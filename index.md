@@ -3,50 +3,29 @@ layout: home
 title: Pebble Biofusion Summer School
 ---
 
-# Pebble Biofusion Summer School
-
-Westlake University Interdisciplinary Sciences Center summer program for computational biology and systems science.
+Westlake University Interdisciplinary Sciences Center summer program in computational biology and systems science.
 
 ## About the Program
 
-The Pebble Biofusion Summer School brings together exceptional students and world-class faculty from physics, mathematics, biology, computer science, and engineering to work on cutting-edge interdisciplinary problems in computational biology and systems science.
+The Pebble Biofusion Summer School brings together exceptional students and world-class faculty from physics, mathematics, biology, computer science, and engineering to work on cutting-edge interdisciplinary problems.
 
-## 2026 Summer School
+## 2026 Program Details
 
-**Application Deadline**: June 15, 2026 at 10:00 AM  
-**Program Duration**: 6-8 weeks during summer 2026  
-**Location**: Westlake University, Hangzhou
+- **Application Deadline**: June 15, 2026 at 10:00 AM  
+- **Program Duration**: 6-8 weeks  
+- **Location**: Westlake University, Hangzhou
 
-### Program Highlights
+### Faculty & Research
 
 - **15+ Faculty Members** from Westlake University and partner institutions
-- **8 Research Areas** covering the latest developments in interdisciplinary science
-- **Hands-On Research** with real-world projects and cutting-edge tools
-- **Interdisciplinary Collaboration** across traditional academic boundaries
+- **8 Research Areas**: Complex Systems, Synthetic Biology, AI for Science, Biophysics, and more
+- **Hands-On Research** with real-world projects and cutting-edge computational tools
 
-## Research Areas
-
-Our summer school focuses on these key research directions:
-
-### Complex Systems
-Statistical physics, network dynamics, self-organization, and multi-scale modeling.
-
-### Synthetic Biology
-Genetic circuits, protein design, microbial engineering, and biological chassis development.
-
-### AI for Science
-Machine learning applications, data science, and computational simulation.
-
-### Biophysics
-Single-cell technologies, protein homeostasis, and quantitative biology.
-
-## Platform Materials
-
-This website hosts teaching materials and research outputs from our summer school programs.
+## This Platform
 
 ### Teaching Materials
 - Course slides and theoretical background
-- Tutorial notebooks and code examples
+- Tutorial notebooks and code examples  
 - Reference materials and reading lists
 
 ### Research Outputs
@@ -54,30 +33,14 @@ This website hosts teaching materials and research outputs from our summer schoo
 - Conference posters and presentations
 - Research papers and technical reports
 
-### Project Documentation
-- Complete project descriptions and methodologies
-- Software requirements and setup instructions
-- Results and findings summaries
+## Quick Navigation
 
-## Getting Started
-
-### For Prospective Students
-- Learn about our [program overview]({{ site.baseurl }}/summer-camp/)
-- Check [2026 projects]({{ site.baseurl }}/years/2026/) and research areas
-- Apply before the June 15, 2026 deadline
-
-### For Participants
-- Browse materials by research area (see sidebar)
-- Access project templates and contribution guidelines
-- Download resources for your research
-
-### For Visitors
-- Explore our research outputs and methodologies
-- Access reproducible research materials
-- Learn about our interdisciplinary approach
+- **[Program Details]({{ site.baseurl }}/summer-camp/)** - Faculty, application information, and program overview
+- **[2026 Projects]({{ site.baseurl }}/years/2026/)** - Research directions and project structure  
+- **[Research Areas]({{ site.baseurl }}/topics/)** - Explore by scientific discipline (see sidebar)
 
 ## Contact
 
-**Host Institution**: Westlake University College of Science Interdisciplinary Sciences Center
+**Host**: Westlake University Interdisciplinary Sciences Center (CIS)
 
-**Application Information**: See our [program page]({{ site.baseurl }}/summer-camp/) for details
+**Application**: See [program page]({{ site.baseurl }}/summer-camp/) for details

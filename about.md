@@ -4,31 +4,27 @@ title: "About"
 permalink: /about/
 ---
 
-# About Pebble Biofusion Summer School
+## About the Platform
 
-Pebble Biofusion Summer School is a collaborative platform hosted by Westlake University Interdisciplinary Sciences Center, designed to collect and showcase teaching materials, project outputs, and research results from our annual summer school programs.
+This platform hosts teaching materials and research outputs from the Pebble Biofusion Summer School hosted by Westlake University Interdisciplinary Sciences Center.
 
-## Our Mission
+## Program Mission
 
-- **Education**: Make cutting-edge research materials accessible and well-documented
-- **Collaboration**: Enable easy contribution and sharing of scientific knowledge
-- **Innovation**: Create a central hub for interdisciplinary research outputs
-- **Excellence**: Maintain high standards for scientific documentation and reproducibility
+- **Education**: Accessible cutting-edge research materials
+- **Collaboration**: Easy sharing of scientific knowledge
+- **Innovation**: Central hub for interdisciplinary research
+- **Excellence**: High standards for documentation and reproducibility
 
 ## Program Background
 
-The Pebble Biofusion Summer School brings together students and researchers from physics, mathematics, biology, computer science, and engineering to work on cutting-edge interdisciplinary problems in computational biology and systems science.
+The Pebble Biofusion Summer School brings together students and researchers from physics, mathematics, biology, computer science, and engineering for intensive 6-8 week research projects.
 
-Hosted by Westlake University's Interdisciplinary Sciences Center, the program features:
-
-- World-class faculty from Westlake University and partner institutions
-- Intensive 6-8 week research projects
-- Hands-on experience with latest research methods and technologies
+### Features
+- World-class faculty from Westlake University and partners
+- Hands-on experience with latest research methods
 - Interdisciplinary collaboration and networking
 
 ## Platform Purpose
-
-This website serves as a central repository for:
 
 ### Teaching Materials
 - Course slides and theoretical background
@@ -45,28 +41,29 @@ This website serves as a central repository for:
 - Software requirements and setup instructions
 - Results and findings summaries
 
-## Content Organization
+## Organization
 
-Materials are organized by:
-- **Research Areas**: Browse by scientific discipline (see sidebar)
-- **Year**: Access projects by summer school year
-- **Project Type**: Presentations, notebooks, posters, manuscripts
+### By Research Area
+- Complex Systems, Synthetic Biology, AI for Science, Biophysics, etc.
+
+### By Year
+- Access projects by summer school year
+
+### By Type
+- Presentations, Notebooks, Posters, Manuscripts
 
 ## Technical Infrastructure
 
-Built with:
 - **Jekyll**: Static site generator
 - **GitHub Pages**: Web hosting and deployment
 - **Markdown**: Content authoring
-- **Git**: Version control and collaboration
+- **Git**: Version control
 
-## Contact Information
+## Contact
 
-For questions or suggestions about the platform, please contact the summer school organizing committee at Westlake University Interdisciplinary Sciences Center.
+**Host**: Westlake University Interdisciplinary Sciences Center
 
-## Acknowledgments
-
-This platform is developed and maintained by the Westlake University Interdisciplinary Sciences Center to support interdisciplinary education and research in computational biology and systems science.
+For platform questions, contact the summer school organizing committee.
 
 ---
 

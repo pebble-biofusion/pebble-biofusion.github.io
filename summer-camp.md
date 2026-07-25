@@ -4,132 +4,84 @@ title: "Summer School Program"
 permalink: /summer-camp/
 ---
 
-# Pebble Biofusion Summer School 2026
-
-Westlake University Interdisciplinary Sciences Center (CIS) interdisciplinary biofusion summer camp, cultivating scientific core competencies in the AI era.
-
 ## Program Overview
 
-The "Pebble Biofusion Summer School" is a core educational project of the Westlake University Interdisciplinary Sciences Center, aiming to cultivate students' scientific core competencies in the AI era through interdisciplinary integration. The summer camp brings together top mentors from physics, mathematics, biology, computer science, and other fields to provide a unique frontier interdisciplinary research experience.
+The Pebble Biofusion Summer School is an intensive interdisciplinary program hosted by Westlake University Interdisciplinary Sciences Center (CIS), cultivating scientific core competencies in the AI era through hands-on research experience.
 
 ## Important Dates
 
 - **Application Deadline**: June 15, 2026 (Monday) 10:00 AM
 - **Program Period**: Summer 2026
-- **Project Duration**: 6-8 weeks
+- **Duration**: 6-8 weeks
 
 ## Faculty Team
 
 ### Westlake University
 
 **Distinguished Professors**
-- **Chao Tang** - CAS Academician, Complex Systems and Statistical Physics
-- **Lei-Han Tang** - Statistical Physics, Self-Organization in Living Systems
-- **Hong Qian** - Single-Molecule Biophysics, Statistical Thermodynamics Theory
-- **Zhen-Nan Zhou** - Differential Equations and Stochastic Models
+- Chao Tang (Complex Systems and Statistical Physics)
+- Lei-Han Tang (Statistical Physics, Self-Organization)
+- Hong Qian (Single-Molecule Biophysics)
+- Zhen-Nan Zhou (Differential Equations and Stochastic Models)
 
 **Research Fellows**
-- **Zibo Chen** - Synthetic Biology, Protein Design
-- **Tailin Wu** - AI for Science Interdisciplinary Core Problems
-- **Kaiyuan Sun** - Complex Systems Modeling and Infectious Disease Dynamics
-- **Baiyi He** - Microbiome Quantitative Engineering
-- **Yifan Yang** - Nonlinear Dynamics in Biological Aging
-- **Fangzhou Xiao** - Biological Machine Control and Architecture
-- **Yihan Wan** - Single-Cell Transcriptomics Imaging Technology
-- **Shouwen Wang** - Cell Fate Choice and Single-Cell Multi-Omics
-- **Zitong Wang** - Cell Change Patterns in Complex Environments
-- **Rui Fang** - Protein Homeostasis Mechanisms
-- **Hanqing Guo** - Embryonic Development Morphogenesis
+- Zibo Chen (Synthetic Biology, Protein Design)
+- Tailin Wu (AI for Science)
+- Kaiyuan Sun (Complex Systems Modeling)
+- Baiyi He (Microbiome Engineering)
+- Yifan Yang (Nonlinear Dynamics in Aging)
+- Fangzhou Xiao (Biological Machine Control)
+- Yihan Wan (Single-Cell Technologies)
+- Shouwen Wang (Cell Fate and Multi-Omics)
+- Zitong Wang (AI and Cell Dynamics)
+- Rui Fang (Protein Homeostasis)
+- Hanqing Guo (Developmental Biology)
 
 ### Partner Institutions
-
-- **Zhiyuan Li** - Peking University Center for Quantitative Biology
-- **Jin Fan** - Shenzhen Institutes of Advanced Technology, CAS
+- Zhiyuan Li (Peking University Center for Quantitative Biology)
+- Jin Fan (Shenzhen Institutes of Advanced Technology, CAS)
 
 ## Research Directions
 
 ### 1. Complex Systems Theory
-- Statistical physics of living systems
-- Self-organization and non-equilibrium systems
-- Network dynamics and data mining
+Statistical physics of living systems, network dynamics, multi-scale modeling
 
 ### 2. Synthetic Biology
-- Genetic circuit design and construction
-- Protein de novo design
-- Microbial chassis development
+Genetic circuit design, protein engineering, microbial chassis development
 
 ### 3. AI for Science
-- AI-assisted scientific discovery
-- Machine learning in biology applications
-- Data science and statistical thermodynamics
+Machine learning applications, computational simulation, data science integration
 
 ### 4. Microbiome Engineering
-- Microbial community interaction mechanisms
-- Microbiome quantitative analysis
-- Quorum sensing and regulation
+Microbial community dynamics, quantitative analysis, synthetic ecology
 
 ### 5. Single-Cell Biology
-- Single-cell multi-omics technologies
-- Cell fate choice mechanisms
-- Lineage tracing techniques
+Multi-omics technologies, cell fate mechanisms, lineage tracing
 
 ### 6. Protein Homeostasis
-- Protein folding and degradation mechanisms
-- Ubiquitin-proteasome system
-- Cellular quality control
+Folding and degradation mechanisms, quality control systems
 
 ### 7. Biological Aging
-- Nonlinear dynamics in aging
-- Statistical physics and quantitative biology
-- Lifespan regulation mechanisms
+Nonlinear dynamics, statistical physics approaches
 
 ### 8. Developmental Biology
-- Embryonic development processes
-- Morphogenesis physical mechanisms
-- Optogenetics and imaging
-
-## Program Features
-
-### Interdisciplinary Integration
-- Break traditional disciplinary boundaries
-- Combine theory, experiment, and computation
-- Multi-mentor collaborative guidance model
-
-### Frontier Research Orientation
-- Direct participation in cutting-edge scientific research
-- Exposure to latest research methods and technologies
-- Cultivate innovative thinking capabilities
-
-### International Perspective
-- Top-tier mentor team
-- International frontier research directions
-- Interdisciplinary research network
+Morphogenesis mechanisms, optogenetics applications
 
 ## Application Information
 
-### Application Requirements
+### Requirements
 - Strong interest in interdisciplinary scientific research
-- Relevant academic background (physics, mathematics, biology, computer science, etc.)
+- Relevant academic background (physics, mathematics, biology, computer science)
 - Commitment to pursuing scientific research
-- Ability to fully participate in summer camp activities
+- Ability to fully participate in the program
 
-### Application Materials
+### Materials
 - Resume and academic background
 - Research interests and motivation statement
 - Reference contact information
-- Related academic achievements (if available)
 
-### How to Apply
-- **Official Information**: See detailed application guidelines
-- **Deadline**: June 15, 2026 at 10:00 AM
-- **Contact**: Westlake University Interdisciplinary Sciences Center
+## Contact
 
-## Contact Information
+**Institution**: Westlake University College of Science Interdisciplinary Sciences Center
 
-- **Host Institution**: Westlake University College of Science Interdisciplinary Sciences Center (CIS)
-- **Website**: [Westlake University](https://www.westlake.edu.cn/)
-- **Application**: [Official Application Information](https://mp.weixin.qq.com/s/75Lt8VJmhoKTkEY9bz9r-w)
-
----
-
-*This website serves as the material collection and display platform for the summer school, recording learning outcomes and research project outputs from students each year.*
+**Application**: [Official information](https://mp.weixin.qq.com/s/75Lt8VJmhoKTkEY9bz9r-w)

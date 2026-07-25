@@ -4,82 +4,75 @@ title: "How to Contribute"
 permalink: /contribute/
 ---
 
-# How to Contribute
+## Adding Content
 
-This platform hosts teaching materials and research outputs from the Pebble Biofusion Summer School. Here's how to add your content.
+This platform hosts teaching materials and research outputs from the Pebble Biofusion Summer School.
 
-## Adding New Projects
+## Project Structure
 
-### Project Structure
 ```
 summerschool/2026/your-project-name/
 ├── presentations/      # Keynote/PPT files
 ├── notebooks/         # Jupyter notebooks
 ├── posters/          # PDF poster files
-├── manuscripts/      # Research papers and reports
+├── manuscripts/      # Research papers
 └── README.md         # Project description
 ```
 
-### Project Template
-Use the project template: `summerschool/templates/project-template.md`
+## Project Template
 
-## Content Guidelines
+Use: `summerschool/templates/project-template.md`
 
-### Required Files
-- `README.md` - Project description with metadata
+## Required Files
+
+- `README.md` with metadata
 - At least one analysis/presentation file
 
-### Recommended Structure
+## Recommended Structure
+
 - `presentations/` - `.pptx`, `.key`, `.pdf`
 - `notebooks/` - `.ipynb`, `.py`, `.R`
 - `posters/` - `.pdf`, `.png`
 - `manuscripts/` - `.pdf`, `.docx`, `.tex`
 - `data/` - `.csv`, `.xlsx`, `.json`
 
-### Metadata Requirements
+## Metadata Format
 
 Every project `README.md` must include:
 
 ```yaml
 ---
 layout: project
-title: "Descriptive project title"
+title: "Project Title"
 year: 2026
 topic: "research-topic"
-authors: ["Full Name", "Co-author Name"]
-status: "completed"  # or "ongoing", "planned"
-tags: [relevant, tags, here]
-project_image: "optional-preview.png"
+authors: ["Full Name", "Co-author"]
+status: "completed"
+tags: [tag1, tag2]
 date: 2026-07-25
 ---
 ```
 
 ## Submission Process
 
-1. **Create Project Directory** following the structure above
-2. **Add Your Materials** to appropriate folders
-3. **Update Project Metadata** in README.md
-4. **Test Locally** using `bundle exec jekyll serve`
-5. **Submit Changes** via pull request or direct push
+1. Create project directory structure
+2. Add materials to appropriate folders
+3. Update project metadata in README.md
+4. Test locally: `bundle exec jekyll serve`
+5. Submit via pull request or direct push
 
 ## Quality Standards
 
-### Clear Descriptions
-- Explain research context and methods
-- Provide reproducible code with requirements.txt
+- Clear research context and methods
+- Reproducible code with requirements.txt
 - Include all referenced files
 - Credit all contributors appropriately
-
-### File Organization
 - Use descriptive filenames
-- Organize materials in standard directories
-- Include README with project overview
 - Follow consistent naming conventions
 
-## Technical Requirements
+## Software Dependencies
 
-### Software Dependencies
-Include a `requirements.txt` file:
+Include `requirements.txt`:
 ```
 numpy>=1.20.0
 pandas>=1.3.0
@@ -87,39 +80,15 @@ matplotlib>=3.4.0
 jupyter>=1.0.0
 ```
 
-### Code Documentation
-- Comment complex code sections
-- Include usage instructions
-- Provide example outputs
-- Document dependencies
-
-## Review Process
-
-Content is reviewed for:
-- Scientific accuracy
-- Code reproducibility
-- Documentation completeness
-- File organization standards
-
 ## Local Development
 
-### Setting Up Jekyll
+```bash
+cd /path/to/pebble-biofusion.github.io
+bundle install
+bundle exec jekyll serve
+# Visit http://localhost:4000
+```
 
-1. **Install Dependencies**
-   ```bash
-   cd /path/to/pebble-biofusion.github.io
-   bundle install
-   ```
+## Contact
 
-2. **Start Local Server**
-   ```bash
-   bundle exec jekyll serve
-   ```
-
-3. **Access Site**
-   - Open: `http://localhost:4000`
-   - Changes auto-refresh
-
-## Questions?
-
-Contact the summer school organizing committee for guidance on contributing materials.
+For guidance on contributing materials, contact the summer school organizing committee.

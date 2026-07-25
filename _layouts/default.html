@@ -21,28 +21,24 @@
       font-size: 16px;
     }
 
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
     /* Header */
     .site-header {
       background: #fff;
       border-bottom: 1px solid #e0e0e0;
       padding: 1.5rem 0;
-      margin-bottom: 0;
     }
 
     .header-content {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
     }
 
     .site-title {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 500;
       color: #333;
       text-decoration: none;
@@ -60,7 +56,7 @@
     .header-nav a {
       color: #555;
       text-decoration: none;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       transition: color 0.2s;
     }
 
@@ -78,7 +74,7 @@
     /* Sidebar */
     .sidebar {
       width: 250px;
-      padding: 2rem 0;
+      padding: 2rem 1.5rem 2rem 2rem;
       border-right: 1px solid #e0e0e0;
       flex-shrink: 0;
     }
@@ -88,7 +84,7 @@
     }
 
     .sidebar-title {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -133,7 +129,7 @@
     }
 
     .main-content h1 {
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: 500;
       margin-bottom: 1.5rem;
       color: #333;
@@ -142,7 +138,7 @@
     }
 
     .main-content h2 {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 500;
       margin-top: 2rem;
       margin-bottom: 1rem;
@@ -150,7 +146,7 @@
     }
 
     .main-content h3 {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 500;
       margin-top: 1.5rem;
       margin-bottom: 0.75rem;
@@ -208,7 +204,7 @@
       padding: 2rem 0;
       text-align: center;
       color: #666;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       margin-top: 3rem;
     }
 
@@ -222,32 +218,33 @@
         width: 100%;
         border-right: none;
         border-bottom: 1px solid #e0e0e0;
-        padding: 1.5rem 0;
+        padding: 1.5rem 2rem;
       }
 
       .main-content {
-        padding: 2rem 1.5rem;
+        padding: 2rem 2rem;
       }
 
       .header-nav {
         display: none;
+      }
+
+      .header-content {
+        padding: 0 1.5rem;
       }
     }
   </style>
 </head>
 <body>
   <header class="site-header">
-    <div class="container">
-      <div class="header-content">
-        <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
-        <nav class="header-nav">
-          <a href="{{ '/' | relative_url }}">Home</a>
-          <a href="{{ '/summer-camp/' | relative_url }}">Program</a>
-          <a href="{{ '/years/2026/' | relative_url }}">Projects</a>
-          <a href="{{ '/contribute/' | relative_url }}">Contribute</a>
-          <a href="{{ '/about/' | relative_url }}">About</a>
-        </nav>
-      </div>
+    <div class="header-content">
+      <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
+      <nav class="header-nav">
+        <a href="{{ '/summer-camp/' | relative_url }}">Program</a>
+        <a href="{{ '/years/2026/' | relative_url }}">Projects</a>
+        <a href="{{ '/contribute/' | relative_url }}">Contribute</a>
+        <a href="{{ '/about/' | relative_url }}">About</a>
+      </nav>
     </div>
   </header>
 
@@ -268,7 +265,7 @@
         <div class="sidebar-title">Quick Links</div>
         <ul class="sidebar-nav">
           <li><a href="{{ '/years/2026/' | relative_url }}">2026 Projects</a></li>
-          <li><a href="{{ '/summer-camp/' | relative_url }}">Apply Now</a></li>
+          <li><a href="{{ '/summer-camp/' | relative_url }}">Application</a></li>
           <li><a href="{{ '/contribute/' | relative_url }}">Add Materials</a></li>
         </ul>
       </div>
@@ -280,9 +277,7 @@
   </div>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 Pebble Biofusion Summer School, Westlake University Interdisciplinary Sciences Center</p>
-    </div>
+    &copy; 2026 Pebble Biofusion Summer School, Westlake University CIS
   </footer>
 </body>
 </html>
