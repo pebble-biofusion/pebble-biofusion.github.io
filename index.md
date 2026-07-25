@@ -5,7 +5,7 @@ title: Pebble Biofusion Summer School
 
 ## About the Program
 
-The Pebble Biofusion Summer School brings together exceptional students and world-class faculty from physics, mathematics, biology, computer science, and engineering to work on cutting-edge interdisciplinary problems.
+This program brings together exceptional students and world-class faculty from physics, mathematics, biology, computer science, and engineering to work on cutting-edge interdisciplinary problems.
 
 ## 2026 Program Details
 
