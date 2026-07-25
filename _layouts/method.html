@@ -1,0 +1,123 @@
+---
+layout: default
+---
+<div class="method">
+  <header class="method-header">
+    <h1>{{ page.title }}</h1>
+    <div class="method-meta">
+      <span class="author">By {{ page.author }}</span>
+      <span class="date">{{ page.date | date: "%B %d, %Y" }}</span>
+      {% if page.tags %}
+      <span class="tags">
+        {% for tag in page.tags %}
+          <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </span>
+      {% endif %}
+    </div>
+  </header>
+
+  <article class="method-content">
+    {% if page.category %}
+    <div class="category">
+      <strong>Category:</strong> {{ page.category }}
+    </div>
+    {% endif %}
+
+    {{ content }}
+  </article>
+
+  <footer class="method-footer">
+    <a href="{{ site.baseurl }}/">← Back to Home</a>
+    <a href="{{ site.baseurl }}/methods/">← All Methods</a>
+  </footer>
+</div>
+
+<style>
+  .method {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  .method-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #eee;
+  }
+
+  .method-header h1 {
+    margin: 0 0 1rem 0;
+    color: #2c3e50;
+  }
+
+  .method-meta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .method-meta .author,
+  .method-meta .date {
+    padding: 0.25rem 0.5rem;
+    background: #f8f9fa;
+    border-radius: 4px;
+  }
+
+  .tags {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    padding: 0.25rem 0.5rem;
+    background: #e3f2fd;
+    color: #1976d2;
+    border-radius: 4px;
+    font-size: 0.85rem;
+  }
+
+  .category {
+    padding: 0.5rem 1rem;
+    background: #f0f7ff;
+    border-left: 3px solid #2196f3;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+  }
+
+  .method-content {
+    line-height: 1.8;
+  }
+
+  .method-content h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+  }
+
+  .method-content pre {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+  }
+
+  .method-footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .method-footer a {
+    color: #2196f3;
+    text-decoration: none;
+  }
+
+  .method-footer a:hover {
+    text-decoration: underline;
+  }
+</style>

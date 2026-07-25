@@ -1,0 +1,128 @@
+---
+layout: default
+---
+<div class="workflow">
+  <header class="workflow-header">
+    <h1>{{ page.title }}</h1>
+    <div class="workflow-meta">
+      <span class="author">By {{ page.author }}</span>
+      <span class="date">{{ page.date | date: "%B %d, %Y" }}</span>
+      {% if page.tags %}
+      <span class="tags">
+        {% for tag in page.tags %}
+          <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </span>
+      {% endif %}
+    </div>
+  </header>
+
+  <article class="workflow-content">
+    {% if page.category %}
+    <div class="category workflow-category">
+      <strong>Category:</strong> {{ page.category }}
+    </div>
+    {% endif %}
+
+    {{ content }}
+  </article>
+
+  <footer class="workflow-footer">
+    <a href="{{ site.baseurl }}/">← Back to Home</a>
+    <a href="{{ site.baseurl }}/workflows/">← All Workflows</a>
+  </footer>
+</div>
+
+<style>
+  .workflow {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  .workflow-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #81c784;
+  }
+
+  .workflow-header h1 {
+    margin: 0 0 1rem 0;
+    color: #2e7d32;
+  }
+
+  .workflow-meta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .workflow-meta .author,
+  .workflow-meta .date {
+    padding: 0.25rem 0.5rem;
+    background: #f1f8e9;
+    border-radius: 4px;
+  }
+
+  .tags {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    padding: 0.25rem 0.5rem;
+    background: #c8e6c9;
+    color: #2e7d32;
+    border-radius: 4px;
+    font-size: 0.85rem;
+  }
+
+  .workflow-category {
+    background: #e8f5e9;
+    border-left-color: #4caf50;
+  }
+
+  .workflow-content {
+    line-height: 1.8;
+  }
+
+  .workflow-content h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #2e7d32;
+  }
+
+  .workflow-content h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #43a047;
+  }
+
+  .workflow-content ol,
+  .workflow-content ul {
+    padding-left: 1.5rem;
+  }
+
+  .workflow-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .workflow-footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .workflow-footer a {
+    color: #4caf50;
+    text-decoration: none;
+  }
+
+  .workflow-footer a:hover {
+    text-decoration: underline;
+  }
+</style>
