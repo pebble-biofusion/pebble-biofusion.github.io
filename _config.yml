@@ -1,9 +1,9 @@
 # Site settings
-title: Pebble Methods Studio
-description: Collaborative methods and workflows for the Pebble team
+title: Pebble Summer School Portal
+description: Teaching materials and research outputs from Pebble summer school programs
 email: your-email@example.com
 baseurl: ""
-url: "https://pebble.github.io"
+url: "https://pebble-biofusion.github.io"
 
 # Build settings
 markdown: kramdown
@@ -33,6 +33,9 @@ collections:
   workflows:
     output: true
     permalink: /workflows/:path/
+  projects:
+    output: true
+    permalink: /summerschool/:path/
 
 # Defaults
 defaults:
@@ -51,3 +54,8 @@ defaults:
       type: "workflows"
     values:
       layout: "workflow"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"

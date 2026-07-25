@@ -1,0 +1,273 @@
+---
+layout: default
+---
+<div class="project-page">
+  <header class="project-header">
+    <div class="project-meta">
+      <span class="project-year">{{ page.year }}</span>
+      <span class="project-status status-{{ page.status }}">{{ page.status }}</span>
+      {% if page.topic %}
+      <span class="project-topic">
+        <a href="{{ site.baseurl }}/topics/{{ page.topic }}/">#{{ page.topic }}</a>
+      </span>
+      {% endif %}
+    </div>
+    <h1>{{ page.title }}</h1>
+    {% if page.authors %}
+    <div class="project-authors">
+      {% for author in page.authors %}
+        <span class="author">{{ author }}</span>{% if forloop.last == false %}, {% endif %}
+      {% endfor %}
+    </div>
+    {% endif %}
+    <div class="project-date">{{ page.date | date: "%B %d, %Y" }}</div>
+  </header>
+
+  <div class="project-content">
+    {% if page.project_image %}
+    <div class="project-hero">
+      <img src="{{ site.baseurl }}/images/{{ page.project_image }}" alt="{{ page.title }}">
+    </div>
+    {% endif %}
+
+    <article class="project-description">
+      {{ content }}
+    </article>
+
+    {% if page.tags %}
+    <div class="project-tags">
+      <strong>Tags:</strong>
+      {% for tag in page.tags %}
+        <span class="tag">#{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+
+  <nav class="project-navigation">
+    <a href="{{ site.baseurl }}/summerschool/" class="btn-back">← Back to Summer School</a>
+    <a href="{{ site.baseurl }}/years/{{ page.year }}/" class="btn-year">View {{ page.year }} Projects</a>
+  </nav>
+</div>
+
+<style>
+  .project-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  .project-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #e0e0e0;
+  }
+
+  .project-meta {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  .project-year {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .project-status {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .status-completed {
+    background: #10b981;
+    color: white;
+  }
+
+  .status-ongoing {
+    background: #3b82f6;
+    color: white;
+  }
+
+  .status-planned {
+    background: #6b7280;
+    color: white;
+  }
+
+  .project-topic a {
+    background: #fef3c7;
+    color: #92400e;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.85rem;
+  }
+
+  .project-topic a:hover {
+    background: #fde68a;
+  }
+
+  .project-header h1 {
+    margin: 0.5rem 0;
+    color: #1f2937;
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .project-authors {
+    margin: 1rem 0;
+    color: #4b5563;
+    font-size: 1.1rem;
+  }
+
+  .author {
+    background: #f3f4f6;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    margin-right: 0.3rem;
+  }
+
+  .project-date {
+    color: #6b7280;
+    font-size: 0.9rem;
+  }
+
+  .project-hero {
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .project-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .project-description {
+    line-height: 1.8;
+    color: #374151;
+  }
+
+  .project-description h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #1f2937;
+  }
+
+  .project-description h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #4b5563;
+  }
+
+  .project-description ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .project-description li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .project-description li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #6366f1;
+    font-weight: bold;
+  }
+
+  .project-description a {
+    color: #6366f1;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  .project-description a:hover {
+    border-bottom-color: #6366f1;
+  }
+
+  .project-tags {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #f9fafb;
+    border-radius: 8px;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    background: #e0e7ff;
+    color: #4338ca;
+    padding: 0.3rem 0.7rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+  }
+
+  .project-navigation {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-back, .btn-year {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn-back {
+    background: #6366f1;
+    color: white;
+  }
+
+  .btn-year {
+    background: #f3f4f6;
+    color: #374151;
+  }
+
+  .btn-back:hover {
+    background: #4f46e5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  }
+
+  .btn-year:hover {
+    background: #e5e7eb;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    .project-header h1 {
+      font-size: 2rem;
+    }
+
+    .project-navigation {
+      flex-direction: column;
+    }
+
+    .btn-back, .btn-year {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>
