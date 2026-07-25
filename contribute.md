@@ -1,142 +1,110 @@
 ---
 layout: page
-title: Contribute
+title: "How to Contribute"
 permalink: /contribute/
 ---
 
 # How to Contribute
 
-Adding content to Pebble Methods Studio is easy! Here's how:
+This platform hosts teaching materials and research outputs from the Pebble Biofusion Summer School. Here's how to add your content.
 
-## Quick Start
+## Adding New Projects
 
-1. **Clone the repository** (or just edit directly on GitHub)
-2. **Create a new markdown file** in the appropriate directory
-3. **Follow the template format** (see examples below)
-4. **Push to GitHub** - the site updates automatically!
+### Project Structure
+```
+summerschool/2026/your-project-name/
+├── presentations/      # Keynote/PPT files
+├── notebooks/         # Jupyter notebooks
+├── posters/          # PDF poster files
+├── manuscripts/      # Research papers and reports
+└── README.md         # Project description
+```
 
-## File Locations
+### Project Template
+Use the project template: `summerschool/templates/project-template.md`
 
-### Methods Documentation
-- **Directory**: `_methods/`
-- **URL Pattern**: `/methods/your-file-name/`
-- **Example**: `_methods/cell-culture.md` → `/methods/cell-culture/`
+## Content Guidelines
 
-### Workflows
-- **Directory**: `_workflows/`
-- **URL Pattern**: `/workflows/your-file-name/`
-- **Example**: `_workflows/data-analysis.md` → `/workflows/data-analysis/`
+### Required Files
+- `README.md` - Project description with metadata
+- At least one analysis/presentation file
 
-### Blog Posts
-- **Directory**: `_posts/`
-- **File Format**: `YYYY-MM-DD-title.md`
-- **URL Pattern**: `/YYYY/MM/DD/title/`
-- **Example**: `_posts/2026-07-25-new-method.md` → `/2026/07/25/new-method/`
+### Recommended Structure
+- `presentations/` - `.pptx`, `.key`, `.pdf`
+- `notebooks/` - `.ipynb`, `.py`, `.R`
+- `posters/` - `.pdf`, `.png`
+- `manuscripts/` - `.pdf`, `.docx`, `.tex`
+- `data/` - `.csv`, `.xlsx`, `.json`
 
-## Template Format
+### Metadata Requirements
 
-### For Methods & Workflows:
+Every project `README.md` must include:
 
 ```yaml
 ---
-title: "Your Title Here"
+layout: project
+title: "Descriptive project title"
+year: 2026
+topic: "research-topic"
+authors: ["Full Name", "Co-author Name"]
+status: "completed"  # or "ongoing", "planned"
+tags: [relevant, tags, here]
+project_image: "optional-preview.png"
 date: 2026-07-25
-category: methods  # or "workflows"
-tags: [tag1, tag2, tag3]
-author: "Your Name"
 ---
-
-# Title
-
-Brief description...
-
-## Overview
-
-What this method/workflow does...
-
-## Steps
-
-1. First step
-2. Second step
-3. Continue as needed
-
-## Results
-
-Expected outcomes...
-
-## Notes
-
-Any additional information...
 ```
 
-### For Blog Posts:
+## Submission Process
 
-```yaml
----
-layout: post
-title: "Post Title"
-date: 2026-07-25
-category: announcement
-tags: [news, update]
-author: "Your Name"
----
+1. **Create Project Directory** following the structure above
+2. **Add Your Materials** to appropriate folders
+3. **Update Project Metadata** in README.md
+4. **Test Locally** using `bundle exec jekyll serve`
+5. **Submit Changes** via pull request or direct push
 
-# Post Title
+## Quality Standards
 
-Your content here...
+### Clear Descriptions
+- Explain research context and methods
+- Provide reproducible code with requirements.txt
+- Include all referenced files
+- Credit all contributors appropriately
+
+### File Organization
+- Use descriptive filenames
+- Organize materials in standard directories
+- Include README with project overview
+- Follow consistent naming conventions
+
+## Technical Requirements
+
+### Software Dependencies
+Include a `requirements.txt` file:
+```
+numpy>=1.20.0
+pandas>=1.3.0
+matplotlib>=3.4.0
+jupyter>=1.0.0
 ```
 
-## Best Practices
-
-### Content Quality
-- **Be Clear**: Write in clear, simple language
-- **Be Specific**: Include exact details and parameters
-- **Be Complete**: Cover all steps and considerations
-- **Be Current**: Update documents when things change
-
-### Formatting
-- Use headings (`#`, `##`) to organize content
-- Use code blocks for commands and scripts
-- Include images when helpful (place in `images/` directory)
-- Use bullet points for lists
-
-### Code Blocks
-```
-    ```bash
-    # For shell commands
-    pip install package-name
-    ```
-
-    ```python
-    # For Python code
-    import pandas as pd
-    ```
-
-    ```R
-    # For R code
-    library(tidyverse)
-    ```
-```
-
-### Images
-```markdown
-![Description](images/your-image.png)
-```
+### Code Documentation
+- Comment complex code sections
+- Include usage instructions
+- Provide example outputs
+- Document dependencies
 
 ## Review Process
 
-Currently, we use a direct push model:
-1. Make your changes
-2. Push to the main branch
-3. Site updates automatically
-4. Team can review and suggest improvements
+Content is reviewed for:
+- Scientific accuracy
+- Code reproducibility
+- Documentation completeness
+- File organization standards
 
-## Need Help?
+## Questions?
 
-- Check existing methods/workflows for examples
-- Ask a team member for guidance
-- Start simple and expand over time
+Contact the summer school organizing committee for guidance on contributing materials.
 
 ---
 
-*Happy contributing! 🎉*
+*For more information, see the [Program Overview](/summer-camp/)*

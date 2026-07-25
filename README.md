@@ -1,6 +1,6 @@
-# 🎓 Pebble Summer School Portal
+# 🎓 Pebble Biofusion Summer School Platform
 
-A comprehensive platform for hosting teaching materials, project outputs, and research results from annual summer school programs in computational biology and mathematical modeling.
+A comprehensive platform for hosting teaching materials, project outputs, and research results from the annual Pebble Biofusion Summer School programs at Westlake University Interdisciplinary Sciences Center.
 
 ## 🌟 Website
 
@@ -8,7 +8,7 @@ A comprehensive platform for hosting teaching materials, project outputs, and re
 
 ## 🎯 Purpose
 
-This portal serves as a central repository for:
+This platform serves as a central repository for:
 - **Teaching Materials**: Lecture slides, tutorials, and educational resources
 - **Project Outputs**: Jupyter notebooks, presentations, and analysis code
 - **Research Results**: Manuscripts, posters, and conference materials
@@ -19,69 +19,51 @@ This portal serves as a central repository for:
 ### By Year Structure
 ```
 summerschool/
-├── 2024/
-│   ├── spudcell-tutorials/
+├── 2026/
+│   ├── your-project-name/
 │   │   ├── presentations/     # Keynote/PPT files
 │   │   ├── notebooks/        # Jupyter notebooks
 │   │   ├── posters/          # PDF poster files
 │   │   ├── manuscripts/      # Draft papers
 │   │   └── README.md         # Project description
-│   └── project-2/
-└── 2025/
-    └── upcoming-projects/
 ```
 
-### By Topic Navigation
-- **Cell Biology**: Cell cycle modeling, regulatory networks
-- **Mathematical Modeling**: ODE models, simulations
-- **Biochemistry**: Enzyme kinetics, metabolic pathways
-- **Systems Biology**: Network analysis, multi-scale modeling
+### By Research Topics
+- **Complex Systems**: Statistical physics, network dynamics, self-organization
+- **Synthetic Biology**: Genetic circuits, protein design, microbial engineering
+- **AI for Science**: Machine learning, data science, computational simulation
+- **Biophysics**: Single-cell technologies, protein homeostasis
 
 ## 🚀 Getting Started
 
 ### For Visitors
 
-1. **Browse Materials**: Navigate by year or research topic
-2. **Download Resources**: All files are available on GitHub
-3. **Reproduce Analysis**: Use Jupyter notebooks interactively
+1. Browse materials by year or research topic
+2. Download resources directly from GitHub
+3. Reproduce analysis using Jupyter notebooks
 
 ### For Contributors
 
 #### Adding New Projects
 
-1. **Create Project Directory**
+1. Create project directory structure:
    ```bash
-   mkdir -p summerschool/2025/your-project-name/{presentations,notebooks,posters,manuscripts}
+   mkdir -p summerschool/2026/your-project/{presentations,notebooks,posters,manuscripts}
    ```
 
-2. **Use Project Template**
-   - Copy: `summerschool/templates/project-template.md`
-   - Rename to: `summerschool/2025/your-project-name/README.md`
+2. Use project template:
+   Copy `summerschool/templates/project-template.md`
 
-3. **Add Your Materials**
-   ```bash
-   # Add presentations
-   cp your-presentation.pptx summerschool/2025/your-project-name/presentations/
-
-   # Add notebooks
-   cp your-analysis.ipynb summerschool/2025/your-project-name/notebooks/
-
-   # Add other materials to appropriate directories
-   ```
-
-4. **Update Project Metadata**
-   Edit the front matter in `README.md`:
+3. Add materials with proper metadata:
    ```yaml
    ---
    layout: project
    title: "Your Project Title"
-   year: 2025
-   topic: "your-topic"
-   authors: ["Author Name", "Co-author"]
+   year: 2026
+   topic: "research-topic"
+   authors: ["Author Name"]
    status: "completed"
-   tags: [tag1, tag2, tag3]
-   project_image: "preview-image.png"
-   date: 2025-07-25
+   tags: [tag1, tag2]
    ---
    ```
 
@@ -89,30 +71,20 @@ summerschool/
 
 ### Setting Up Jekyll
 
-1. **Install Dependencies**
+1. Install dependencies:
    ```bash
    cd /path/to/pebble-biofusion.github.io
    bundle install
    ```
 
-2. **Start Local Server**
+2. Start local server:
    ```bash
    bundle exec jekyll serve
    ```
 
-3. **Access Site**
-   - Open: `http://localhost:4000`
-   - Changes auto-refresh
-
-### Testing Changes
-
-- Edit files and refresh browser to see changes
-- Check console for Jekyll errors
-- Test navigation and links
+3. Access site: `http://localhost:4000`
 
 ## 📦 Deployment
-
-### Automatic Deployment
 
 The site automatically deploys to GitHub Pages when you push to the main branch:
 
@@ -122,10 +94,6 @@ git commit -m "Add new summer school project"
 git push origin main
 ```
 
-### Manual Build Verification
-
-Check deployment status: [GitHub Actions](https://github.com/pebble-biofusion/pebble-biofusion.github.io/actions)
-
 ## 📊 Content Guidelines
 
 ### File Organization Standards
@@ -133,7 +101,7 @@ Check deployment status: [GitHub Actions](https://github.com/pebble-biofusion/pe
 Each project should include:
 
 **Required Files:**
-- `README.md` - Project description with metadata
+- `README.md` with metadata
 - At least one analysis/presentation file
 
 **Recommended Structure:**
@@ -141,49 +109,55 @@ Each project should include:
 - `notebooks/` - `.ipynb`, `.py`, `.R`
 - `posters/` - `.pdf`, `.png`
 - `manuscripts/` - `.pdf`, `.docx`, `.tex`
-- `data/` - `.csv`, `.xlsx`, `.json`
 
 ### Metadata Requirements
 
-Every project `README.md` must include:
-
+Every project must include:
 ```yaml
 ---
 layout: project
-title: "Descriptive project title"
-year: 2025
-topic: "research-topic"
-authors: ["Full Name", "Co-author Name"]
-status: "completed"  # or "ongoing", "planned"
-tags: [relevant, tags, here]
-project_image: "optional-preview.png"
-date: 2025-07-25
+title: "Project title"
+year: 2026
+topic: "research-area"
+authors: ["Name1", "Name2"]
+status: "completed"
+tags: [tag1, tag2]
+date: 2026-07-25
 ---
 ```
 
-### Quality Standards
+## 🎓 Program Overview
 
-- **Clear Descriptions**: Explain research context and methods
-- **Reproducible Code**: Include requirements.txt or environment.yml
-- **Complete Materials**: All referenced files should be present
-- **Proper Attribution**: Credit all contributors appropriately
+### 2026 Summer School
+- **Application Deadline**: June 15, 2026
+- **Duration**: 6-8 weeks
+- **Research Areas**: 8 interdisciplinary directions
+- **Faculty**: 15+ world-class mentors
+- **Institutions**: Westlake University + partner institutions
+
+### Research Focus
+- Complex systems and statistical physics
+- Synthetic biology and genetic circuits
+- AI for science applications
+- Microbiome engineering
+- Single-cell technologies
+- Protein homeostasis
+- Biological aging dynamics
+- Developmental biology
 
 ## 🎓 Educational Use
 
 ### For Students
-
 - Access learning materials and tutorials
 - Explore code examples and analysis methods
 - Use templates for your own projects
 
 ### For Instructors
-
 - Share teaching materials with students
 - Access reusable project templates
 - Coordinate multi-year programs
 
 ### For Researchers
-
 - Explore computational approaches
 - Access reproducible research examples
 - Build upon existing methodologies
@@ -198,55 +172,51 @@ date: 2025-07-25
 
 ## 🤝 Contribution Workflow
 
-1. **Fork the Repository**
-2. **Create Project Branch**: `git checkout -b feature/new-project`
-3. **Add Your Materials**: Follow directory structure
-4. **Test Locally**: `bundle exec jekyll serve`
-5. **Submit Pull Request**: Describe your project
+1. Fork the repository
+2. Create project branch
+3. Add materials following directory structure
+4. Test locally
+5. Submit pull request
 
-## 📈 Project Statistics
+## 📈 Platform Statistics
 
-- **12+** Research Projects
-- **45+** Jupyter Notebooks
-- **30+** Presentations
-- **100+** Students & Researchers
-- **4** Research Topics
+- **15+** Faculty Members
+- **8** Research Directions
+- **6-8** Week Program Duration
+- **100%** Interdisciplinary Focus
 
 ## 🔍 Navigation Guide
 
 ### Browse by Year
-- [2024 Projects](/years/2024/) - Cell cycle modeling, biochemical networks
-- [2025 Projects](/years/2025/) - Coming soon!
+- [2026 Projects](/years/2026/) - Current summer school projects
 
-### Browse by Topic
-- [Cell Biology](/topics/cell-biology/) - Cell cycle, regulatory networks
-- [Mathematical Modeling](/topics/mathematical-modeling/) - ODE models, simulations
-- [Biochemistry](/topics/biochemistry/) - Enzyme kinetics, metabolism
-- [Systems Biology](/topics/systems-biology/) - Network analysis
+### Browse by Research Topic
+- [Complex Systems](/topics/complex-systems/) - Statistical physics, networks
+- [Synthetic Biology](/topics/synthetic-biology/) - Genetic circuits, design
+- [AI for Science](/topics/ai-for-science/) - Machine learning, simulation
+- [Biophysics](/topics/biophysics/) - Single-cell, protein systems
 
-## 📞 Support & Contact
+## 📞 Support
 
 ### Questions About Materials
-- Check project README files for specific information
-- Review the [Contribution Guide](/contribute/)
-- Contact the project team
+- Check project README files
+- Review contribution guidelines
+- Contact project team
 
 ### Technical Issues
-- Check [GitHub Issues](https://github.com/pebble-biofusion/pebble-biofusion.github.io/issues)
+- Check GitHub Issues
 - Review Jekyll error logs
 - Verify file paths and permissions
 
 ## 🔮 Future Enhancements
 
-Planned improvements:
-- [ ] Advanced search functionality
-- [ ] Interactive code viewers
-- [ ] Video tutorial integration
-- [ ] Multi-language support
-- [ ] Citation export features
+- Advanced search functionality
+- Interactive code viewers
+- Multi-language support
+- Citation export features
 
 ---
 
 **Built with ❤️ for the computational biology community**
 
-*Last updated: July 2025*
+*Last updated: July 2026*

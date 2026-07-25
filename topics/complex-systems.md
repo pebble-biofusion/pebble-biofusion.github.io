@@ -1,173 +1,106 @@
 ---
 layout: page
-title: "复杂系统研究"
+title: "Complex Systems Research"
 permalink: /topics/complex-systems/
 ---
 
-# 复杂系统研究项目
+# Complex Systems Research Projects
 
-复杂系统研究是小石子生物聚变训练营的核心方向之一，运用统计物理学、网络动力学等方法研究生命系统的内在规律。
+Complex systems research is one of the core directions of the Pebble Biofusion Summer School, using methods from statistical physics, network dynamics, and other fields to study the fundamental laws of living systems.
 
-## 🔬 研究重点
+## Research Focus
 
-### 统计物理学与生命系统
-运用统计物理学的理论框架和方法来理解生命系统的基本规律：
-- **非平衡态统计物理**: 生命系统远离平衡态的特性
-- **自组织现象**: 生物系统中自发出现的有序结构
-- **相变理论**: 生物系统中的相变和临界现象
+### Statistical Physics and Living Systems
+Applying theoretical frameworks and methods from statistical physics to understand the basic laws of living systems:
+- **Non-equilibrium Statistical Physics**: Characteristics of living systems far from equilibrium
+- **Self-Organization Phenomena**: Spontaneously emerging ordered structures in biological systems
+- **Phase Transition Theory**: Phase transitions and critical phenomena in biological systems
 
-### 网络动力学与数据科学
-结合网络理论和大数据分析方法：
-- **生物网络建模**: 蛋白质互作网络、基因调控网络
-- **网络动力学**: 网络结构的动力学演化
-- **数据挖掘**: 从大规模生物数据中提取规律
+### Network Dynamics and Data Science
+Combining network theory and big data analysis methods:
+- **Biological Network Modeling**: Protein interaction networks, gene regulatory networks
+- **Network Dynamics**: Dynamic evolution of network structures
+- **Data Mining**: Extracting patterns from large-scale biological data
 
-### 多尺度建模方法
-跨越不同时空尺度的系统建模：
-- **分子尺度**: 蛋白质、分子的相互作用
-- **细胞尺度**: 细胞行为和决策机制
-- **组织尺度**: 细胞群体和组织形成
+### Multi-Scale Modeling Methods
+System modeling across different temporal and spatial scales:
+- **Molecular Scale**: Interactions at the protein and molecular level
+- **Cellular Scale**: Cellular behaviors and decision-making mechanisms
+- **Tissue Scale**: Cell populations and tissue formation
 
-## 👨‍🔬 相关导师
+## Related Faculty
 
-### 西湖大学
-- **汤超** - 中国科学院院士，复杂系统与统计物理
-- **汤雷翰** - 统计物理，生命系统自组织
-- **周珍楠** - 微分方程和随机模型应用分析
+### Westlake University
+- **Chao Tang** - CAS Academician, Complex Systems and Statistical Physics
+- **Lei-Han Tang** - Statistical Physics, Living System Self-Organization
+- **Zhen-Nan Zhou** - Differential Equations and Stochastic Model Application Analysis
 
-### 北京大学
-- **李志远** - 网络动力学，微生物群落互作
+### Peking University
+- **Zhiyuan Li** - Network Dynamics, Microbial Community Interactions
 
-## 🎯 典型研究问题
+## Typical Research Questions
 
-### 生物系统的自组织
-- 如何从分子相互作用涌现出细胞结构？
-- 生物系统如何维持有序状态？
-- 从无序到有序的相变机制是什么？
+### Self-Organization in Biological Systems
+- How do cellular structures emerge from molecular interactions?
+- How do biological systems maintain ordered states?
+- What are the phase transition mechanisms from disorder to order?
 
-### 网络结构与功能
-- 生物网络的结构特征如何决定其功能？
-- 网络鲁棒性与脆弱性的平衡？
-- 网络演化中的关键节点识别
+### Network Structure and Function
+- How do network structural characteristics determine their function?
+- What is the balance between network robustness and fragility?
+- How to identify key nodes in network evolution?
 
-### 跨尺度耦合
-- 不同尺度间的信息传递机制？
-- 微观过程如何影响宏观行为？
-- 尺度间的解耦与耦合策略？
+### Cross-Scale Coupling
+- What are the information transfer mechanisms between different scales?
+- How do microscopic processes affect macroscopic behaviors?
+- What are the decoupling and coupling strategies between scales?
 
-## 💻 研究方法与工具
+## Research Methods and Tools
 
-### 理论建模
-- **Master方程**: 描述随机过程的演化
-- **Fokker-Planck方程**: 连续系统的概率密度演化
-- **图论与网络分析**: 网络结构分析工具
+### Theoretical Modeling
+- **Master Equation**: Evolution of stochastic processes
+- **Fokker-Planck Equation**: Probability density evolution of continuous systems
+- **Graph Theory and Network Analysis**: Network structure analysis tools
 
-### 数值模拟
-- **Monte Carlo方法**: 随机过程的数值模拟
-- **分子动力学**: 分子尺度的动力学模拟
-- **元胞自动机**: 离散系统的演化模拟
+### Numerical Simulation
+- **Monte Carlo Methods**: Numerical simulation of stochastic processes
+- **Molecular Dynamics**: Dynamic simulation at the molecular scale
+- **Cellular Automata**: Evolution simulation of discrete systems
 
-### 数据分析
-- **时间序列分析**: 动态数据的模式识别
-- **网络推断**: 从实验数据重建网络结构
-- **机器学习**: 大数据模式识别与预测
+### Data Analysis
+- **Time Series Analysis**: Pattern recognition in dynamic data
+- **Network Inference**: Reconstructing network structures from experimental data
+- **Machine Learning**: Pattern recognition and prediction from big data
 
-## 📊 相关项目
+## Recommended Resources
 
-### 理论生物物理
-- 统计热力学理论的现代应用
-- 数据科学与经典物理理论的关联
-- 生命系统的物理限制与优化
+### Classic Textbooks
+- "Statistical Physics of Biological Systems" - Statistical physics related to biology
+- "Network Science" - Network theory foundations
+- "Biological Physics" - Introduction to biophysics
 
-### 系统生物学
-- 微生物群落的演化动力学
-- 多细胞系统的模式形成
-- 传染病动力学与跨尺度建模
+### Research Papers
+- Research by Chao Tang's team on protein folding and design
+- Work by Lei-Han Tang on self-organization in living systems
+- Studies by Zhiyuan Li on microbial community interactions
 
-## 📚 推荐资源
+### Computational Tools
+- **NetworkX**: Python network analysis library
+- **NumPy/SciPy**: Scientific computing foundation tools
+- **Matplotlib**: Data visualization
 
-### 经典教材
-- **"Statistical Physics of Biological Systems"** - 与生物相关的统计物理
-- **"Network Science"** - 网络理论基础
-- **"Biological Physics"** - 生物物理入门
+## Current Frontiers
 
-### 研究论文
-- 汤超团队关于蛋白质折叠和设计的研究
-- 汤雷翰关于生命系统自组织的工作
-- 李志远的微生物群落互作研究
+### Emerging Directions
+- **Active Matter**: Collective behavior of self-propelled particles
+- **Quantum Biology**: Quantum effects in biological systems
+- **Information Theory and Biology**: Information processing in biological systems
 
-### 计算工具
-- **NetworkX**: Python网络分析库
-- **NumPy/SciPy**: 科学计算基础工具
-- **Matplotlib**: 数据可视化
-
-## 🎓 学习路径
-
-### 入门阶段
-1. **基础物理**: 统计物理学基础概念
-2. **数学工具**: 微积分、线性代数、概率论
-3. **编程基础**: Python或R语言
-
-### 进阶阶段
-1. **网络理论**: 图论、网络动力学
-2. **生物知识**: 分子生物学、细胞生物学
-3. **数值方法**: 常用数值算法和模拟技术
-
-### 高级阶段
-1. **前沿研究**: 阅读最新研究论文
-2. **跨学科融合**: 物理与生物的深度结合
-3. **原创研究**: 开展独立科研项目
-
-## 🔬 当前前沿
-
-### 新兴方向
-- **主动物质**: 自驱动粒子的集体行为
-- **量子生物学**: 量子效应在生物系统中的作用
-- **信息论与生物**: 生物系统中的信息处理
-
-### 技术创新
-- **单分子技术**: 观测单个分子的行为
-- **超分辨成像**: 突破光学衍射极限的成像
-- **大数据分析**: 处理海量的生物医学数据
+### Technical Innovations
+- **Single-Molecule Technologies**: Observing individual molecular behaviors
+- **Super-Resolution Imaging**: Breaking optical diffraction limits
+- **Big Data Analysis**: Processing massive biomedical data
 
 ---
 
-*探索其他研究方向: [生物物理与单细胞]({{ site.baseurl }}/topics/biophysics/) | [合成生物学]({{ site.baseurl }}/topics/synthetic-biology/) | [AI for Science]({{ site.baseurl }}/topics/ai-for-science/)*
-
-<style>
-  .focus-area {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 2rem;
-    margin: 1.5rem 0;
-    border-radius: 12px;
-  }
-
-  .focus-area h3 {
-    margin-top: 0;
-  }
-
-  .mentor-highlight {
-    background: #f3f4f6;
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-    border-radius: 12px;
-    border-left: 4px solid #6366f1;
-  }
-
-  .research-question {
-    background: #fef3c7;
-    border: 1px solid #f59e0b;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 8px;
-  }
-
-  .method-card {
-    background: white;
-    border: 1px solid #e5e7eb;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 8px;
-  }
-</style>
+*Explore other research areas: [Synthetic Biology](/topics/synthetic-biology/) | [Biophysics](/topics/biophysics/) | [AI for Science](/topics/ai-for-science/)*
