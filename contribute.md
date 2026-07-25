@@ -101,10 +101,25 @@ Content is reviewed for:
 - Documentation completeness
 - File organization standards
 
+## Local Development
+
+### Setting Up Jekyll
+
+1. **Install Dependencies**
+   ```bash
+   cd /path/to/pebble-biofusion.github.io
+   bundle install
+   ```
+
+2. **Start Local Server**
+   ```bash
+   bundle exec jekyll serve
+   ```
+
+3. **Access Site**
+   - Open: `http://localhost:4000`
+   - Changes auto-refresh
+
 ## Questions?
 
 Contact the summer school organizing committee for guidance on contributing materials.
-
----
-
-*For more information, see the [Program Overview](/summer-camp/)*

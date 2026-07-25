@@ -135,7 +135,3 @@ Synthetic biology is an important direction of the Pebble Biofusion Summer Schoo
 - Access latest synthetic biology technologies
 - Participate in mentors' actual research projects
 - Experience the complete process of scientific discovery
-
----
-
-*Explore other research areas: [Complex Systems](/topics/complex-systems/) | [Biophysics](/topics/biophysics/) | [AI for Science](/topics/ai-for-science/)*

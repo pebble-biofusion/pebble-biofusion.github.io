@@ -5,114 +5,146 @@ title: Pebble Biofusion Summer School
 
 # Pebble Biofusion Summer School Platform
 
-Hosted by Westlake University Interdisciplinary Sciences Center, cultivating scientific core competencies in the AI era.
+Welcome to the official platform for the Pebble Biofusion Summer School hosted by Westlake University Interdisciplinary Sciences Center.
 
-## Quick Navigation
+## About the Program
 
-### 2026 Summer School
-- **[Program Overview](/summer-camp/)** - About the Pebble Biofusion Summer School
-- **[Application Deadline](https://mp.weixin.qq.com/s/75Lt8VJmhoKTkEY9bz9r-w)** - June 15, 2026 at 10:00 AM
+The Pebble Biofusion Summer School brings together exceptional students and world-class faculty from physics, mathematics, biology, computer science, and engineering to work on cutting-edge interdisciplinary problems in computational biology and systems science.
 
-### Browse by Year
-- **[2026 Projects](/years/2026/)** - Current year projects and research
+## 2026 Summer School
 
-### Browse by Research Area
-- **[Complex Systems](/topics/complex-systems/)** - Statistical physics, network dynamics, self-organization
-- **[Synthetic Biology](/topics/synthetic-biology/)** - Genetic circuits, protein design, microbial engineering
-- **[Biophysics](/topics/biophysics/)** - Single-cell technologies, protein homeostasis
-- **[AI for Science](/topics/ai-for-science/)** - Machine learning, data science, computational simulation
+### Important Dates
+- **Application Deadline**: June 15, 2026 at 10:00 AM
+- **Program Duration**: 6-8 weeks during summer 2026
+- **Location**: Westlake University, Hangzhou
 
-## About the Platform
+### Program Highlights
+- **15+ World-Class Faculty** from Westlake University and partner institutions
+- **8 Research Areas** covering the latest developments in interdisciplinary science
+- **Hands-On Research** with real-world projects and cutting-edge tools
+- **Interdisciplinary Collaboration** across traditional academic boundaries
 
-This platform collects and hosts teaching materials, project outputs, and research results from the Pebble Biofusion Summer School programs.
+## What You'll Find Here
 
-### Material Types
-- **Presentations**: Course slides and theoretical background
-- **Jupyter Notebooks**: Reproducible code and analysis
-- **Research Posters**: Conference-ready presentations
-- **Manuscripts**: Research papers and technical reports
+This platform hosts teaching materials and research outputs from our summer school programs:
 
-## Program Highlights
+### Teaching Materials
+- Course slides and theoretical background
+- Tutorial notebooks and code examples
+- Reference materials and reading lists
 
-### World-Class Faculty
-15+ interdisciplinary mentors from Westlake University and partner institutions
+### Research Outputs
+- Jupyter notebooks with reproducible analysis
+- Conference posters and presentations
+- Research papers and technical reports
 
-### Cutting-Edge Research
-6+ frontier research directions in computational biology and systems science
+### Project Documentation
+- Complete project descriptions and methodologies
+- Software requirements and setup instructions
+- Results and findings summaries
 
-### Intensive Training
-6-8 week focused research projects with hands-on experience
+## Getting Started
 
-## Quick Links
+### For Prospective Students
+- Learn about our [program overview](/summer-camp/)
+- Check [2026 projects](/years/2026/) and research areas
+- Apply before the June 15, 2026 deadline
 
-- **[About Program](/summer-camp/)** - Detailed program information
-- **[How to Contribute](/contribute/)** - Add your materials
-- **[2026 Projects](/years/2026/)** - Current research projects
+### For Participants
+- Browse materials by research area (see sidebar)
+- Access project templates and contribution guidelines
+- Download resources for your research
+
+### For Visitors
+- Explore our research outputs and methodologies
+- Access reproducible research materials
+- Learn about our interdisciplinary approach
+
+## Contact Information
+
+**Host Institution**: Westlake University College of Science Interdisciplinary Sciences Center
+
+**Application Information**: See our [program page](/summer-camp/) for details
 
 ---
 
 <style>
-  .quick-nav {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+  .hero-section {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: white;
+    padding: 3rem;
+    border-radius: 12px;
     margin: 2rem 0;
-  }
-
-  .nav-section {
-    background: #f9fafb;
-    padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 4px solid #6366f1;
-  }
-
-  .nav-section h3 {
-    margin: 0 0 1rem 0;
-    color: #1f2937;
-  }
-
-  .nav-section ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .nav-section li {
-    margin-bottom: 0.5rem;
-  }
-
-  .nav-section a {
-    color: #6366f1;
-    text-decoration: none;
-  }
-
-  .nav-section a:hover {
-    text-decoration: underline;
-  }
-
-  .material-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin: 2rem 0;
-  }
-
-  .material-item {
-    background: white;
-    border: 1px solid #e5e7eb;
-    padding: 1rem;
-    border-radius: 8px;
     text-align: center;
   }
 
-  .material-item h4 {
-    margin: 0 0 0.5rem 0;
-    color: #1f2937;
+  .hero-section h1 {
+    margin: 0 0 1rem 0;
+    font-size: 2.5rem;
   }
 
-  .material-item p {
+  .hero-section p {
     margin: 0;
-    color: #6b7280;
-    font-size: 0.9rem;
+    opacity: 0.9;
+    font-size: 1.1rem;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+  }
+
+  .info-card {
+    background: #f9fafb;
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid #6366f1;
+  }
+
+  .info-card h3 {
+    margin: 0 0 1rem 0;
+    color: #1f2937;
+    font-size: 1.25rem;
+  }
+
+  .info-card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .info-card li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .info-card li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #6366f1;
+    font-weight: bold;
+  }
+
+  .deadline-banner {
+    background: #fef3c7;
+    border: 2px solid #f59e0b;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    text-align: center;
+  }
+
+  .deadline-banner h3 {
+    margin: 0 0 0.5rem 0;
+    color: #92400e;
+  }
+
+  .deadline-banner p {
+    margin: 0;
+    color: #78350f;
+    font-size: 1.1rem;
   }
 </style>

@@ -105,16 +105,30 @@ The "Pebble Biofusion Summer School" is a core educational project of the Westla
 - International frontier research directions
 - Interdisciplinary research network
 
+## Application Information
+
+### Application Requirements
+- Strong interest in interdisciplinary scientific research
+- Relevant academic background (physics, mathematics, biology, computer science, etc.)
+- Commitment to pursuing scientific research
+- Ability to fully participate in summer camp activities
+
+### Application Materials
+- Resume and academic background
+- Research interests and motivation statement
+- Reference contact information
+- Related academic achievements (if available)
+
+### How to Apply
+- **Official Information**: See detailed application guidelines
+- **Deadline**: June 15, 2026 at 10:00 AM
+- **Contact**: Westlake University Interdisciplinary Sciences Center
+
 ## Contact Information
 
 - **Host Institution**: Westlake University College of Science Interdisciplinary Sciences Center (CIS)
-- **Application**: Via official website or WeChat public account
-
-## Related Links
-
-- [Westlake University](https://www.westlake.edu.cn/)
-- [Interdisciplinary Sciences Center](https://www.westlake.edu.cn/academics/CIS/)
-- [Application Information](https://mp.weixin.qq.com/s/75Lt8VJmhoKTkEY9bz9r-w)
+- **Website**: [Westlake University](https://www.westlake.edu.cn/)
+- **Application**: [Official Application Information](https://mp.weixin.qq.com/s/75Lt8VJmhoKTkEY9bz9r-w)
 
 ---
 

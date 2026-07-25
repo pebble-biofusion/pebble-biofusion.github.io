@@ -100,7 +100,3 @@ System modeling across different temporal and spatial scales:
 - **Single-Molecule Technologies**: Observing individual molecular behaviors
 - **Super-Resolution Imaging**: Breaking optical diffraction limits
 - **Big Data Analysis**: Processing massive biomedical data
-
----
-
-*Explore other research areas: [Synthetic Biology](/topics/synthetic-biology/) | [Biophysics](/topics/biophysics/) | [AI for Science](/topics/ai-for-science/)*
