@@ -1,167 +1,212 @@
 ---
 layout: home
-title: Pebble Summer School Portal
+title: 小石子生物聚变训练营
 ---
 
-# 🎓 Welcome to the Pebble Summer School Portal
+# 🧬 欢迎来到小石子生物聚变训练营材料库
 
-This platform hosts teaching materials, project outputs, and research results from our annual summer school programs in computational biology and mathematical modeling.
+西湖大学交叉科学中心主办的跨学科生物聚变训练营，培养AI时代的科学核心能力。这里收集每年学员的学习材料、项目产出和研究成果。
 
-## 🚀 Quick Navigation
+## 🎯 快速导航
 
-### Browse by Year
+### 🔬 2026年训练营
 <div class="nav-cards">
-  <a href="{{ site.baseurl }}/years/2024/" class="nav-card">
+  <a href="{{ site.baseurl }}/summer-camp/" class="nav-card primary">
+    <div class="nav-icon">🎓</div>
+    <div class="nav-content">
+      <h3>小石子生物聚变训练营 2026</h3>
+      <p>西湖大学交叉科学中心跨学科项目，申请截止：2026年6月15日</p>
+    </div>
+  </a>
+</div>
+
+### 📅 按年份浏览
+<div class="nav-cards">
+  <a href="{{ site.baseurl }}/years/2026/" class="nav-card">
     <div class="nav-icon">📅</div>
     <div class="nav-content">
-      <h3>2024 Projects</h3>
-      <p>Cell cycle modeling, biochemical networks, computational methods</p>
+      <h3>2026年项目</h3>
+      <p>复杂系统、合成生物学、AI for Science等前沿方向</p>
+    </div>
+  </a>
+  
+  <a href="{{ site.baseurl }}/years/2024/" class="nav-card">
+    <div class="nav-icon">📚</div>
+    <div class="nav-content">
+      <h3>2024年项目</h3>
+      <p>细胞周期建模、生化网络分析等经典项目</p>
     </div>
   </a>
 </div>
 
-### Browse by Topic
+### 🔬 按研究方向浏览
 <div class="nav-cards">
-  <a href="{{ site.baseurl }}/topics/cell-biology/" class="nav-card">
+  <a href="{{ site.baseurl }}/topics/complex-systems/" class="nav-card">
+    <div class="nav-icon">⚡</div>
+    <div class="nav-content">
+      <h3>复杂系统</h3>
+      <p>统计物理、网络动力学、自组织现象</p>
+    </div>
+  </a>
+
+  <a href="{{ site.baseurl }}/topics/synthetic-biology/" class="nav-card">
     <div class="nav-icon">🧬</div>
     <div class="nav-content">
-      <h3>Cell Biology</h3>
-      <p>Cell cycle, regulatory networks, signaling pathways</p>
+      <h3>合成生物学</h3>
+      <p>基因回路、蛋白质设计、微生物组工程</p>
     </div>
   </a>
 
-  <a href="{{ site.baseurl }}/topics/mathematical-modeling/" class="nav-card">
-    <div class="nav-icon">🧮</div>
+  <a href="{{ site.baseurl }}/topics/biophysics/" class="nav-card">
+    <div class="nav-icon">🔬</div>
     <div class="nav-content">
-      <h3>Mathematical Modeling</h3>
-      <p>ODE models, simulations, parameter estimation</p>
+      <h3>生物物理与单细胞</h3>
+      <p>单分子技术、细胞命运、蛋白质稳态</p>
     </div>
   </a>
 
-  <a href="{{ site.baseurl }}/topics/biochemistry/" class="nav-card">
-    <div class="nav-icon">🧪</div>
+  <a href="{{ site.baseurl }}/topics/ai-for-science/" class="nav-card">
+    <div class="nav-icon">🤖</div>
     <div class="nav-content">
-      <h3>Biochemistry</h3>
-      <p>Enzyme kinetics, metabolic pathways, reactions</p>
+      <h3>AI for Science</h3>
+      <p>机器学习、数据科学、计算仿真</p>
     </div>
   </a>
 
-  <a href="{{ site.baseurl }}/topics/systems-biology/" class="nav-card">
+  <a href="{{ site.baseurl }}/topics/microbiome/" class="nav-card">
+    <div class="nav-icon">🦠</div>
+    <div class="nav-content">
+      <h3>微生物组工程</h3>
+      <p>微生物群落、生态工程、定量分析</p>
+    </div>
+  </a>
+
+  <a href="{{ site.baseurl }}/topics/cell-biology/" class="nav-card">
     <div class="nav-icon">🧫</div>
     <div class="nav-content">
-      <h3>Systems Biology</h3>
-      <p>Network analysis, multi-scale modeling, circuits</p>
+      <h3细胞生物学前沿</h3>
+      <p>细胞衰老、发育过程、组织病变</p>
     </div>
   </a>
 </div>
 
-## 🎯 Featured Project
+## 🎓 训练营亮点
 
-### [SpudCell Whole Cell Cycle ODE Analysis]({{ site.baseurl }}/summerschool/2024/spudcell-tutorials/)
+### 🌟 跨学科导师团队
+西湖大学交叉科学中心顶尖导师，涵盖：
+- **物理方向**: 汤超院士、汤雷翰教授、钱紘教授
+- **数学方向**: 周珍楠副教授
+- **生物方向**: 陈子博、万奕含、王寿文等特聘研究员
+- **AI方向**: 吴泰霖、王子桐等学者
+- **系统方向**: 孙开元、何柏毅、杨一帆等研究员
 
-<div class="featured-project">
-  <div class="featured-content">
-    <p>Comprehensive modeling of the complete cell cycle using coupled ODEs. This project includes interactive Jupyter notebooks, detailed presentations, and simulation data.</p>
-    <div class="featured-meta">
-      <span class="meta-tag">📅 2024</span>
-      <span class="meta-tag">🧬 Cell Biology</span>
-      <span class="meta-tag">💻 Jupyter Notebooks</span>
-    </div>
-  </div>
-  <div class="featured-action">
-    <a href="{{ site.baseurl }}/summerschool/2024/spudcell-tutorials/" class="btn-primary">Explore Project →</a>
-  </div>
-</div>
+### 🔬 前沿研究方向
+- 复杂系统与统计物理
+- 合成生物学与蛋白质设计
+- AI辅助科学发现
+- 单细胞技术与系统生物学
+- 微生物组定量工程
+- 细胞命运与组织发生
 
-## 📊 What You'll Find
+### 🎯 独特训练模式
+- 理论、实验、计算三位一体
+- 多导师联合指导
+- 前沿科研项目实践
+- 跨学科学术网络建设
 
-### Material Types
-Each summer school project includes comprehensive materials:
+## 📊 材料类型
+
+每个训练营项目包含完整的学习材料：
 
 <div class="material-types">
   <div class="material-item">
     <div class="material-icon">📊</div>
     <div class="material-info">
-      <h4>Presentations</h4>
-      <p>Keynote/PPT files with theoretical background and methodology</p>
+      <h4>课程演示</h4>
+      <p>Keynote/PPT讲义，理论基础与方法讲解</p>
     </div>
   </div>
 
   <div class="material-item">
     <div class="material-icon">💻</div>
     <div class="material-info">
-      <h4>Jupyter Notebooks</h4>
-      <p>Interactive code, analysis, and reproducible research</p>
+      <h4>Jupyter Notebook</h4>
+      <p>交互式代码，可复现的数据分析</p>
     </div>
   </div>
 
   <div class="material-item">
     <div class="material-icon">📈</div>
     <div class="material-info">
-      <h4>Research Posters</h4>
-      <p>Conference-ready poster presentations and summaries</p>
+      <h4>研究海报</h4>
+      <p>会议级海报展示，科研成果总结</p>
     </div>
   </div>
 
   <div class="material-item">
     <div class="material-icon">📝</div>
     <div class="material-info">
-      <h4>Manuscripts</h4>
-      <p>Draft papers, technical reports, and documentation</p>
+      <h4>学术论文</h4>
+      <p>研究手稿、技术报告、论文草稿</p>
     </div>
   </div>
 </div>
 
-## 🎓 For Different Users
-
-### For Students
-- Access learning materials and tutorials
-- Explore project examples and code
-- Find resources for your own research
-
-### For Instructors
-- Share teaching materials with students
-- Access reusable project templates
-- Coordinate summer school programs
-
-### For Researchers
-- Explore computational approaches
-- Access reproducible research examples
-- Collaborate on future projects
-
-## 📈 Impact & Statistics
+## 📈 项目统计
 
 <div class="stats-section">
   <div class="stat-box">
-    <div class="stat-number">12+</div>
-    <div class="stat-label">Research Projects</div>
+    <div class="stat-number">15+</div>
+    <div class="stat-label">顶尖导师</div>
   </div>
   <div class="stat-box">
-    <div class="stat-number">45+</div>
-    <div class="stat-label">Jupyter Notebooks</div>
+    <div class="stat-number">6+</div>
+    <div class="stat-label">前沿方向</div>
   </div>
   <div class="stat-box">
-    <div class="stat-number">30+</div>
-    <div class="stat-label">Presentations</div>
+    <div class="stat-number">50+</div>
+    <div class="stat-label">预期项目</div>
   </div>
   <div class="stat-box">
-    <div class="stat-number">100+</div>
-    <div class="stat-label">Students & Researchers</div>
+    <div class="stat-number">100%</div>
+    <div class="stat-label">跨学科融合</div>
   </div>
 </div>
 
-## 🚀 Getting Started
+## 🚀 参与方式
 
-1. **Browse Materials**: Explore projects by year or research topic
-2. **Download Resources**: All materials are freely available on GitHub
-3. **Reproduce Analysis**: Use Jupyter notebooks to follow the analysis
-4. **Contribute**: Add your own projects using our templates
+### 对于申请者
+- 了解导师研究方向
+- 准备跨学科背景
+- 关注申请截止时间（2026年6月15日）
 
-## 📞 Connect With Us
+### 对于学员
+- 获取课程材料和学习资源
+- 参考历年项目经验
+- 准备科研产出文档
 
-- **[About Us]({{ site.baseurl }}/about/)**: Learn more about the Pebble program
-- **[Contribute]({{ site.baseurl }}/contribute/)**: How to add your own materials
-- **[Contact]({{ site.baseurl }}/about/)**: Get in touch with our team
+### 对于导师和研究者
+- 分享教学材料
+- 展示研究成果
+- 协作培养人才
+
+## 📞 重要信息
+
+### 申请联系
+- **主办单位**: 西湖大学理学院交叉科学中心
+- **申请截止**: 2026年6月15日（周一）上午10:00
+- **官方信息**: [微信公众号推文](https://mp.weixin.qq.com/s/75Lt8VJmhoKTkEY9bz9r-w)
+
+### 材料贡献
+- 使用标准化模板
+- 按年份和主题组织
+- 通过GitHub提交材料
+
+## 🔗 相关链接
+
+- [训练营详细介绍]({{ site.baseurl }}/summer-camp/)
+- [贡献指南]({{ site.baseurl }}/contribute/)
+- [关于我们]({{ site.baseurl }}/about/)
 
 ---
 
@@ -185,6 +230,11 @@ Each summer school project includes comprehensive materials:
     transition: transform 0.2s, box-shadow 0.2s;
   }
 
+  .nav-card.primary {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    transform: scale(1.05);
+  }
+
   .nav-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
@@ -203,43 +253,6 @@ Each summer school project includes comprehensive materials:
     margin: 0;
     opacity: 0.9;
     font-size: 0.9rem;
-  }
-
-  .featured-project {
-    background: #f3f4f6;
-    padding: 2rem;
-    margin: 2rem 0;
-    border-radius: 12px;
-    border-left: 4px solid #6366f1;
-  }
-
-  .featured-content {
-    margin-bottom: 1rem;
-  }
-
-  .featured-meta {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .meta-tag {
-    background: white;
-    padding: 0.3rem 0.7rem;
-    border-radius: 15px;
-    font-size: 0.85rem;
-    color: #4b5563;
-  }
-
-  .btn-primary {
-    display: inline-block;
-    background: #6366f1;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
   }
 
   .material-types {
@@ -303,6 +316,10 @@ Each summer school project includes comprehensive materials:
   @media (max-width: 768px) {
     .nav-cards, .material-types, .stats-section {
       grid-template-columns: 1fr;
+    }
+
+    .nav-card.primary {
+      transform: scale(1);
     }
   }
 </style>
