@@ -3,8 +3,6 @@ layout: home
 title: Pebble Biofusion Summer School
 ---
 
-Westlake University Interdisciplinary Sciences Center summer program in computational biology and systems science.
-
 ## About the Program
 
 The Pebble Biofusion Summer School brings together exceptional students and world-class faculty from physics, mathematics, biology, computer science, and engineering to work on cutting-edge interdisciplinary problems.
