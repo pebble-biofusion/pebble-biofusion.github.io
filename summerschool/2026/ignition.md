@@ -55,6 +55,18 @@ permalink: /summerschool/2026/ignition/
         <span class="talk-title">From a story to a publishable paper: A deep dive in AI-native scientific research</span>
         <span class="talk-speaker">Fangzhou Xiao</span>
       </li>
+      <li class="talk">
+        <a href="#" class="talk-title">Biocircuits 101</a>
+        <span class="talk-speaker">Sijie Li</span>
+      </li>
+      <li class="talk">
+        <a href="#" class="talk-title">Information processing in living systems</a>
+        <span class="talk-speaker">Haoming Luo, Yiping Ma, Yanzhang Jiang</span>
+      </li>
+      <li class="talk">
+        <a href="#" class="talk-title">A minimal synthetic cell</a>
+        <span class="talk-speaker">Xinwen Fan</span>
+      </li>
     </ul>
   </section>
 
