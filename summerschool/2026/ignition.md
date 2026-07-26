@@ -25,6 +25,18 @@ permalink: /summerschool/2026/ignition/
         <span class="talk-title">Multiscale modelling</span>
         <span class="talk-speaker">Zhennan Zhou</span>
       </li>
+      <li class="talk">
+        <a href="#" class="talk-title">High-dimensional biological data</a>
+        <span class="talk-speaker">Xinyu Wang</span>
+      </li>
+      <li class="talk">
+        <a href="#" class="talk-title">Dynamics from RNA splicing</a>
+        <span class="talk-speaker">Qinguo Liu</span>
+      </li>
+      <li class="talk">
+        <a href="#" class="talk-title">Neural systems across scales</a>
+        <span class="talk-speaker">Qianrui Wang, Jiaqi Tu</span>
+      </li>
     </ul>
   </section>
 
