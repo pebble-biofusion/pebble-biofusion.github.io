@@ -6,6 +6,24 @@ permalink: /summerschool/2026/ignition/
 
 <div class="ignition">
 
+  <!-- ===== 07.30 ===== -->
+  <section class="day">
+    <button class="day-toggle" type="button" aria-expanded="false">
+      <span class="day-arrow">▸</span>
+      <span class="day-date">07.30 Project Kickstart</span>
+    </button>
+    <ul class="talk-list collapsed">
+      <li class="talk">
+        <span class="talk-title">Introduction: Network science in biology</span>
+        <span class="talk-speaker">Xin-Ya Zhang</span>
+      </li>
+      <li class="talk">
+        <span class="talk-title">Protein language models</span>
+        <span class="talk-speaker">Sergei Maslov</span>
+      </li>
+    </ul>
+  </section>
+
   <!-- ===== 07.29 ===== -->
   <section class="day">
     <button class="day-toggle" type="button" aria-expanded="false">
