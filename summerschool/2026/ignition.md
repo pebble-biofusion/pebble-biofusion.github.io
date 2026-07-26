@@ -6,6 +6,44 @@ permalink: /summerschool/2026/ignition/
 
 <div class="ignition">
 
+  <!-- ===== 07.28 ===== -->
+  <section class="day">
+    <button class="day-toggle" type="button" aria-expanded="false">
+      <span class="day-arrow">▸</span>
+      <span class="day-date">07.28 Tuesday Q4: Aging, Damage &amp; Asymmetry</span>
+    </button>
+    <ul class="talk-list collapsed">
+      <li class="talk">
+        <span class="talk-title">Single-cell damage</span>
+        <span class="talk-speaker">Rui Fang</span>
+      </li>
+      <li class="talk">
+        <span class="talk-title">Damage &amp; asymmetric division</span>
+        <span class="talk-speaker">Yifan Yang</span>
+      </li>
+      <li class="talk">
+        <span class="talk-title">Lineage &amp; inheritance</span>
+        <span class="talk-speaker">Shouwen Wang</span>
+      </li>
+      <li class="talk">
+        <span class="talk-title">Cellular information processing</span>
+        <span class="talk-speaker">Fan Jin</span>
+      </li>
+      <li class="talk">
+        <a href="#" class="talk-title">Asymmetric damage &amp; lifespan</a>
+        <span class="talk-speaker">Hongying Lin</span>
+      </li>
+      <li class="talk">
+        <a href="#" class="talk-title">The methylation clock</a>
+        <span class="talk-speaker">Yihao Lin</span>
+      </li>
+      <li class="talk">
+        <a href="#" class="talk-title">Saturating-removal models of aging</a>
+        <span class="talk-speaker">Yihang Ding</span>
+      </li>
+    </ul>
+  </section>
+
   <!-- ===== 07.27 ===== -->
   <section class="day">
     <button class="day-toggle" type="button" aria-expanded="false">
