@@ -34,6 +34,30 @@
       max-width: 1400px;
       margin: 0 auto;
       padding: 0 2rem;
+      gap: 1.5rem;
+    }
+
+    .header-logos {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .header-logos a {
+      display: inline-block;
+      line-height: 0;
+    }
+
+    .header-logos img {
+      height: 42px;
+      width: auto;
+      display: block;
+      transition: opacity 0.2s;
+    }
+
+    .header-logos a:hover img {
+      opacity: 0.7;
     }
 
     .site-title {
@@ -347,6 +371,10 @@
       .header-content {
         padding: 0 1.5rem;
       }
+
+      .header-logos img {
+        height: 28px;
+      }
     }
   </style>
 </head>
@@ -356,6 +384,14 @@
       <a href="{{ '/' | relative_url }}" class="site-title">
         <span class="title-acronym">PEBBLE</span><span class="title-eq">=</span><span class="cap">P</span>hysics<span class="op">+</span><span class="cap">E</span>ngineering<span class="op">+</span><span class="cap">B</span>iology<span class="op">+</span><span class="cap">B</span>iotechnology<span class="op">+</span><span class="cap">L</span>earning<span class="op">+</span><span class="cap">E</span>xperience
       </a>
+      <div class="header-logos">
+        <a href="https://cis.westlake.edu.cn/index.htm" target="_blank" rel="noopener" title="CIS, Westlake University">
+          <img src="{{ '/images/cis-logo.png' | relative_url }}" alt="CIS, Westlake University">
+        </a>
+        <a href="https://www.westlake.edu.cn/" target="_blank" rel="noopener" title="Westlake University">
+          <img src="{{ '/images/westlake-logo.png' | relative_url }}" alt="Westlake University">
+        </a>
+      </div>
     </div>
   </header>
 
