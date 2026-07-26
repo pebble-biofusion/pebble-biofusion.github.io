@@ -39,9 +39,16 @@ title: PEBBLE
       <h2 class="column-heading">About</h2>
 
       <div class="mission-block">
-        <h3 class="mission-label">Mission</h3>
-        <p class="mission-equation">
-          <strong>PEBBLE</strong> = Physics + Engineering + Biology + Biotechnology + Learning + Experience
+        <p class="intro-text">
+          <strong>PEBBLE BioFusion 2026</strong> is designed from the ground up for the age of AI. We are not adding AI as a tool on top of a traditional curriculum. Instead, we are rethinking what a summer school should train when AI makes tutorials, literature review, coding, and draft generation available on demand. In this new landscape, three things become critically important:
+        </p>
+        <ul class="core-skills">
+          <li><span class="skill-name">Taste</span> &mdash; the ability to ask deep, well-chosen questions. Which problems are alive? Which framings reveal new structure?</li>
+          <li><span class="skill-name">Scientific Reasoning</span> &mdash; the ability to develop a full, in-depth chain of logic that tells a complete, convincing story.</li>
+          <li><span class="skill-name">Courage</span> &mdash; the willingness to ask bold questions, and the determination to pursue them all the way through.</li>
+        </ul>
+        <p class="intro-text">
+          These are precisely what AI does not reliably provide. They are what <strong>PEBBLE BioFusion</strong> trains.
         </p>
       </div>
 
@@ -162,24 +169,46 @@ title: PEBBLE
     margin-bottom: 2.5rem;
   }
 
-  .mission-label {
+  .intro-text {
     font-size: 1rem;
-    font-weight: 500;
-    color: #6b7280;
-    margin: 0 0 0.75rem 0;
-    letter-spacing: 1px;
+    line-height: 1.75;
+    color: #374151;
+    margin: 0 0 1.25rem 0;
   }
 
-  .mission-equation {
+  .intro-text strong {
+    color: #1f2937;
+    font-weight: 600;
+  }
+
+  .core-skills {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+
+  .core-skills li {
     font-size: 1rem;
     line-height: 1.7;
     color: #374151;
-    margin: 0;
+    margin-bottom: 0.85rem;
+    padding-left: 1.3rem;
+    position: relative;
   }
 
-  .mission-equation strong {
-    color: #1f2937;
-    font-weight: 600;
+  .core-skills li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #FF6C0C;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  .skill-name {
+    font-weight: 700;
+    color: #FF6C0C;
   }
 
   /* ===== Stats Circles ===== */
