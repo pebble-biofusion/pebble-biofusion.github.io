@@ -302,10 +302,10 @@ permalink: /summerschool/2026/ignition/
           <span class="talk-speaker">Sijie Li</span>
         </div>
         <ul class="materials collapsed">
-          <li><a href="{{ site.baseurl }}/summerschool/2026/materials/biocircuits-101/Biocircuit101_slide_sijie.pdf">Slides (PDF)</a></li>
-          <li><a href="{{ site.baseurl }}/summerschool/2026/materials/biocircuits-101/Biocircuit101_notebook.html">Notebook (HTML)</a></li>
-          <li><a href="{{ site.baseurl }}/summerschool/2026/materials/biocircuits-101/Biocircuit101_notebook.ipynb">Notebook (.ipynb)</a></li>
-          <li><a href="{{ site.baseurl }}/summerschool/2026/materials/biocircuits-101/environment.yml">Environment</a></li>
+          <li><a href="{{ site.baseurl }}/summerschool/2026/materials/biocircuits-101/Biocircuit101_slide_sijie.pdf">Biocircuit101_slide_sijie.pdf</a></li>
+          <li><a href="{{ site.baseurl }}/summerschool/2026/materials/biocircuits-101/Biocircuit101_notebook.html">Biocircuit101_notebook.html</a></li>
+          <li><a href="{{ site.baseurl }}/summerschool/2026/materials/biocircuits-101/Biocircuit101_notebook.ipynb">Biocircuit101_notebook.ipynb</a></li>
+          <li><a href="{{ site.baseurl }}/summerschool/2026/materials/biocircuits-101/environment.yml">environment.yml</a></li>
         </ul>
       </li>
       <li class="talk talk--has-materials">
