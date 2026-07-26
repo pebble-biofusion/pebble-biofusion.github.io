@@ -332,9 +332,9 @@ permalink: /summerschool/2026/ignition/
           <span class="talk-speaker">Xinwen Fan</span>
         </div>
         <ul class="materials collapsed">
-          <li><a href="#">Slides</a></li>
-          <li><a href="#">Notebook</a></li>
-          <li><a href="#">Data</a></li>
+          <li><a href="{{ site.baseurl }}/summerschool/2026/materials/a-minimal-synthetic-cell/260725_spudecell_tutorials.key">260725_spudecell_tutorials.key</a></li>
+          <li><a href="{{ site.baseurl }}/summerschool/2026/materials/a-minimal-synthetic-cell/spudcell_whole_cell_cycle.ipynb">spudcell_whole_cell_cycle.ipynb</a></li>
+          <li><a href="{{ site.baseurl }}/summerschool/2026/materials/a-minimal-synthetic-cell/spudcell-manuscript.pdf">spudcell-manuscript.pdf</a></li>
         </ul>
       </li>
     </ul>
