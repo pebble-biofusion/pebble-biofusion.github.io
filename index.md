@@ -85,8 +85,7 @@ layout: home
   }
 
   .skills li {
-    display: grid;
-    grid-template-columns: 150px 1fr;
+    display: flex;
     gap: 2rem;
     align-items: baseline;
     margin-bottom: 1.75rem;
@@ -101,13 +100,14 @@ layout: home
     font-weight: 600;
     color: #FF6C0C;
     letter-spacing: 0.2px;
-    text-align: right;
+    flex-shrink: 0;
   }
 
   .skill-desc {
     font-size: 0.95rem;
     line-height: 1.7;
     color: #6b7280;
+    flex: 1;
   }
 
   /* ===== Stats ===== */
@@ -153,7 +153,7 @@ layout: home
   /* ===== Responsive ===== */
   @media (max-width: 768px) {
     .skills li {
-      grid-template-columns: 1fr;
+      flex-direction: column;
       gap: 0.35rem;
     }
 
