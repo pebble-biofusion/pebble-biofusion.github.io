@@ -18,7 +18,7 @@ This platform serves as a central repository for:
 
 ### By Year Structure
 ```
-summerschool/
+workshop/
 ├── 2026/
 │   ├── your-project-name/
 │   │   ├── presentations/     # Keynote/PPT files
@@ -48,11 +48,11 @@ summerschool/
 
 1. Create project directory structure:
    ```bash
-   mkdir -p summerschool/2026/your-project/{presentations,notebooks,posters,manuscripts}
+   mkdir -p workshop/2026/your-project/{presentations,notebooks,posters,manuscripts}
    ```
 
 2. Use project template:
-   Copy `summerschool/templates/project-template.md`
+   Copy `workshop/templates/project-template.md`
 
 3. Add materials with proper metadata:
    ```yaml

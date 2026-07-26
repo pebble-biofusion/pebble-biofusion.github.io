@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Synthesis"
-permalink: /summerschool/2026/synthesis/
+permalink: /workshop/2026/synthesis/
 ---
 
 <div class="synthesis">

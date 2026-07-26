@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Summer School Projects
-permalink: /summerschool/
+permalink: /workshop/
 ---
 
 # Summer School Materials Portal
@@ -76,13 +76,13 @@ Welcome to the Pebble Summer School materials repository! This platform hosts te
   <div class="featured-project">
     <h4>SpudCell Whole Cell Cycle ODE Analysis</h4>
     <p>Complete cell cycle modeling using coupled ODEs</p>
-    <a href="{{ site.baseurl }}/summerschool/2024/spudcell-tutorials/">View Project →</a>
+    <a href="{{ site.baseurl }}/workshop/2024/spudcell-tutorials/">View Project →</a>
   </div>
 
   <div class="featured-project">
     <h4>Computational Biochemistry Workshop</h4>
     <p>Hands-on computational approaches to biochemical problems</p>
-    <a href="{{ site.baseurl }}/summerschool/2024/biochemistry-workshop/">View Project →</a>
+    <a href="{{ site.baseurl }}/workshop/2024/biochemistry-workshop/">View Project →</a>
   </div>
 </div>
 
@@ -104,7 +104,7 @@ Each project includes comprehensive materials:
 3. Follow the analysis in Jupyter notebooks
 
 ### For Contributors
-1. Use our [project template]({{ site.baseurl }}/summerschool/templates/project-template/)
+1. Use our [project template]({{ site.baseurl }}/workshop/templates/project-template/)
 2. Organize materials in the standard directory structure
 3. Submit your project via pull request
 

@@ -11,7 +11,7 @@ This platform hosts teaching materials and research outputs from the Pebble Biof
 ## Project Structure
 
 ```
-summerschool/2026/your-project-name/
+workshop/2026/your-project-name/
 ├── presentations/      # Keynote/PPT files
 ├── notebooks/         # Jupyter notebooks
 ├── posters/          # PDF poster files
@@ -21,7 +21,7 @@ summerschool/2026/your-project-name/
 
 ## Project Template
 
-Use: `summerschool/templates/project-template.md`
+Use: `workshop/templates/project-template.md`
 
 ## Required Files
 

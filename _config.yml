@@ -29,7 +29,7 @@ exclude:
 collections:
   projects:
     output: true
-    permalink: /summerschool/:path/
+    permalink: /workshop/:path/
 
 # Defaults
 defaults:

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Ignition"
-permalink: /summerschool/2026/ignition/
+permalink: /workshop/2026/ignition/
 ---
 
 <div class="ignition">
@@ -302,10 +302,10 @@ permalink: /summerschool/2026/ignition/
           <span class="talk-speaker">Sijie Li</span>
         </div>
         <ul class="materials collapsed">
-          <li><a href="{{ site.baseurl }}/summerschool/2026/materials/biocircuits-101/Biocircuit101_slide_sijie.pdf">Biocircuit101_slide_sijie.pdf</a></li>
-          <li><a href="{{ site.baseurl }}/summerschool/2026/materials/biocircuits-101/Biocircuit101_notebook.html">Biocircuit101_notebook.html</a></li>
-          <li><a href="{{ site.baseurl }}/summerschool/2026/materials/biocircuits-101/Biocircuit101_notebook.ipynb">Biocircuit101_notebook.ipynb</a></li>
-          <li><a href="{{ site.baseurl }}/summerschool/2026/materials/biocircuits-101/environment.yml">environment.yml</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/biocircuits-101/Biocircuit101_slide_sijie.pdf">Biocircuit101_slide_sijie.pdf</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/biocircuits-101/Biocircuit101_notebook.html">Biocircuit101_notebook.html</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/biocircuits-101/Biocircuit101_notebook.ipynb">Biocircuit101_notebook.ipynb</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/biocircuits-101/environment.yml">environment.yml</a></li>
         </ul>
       </li>
       <li class="talk talk--has-materials">
@@ -317,10 +317,10 @@ permalink: /summerschool/2026/ignition/
           <span class="talk-speaker">Haoming Luo, Yiping Ma, Yanzhang Jiang</span>
         </div>
         <ul class="materials collapsed">
-          <li><a href="{{ site.baseurl }}/summerschool/2026/materials/information-processing-living-systems/fdcc_multiscale_signal_chain_concise_en.ipynb">fdcc_multiscale_signal_chain_concise_en.ipynb</a></li>
-          <li><a href="{{ site.baseurl }}/summerschool/2026/materials/information-processing-living-systems/Information%20processing%20in%20living%20systems.html">Information processing in living systems.html</a></li>
-          <li><a href="{{ site.baseurl }}/summerschool/2026/materials/information-processing-living-systems/Information%20processing%20in%20living%20systems.ipynb">Information processing in living systems.ipynb</a></li>
-          <li><a href="{{ site.baseurl }}/summerschool/2026/materials/information-processing-living-systems/Information%20processing%20in%20living%20systems.key">Information processing in living systems.key</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/information-processing-living-systems/fdcc_multiscale_signal_chain_concise_en.ipynb">fdcc_multiscale_signal_chain_concise_en.ipynb</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/information-processing-living-systems/Information%20processing%20in%20living%20systems.html">Information processing in living systems.html</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/information-processing-living-systems/Information%20processing%20in%20living%20systems.ipynb">Information processing in living systems.ipynb</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/information-processing-living-systems/Information%20processing%20in%20living%20systems.key">Information processing in living systems.key</a></li>
         </ul>
       </li>
       <li class="talk talk--has-materials">
@@ -332,9 +332,9 @@ permalink: /summerschool/2026/ignition/
           <span class="talk-speaker">Xinwen Fan</span>
         </div>
         <ul class="materials collapsed">
-          <li><a href="{{ site.baseurl }}/summerschool/2026/materials/a-minimal-synthetic-cell/260725_spudecell_tutorials.key">260725_spudecell_tutorials.key</a></li>
-          <li><a href="{{ site.baseurl }}/summerschool/2026/materials/a-minimal-synthetic-cell/spudcell_whole_cell_cycle.ipynb">spudcell_whole_cell_cycle.ipynb</a></li>
-          <li><a href="{{ site.baseurl }}/summerschool/2026/materials/a-minimal-synthetic-cell/spudcell-manuscript.pdf">spudcell-manuscript.pdf</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/a-minimal-synthetic-cell/260725_spudecell_tutorials.key">260725_spudecell_tutorials.key</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/a-minimal-synthetic-cell/spudcell_whole_cell_cycle.ipynb">spudcell_whole_cell_cycle.ipynb</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/a-minimal-synthetic-cell/spudcell-manuscript.pdf">spudcell-manuscript.pdf</a></li>
         </ul>
       </li>
     </ul>
