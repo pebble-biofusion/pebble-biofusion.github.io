@@ -6,6 +6,32 @@ permalink: /summerschool/2026/ignition/
 
 <div class="ignition">
 
+  <!-- ===== 07.28 ===== -->
+  <section class="day">
+    <button class="day-toggle" type="button" aria-expanded="false">
+      <span class="day-arrow">▸</span>
+      <span class="day-date">07.28 Monday Q3: Noise, Fluctuation &amp; Diversity</span>
+    </button>
+    <ul class="talk-list collapsed">
+      <li class="talk">
+        <span class="talk-title">Stochasticity at the core</span>
+        <span class="talk-speaker">Hong Qian</span>
+      </li>
+      <li class="talk">
+        <span class="talk-title">Yihan Wan</span>
+        <span class="talk-speaker">Yihan Wan</span>
+      </li>
+      <li class="talk">
+        <a href="#" class="talk-title">Agent-based models</a>
+        <span class="talk-speaker">Ruoqing Zhang</span>
+      </li>
+      <li class="talk">
+        <a href="#" class="talk-title">Membrane physics</a>
+        <span class="talk-speaker">Jiahao Chen</span>
+      </li>
+    </ul>
+  </section>
+
   <!-- ===== 07.26 ===== -->
   <section class="day">
     <button class="day-toggle" type="button" aria-expanded="false">
