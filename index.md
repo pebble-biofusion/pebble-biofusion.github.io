@@ -32,7 +32,7 @@ layout: home
     <div class="stats">
       <div class="stat">
         <div class="stat-number">500<span>+</span></div>
-        <div class="stat-label">contributor</div>
+        <div class="stat-label">contributors</div>
       </div>
       <div class="stat">
         <div class="stat-number">50<span>+</span></div>
