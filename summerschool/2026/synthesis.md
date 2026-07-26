@@ -58,7 +58,7 @@ permalink: /summerschool/2026/synthesis/
   /* ===== Each paper = one row (info | poster) ===== */
   .paper-row {
     display: grid;
-    grid-template-columns: 1fr 150px;
+    grid-template-columns: 150px 1fr;
     gap: 2rem;
     align-items: center;
     padding: 1.75rem 0;
@@ -71,6 +71,7 @@ permalink: /summerschool/2026/synthesis/
   /* ===== Paper info (left) ===== */
   .paper-info {
     min-width: 0;
+    order: 2;
   }
 
   .paper-title {
@@ -96,6 +97,7 @@ permalink: /summerschool/2026/synthesis/
   /* ===== Poster preview (right) ===== */
   .paper-poster {
     aspect-ratio: 3 / 4;
+    order: 1;
     border: 1px solid #e5e7eb;
     border-radius: 6px;
     background: #fafafa;
