@@ -102,7 +102,7 @@ permalink: /summerschool/2026/ignition/
   }
 
   .day-date {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: #374151;
     letter-spacing: 0.5px;
@@ -137,7 +137,7 @@ permalink: /summerschool/2026/ignition/
   }
 
   .talk-title {
-    font-size: 1.02rem;
+    font-size: 1rem;
     font-weight: 500;
     color: #1f2937;
     text-decoration: none;
@@ -150,7 +150,7 @@ permalink: /summerschool/2026/ignition/
   }
 
   .talk-speaker {
-    font-size: 0.88rem;
+    font-size: 0.83rem;
     color: #9ca3af;
     flex-shrink: 0;
   }
