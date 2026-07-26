@@ -6,11 +6,25 @@ permalink: /summerschool/2026/ignition/
 
 <div class="ignition">
 
+  <!-- ===== 08.03 ===== -->
+  <section class="day">
+    <button class="day-toggle" type="button" aria-expanded="false">
+      <span class="day-arrow">▸</span>
+      <span class="day-date">08.03 Monday Research + Polish</span>
+    </button>
+    <ul class="talk-list collapsed">
+      <li class="talk">
+        <span class="talk-title">Toward an Interpretable Virtual Cell Model</span>
+        <span class="talk-speaker">Weixu Wang</span>
+      </li>
+    </ul>
+  </section>
+
   <!-- ===== 07.30 ===== -->
   <section class="day">
     <button class="day-toggle" type="button" aria-expanded="false">
       <span class="day-arrow">▸</span>
-      <span class="day-date">07.30 Project Kickstart</span>
+      <span class="day-date">07.30 Thursday Project Kickstart</span>
     </button>
     <ul class="talk-list collapsed">
       <li class="talk">
