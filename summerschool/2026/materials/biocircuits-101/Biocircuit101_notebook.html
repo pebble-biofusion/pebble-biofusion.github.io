@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biocircuit 101</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.27.0/plotly.min.js"></script>
+<script>window.MathJax={tex:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]]},svg:{fontCache:"global"}};</script>
+<style>
+*{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.6;color:#333;background:#fff;margin:0;padding:0}
+.nb{max-width:820px;margin:0 auto;padding:12px}
+.cell{margin:10px 0;border:1px solid #e0e0e0;border-radius:3px}
+.md{padding:10px 14px}.code-cell{background:#fafafa}
+.output{padding:8px 14px;background:#fff;border-top:1px solid #e0e0e0;overflow-x:auto}
+.ch{background:#f0f0f0;padding:4px 10px;cursor:pointer;font-size:11px;color:#666;display:flex;align-items:center;gap:6px;user-select:none}
+.ch:hover{background:#e8e8e8}.ch .ar{font-size:9px;transition:transform .2s;display:inline-block}
+.ch.collapsed .ar{transform:rotate(-90deg)}
+.cc{overflow:hidden;transition:max-height .3s ease}
+.cc.folded{max-height:0!important}
+.cc pre{margin:0;padding:8px;background:#f7f7f7;font-size:11px;overflow-x:auto;white-space:pre;font-family:Consolas,monospace;line-height:1.3}
+.output img,.output svg{max-width:100%!important;height:auto!important}
+.md h1{font-size:1.5em}.md h2{font-size:1.25em;border-bottom:1px solid #eee;padding-bottom:3px}
+.md h3{font-size:1.1em}.md p{margin:5px 0}.md ul,.md ol{margin:5px 0;padding-left:20px}
+.md code{background:#f0f0f0;padding:1px 4px;border-radius:3px;font-size:.85em}
+.md .eq{background:#f8f9fa;padding:6px 12px;border-left:3px solid #3498db;margin:6px 0;font-family:serif;font-size:1.02em}
+.md .nt{background:#fff3cd;border:1px solid #ffc107;border-radius:3px;padding:6px 12px;margin:6px 0;font-size:13px}
+.jsi{background:#fafafa;border:1px solid #e0e0e0;border-radius:4px;padding:12px;margin:8px 0}
+.jsi h4{margin:0 10px 10px;color:#8e44ad;font-size:13px}
+.jsc{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin-bottom:12px}
+.jctl{display:flex;flex-direction:column}
+.jctl label{font-size:10px;font-weight:600;color:#555;margin-bottom:2px}
+.jctl input[type=range]{width:100%;cursor:pointer}
+.jctl .v{font-size:10px;color:#8e44ad;font-weight:bold}
+.jsp{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.jp{width:100%;min-height:260px;border:1px solid #ddd;border-radius:3px;background:#fff}
+@media(max-width:650px){.jsp{grid-template-columns:1fr}}
+.lg{display:flex;gap:10px;margin:4px 0;font-size:10px}
+.lg span{display:flex;align-items:center;gap:3px}
+.lg .d{width:9px;height:9px;border-radius:50%;display:inline-block}
+.lg .d.s{background:#000}.lg .d.h{background:#fff;border:2px solid #000}
+.si{border:1px solid #ddd;border-radius:3px;padding:8px;margin:5px 0;text-align:center}
+.si img{max-width:100%;height:auto}
+</style>
+</head><body>
+<div class="nb">
+<h1 style="text-align:center;font-size:1.6em;margin:12px 0">Biocircuit 101: ODE Models of Biocircuits</h1>
+<p style="text-align:center;color:#888;font-size:0.8em;margin-bottom:15px">Click code cells to expand/collapse.</p>
+<div class="cell md"><h1>Biocircuit 101: ODE Models of Biocircuits</h1>
+<p>For this tutorial, we do not care about the molecular details (for the sake of time), ODE solving techniques, and visualization coding.</p>
+<p>AI could help with coding and solving ODEs.
+In my opinion, it is more important to know:
+<li>How to describe biocircuits (at least you should know how decribe the circuit to AI)</li>
+<li>What information we want</li>
+<li>The workflow to obtain the information we want</li></p></div>
+<div class="cell md"><h3>Workflow for Each Model</h3>
+<p>1. <strong>Describe the circuit</strong>: write ODE for each variable in the circuit (nondimensionalization)</p>
+<p>2. <strong>Solve for the dynamics</strong>: show how all variables evolve over time</p>
+<p style="margin-left:20px;">- use numerical methods if it is hard to solve explicitly</p>
+<p style="margin-left:20px;">- tune parameters and interpret the result</p>
+<p>3. <strong>Do Nullcline Analysis</strong>: find fixed points/steady state locus</p>
+<p style="margin-left:20px;">- tune parameters and interpret the result along with its dynamics</p>
+<p>4. <strong>Do Bifurcation Analysis</strong>: track the stability of the circuit in the parameter space</p>
+<p style="margin-left:20px;">- determine the parameter values to realize the function you want</p></div>
+<div class="cell md"><h3>0. Environment Setup</h3>
+Set up a Python environment with all the packages we need.
+<p>Open your terminal and <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px">cd</code> to the folder containing <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px">environment.yml</code></p>
+<pre style="background:#f5f5f5;padding:8px;border-radius:3px;overflow-x:auto"><code>conda env create -f environment.yml
+</code></pre>
+<p>Activate it:</p>
+<pre style="background:#f5f5f5;padding:8px;border-radius:3px;overflow-x:auto"><code>conda activate biocircuits
+</code></pre>
+If you prefer to use jupyter lab, run:
+<pre style="background:#f5f5f5;padding:8px;border-radius:3px;overflow-x:auto"><code>jupyter lab
+</code></pre>
+<p>Run the cell below to confirm all packages are available:</p></div>
+<div class="cell code-cell"><div class="ch collapsed" onclick="tc(this)"><span class="ar">&#9660;</span>[4] Code</div><div class="cc folded"><pre># ============================================================
+#  IMPORTS -- libraries used throughout the notebook
+# ============================================================
+import numpy as np                                    # numerical arrays &amp; math
+
+from bokeh.plotting import figure, show               # Bokeh: create &amp; display plots
+from bokeh.layouts import column, row                 # Bokeh: arrange plots &amp; widgets
+from bokeh.models import (                            # Bokeh: interactive components
+    ColumnDataSource,                                 #   -- efficient data &lt;-&gt; plot bridge
+    CustomJS,                                          #   -- browser-side callbacks (no Python kernel)
+    Slider,                                            #   -- interactive parameter control
+    Span,                                              #   -- vertical/horizontal marker line
+    VArea,                                             #   -- filled region (bifurcation diagrams)
+)
+from bokeh.io import output_notebook                  # Bokeh: render plots inside Jupyter
+
+from scipy.optimize import fsolve                      # root-finding (fixed-point analysis)
+from scipy.integrate import odeint                     # ODE numerical integration (LSODA adaptive solver)
+
+import plotly.graph_objects as go                      # Plotly: 3D interactive plots (repressilator)
+
+# Enable interactive Bokeh plots in the notebook
+output_notebook()
+</pre></div></div>
+<div class="cell md"><h2>1. Get the taste of ODE description</h2>
+<p>The simplest biocircuit consists of a gene that is constitutively expressed (produced at a constant rate) and degraded/diluted.</p>
+<p>$$dx/dt = \beta - \gamma x$$</p>
+<li>$x$ is the concentration of protein x</li>
+<li>$\beta$ is the dimensionless production rate.</li>
+<li>$\gamma$ is the degradation and dilution rate.</li>
+<p>dimensionless form:
+$$dx/dt = \beta - x$$</p></div>
+<div class="cell md"><p>It is a <strong>linear first-order ODE</strong> and can be solved analytically. So no numerical method is needed.</p>
+<p>Using separation of variables (or the integrating factor method), with initial condition $x(0) = x_0$:</p>
+<p>$$x(t) = \beta + (x_0 - \beta)e^{-t}$$</p>
+<p>If we start from $x_0 = 0$ (no protein initially), this simplifies to:</p>
+<p>$$x(t) = \beta\left(1 - e^{-t}\right)$$</p>
+<p>> <strong>Note:</strong> For more complex circuits (autoregulation, toggle switch, repressilator), analytical solutions are generally <em>not</em> available, and we must resort to numerical integration. But for this simplest case, the analytical solution gives us everything we need.
+></p></div>
+<div class="cell code-cell"><div class="ch collapsed" onclick="tc(this)"><span class="ar">&#9660;</span>[7] Code</div><div class="cc folded"><pre># ============================================================
+#  SIMPLE PRODUCTION-DEGRADATION DEVICE
+#  ODE: dx/dt = beta - x    (analytical solution: x(t) = beta*(1 - e^(-t)))
+# ============================================================
+def plot_simple_device():
+    # --- Parameters ---
+    beta_init = 5.0                                   # production rate beta
+    t = np.linspace(0, 10, 100)                       # time vector for dynamics plot
+    x_nc = np.linspace(0, 10, 100)                    # concentration range for nullcline plot
+
+    # --- Analytical solution ---
+    # dx/dt = beta - x  --&gt;  x(t) = beta*(1 - e^(-t))  with x(0)=0
+    x_dyn_init = beta_init * (1 - np.exp(-t))
+    # Production term is constant (= beta); removal term is linear (= x)
+    prod_init = np.full_like(x_nc, beta_init)
+
+    # --- Bokeh data sources ---
+    src_dyn = ColumnDataSource(data=dict(t=t, x=x_dyn_init))
+    src_nc = ColumnDataSource(data=dict(x=x_nc, prod=prod_init, deg=x_nc))
+    # Fixed point: intersection of production and removal --&gt; x* = beta
+    src_pt = ColumnDataSource(data=dict(x=[beta_init], y=[beta_init]))
+
+    # --- Dynamics plot (x vs t) ---
+    p_dyn = figure(title="Dynamics", x_axis_label="t", y_axis_label="x", width=400, height=300)
+    p_dyn.line('t', 'x', source=src_dyn, line_width=3, color='#2ca02c')
+
+    # --- Nullcline plot (production &amp; removal rates vs x) ---
+    p_nc = figure(title="Nullcline Analysis", x_axis_label="x", y_axis_label="rate", width=400, height=300)
+    p_nc.line('x', 'prod', source=src_nc, line_width=3, color='#1f77b4', legend_label="Production")
+    p_nc.line('x', 'deg', source=src_nc, line_width=3, color='#ff7f0e', legend_label="Removal")
+    p_nc.scatter('x', 'y', source=src_pt, size=12, color='black', legend_label="Stable Point")
+    p_nc.legend.location = "top_left"
+    p_nc.legend.label_text_font_size = "8pt"
+
+    # --- Interactive slider for beta ---
+    slider_beta = Slider(start=0.0, end=10.0, value=beta_init, step=0.1, title="beta")
+
+    # Browser-side callback: update all plots when beta changes (uses analytical formula)
+    callback = CustomJS(args=dict(sd=src_dyn, snc=src_nc, spt=src_pt, b=slider_beta), code="""
+        const beta = b.value;
+        const t = sd.data['t'];
+        const x_d = sd.data['x'];
+        for(let i=0; i&lt;t.length; i++) {
+            x_d[i] = beta * (1 - Math.exp(-t[i]));
+        }
+        sd.change.emit();
+
+        const x_n = snc.data['x'];
+        const prod = snc.data['prod'];
+        for(let i=0; i&lt;x_n.length; i++) prod[i] = beta;
+        snc.change.emit();
+
+        spt.data = {x: [beta], y: [beta]};
+        spt.change.emit();
+    """)
+    slider_beta.js_on_change('value', callback)
+
+    # Layout: slider on top, dynamics (left) and nullcline (right) side by side
+    return column(slider_beta, row(p_dyn, p_nc))
+
+show(plot_simple_device())
+</pre></div></div>
+<div class="output"><div class="jsi"><h4>Interactive: Dynamics & Nullcline</h4><div class="jsc"><div class="jctl"><label>β: <span class="v" id="c6_v_beta">5.0</span></label><input type="range" id="c6_beta" min="0.1" max="10" step="0.1" value="5.0" oninput="c6_upd()"></div></div><div class="jsp"><div id="c6_p0" class="jp"></div><div id="c6_p1" class="jp"></div></div></div></div>
+<div class="cell md"><p>Varying β gives a straight line of steady states. The system is always monostable. No need for bifurcation anaylsis.</p></div>
+<div class="cell code-cell"><div class="ch collapsed" onclick="tc(this)"><span class="ar">&#9660;</span>[9] Code</div><div class="cc folded"><pre># ============================================================
+def plot_simple_device_advanced(t_switch=5.0, beta1=2.0, beta2=8.0, x0=0.0):
+    """
+    Demonstrate memory-like behavior in a simple production-degradation system.
+
+    The system starts with production rate beta1, then switches to beta2 at t_switch.
+    This shows how the system "remembers" its history and adapts to new parameters.
+
+    Parameters:
+        t_switch — time to switch from beta1 to beta2 (default: 5.0)
+        beta1    — initial production rate (default: 2.0)
+        beta2    — production rate after switch (default: 8.0)
+        x0       — initial concentration (default: 0.0)
+    """
+    from scipy.integrate import odeint
+
+    # Total simulation time and time vector
+    t_total = 10.0
+    t = np.linspace(0, t_total, 500)
+
+    # Define the ODE: dx/dt = beta - x  (production - degradation)
+    def rhs(x, t, beta):
+        return beta - x
+
+    # --- Solve ODE with a parameter switch using scipy.integrate.odeint ---
+    # Split time vector at the switch point
+    t1 = t[t &lt;= t_switch]
+    t2 = t[t &gt;= t_switch]
+    # Phase 1: integrate from t=0 to t=t_switch with production rate beta1
+    sol1 = odeint(rhs, x0, t1, args=(beta1,))
+
+    # Phase 2: integrate from t=t_switch to t=t_total with production rate beta2.
+    # The initial condition for phase 2 is the final state of phase 1, so the
+    # trajectory is continuous across the switch.
+    x_switch = sol1[-1, 0]
+    sol2 = odeint(rhs, x_switch, t2, args=(beta2,))
+
+    # Concatenate: if t_switch falls exactly on a grid point, t1 and t2 overlap (drop duplicate);
+    # otherwise they partition t (keep all points)
+    if t1[-1] == t2[0]:
+        sol = np.concatenate([sol1[:-1], sol2]).flatten()
+    else:
+        sol = np.concatenate([sol1, sol2]).flatten()
+
+    # --- Build the interactive Bokeh plot ---
+    src = ColumnDataSource(data=dict(t=t, x=sol))
+
+    # Vertical dashed line marking the parameter switch time
+    switch_line = Span(location=t_switch, dimension="height",
+                       line_color="red", line_dash="dashed", line_width=2)
+
+    p = figure(title="Simple Device: Parameter Switch Dynamics",
+               x_axis_label="Time (t)", y_axis_label="Concentration (x)",
+               width=600, height=350)
+    p.line('t', 'x', source=src, line_width=3, color='#2ca02c')
+    p.add_layout(switch_line)
+
+    # --- Interactive sliders ---
+    s_t = Slider(start=1.0, end=9.0, value=t_switch, step=0.5, title="Switch Time")
+    s_b1 = Slider(start=0.0, end=10.0, value=beta1, step=0.1, title="β₁ (before switch)")
+    s_b2 = Slider(start=0.0, end=10.0, value=beta2, step=0.1, title="β₂ (after switch)")
+    s_x0 = Slider(start=0.0, end=10.0, value=x0, step=0.1, title="x₀ (initial concentration)")
+
+    # Browser-side (JavaScript) solver using RK4 for smooth, accurate interactivity
+    code = """
+        const t_switch = s_t.value, beta1 = s_b1.value, beta2 = s_b2.value, x0 = s_x0.value;
+        const t = src.data['t'], x = src.data['x'];
+        let x_curr = x0;
+        for(let i=0; i&lt;t.length; i++) {
+            x[i] = x_curr;
+            if(i &lt; t.length - 1) {
+                let dt = t[i+1] - t[i];
+                let beta = (t[i] &lt; t_switch) ? beta1 : beta2;
+                // RK4 integration step
+                let k1 = beta - x_curr;
+                let k2 = beta - (x_curr + 0.5 * dt * k1);
+                let k3 = beta - (x_curr + 0.5 * dt * k2);
+                let k4 = beta - (x_curr + dt * k3);
+                x_curr += (dt / 6.0) * (k1 + 2*k2 + 2*k3 + k4);
+            }
+        }
+        src.change.emit();
+        switch_line.location = t_switch;
+    """
+
+    cb = CustomJS(args=dict(src=src, s_t=s_t, s_b1=s_b1, s_b2=s_b2, s_x0=s_x0, switch_line=switch_line), code=code)
+    s_t.js_on_change("value", cb)
+    s_b1.js_on_change("value", cb)
+    s_b2.js_on_change("value", cb)
+    s_x0.js_on_change("value", cb)
+
+    # Layout: plot on the left, sliders stacked on the right
+    return row(p, column(s_t, s_b1, s_b2, s_x0))
+
+show(plot_simple_device_advanced())</pre></div></div>
+<div class="output"><div class="jsi"><h4>Interactive: Parameter Switch</h4><div class="jsc"><div class="jctl"><label>t_switch: <span class="v" id="c8_v_ts">5.0</span></label><input type="range" id="c8_ts" min="1" max="9" step="0.5" value="5.0" oninput="c8_upd()"></div><div class="jctl"><label>β1: <span class="v" id="c8_v_b1">2.0</span></label><input type="range" id="c8_b1" min="0.1" max="10" step="0.1" value="2.0" oninput="c8_upd()"></div><div class="jctl"><label>β2: <span class="v" id="c8_v_b2">8.0</span></label><input type="range" id="c8_b2" min="0.1" max="10" step="0.1" value="8.0" oninput="c8_upd()"></div><div class="jctl"><label>x0: <span class="v" id="c8_v_x0">0.0</span></label><input type="range" id="c8_x0" min="0" max="5" step="0.1" value="0.0" oninput="c8_upd()"></div></div><div class="jsp"><div id="c8_p0" class="jp"></div></div></div></div>
+<div class="cell md"><h2>2. Autoregulation (Positive Feedback)</h2>
+<li>The protein binds to its own promoter and <strong>activates</strong> transcription</li>
+<li>This creates a positive feedback loop: more protein → more production</li>
+<li>Positive autoregulation can create <strong>bistability</strong> (two stable steady states)</li>
+<p><strong>Dimensionless ODE:</strong>
+$$\frac{\mathrm{d}x}{\mathrm{d}t} = \beta \frac{x^n}{1 + x^n} - x$$</p></div>
+<div class="cell md"><h3>Dynamics and nullcline anaylsis</h3></div>
+<div class="cell code-cell"><div class="ch collapsed" onclick="tc(this)"><span class="ar">&#9660;</span>[12] Code</div><div class="cc folded"><pre>def plot_autoactivator(x0_low=0.5, x0_high=3):
+    # ============================================================
+    #  PART A: CORE MATH -- ODE definition &amp; numerical integration
+    #             (this is what you want to focus on for learning)
+    # ============================================================
+    #
+    # Autoactivator dimensionless ODE:
+    #   dx/dt = beta * x^n / (1 + x^n)  -  x
+    #          +---- production ----+    +- degradation -+
+    #
+    # Parameters:
+    #   beta  -- maximal expression rate
+    #   n     -- Hill coefficient (cooperativity)
+    #
+    # User-configurable initial conditions (for dynamics):
+    #   x0_low   -- starting value for the "Starts Low" trajectory  (default: 0.5)
+    #   x0_high  -- starting value for the "Starts High" trajectory (default: 6.0)
+    #
+    # Tip: To see bistability clearly, choose x0_low below the unstable
+    # fixed point (e.g., 0.01) and x0_high above it (e.g., 6.0).
+    x_max, beta_val, n_val = 8.0, 5.0, 4.0
+    x_arr = np.linspace(0, x_max, 500)
+    t_arr = np.linspace(0, 15, 500)
+
+    # Production term (for nullcline plotting)
+    prod_init = beta_val * (x_arr**n_val) / (1.0 + x_arr**n_val)
+
+    # --- Fixed-point analysis ---
+    # Fixed-point condition: dx/dt = 0  --&gt;  beta*x^n/(1+x^n) = x
+    # Stability condition: |f'(x*)| &lt; 1 is stable, &gt; 1 is unstable
+    # Note: f'(0) = beta*n*x^(n-1) for x-&gt;0
+    #   - n &lt; 1: f'(0) -&gt; infinity (unstable)
+    #   - n = 1: f'(0) = beta
+    #   - n &gt; 1: f'(0) = 0 (stable)
+    #
+    # Use fsolve with many initial guesses to find ALL fixed points
+    # (grid-based sign-change search misses points near x=0 when n~1)
+    def f_prime(xv, beta, n):
+        """Derivative of the ODE right-hand side at xv (for stability check)"""
+        if xv == 0:
+            if n &lt; 1: return float('inf')
+            return beta if n == 1 else 0.0
+        return (beta * n * (xv**(n - 1))) / ((1.0 + xv**n)**2)
+
+    def find_fixed_points(beta, n):
+        """Find all fixed points using fsolve with many initial guesses"""
+        f = lambda x: beta * x**n / (1 + x**n) - x
+        guesses = np.linspace(0.001, x_max - 0.01, 300)
+        roots = []
+        for g in guesses:
+            try:
+                r = fsolve(f, g, full_output=False)[0]
+                if 0.001 &lt;= r &lt;= x_max and abs(f(r)) &lt; 1e-6:
+                    if not any(abs(r - existing) &lt; 1e-4 for existing in roots):
+                        roots.append(r)
+            except:
+                pass
+        return sorted(roots)
+
+    nonzero_roots = find_fixed_points(beta_val, n_val)
+
+    st_x, st_y, ust_x, ust_y = [], [], [], []
+
+    # Classify x = 0
+    if f_prime(0, beta_val, n_val) &lt; 1.0:
+        st_x.append(0.0); st_y.append(0.0)
+    else:
+        ust_x.append(0.0); ust_y.append(0.0)
+
+    # Classify non-zero fixed points
+    for r in nonzero_roots:
+        if f_prime(r, beta_val, n_val) &lt; 1.0:
+            st_x.append(r); st_y.append(r)
+        else:
+            ust_x.append(r); ust_y.append(r)
+
+    # --- Numerical ODE integration (CORE) ---
+    # Using scipy.integrate.odeint (LSODA adaptive solver)
+    #   - Auto-detects stiffness, switches between Adams and BDF methods
+    #   - Adaptive step size + error control (default rtol=1e-8, atol=1e-12)
+    #   - Far superior to fixed-step Forward Euler
+    #
+    # Signature: odeint(func, y0, t, args=...)
+    #   func(y, t, *args) returns dy/dt
+    def autoactivator_rhs(x, t, beta, n):
+        """ODE right-hand side: dx/dt = beta * x^n / (1 + x^n) - x"""
+        return beta * (x**n) / (1.0 + x**n) - x
+
+    # Integrate from two different initial conditions to show bistability
+    x1_init = odeint(autoactivator_rhs, x0_low, t_arr, args=(beta_val, n_val)).flatten()
+    x2_init = odeint(autoactivator_rhs, x0_high, t_arr, args=(beta_val, n_val)).flatten()
+
+    # ============================================================
+    #  PART B: VISUALIZATION (Bokeh plotting + interactivity, math-independent)
+    # ============================================================
+    src_nc = ColumnDataSource(data=dict(x=x_arr, prod=prod_init, deg=x_arr))
+    src_dyn = ColumnDataSource(data=dict(t=t_arr, x1=x1_init, x2=x2_init))
+    src_st = ColumnDataSource(data=dict(x=st_x, y=st_y))
+    src_unst = ColumnDataSource(data=dict(x=ust_x, y=ust_y))
+
+    p_dyn = figure(title="Dynamics (Two different initial conditions)", x_axis_label="t", y_axis_label="x", width=400, height=350)
+    p_dyn.line('t', 'x1', source=src_dyn, line_width=2, color='purple', legend_label=f"Starts at {x0_low}")
+    p_dyn.line('t', 'x2', source=src_dyn, line_width=2, color='orange', legend_label=f"Starts at {x0_high}")
+    p_dyn.legend.location = "top_left"
+    p_dyn.legend.label_text_font_size = "8pt"
+
+    p_nc = figure(title="Nullclines", x_axis_label="x", y_axis_label="rate", width=400, height=350)
+    p_nc.line('x', 'prod', source=src_nc, line_width=3, color='#1f77b4', legend_label="Production")
+    p_nc.line('x', 'deg', source=src_nc, line_width=3, color='#ff7f0e', legend_label="Removal")
+    p_nc.scatter('x', 'y', source=src_st, size=10, color='black', legend_label="Stable")
+    p_nc.scatter('x', 'y', source=src_unst, size=10, fill_color='white', line_color='black', line_width=2, legend_label="Unstable")
+    p_nc.legend.location = "top_left"
+    p_nc.legend.label_text_font_size = "8pt"
+
+    s_beta = Slider(start=0.0, end=10.0, value=beta_val, step=0.1, title="beta")
+    s_n = Slider(start=1, end=8.0, value=n_val, step=0.1, title="n")
+
+    # --- CustomJS: browser-side real-time update (no Python kernel needed) ---
+    # Uses Newton's method + bisection to find ALL fixed points (stable + unstable).
+    # Newton's method converges quickly; bisection is used as a robust fallback
+    # to find the unstable middle fixed point between two stable ones.
+    # This approach is adapted from the biocircuits library (jsplots.py).
+    code = """
+        const beta = s_beta.value, n = s_n.value;
+        const x = snc.data['x'], prod = snc.data['prod'], deg = snc.data['deg'];
+
+        // Update production term for nullcline plot
+        for(let i=0; i&lt;x.length; i++) {
+            prod[i] = beta * Math.pow(x[i], n) / (1 + Math.pow(x[i], n));
+        }
+        snc.change.emit();
+
+        // --- Root-finding helpers (Newton's method + bisection) ---
+        // Fixed-point condition: beta*x^n/(1+x^n) - x = 0
+        const diff = (xv) =&gt; (beta * Math.pow(xv, n) / (1 + Math.pow(xv, n))) - xv;
+        // Derivative of diff: beta*n*x^(n-1)/(1+x^n)^2 - 1
+        const ddiff = (xv) =&gt; {
+            if (xv === 0) {
+                if (n &lt; 1) return Infinity;
+                return (n === 1) ? beta - 1 : -1;
+            }
+            const xn = Math.pow(xv, n);
+            return (beta * n * Math.pow(xv, n - 1)) / Math.pow(1 + xn, 2) - 1.0;
+        };
+        // Stability: |f'(x*)| &lt; 1 is stable, &gt; 1 is unstable
+        const f_prime = (xv) =&gt; {
+            if (xv === 0) {
+                if (n &lt; 1) return Infinity;
+                return (n === 1) ? beta : 0;
+            }
+            const xn = Math.pow(xv, n);
+            return (beta * n * Math.pow(xv, n - 1)) / Math.pow(1 + xn, 2);
+        };
+
+        // Newton's method: fast convergence to a root near the starting guess
+        function newtonSolve(x0, tol, maxIter) {
+            tol = tol || 1e-8;
+            maxIter = maxIter || 100;
+            let x = x0;
+            for (let i = 0; i &lt; maxIter; i++) {
+                let y = diff(x);
+                let yp = ddiff(x);
+                if (Math.abs(yp) &lt; 1e-14) break;
+                let xNew = x - y / yp;
+                if (xNew &lt; 0) xNew = x / 2;  // keep positive
+                if (Math.abs(xNew - x) &lt;= tol) return xNew;
+                x = xNew;
+            }
+            return x;
+        }
+
+        // Bisection method: guaranteed to converge for bracketed roots
+        function bisectionSolve(lower, upper, tol, maxIter) {
+            tol = tol || 1e-8;
+            maxIter = maxIter || 100;
+            let a = lower, b = upper;
+            let fa = diff(a), fb = diff(b);
+            if (fa * fb &gt; 0) return null;
+            for (let i = 0; i &lt; maxIter; i++) {
+                let mid = (a + b) / 2.0;
+                let fmid = diff(mid);
+                if (Math.abs(fmid) &lt; tol || (b - a) / 2.0 &lt; tol) return mid;
+                if (fa * fmid &lt; 0) { b = mid; fb = fmid; }
+                else { a = mid; fa = fmid; }
+            }
+            return (a + b) / 2.0;
+        }
+
+        // Find ALL fixed points using Newton + bisection
+        let st_x = [], st_y = [], ust_x = [], ust_y = [];
+        const x_max = 8.0;
+
+        // Newton from large x -&gt; finds the rightmost (stable) positive fixed point
+        let xStable = newtonSolve(x_max);
+
+        // Collect positive fixed points (verify diff ≈ 0 to discard false convergence)
+        let roots = [];
+        if (xStable !== null &amp;&amp; xStable &gt; 0.001 &amp;&amp; Math.abs(diff(xStable)) &lt; 1e-4) {
+            roots.push(xStable);
+        }
+
+        // Use bisection to find the unstable middle point (if it exists).
+        // diff(x) &lt; 0 just after x=0. The unstable point is where diff changes
+        // sign. We check two sub-intervals: [0.01, xStable/2] and [xStable/2, xStable].
+        if (roots.length === 1) {
+            let xMid = roots[0] / 2;
+            let fMid = diff(xMid);
+            let xUnstable = null;
+            if (diff(0.01) * fMid &lt; 0) {
+                xUnstable = bisectionSolve(0.01, xMid);
+            } else if (fMid * diff(roots[0] - 1e-4) &lt; 0) {
+                xUnstable = bisectionSolve(xMid, roots[0] - 1e-4);
+            }
+            if (xUnstable !== null &amp;&amp; xUnstable &gt; 0.01 &amp;&amp; Math.abs(xUnstable - roots[0]) &gt; 0.1) {
+                roots.push(xUnstable);
+                roots.sort((a, b) =&gt; a - b);
+            }
+        }
+
+        // Classify x = 0 (fixed point only if n &gt;= 1)
+        if (n &gt;= 1) {
+            if (f_prime(0) &lt; 1.0) { st_x.push(0.0); st_y.push(0.0); }
+            else { ust_x.push(0.0); ust_y.push(0.0); }
+        }
+
+        // Classify non-zero fixed points
+        for (let r of roots) {
+            if (f_prime(r) &lt; 1.0) { st_x.push(r); st_y.push(r); }
+            else { ust_x.push(r); ust_y.push(r); }
+        }
+
+        sst.data = {x: st_x, y: st_y}; sst.change.emit();
+        sust.data = {x: ust_x, y: ust_y}; sust.change.emit();
+
+        // Browser-side ODE integration via RK4 (4th-order accuracy, far better than Euler)
+        const t = sdyn.data['t'], x1 = sdyn.data['x1'], x2 = sdyn.data['x2'];
+        const dt = t[1] - t[0];
+        let curr_x1 = """ + str(x0_low) + """, curr_x2 = """ + str(x0_high) + """;
+
+        for(let i=0; i&lt;t.length; i++) {
+            x1[i] = curr_x1; x2[i] = curr_x2;
+            let k1a = diff(curr_x1);
+            let k2a = diff(curr_x1 + 0.5*dt*k1a);
+            let k3a = diff(curr_x1 + 0.5*dt*k2a);
+            let k4a = diff(curr_x1 + dt*k3a);
+            curr_x1 += (dt/6.0) * (k1a + 2*k2a + 2*k3a + k4a);
+            let k1b = diff(curr_x2);
+            let k2b = diff(curr_x2 + 0.5*dt*k1b);
+            let k3b = diff(curr_x2 + 0.5*dt*k2b);
+            let k4b = diff(curr_x2 + dt*k3b);
+            curr_x2 += (dt/6.0) * (k1b + 2*k2b + 2*k3b + k4b);
+        }
+        sdyn.change.emit();
+    """
+
+    cb = CustomJS(args=dict(snc=src_nc, sdyn=src_dyn, sst=src_st, sust=src_unst, s_beta=s_beta, s_n=s_n), code=code)
+    s_beta.js_on_change('value', cb)
+    s_n.js_on_change('value', cb)
+
+    return column(row(s_beta, s_n), row(p_dyn, p_nc))
+
+# Example usage:
+#   plot_autoactivator()                    # uses defaults: x0_low=0.5, x0_high=6.0
+#   plot_autoactivator(x0_low=0.01, x0_high=6.0)  # low start below unstable point
+show(plot_autoactivator())
+</pre></div></div>
+<div class="output"><div class="jsi"><h4>Interactive: Dynamics & Nullcline</h4><div class="jsc"><div class="jctl"><label>β: <span class="v" id="c11_v_beta">5.0</span></label><input type="range" id="c11_beta" min="0.1" max="10" step="0.1" value="5.0" oninput="c11_upd()"></div><div class="jctl"><label>n: <span class="v" id="c11_v_n">4.0</span></label><input type="range" id="c11_n" min="0.1" max="8" step="0.1" value="4.0" oninput="c11_upd()"></div><div class="jctl"><label>x₀(low): <span class="v" id="c11_v_x0l">0.5</span></label><input type="range" id="c11_x0l" min="0.01" max="2" step="0.01" value="0.5" oninput="c11_upd()"></div><div class="jctl"><label>x₀(high): <span class="v" id="c11_v_x0h">6.0</span></label><input type="range" id="c11_x0h" min="2" max="8" step="0.1" value="6.0" oninput="c11_upd()"></div></div><div class="lg"><span><span class="d s"></span> Stable</span><span><span class="d h"></span> Unstable</span></div><div class="jsp"><div id="c11_p0" class="jp"></div><div id="c11_p1" class="jp"></div></div></div></div>
+<div class="cell md"><p>> <strong>Note:</strong> The nullcline plot may show two stable fixed points (bistability), while the dynamics plot shows both trajectories converging to the same state. This is <strong>not a contradiction</strong>! Tt reflects that both initial conditions lie in the basin of attraction of the same stable state. The other stable state (e.g., $x=0$ for $n>1$) has a very small basin of attraction near the origin. To observe it, start a trajectory from a very small initial condition (e.g., $x_0 = 0.001$).</p></div>
+<div class="cell md"><h3>Memorize the state!</h3></div>
+<div class="cell code-cell"><div class="ch collapsed" onclick="tc(this)"><span class="ar">&#9660;</span>[15] Code</div><div class="cc folded"><pre># ============================================================
+#  MEMORY DEMO: Autoactivator with TWO parameter switches
+#  ODE: dx/dt = beta * x^n / (1 + x^n) - x
+#  Uses scipy.integrate.odeint (three-phase integration)
+#  Demo: bistable -&gt; monostable -&gt; bistable (irreversible)
+# ============================================================
+def plot_autoactivator_advanced(t_switch1=5.0, t_switch2=10.0,
+                               beta1=5.0, n1=4.0,
+                               beta2=1.0, n2=4,
+                               beta3=10.0, n3=4.0,
+                               x0_low=0.5, x0_high=6.0):
+    """
+    Demonstrate memory (bistability) in the autoactivator system with TWO parameter switches.
+
+    The system transitions through three parameter regimes:
+      - Phase 1 (t &lt; t_switch1): (beta1, n1) -- typically bistable
+      - Phase 2 (t_switch1 &lt; t &lt; t_switch2): (beta2, n2) -- typically monostable
+      - Phase 3 (t &gt; t_switch2): (beta3, n3) -- bistable again (but state may not recover)
+
+    This shows how a system can be driven from bistable -&gt; monostable -&gt; bistable,
+    and that the final state may depend on the path (hysteresis / irreversibility).
+
+    Parameters:
+        t_switch1 -- time of first parameter switch (default: 5.0)
+        t_switch2 -- time of second parameter switch (default: 10.0)
+        beta1, n1 -- parameters for phase 1 (default: 5.0, 4.0)
+        beta2, n2 -- parameters for phase 2 (default: 2.0, 1.5)
+        beta3, n3 -- parameters for phase 3 (default: 5.0, 4.0)
+        x0_low    -- initial condition for low trajectory (default: 0.5)
+        x0_high   -- initial condition for high trajectory (default: 6.0)
+    """
+    # Total simulation time and time vector
+    t_total = 15.0
+    t = np.linspace(0, t_total, 1500)
+
+    # ODE right-hand side: dx/dt = beta * x^n / (1 + x^n) - x
+    def rhs(x, t, beta, n):
+        return beta * x**n / (1 + x**n) - x
+
+    # --- Solve ODE with TWO parameter switches using scipy.integrate.odeint ---
+    # Three phases per trajectory; each phase's initial condition = previous phase's final state
+    t1 = t[t &lt;= t_switch1]
+    t2 = t[(t &gt; t_switch1) &amp; (t &lt;= t_switch2)]
+    t3 = t[t &gt; t_switch2]
+
+    def solve_three_phase(x0, beta1, n1, beta2, n2, beta3, n3):
+        """Integrate one trajectory through three parameter regimes."""
+        # Phase 1
+        sol1 = odeint(rhs, x0, t1, args=(beta1, n1))
+        # Phase 2
+        sol2 = odeint(rhs, sol1[-1, 0], t2, args=(beta2, n2))
+        # Phase 3
+        sol3 = odeint(rhs, sol2[-1, 0], t3, args=(beta3, n3))
+        # Concatenate: drop duplicate points at switch boundaries
+        parts = [sol1]
+        if len(t2) &gt; 0:
+            parts.append(sol2[1:] if t1[-1] == t2[0] else sol2)
+        if len(t3) &gt; 0:
+            parts.append(sol3[1:] if t2[-1] == t3[0] else sol3)
+        return np.concatenate(parts).flatten()
+
+    # Compute both trajectories (low and high initial conditions)
+    sol_high = solve_three_phase(x0_high, beta1, n1, beta2, n2, beta3, n3)
+    sol_low = solve_three_phase(x0_low, beta1, n1, beta2, n2, beta3, n3)
+
+    # --- Build the interactive Bokeh plot ---
+    src = ColumnDataSource(data=dict(t=t, x_high=sol_high, x_low=sol_low))
+
+    # Vertical dashed lines marking the two parameter switch times
+    switch_line1 = Span(location=t_switch1, dimension="height",
+                        line_color="red", line_dash="dashed", line_width=2)
+    switch_line2 = Span(location=t_switch2, dimension="height",
+                        line_color="blue", line_dash="dashed", line_width=2)
+
+    p = figure(title="Autoactivator: Bistable -&gt; Monostable -&gt; Bistable (Irreversible)",
+               x_axis_label="Time (t)", y_axis_label="Concentration (x)",
+               width=550, height=400)
+    p.line('t', 'x_high', source=src, line_width=2, color='purple', legend_label="Started High")
+    p.line('t', 'x_low', source=src, line_width=2, color='orange', legend_label="Started Low")
+    p.add_layout(switch_line1)
+    p.add_layout(switch_line2)
+    p.legend.location = "top_left"
+    p.legend.label_text_font_size = "8pt"
+
+    # --- Interactive sliders ---
+    s_t1 = Slider(start=1.0, end=7.0, value=t_switch1, step=0.5, title="Switch Time 1")
+    s_t2 = Slider(start=8.0, end=14.0, value=t_switch2, step=0.5, title="Switch Time 2")
+    s_b1 = Slider(start=0.0, end=10.0, value=beta1, step=0.5, title="beta_1 (phase 1)")
+    s_n1 = Slider(start=0.1, end=8.0, value=n1, step=0.1, title="n_1 (phase 1)")
+    s_b2 = Slider(start=0.0, end=10.0, value=beta2, step=0.5, title="beta_2 (phase 2)")
+    s_n2 = Slider(start=0.1, end=8.0, value=n2, step=0.1, title="n_2 (phase 2)")
+    s_b3 = Slider(start=1.0, end=10.0, value=beta3, step=0.5, title="beta_3 (phase 3)")
+    s_n3 = Slider(start=1.0, end=8.0, value=n3, step=0.1, title="n_3 (phase 3)")
+    s_x0l = Slider(start=0.0, end=2.0, value=x0_low, step=0.1, title="x0 (low)")
+    s_x0h = Slider(start=2.0, end=8.0, value=x0_high, step=0.1, title="x0 (high)")
+
+    # Browser-side solver using RK4 for smooth, accurate interactivity
+    code = """
+        const t_switch1 = s_t1.value, t_switch2 = s_t2.value;
+        const beta1 = s_b1.value, n1 = s_n1.value;
+        const beta2 = s_b2.value, n2 = s_n2.value;
+        const beta3 = s_b3.value, n3 = s_n3.value;
+        const x0_low = s_x0l.value, x0_high = s_x0h.value;
+        const t = src.data['t'], x_high = src.data['x_high'], x_low = src.data['x_low'];
+        const rhs = (x, beta, n) =&gt; beta * Math.pow(x, n) / (1 + Math.pow(x, n)) - x;
+
+        // RK4 integration for the high trajectory (three phases)
+        let x_curr = x0_high;
+        for(let i=0; i&lt;t.length; i++) {
+            x_high[i] = x_curr;
+            if(i &lt; t.length - 1) {
+                let dt = t[i+1] - t[i];
+                let beta = (t[i] &lt; t_switch1) ? beta1 : (t[i] &lt; t_switch2) ? beta2 : beta3;
+                let n = (t[i] &lt; t_switch1) ? n1 : (t[i] &lt; t_switch2) ? n2 : n3;
+                let k1 = rhs(x_curr, beta, n);
+                let k2 = rhs(x_curr + 0.5*dt*k1, beta, n);
+                let k3 = rhs(x_curr + 0.5*dt*k2, beta, n);
+                let k4 = rhs(x_curr + dt*k3, beta, n);
+                x_curr += (dt/6.0) * (k1 + 2*k2 + 2*k3 + k4);
+            }
+        }
+        // RK4 integration for the low trajectory (three phases)
+        x_curr = x0_low;
+        for(let i=0; i&lt;t.length; i++) {
+            x_low[i] = x_curr;
+            if(i &lt; t.length - 1) {
+                let dt = t[i+1] - t[i];
+                let beta = (t[i] &lt; t_switch1) ? beta1 : (t[i] &lt; t_switch2) ? beta2 : beta3;
+                let n = (t[i] &lt; t_switch1) ? n1 : (t[i] &lt; t_switch2) ? n2 : n3;
+                let k1 = rhs(x_curr, beta, n);
+                let k2 = rhs(x_curr + 0.5*dt*k1, beta, n);
+                let k3 = rhs(x_curr + 0.5*dt*k2, beta, n);
+                let k4 = rhs(x_curr + dt*k3, beta, n);
+                x_curr += (dt/6.0) * (k1 + 2*k2 + 2*k3 + k4);
+            }
+        }
+        src.change.emit();
+        switch_line1.location = t_switch1;
+        switch_line2.location = t_switch2;
+    """
+
+    cb = CustomJS(args=dict(src=src, s_t1=s_t1, s_t2=s_t2,
+                             s_b1=s_b1, s_n1=s_n1, s_b2=s_b2, s_n2=s_n2,
+                             s_b3=s_b3, s_n3=s_n3,
+                             s_x0l=s_x0l, s_x0h=s_x0h,
+                             switch_line1=switch_line1, switch_line2=switch_line2), code=code)
+    s_t1.js_on_change("value", cb)
+    s_t2.js_on_change("value", cb)
+    s_b1.js_on_change("value", cb)
+    s_n1.js_on_change("value", cb)
+    s_b2.js_on_change("value", cb)
+    s_n2.js_on_change("value", cb)
+    s_b3.js_on_change("value", cb)
+    s_n3.js_on_change("value", cb)
+    s_x0l.js_on_change("value", cb)
+    s_x0h.js_on_change("value", cb)
+
+    # Layout: plot on left, sliders stacked on right
+    sliders = column(s_t1, s_t2, s_b1, s_n1, s_b2, s_n2, s_b3, s_n3, s_x0l, s_x0h)
+    return row(p, sliders)
+
+show(plot_autoactivator_advanced())
+</pre></div></div>
+<div class="output"><div class="jsi"><h4>Interactive: Two Parameter Switches</h4><div class="jsc"><div class="jctl"><label>t_switch1: <span class="v" id="c14_v_ts1">5.0</span></label><input type="range" id="c14_ts1" min="1" max="8" step="0.5" value="5.0" oninput="c14_upd()"></div><div class="jctl"><label>t_switch2: <span class="v" id="c14_v_ts2">10.0</span></label><input type="range" id="c14_ts2" min="6" max="14" step="0.5" value="10.0" oninput="c14_upd()"></div><div class="jctl"><label>β1: <span class="v" id="c14_v_b1">5.0</span></label><input type="range" id="c14_b1" min="0.1" max="10" step="0.1" value="5.0" oninput="c14_upd()"></div><div class="jctl"><label>n1: <span class="v" id="c14_v_n1">4.0</span></label><input type="range" id="c14_n1" min="0.1" max="8" step="0.1" value="4.0" oninput="c14_upd()"></div><div class="jctl"><label>β2: <span class="v" id="c14_v_b2">2.0</span></label><input type="range" id="c14_b2" min="0.1" max="10" step="0.1" value="2.0" oninput="c14_upd()"></div><div class="jctl"><label>n2: <span class="v" id="c14_v_n2">4.0</span></label><input type="range" id="c14_n2" min="0.1" max="8" step="0.1" value="4.0" oninput="c14_upd()"></div><div class="jctl"><label>β3: <span class="v" id="c14_v_b3">10.0</span></label><input type="range" id="c14_b3" min="0.1" max="15" step="0.1" value="10.0" oninput="c14_upd()"></div><div class="jctl"><label>n3: <span class="v" id="c14_v_n3">4.0</span></label><input type="range" id="c14_n3" min="0.1" max="8" step="0.1" value="4.0" oninput="c14_upd()"></div><div class="jctl"><label>x₀(low): <span class="v" id="c14_v_x0l">0.5</span></label><input type="range" id="c14_x0l" min="0.01" max="2" step="0.01" value="0.5" oninput="c14_upd()"></div><div class="jctl"><label>x₀(high): <span class="v" id="c14_v_x0h">6.0</span></label><input type="range" id="c14_x0h" min="2" max="8" step="0.1" value="6.0" oninput="c14_upd()"></div></div><div class="jsp"><div id="c14_p0" class="jp"></div></div></div></div>
+<div class="cell md"><h3>Bifurcation Analysis (Autoactivator)</h3>
+By mapping out the stable and unstable regimes across parameters, we generate a <strong>Bifurcation Diagram</strong>. 
+The boundary between monostability (1 stable point) and bistability (2 stable points) can be analytically derived by setting $\frac{\mathrm{d}x}{\mathrm{d}t} = 0$ and $\frac{\mathrm{d}^2x}{\mathrm{d}t^2} = 0$.
+<p>The boundary curve is given by:
+$$\beta = \frac{n}{(n-1)^{\frac{n-1}{n}}}$$
+> <strong>Note:</strong> This bifurcation boundary above is computed from an analytical formula derived from the fixed-point condition. For more complex models where an analytical boundary cannot be derived, a <strong>numerical method</strong> can be used instead.</p></div>
+<div class="cell code-cell"><div class="ch collapsed" onclick="tc(this)"><span class="ar">&#9660;</span>[17] Code</div><div class="cc folded"><pre># ============================================================
+#  BIFURCATION ANALYSIS: Autoactivator
+#  Analytical boundary: beta = n / ((n-1)^((n-1)/n))
+#  Above the curve: bistable; below: monostable
+# ============================================================
+def plot_autoactivator_bifurcation():
+    # Range of Hill coefficients to sweep
+    n_vals = np.linspace(1.001, 10, 500)
+    # Analytical bistability boundary derived from fixed-point conditions
+    beta_boundary = n_vals / ((n_vals - 1)**((n_vals - 1)/n_vals))
+
+    # --- Bifurcation diagram ---
+    p = figure(title="Bifurcation Diagram: Autoactivator",
+               x_axis_label="n", y_axis_label="nondimensional beta",
+               x_range=(1, 10), y_range=(0, 3), width=600, height=400)
+
+    # Italic axis labels for math notation
+    p.xaxis.axis_label_text_font_style = "italic"
+    p.yaxis.axis_label_text_font_style = "italic"
+
+    # Gray region = bistable (above boundary)
+    p.varea(x=n_vals, y1=beta_boundary, y2=3, fill_color="gray", fill_alpha=0.7)
+    # Light gray region = monostable (below boundary)
+    p.varea(x=n_vals, y1=0, y2=beta_boundary, fill_color="lightgray", fill_alpha=0.5)
+
+    # Boundary curve
+    p.line(n_vals, beta_boundary, color="black", line_width=3)
+
+    # Region labels
+    p.text(x=[5], y=[2.3], text=["bistable"], text_color="black", text_align="center", text_font_size="16pt")
+    p.text(x=[5], y=[0.9], text=["monostable"], text_color="black", text_align="center", text_font_size="16pt")
+
+    return p
+
+show(plot_autoactivator_bifurcation())
+</pre></div></div>
+<div class="output"><div class="si"><img src="data:image/png;base64,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VauWOXnypJk6daqtD9EGIH0+++wzOzS+bdu2Jl++fBxGAFk/hLz00kv26+WXX55sqG737t3t95oDZOvWrf7fKXj079/fBhMFFYUR1ZK0a9cuk/ce8F6RIkVsK2DOnDnPOoTs3r3btGzZkhACID5CSCQ1sa+//nrAz48++qjdABjz4IMPchgAxKyoKEwFAADxx9OWEADJffPNN7Z7RF2O2bNnNzVq1DC33HJLyDluVJi6bt06M2TIEHPhhRf6Lz99+rT54osv7H39/vvvdkmE/Pnzm2LFipk6der4az9UAPryyy/7b9e7d++A+3ff7+rVq83SpUvtkgl79uyxXaOFCxe293f99debokWLpvhyqmv1vffes0W0x44dM6VLlzZXX311su7YSBw+fNh2w2p25T///NMO0dfIOt2XtvPO4/MVEAsIIUAU+fjjj83bb79tlyTQPDY6cetEqwDw2GOP2UASiRdffNF8//339vsSJUrYwKFx/b/++qsdzt6oUSN7mYrAq1WrZjZt2mROnTplKleubIOPI2/evP7vn332WduFqiJyBY4zZ86YpKQk89VXX5klS5aYf//732GH2Kvo/M0337SPoeelELFlyxY78aC+duvWLeJjtH37djN8+HCzd+9eu696fgpZem6//PKLWbVqlQ1TCiYAohshBIgi7777rrn99tttS4U+zWuivUmTJtkWjfHjx5tRo0alWoT622+/2QCiolUFF/ekfJpoSIFBQUIuuugiuz388MO2MFUnb7WWhHLXXXeZBg0a2NYPh1pDZs2aZfdb9VtqOQnlk08+sbMb63GcuXq0H2PHjjWff/65qVu3rl2KITXHjx83zz33nA0gakXp1KmTPygpnLzwwgv2uWtBTC2GCSC60WYJRBEFgvbt2/u7EzTZ3n333WdbRhQSFi9enOp9OEPdL7744mSzAuuEfcUVV9iAklZaHsEdQESBqGPHjjZgqJtF4SAUPR/NCeSeLLBJkyY2SDgtQJFQ99Eff/xhGjdubFtP3C01aoXRY6gFRMEIQPSjJQSIIldddVWyy9TloDqHDz/80HY1pFZD4QSMNWvW2G4P1YJkFLWyqAVD9SpqVVGXjDv4aDh9qAUoFRpCrXqt56vA8PPPP9tWjty5c6f4+D/88IP9Gu4YlC9f3nYVqZtIdSvpCVsAMg8hBIgi4dYzci53TvYp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"></div></div>
+<div class="cell md"><h2>3. The Toggle Switch</h2>
+<li>Gene x produces protein x, which represses gene y</li>
+<li>Gene y produces protein y, which represses gene x</li>
+<li>Depending on initial conditions, the system settles into either a high-X/low-Y or low-X/high-Y state</li>
+<p><strong>Dimensionless ODEs:</strong>
+$$\frac{\mathrm{d}x}{\mathrm{d}t} = \frac{\beta_x}{1 + y^n} - x$$
+$$\frac{\mathrm{d}y}{\mathrm{d}t} = \frac{\beta_y}{1 + x^n} - y$$</p>
+<p><em>Note: For simplification, we fix $\beta_y$ and only vary $\beta_x$ to observe how changes in x-production affect the system dynamics.</em></p></div>
+<div class="cell md"><h3>Dynamics and nullcline anaylsis</h3></div>
+<div class="cell code-cell"><div class="ch collapsed" onclick="tc(this)"><span class="ar">&#9660;</span>[20] Code</div><div class="cc folded"><pre>def plot_toggle_switch(beta_x=5.0, n=3.0, x0=0.5, y0=5.0, beta_y=5.0):
+    # ============================================================
+    #  PART A: CORE MATH -- ODE definition &amp; numerical integration
+    #             (this is what you want to focus on for learning)
+    # ============================================================
+    #
+    # Toggle Switch dimensionless ODEs (asymmetric beta):
+    #   dx/dt = beta_x / (1 + y^n) - x
+    #   dy/dt = beta_y / (1 + x^n) - y
+    #
+    # Two genes mutually repressing each other; can produce bistability (1-bit memory)
+    #
+    # Parameters:
+    #   beta_x  -- production rate of x (adjustable, default: 5.0)
+    #   beta_y  -- production rate of y (fixed, default: 5.0)
+    #   n       -- Hill coefficient (cooperativity)
+    #
+    # User-configurable initial conditions (for dynamics):
+    #   x0      -- starting value for x (default: 0.5)
+    #   y0      -- starting value for y (default: 5.0)
+    u_arr = np.linspace(0, 8, 200)
+    t_arr = np.linspace(0, 15, 200)
+
+    # --- Fixed-point analysis ---
+    # Fixed-point condition: x = beta_x / (1 + y^n), y = beta_y / (1 + x^n)
+    # Jacobian: J = [-1, -df/dy; -dg/dx, -1]
+    #   where df_dy = beta_x * n * y^(n-1) / (1+y^n)^2
+    #         dg_dx = beta_y * n * x^(n-1) / (1+x^n)^2
+    # Stability: eigenvalues of J have negative real parts
+    #   trace = -2 (always negative), det = 1 - df_dy * dg_dx
+    #   Stable if det &gt; 0
+    def get_fixed_points(beta_x, beta_y, n):
+        def equations(vars):
+            x, y = vars
+            return [x - beta_x / (1 + y**n), y - beta_y / (1 + x**n)]
+
+        # Use 2D grid of initial guesses to find ALL fixed points
+        guesses = np.linspace(0.1, 7.9, 50)
+        roots = []
+        for gx in guesses:
+            for gy in guesses:
+                try:
+                    r = fsolve(equations, [gx, gy], full_output=False)
+                    x_star, y_star = r[0], r[1]
+                    if x_star &gt; 0 and y_star &gt; 0:
+                        err = np.abs(equations(r))
+                        if err[0] &lt; 1e-6 and err[1] &lt; 1e-6:
+                            if not any(np.isclose(x_star, ex, atol=1e-3) and np.isclose(y_star, ey, atol=1e-3) for ex, ey in roots):
+                                roots.append((x_star, y_star))
+                except:
+                    pass
+
+        st_pts, ust_pts = [], []
+        for x_star, y_star in roots:
+            df_dy = beta_x * n * y_star**(n-1) / (1 + y_star**n)**2
+            dg_dx = beta_y * n * x_star**(n-1) / (1 + x_star**n)**2
+            det = 1 - df_dy * dg_dx
+            if det &gt; 0:
+                st_pts.append((x_star, y_star))
+            else:
+                ust_pts.append((x_star, y_star))
+        return st_pts, ust_pts
+
+    st_pts, ust_pts = get_fixed_points(beta_x, beta_y, n)
+    st_x, st_y = zip(*st_pts) if st_pts else ([], [])
+    ust_x, ust_y = zip(*ust_pts) if ust_pts else ([], [])
+
+    # --- Numerical ODE integration (CORE) ---
+    # Using scipy.integrate.odeint (LSODA adaptive solver)
+    def toggle_rhs(y, t, beta_x, beta_y, n):
+        """Toggle switch ODE: dx/dt = beta_x/(1+y^n) - x, dy/dt = beta_y/(1+x^n) - y"""
+        x, yv = y
+        dxdt = beta_x / (1 + yv**n) - x
+        dydt = beta_y / (1 + x**n) - yv
+        return [dxdt, dydt]
+
+    # Integrate from user-specified initial conditions
+    sol = odeint(toggle_rhs, [x0, y0], t_arr, args=(beta_x, beta_y, n))
+    u_dyn, v_dyn = sol[:, 0], sol[:, 1]
+
+    # ============================================================
+    #  PART B: VISUALIZATION (Bokeh plotting + interactivity, math-independent)
+    # ============================================================
+    # Nullclines: x = beta_x / (1 + y^n) and y = beta_y / (1 + x^n)
+    v_init = beta_x / (1.0 + u_arr**n)  # x-nullcline: x as function of y
+    w_init = beta_y / (1.0 + u_arr**n)  # y-nullcline: y as function of x
+    src_nc = ColumnDataSource(data=dict(u=u_arr, v1=v_init, w1=w_init))
+    src_st = ColumnDataSource(data=dict(x=st_x, y=st_y))
+    src_ust = ColumnDataSource(data=dict(x=ust_x, y=ust_y))
+    src_dyn = ColumnDataSource(data=dict(t=t_arr, u=u_dyn, v=v_dyn))
+
+    p_dyn = figure(title="Dynamics over Time", x_axis_label="t", y_axis_label="Concentration", width=400, height=400)
+    p_dyn.line('t', 'u', source=src_dyn, line_width=3, color='#1f77b4', legend_label="x(t)")
+    p_dyn.line('t', 'v', source=src_dyn, line_width=3, color='#ff7f0e', legend_label="y(t)")
+    p_dyn.legend.location = "top_right"
+    p_dyn.legend.label_text_font_size = "8pt"
+
+    p_nc = figure(title="State Space Nullclines", x_axis_label="x", y_axis_label="y", width=400, height=400, x_range=(0, 8), y_range=(0, 8))
+    p_nc.line('v1', 'u', source=src_nc, line_width=3, color='#1f77b4', legend_label="x-nullcline (dx/dt=0)")
+    p_nc.line('u', 'w1', source=src_nc, line_width=3, color='#ff7f0e', legend_label="y-nullcline (dy/dt=0)")
+    p_nc.scatter('x', 'y', source=src_st, size=12, color='black', legend_label="Stable")
+    p_nc.scatter('x', 'y', source=src_ust, size=12, fill_color='white', line_color='black', line_width=2, legend_label="Unstable")
+    p_nc.legend.location = "top_right"
+    p_nc.legend.label_text_font_size = "8pt"
+
+    s_bx = Slider(start=0.0, end=10.0, value=beta_x, step=0.5, title="beta_x (adjustable)")
+    s_n = Slider(start=1, end=5.0, value=n, step=0.1, title="n")
+    s_x0 = Slider(start=0.0, end=8.0, value=x0, step=0.1, title="x_0")
+    s_y0 = Slider(start=0.0, end=8.0, value=y0, step=0.1, title="y_0")
+
+    # --- CustomJS: browser-side real-time update ---
+    # Uses Newton's method + Brent's method to find ALL fixed points (stable + unstable).
+    # This approach is adapted from the biocircuits library (jsplots.py).
+    # Key insight: Brent's method is bracketed root-finding, so it can find ANY root
+    # including unstable (saddle) points, unlike simple iteration which only converges
+    # to stable points.
+    js_rootfinding = """
+    function newtonSolve(x0, f, df, args, tol, maxIter, epsilon) {
+        let x = Infinity;
+        let solved = false;
+        tol = tol || 1e-8;
+        maxIter = maxIter || 200;
+        epsilon = epsilon || 1e-14;
+        for (let i = 0; i &lt; maxIter; i++) {
+            let y = f(x0, ...args);
+            let yprime = df(x0, ...args);
+            if (Math.abs(yprime) &lt; epsilon) break;
+            x = x0 - y / yprime;
+            if (Math.abs(x - x0) &lt;= tol) { solved = true; break; }
+            x0 = x;
+        }
+        return solved ? x : null;
+    }
+
+    // Bisection method: guaranteed to converge for bracketed roots.
+    // Used to find the saddle point between two stable fixed points.
+    function bisectionSolve(f, lower, upper, args, tol, maxIter) {
+        let a = lower, b = upper;
+        let fa = f(a, ...args), fb = f(b, ...args);
+        tol = tol || 1e-8;
+        maxIter = maxIter || 100;
+        if (fa * fb &gt; 0) return null;
+        for (let i = 0; i &lt; maxIter; i++) {
+            let mid = (a + b) / 2.0;
+            let fmid = f(mid, ...args);
+            if (Math.abs(fmid) &lt; tol || (b - a) / 2.0 &lt; tol) return mid;
+            if (fa * fmid &lt; 0) { b = mid; fb = fmid; }
+            else { a = mid; fa = fmid; }
+        }
+        return (a + b) / 2.0;
+    }
+    """
+
+    js_toggle = """
+    function f(x, beta, n) { return beta / (1.0 + Math.pow(x, n)); }
+
+    function ff(x, betax, nx, betay, ny) {
+        return betax / (1.0 + Math.pow(f(x, betay, ny), nx));
+    }
+
+    function rootFun(x, betax, nx, betay, ny) {
+        return x - ff(x, betax, nx, betay, ny);
+    }
+
+    function derivff(x, betax, nx, betay, ny) {
+        let fy = betay / (1.0 + Math.pow(x, ny));
+        let fynx = Math.pow(fy, nx);
+        let num = nx * ny * Math.pow(x, ny - 1.0) * betax * fynx * fy;
+        let denom = Math.pow(betay * (1.0 + fynx), 2);
+        return num / denom;
+    }
+
+    function derivRootFun(x, betax, nx, betay, ny) {
+        return 1.0 - derivff(x, betax, nx, betay, ny);
+    }
+
+    function leftRoot(betax, nx, betay, ny) {
+        return newtonSolve(0.0, rootFun, derivRootFun, [betax, nx, betay, ny]);
+    }
+
+    function rightRoot(betax, nx, betay, ny) {
+        return newtonSolve(betay, rootFun, derivRootFun, [betax, nx, betay, ny]);
+    }
+
+    function findRoots(betax, nx, betay, ny) {
+        let x1 = leftRoot(betax, nx, betay, ny);
+        let x3 = rightRoot(betax, nx, betay, ny);
+        let args = [betax, nx, betay, ny];
+        if (x1 === null) {
+            if (x3 === null) {
+                return [bisectionSolve(rootFun, 0.0, betay, args)];
+            }
+            else return [x3];
+        }
+        if (x3 === null) return [x1];
+        if (Math.abs(x1 - x3) &lt; 2.0 * 1e-4) return [x1];
+        if (x1 &gt; x3) [x1, x3] = [x3, x1];
+        let x2 = bisectionSolve(rootFun, x1 + 1e-4, x3 - 1e-4, args);
+        if (x2 !== null) return [x1, x2, x3];
+        else return [x1];
+    }
+    """
+
+    js_callback = """
+        const beta_x = s_bx.value, n = s_n.value, x0 = s_x0.value, y0 = s_y0.value;
+        const beta_y = """ + str(beta_y) + """;
+        const u = snc.data['u'], v1 = snc.data['v1'], w1 = snc.data['w1'];
+
+        // Update nullclines
+        for(let i=0; i&lt;u.length; i++) {
+            v1[i] = beta_x / (1 + Math.pow(u[i], n));
+            w1[i] = beta_y / (1 + Math.pow(u[i], n));
+        }
+        snc.change.emit();
+
+        // Find ALL fixed points using Newton + Brent methods
+        let xfp = findRoots(beta_x, n, beta_y, n);
+        if (xfp === null || xfp[0] === null) {
+            sst.data = {x: [], y: []};
+            sust.data = {x: [], y: []};
+        }
+        else if (xfp.length === 1) {
+            sst.data = {x: xfp, y: [f(xfp[0], beta_y, n)]};
+            sust.data = {x: [], y: []};
+        }
+        else {
+            sst.data = {x: [xfp[0], xfp[2]], y: [f(xfp[0], beta_y, n), f(xfp[2], beta_y, n)]};
+            sust.data = {x: [xfp[1]], y: [f(xfp[1], beta_y, n)]};
+        }
+        sst.change.emit();
+        sust.change.emit();
+
+        // Update dynamics (RK4 integration)
+        const t = sdyn.data['t'], u_dyn = sdyn.data['u'], v_dyn = sdyn.data['v'];
+        const dt = t[1] - t[0];
+        let cu = x0, cv = y0;
+        for(let i=0; i&lt;t.length; i++) {
+            u_dyn[i] = cu; v_dyn[i] = cv;
+            let k1x = beta_x / (1 + Math.pow(cv, n)) - cu;
+            let k1y = beta_y / (1 + Math.pow(cu, n)) - cv;
+            let k2x = beta_x / (1 + Math.pow(cv + 0.5*dt*k1y, n)) - (cu + 0.5*dt*k1x);
+            let k2y = beta_y / (1 + Math.pow(cu + 0.5*dt*k1x, n)) - (cv + 0.5*dt*k1y);
+            let k3x = beta_x / (1 + Math.pow(cv + 0.5*dt*k2y, n)) - (cu + 0.5*dt*k2x);
+            let k3y = beta_y / (1 + Math.pow(cu + 0.5*dt*k2x, n)) - (cv + 0.5*dt*k2y);
+            let k4x = beta_x / (1 + Math.pow(cv + dt*k3y, n)) - (cu + dt*k3x);
+            let k4y = beta_y / (1 + Math.pow(cu + dt*k3x, n)) - (cv + dt*k3y);
+            cu += (dt/6) * (k1x + 2*k2x + 2*k3x + k4x);
+            cv += (dt/6) * (k1y + 2*k2y + 2*k3y + k4y);
+        }
+        sdyn.change.emit();
+    """
+
+    code = js_rootfinding + js_toggle + js_callback
+
+    cb = CustomJS(args=dict(snc=src_nc, sdyn=src_dyn, sst=src_st, sust=src_ust,
+                             s_bx=s_bx, s_n=s_n, s_x0=s_x0, s_y0=s_y0), code=code)
+    s_bx.js_on_change("value", cb)
+    s_n.js_on_change("value", cb)
+    s_x0.js_on_change("value", cb)
+    s_y0.js_on_change("value", cb)
+
+    return column(row(s_bx, s_n, s_x0, s_y0), row(p_dyn, p_nc))
+
+# Example usage:
+#   plot_toggle_switch()                    # uses defaults: beta_x=5.0, n=3.0
+#   plot_toggle_switch(beta_x=8.0, n=3.0)   # increase production of x
+#   plot_toggle_switch(beta_x=2.0, n=3.0)   # decrease production of x
+show(plot_toggle_switch())
+</pre></div></div>
+<div class="output"><div class="jsi"><h4>Interactive: Dynamics & Nullclines</h4><div class="jsc"><div class="jctl"><label>βx: <span class="v" id="c19_v_bx">5.0</span></label><input type="range" id="c19_bx" min="0.1" max="10" step="0.1" value="5.0" oninput="c19_upd()"></div><div class="jctl"><label>βy: <span class="v" id="c19_v_by">5.0</span></label><input type="range" id="c19_by" min="0.1" max="10" step="0.1" value="5.0" oninput="c19_upd()"></div><div class="jctl"><label>n: <span class="v" id="c19_v_n">3.0</span></label><input type="range" id="c19_n" min="0.1" max="5" step="0.1" value="3.0" oninput="c19_upd()"></div><div class="jctl"><label>x₀: <span class="v" id="c19_v_x0">0.5</span></label><input type="range" id="c19_x0" min="0.01" max="8" step="0.01" value="0.5" oninput="c19_upd()"></div><div class="jctl"><label>y₀: <span class="v" id="c19_v_y0">5.0</span></label><input type="range" id="c19_y0" min="0.01" max="8" step="0.01" value="5.0" oninput="c19_upd()"></div></div><div class="lg"><span><span class="d s"></span> Stable</span><span><span class="d h"></span> Unstable</span></div><div class="lg"><span><span class="d s"></span> Stable</span><span><span class="d h"></span> Unstable</span></div>
+<div class="jsp"><div id="c19_p0" class="jp"></div><div id="c19_p1" class="jp"></div></div></div></div>
+<div class="cell md"><h3>Bifurcation Analysis (Toggle Switch)</h3>
+<p><strong>Symmetric case</strong> ($\beta_x = \beta_y = \beta$, $n_x = n_y = n$):</p>
+<p>The toggle switch ODEs reduce to a symmetric system. At the symmetric fixed point ($x = y = u$), the Jacobian has $\text{trace} = -2$ (always negative) and $\det = 1 - (df_u)^2$ where $f_u = n u^n / (1+u^n)$. The saddle-node bifurcation occurs when $\det = 0$, i.e., $f_u = 1$. Solving this together with the fixed-point condition $u = \beta/(1+u^n)$ yields the analytical boundary:</p>
+<p>$$\beta = \frac{n}{(n-1)^{(n+1)/n}}$$</p>
+<p>Above this curve the system is bistable; below it is monostable. Panel below shows this symmetric case.</p></div>
+<div class="cell code-cell"><div class="ch collapsed" onclick="tc(this)"><span class="ar">&#9660;</span>[22] Code</div><div class="cc folded"><pre># ============================================================
+#  BIFURCATION ANALYSIS: Toggle Switch
+#  Analytical boundary: beta = n / ((n-1)^((n+1)/n))
+# ============================================================
+def plot_toggle_bifurcation():
+    # Range of Hill coefficients to sweep
+    n_vals = np.linspace(1.001, 10, 500)
+    # Analytical bistability boundary for the toggle switch
+    beta_boundary = n_vals / ((n_vals - 1)**((n_vals + 1)/n_vals))
+
+    # --- Bifurcation diagram ---
+    p = figure(title="Bifurcation Diagram: Toggle Switch",
+               x_axis_label="n", y_axis_label="nondimensional beta",
+               x_range=(1, 10), y_range=(0, 10), width=600, height=400)
+
+    # Gray region = bistable (above boundary)
+    p.varea(x=n_vals, y1=beta_boundary, y2=10, fill_color="gray", fill_alpha=0.7)
+    # Light gray region = monostable (below boundary)
+    p.varea(x=n_vals, y1=0, y2=beta_boundary, fill_color="lightgray", fill_alpha=0.5)
+
+    # Boundary curve
+    p.line(n_vals, beta_boundary, color="black", line_width=3)
+
+    # Region labels
+    p.text(x=[5], y=[6], text=["bistable"], text_color="black", text_align="center", text_font_size="16pt")
+    p.text(x=[3], y=[0.3], text=["monostable"], text_color="black", text_align="center", text_font_size="16pt")
+
+    return p
+
+show(plot_toggle_bifurcation())
+</pre></div></div>
+<div class="output"><div class="si"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAhwAAAGHCAYAAAD7t4thAAAAOnRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjEwLjksIGh0dHBzOi8vbWF0cGxvdGxpYi5vcmcvJkbTWQAAAAlwSFlzAAAPYQAAD2EBqD+naQAAP9ZJREFUeJzt3QmczWX///GLMfZdyb7vOy1a9CPSQqJNoVJadCdUd0IppWwtUlSiQrmTVKKFKEsbZQtRpISEkezLWOb8H+/r/n/nPufMmZmzzlnm9Xw8vmbOd86c8z3fc8x5n+v6XNeVx+VyuQwAAEAE5Y3kjQMAABA4AABAjqCFAwAARByBAwAARByBAwAARByBAwAARByBAwAARByBAwAARByBAwAARByBAwlrypQpJk+ePB7bmWeeadq0aWM++eSTDNfXz5944gmPfV9++aU555xzTJEiRezPP/roIxNrjh49ao978eLFmZ6DP/74w0TbbbfdluH58LXpetGgc6j7D6eff/7Z3HLLLaZGjRqmYMGC5owzzjAtWrQw9913nzl48GDIt+/9mt2wYYO9HOzzrXNftGjRkI8L8CWfz71AApk8ebKpV6+e0Sz+u3btMuPHjzedOnUyc+bMsV8dS5cuNZUqVUq/rOt37drV1KlTx15XoaNu3bomFgPHk08+ab9XmHLXsWNH+7jKly9vou2xxx4z99xzT/rlVatWmT59+pgRI0aYSy65JH2/QmEiWL16tbnoootM/fr1zeOPP26qVatm/v77b7NmzRrz7rvvmoceesgUL148pPvwfs0qcOi1oNeB7g+IJQQOJLxGjRrZVgrHFVdcYUqVKmWmT5/uETjOP/98j9/766+/zD///GOuueYa065du7Aci0LM8ePHTaFChUxO0Jt3rLyB16xZ024OnQepXbt2hnOfCMaOHWvy5s1rW56KFSuWvv/66683Tz31lH0thCoRzxsSF10qyHXUtJ0/f36TnJycafO0vjqfHAcOHGh/5nxiVLOzr0+PvprkdVnN5xMmTLCfdAsUKGCmTp1qf/bLL7+Ybt26mbPOOsvur1Klirn11ltNamqq/fmePXvMvffeaxo0aGCbucuWLWvatm1rvv766/TbV9O5Eyj0yda7WyKzLpU333zTNG3a1J6L0qVL21Cl5n9fzeubN282HTp0sN9XrlzZ/Pvf/04/xkjw59hk0qRJtvVJ507n6J133vH53Pz555/2TV5v+iVLljQ9evQwy5cvt+dF5yc7M2bMMBdccIFt4dI5uPzyy23rRXb27t1rWzAy66JwXisvv/yyDSYpKSnpP3v++eftz9UC5EhLS7NBWeff12tWj+WGG26w36vFyHktuD/GefPm2fBcokQJU7hwYfuaHDlyZIZjy+nnHLkDgQMJ7/Tp0+bUqVPm5MmT9s3n/vvvN0eOHDHdu3fP9HfuvPNO8+GHH9rv+/bta5uuZ82aFdT9q+7j1Vdftc3qn3/+ubn44otts/q5555rli1bZoYNG2bmzp1r//Drj/qJEyfs76l1RYYOHWo+/fRT2zWkWgA1lzv1Guoq0ZuI3HHHHfY4tan7IjO6H123YcOG9jG++OKLZu3atfZN9ddff/W4rs7Z1Vdfbd+kZs+ebXr16mVeeOEFM3r0aJ/1GaHWivh7bBMnTjR33323adKkib3ekCFDbODyrmPR86w330WLFtljfu+992zAu/HGG/06HnX3KBQq0Oh33377bXPo0CH7HKr7Iis65p07d9qAs2TJEnPs2DGf17v00ktta4fqhRxffPGFbQVbsGBB+r4VK1aY/fv32+v7ou4zHa8TYpzXgvbLG2+8YUOEgosC8Mcff2z69etn/08E85wDAdPy9EAimjx5stqsM2wFChRwvfLKKxmur58NHTo0/fKWLVvsvmeffdbjej179nRVrVo1w+/rd73/S+lyiRIlXP/884/H/rZt27pKlizpSklJ8fvxnDp1ynXy5ElXu3btXNdcc036/j179mQ4du9zoMci+/btcxUqVMjVoUMHj+tt27bNnpfu3bt7PE797nvvvedxXf1u3bp1Pfb16tXLlZSU5Prjjz/8fjyLFi2ytz9z5syAju306dOucuXKuVq2bOlxva1bt7qSk5M9npuXX37Z3sfcuXM9rtu7d2+7X+cns+dP95svXz5X3759PX730KFD9v67du2a5eM7fvy4q0uXLumvO52f5s2bux599NEMz3ulSpXsOZTU1FRXkSJFXAMHDrS/p8clw4cPt4/v8OHD6b/n/bzrXGqfzq33MRcvXtzVqlUrV1paWqbHHMhzDgSKFg4kvLfeess2oWtTS0LPnj1tU7WKR3OCukHUFO5e5KlPvCpIza6+Qp9ENapB3Qv58uWz3UD6JOyri8Ef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"></div></div>
+<div class="cell md"><h3><font color="orange">For you to explore</font></h3>
+<p><font color="orange">Try yourself with your AI assistant:</font>
+<li><font color="orange">How about the bifurcation analysis for the non-symmetric case?</font></li>
+<li><font color="orange">Similar to <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px">plot_autoactivator_advanced()</code> above, write <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px">plot_toggle_switch_advanced()</code> to show the dynamics with parameters changing after certain time points.</font></li>
+<li><font color="orange">Reproduce the dynamics observed in the experiments.</font></li></p></div>
+<div class="cell md"><h2><font color="orange">4. Extended Task: The Repressilator</font></h2>
+<p>What happens if we add a third repressor to the loop in a rock-paper-scissors topology?
+X represses Y, Y represses Z, Z represses X.</p>
+<p>This breaks the bistability and instead generates <strong>sustained oscillations</strong> (a stable limit cycle) under the right parameters.</p>
+<p><strong>Dimensionless ODEs (symmetric case):</strong>
+$$\frac{\mathrm{d}x}{\mathrm{d}t} = \frac{\beta}{1 + z^n} - x$$
+$$\frac{\mathrm{d}y}{\mathrm{d}t} = \frac{\beta}{1 + x^n} - y$$
+$$\frac{\mathrm{d}z}{\mathrm{d}t} = \frac{\beta}{1 + y^n} - z$$</p></div>
+<div class="cell md"><h3>Dynamics</h3>
+<p>Because the repressilator is a 3D system, we project the dynamics onto the <strong>x-y plane</strong> to visualize the phase portrait. The limit cycle appears as a closed loop in this 2D projection. The symmetric fixed point (where x=y=z) is marked:
+<li><strong>Solid Black</strong> = Stable steady state (perturbations decay)</li>
+<li><strong>Hollow White</strong> = Unstable (system oscillates)</li></p></div>
+<div class="cell code-cell"><div class="ch collapsed" onclick="tc(this)"><span class="ar">&#9660;</span>[26] Code</div><div class="cc folded"><pre>def plot_repressilator(x0=1.0, y0=2.0, z0=3.0):
+    # ============================================================
+    #  PART A: CORE MATH -- ODE definition &amp; numerical integration
+    #             (this is what you want to focus on for learning)
+    # ============================================================
+    #
+    # Repressilator dimensionless ODEs:
+    #   dx/dt = beta / (1 + z^n) - x
+    #   dy/dt = beta / (1 + x^n) - y
+    #   dz/dt = beta / (1 + y^n) - z
+    #
+    # Three genes in a ring repression topology; can produce sustained oscillations (limit cycle)
+    #
+    # Parameters:
+    #   beta  -- maximal expression rate
+    #   n     -- Hill coefficient (cooperativity)
+    #
+    # User-configurable initial conditions (for dynamics):
+    #   x0    -- starting value for protein X (default: 1.0)
+    #   y0    -- starting value for protein Y (default: 2.0)
+    #   z0    -- starting value for protein Z (default: 3.0)
+    t_arr = np.linspace(0, 50, 1000)
+    beta_init, n_init = 50.0, 3.0
+
+    # --- Fixed-point &amp; stability analysis ---
+    # Symmetric fixed point: x = y = z = u, satisfying u = beta/(1+u^n)
+    # Hopf bifurcation condition: c = n*u^n/(1+u^n) &gt; 2 becomes unstable -&gt; oscillations
+    u_star = fsolve(lambda u: beta_init / (1.0 + u**n_init) - u, 1.0)[0]
+    c_val = n_init * (u_star**n_init) / (1.0 + u_star**n_init)
+
+    if c_val &gt; 2.0:
+        st_x, st_y, ust_x, ust_y = [], [], [u_star], [u_star]
+    else:
+        st_x, st_y, ust_x, ust_y = [u_star], [u_star], [], []
+
+    # --- Numerical ODE integration (CORE) ---
+    # Using scipy.integrate.odeint (LSODA adaptive solver)
+    # Signature: odeint(func, y0, t, args=...)
+    #   func(y, t, *args) returns dy/dt (list)
+    def repressilator_rhs(y, t, beta, n):
+        """Repressilator ODE: 3-node ring oscillator"""
+        x, yv, z = y
+        return [beta / (1 + z**n) - x, beta / (1 + x**n) - yv, beta / (1 + yv**n) - z]
+
+    # Integrate from user-specified initial conditions
+    sol = odeint(repressilator_rhs, [x0, y0, z0], t_arr, args=(beta_init, n_init))
+    x_dyn, y_dyn, z_dyn = sol[:, 0], sol[:, 1], sol[:, 2]
+
+    # ============================================================
+    #  PART B: VISUALIZATION (Bokeh plotting + interactivity, math-independent)
+    # ============================================================
+    src_st = ColumnDataSource(data=dict(x=st_x, y=st_y))
+    src_unst = ColumnDataSource(data=dict(x=ust_x, y=ust_y))
+    src_dyn = ColumnDataSource(data=dict(t=t_arr, x=x_dyn, y=y_dyn, z=z_dyn))
+
+    # 1. Time dynamics plot
+    p_dyn = figure(title="Repressilator Time Dynamics", x_axis_label="Time (t)", y_axis_label="Concentration", width=550, height=350)
+    p_dyn.line('t', 'x', source=src_dyn, line_width=2, color='#1f77b4', legend_label="Protein X")
+    p_dyn.line('t', 'y', source=src_dyn, line_width=2, color='#ff7f0e', legend_label="Protein Y")
+    p_dyn.line('t', 'z', source=src_dyn, line_width=2, color='#2ca02c', legend_label="Protein Z")
+    p_dyn.legend.location = "top_right"
+    p_dyn.legend.label_text_font_size = "8pt"
+
+    # 2. 2D Phase Portrait (x vs y projection)
+    # Project the 3D limit cycle onto the x-y plane to visualize the nullcline structure
+    p_phase = figure(title="2D Phase Portrait (x vs y)", x_axis_label="Protein X", y_axis_label="Protein Y", width=400, height=400)
+    p_phase.line('x', 'y', source=src_dyn, line_width=2, color='purple', alpha=0.8)
+    p_phase.scatter('x', 'y', source=src_st, size=12, color='black', legend_label="Stable FP")
+    p_phase.scatter('x', 'y', source=src_unst, size=12, fill_color='white', line_color='black', line_width=2, legend_label="Unstable FP")
+    p_phase.legend.location = "top_right"
+    p_phase.legend.label_text_font_size = "8pt"
+
+    s_beta = Slider(start=1.0, end=100.0, value=beta_init, step=1.0, title="beta")
+    s_n = Slider(start=0.1, end=5.0, value=n_init, step=0.1, title="n")
+
+    # --- CustomJS: browser-side real-time update (no Python kernel needed) ---
+    # Uses Newton's method + bisection to find the symmetric fixed point.
+    code = """
+        const beta = s_beta.value, n = s_n.value;
+
+        // --- Root-finding helpers (Newton's method + bisection) ---
+        // Symmetric fixed point condition: u = beta/(1+u^n)
+        // rootFun(u) = u - beta/(1+u^n) = 0
+        const rootFun = (u) =&gt; u - beta / (1 + Math.pow(u, n));
+        const drootFun = (u) =&gt; {
+            if (u === 0) return 1.0;
+            const un = Math.pow(u, n);
+            return 1.0 + beta * n * Math.pow(u, n - 1) / Math.pow(1 + un, 2);
+        };
+
+        function newtonSolve(x0, tol, maxIter) {
+            tol = tol || 1e-8;
+            maxIter = maxIter || 100;
+            let x = x0;
+            for (let i = 0; i &lt; maxIter; i++) {
+                let y = rootFun(x);
+                let yp = drootFun(x);
+                if (Math.abs(yp) &lt; 1e-14) break;
+                let xNew = x - y / yp;
+                if (xNew &lt; 0) xNew = x / 2;
+                if (Math.abs(xNew - x) &lt;= tol) return xNew;
+                x = xNew;
+            }
+            return x;
+        }
+
+        function bisectionSolve(lower, upper, tol, maxIter) {
+            tol = tol || 1e-8;
+            maxIter = maxIter || 100;
+            let a = lower, b = upper;
+            let fa = rootFun(a), fb = rootFun(b);
+            if (fa * fb &gt; 0) return null;
+            for (let i = 0; i &lt; maxIter; i++) {
+                let mid = (a + b) / 2.0;
+                let fmid = rootFun(mid);
+                if (Math.abs(fmid) &lt; tol || (b - a) / 2.0 &lt; tol) return mid;
+                if (fa * fmid &lt; 0) { b = mid; fb = fmid; }
+                else { a = mid; fa = fmid; }
+            }
+            return (a + b) / 2.0;
+        }
+
+        let u_star = newtonSolve(beta);
+        if (u_star === null || Math.abs(rootFun(u_star)) &gt; 1e-4) {
+            u_star = bisectionSolve(0.0, beta);
+        }
+
+        let c = 0;
+        if (u_star !== null &amp;&amp; u_star &gt; 0) {
+            const un = Math.pow(u_star, n);
+            c = n * un / (1 + un);
+        }
+
+        if (u_star !== null &amp;&amp; c &gt; 2.0) {
+            sst.data = {x: [], y: []};
+            sust.data = {x: [u_star], y: [u_star]};
+        } else if (u_star !== null) {
+            sst.data = {x: [u_star], y: [u_star]};
+            sust.data = {x: [], y: []};
+        } else {
+            sst.data = {x: [], y: []};
+            sust.data = {x: [], y: []};
+        }
+        sst.change.emit(); sust.change.emit();
+
+        // Browser-side ODE integration via RK4
+        const t = sdyn.data['t'];
+        const x = sdyn.data['x'], y = sdyn.data['y'], z = sdyn.data['z'];
+        const dt = t[1] - t[0];
+        let cx = """ + str(x0) + """, cy = """ + str(y0) + """, cz = """ + str(z0) + """;
+        const f = (v) =&gt; beta / (1 + Math.pow(v, n));
+
+        for(let i=0; i&lt;t.length; i++) {
+            x[i] = cx; y[i] = cy; z[i] = cz;
+            let k1x = f(cz) - cx, k1y = f(cx) - cy, k1z = f(cy) - cz;
+            let k2x = f(cz + 0.5*dt*k1z) - (cx + 0.5*dt*k1x);
+            let k2y = f(cx + 0.5*dt*k1x) - (cy + 0.5*dt*k1y);
+            let k2z = f(cy + 0.5*dt*k1y) - (cz + 0.5*dt*k1z);
+            let k3x = f(cz + 0.5*dt*k2z) - (cx + 0.5*dt*k2x);
+            let k3y = f(cx + 0.5*dt*k2x) - (cy + 0.5*dt*k2y);
+            let k3z = f(cy + 0.5*dt*k2y) - (cz + 0.5*dt*k2z);
+            let k4x = f(cz + dt*k3z) - (cx + dt*k3x);
+            let k4y = f(cx + dt*k3x) - (cy + dt*k3y);
+            let k4z = f(cy + dt*k3y) - (cz + dt*k3z);
+            cx += (dt/6) * (k1x + 2*k2x + 2*k3x + k4x);
+            cy += (dt/6) * (k1y + 2*k2y + 2*k3y + k4y);
+            cz += (dt/6) * (k1z + 2*k2z + 2*k3z + k4z);
+        }
+        sdyn.change.emit();
+    """
+
+    cb = CustomJS(args=dict(sdyn=src_dyn, sst=src_st, sust=src_unst, s_beta=s_beta, s_n=s_n), code=code)
+    s_beta.js_on_change('value', cb)
+    s_n.js_on_change('value', cb)
+
+    return column(row(s_beta, s_n), row(p_dyn, p_phase))
+
+# Example usage:
+#   plot_repressilator()                        # uses defaults: x0=1.0, y0=2.0, z0=3.0
+#   plot_repressilator(x0=5.0, y0=0.1, z0=2.0)  # custom initial conditions
+show(plot_repressilator())
+</pre></div></div>
+<div class="output"><div class="jsi"><h4>Interactive: Dynamics & Phase Portrait</h4><div class="jsc"><div class="jctl"><label>β: <span class="v" id="c25_v_beta">50</span></label><input type="range" id="c25_beta" min="1" max="100" step="1" value="50" oninput="c25_upd()"></div><div class="jctl"><label>n: <span class="v" id="c25_v_n">3.0</span></label><input type="range" id="c25_n" min="0.1" max="5" step="0.1" value="3.0" oninput="c25_upd()"></div><div class="jctl"><label>x₀: <span class="v" id="c25_v_x0">1.0</span></label><input type="range" id="c25_x0" min="0.1" max="10" step="0.1" value="1.0" oninput="c25_upd()"></div><div class="jctl"><label>y₀: <span class="v" id="c25_v_y0">2.0</span></label><input type="range" id="c25_y0" min="0.1" max="10" step="0.1" value="2.0" oninput="c25_upd()"></div><div class="jctl"><label>z₀: <span class="v" id="c25_v_z0">3.0</span></label><input type="range" id="c25_z0" min="0.1" max="10" step="0.1" value="3.0" oninput="c25_upd()"></div></div><div class="lg"><span><span class="d s"></span> Stable FP</span><span><span class="d h"></span> Unstable FP</span></div><div class="jsp"><div id="c25_p0" class="jp"></div><div id="c25_p1" class="jp"></div></div></div></div>
+<div class="cell code-cell"><div class="ch collapsed" onclick="tc(this)"><span class="ar">&#9660;</span>[27] Code</div><div class="cc folded"><pre># ============================================================
+#  3D VISUALIZATION: Repressilator limit cycle
+#  ODEs: dx/dt = beta / (1 + z^n) - x
+#         dy/dt = beta / (1 + x^n) - y
+#         dz/dt = beta / (1 + y^n) - z
+#  Uses scipy.integrate.odeint + Plotly for 3D interactive plot
+# ============================================================
+def plot_repressilator_3d(beta=50.0, n=3.0):
+    # Time vector for integration (long enough to see limit cycle)
+    t_arr = np.linspace(0, 50, 2000)
+
+    # Repressilator ODE right-hand side (3-node ring oscillator)
+    def repressilator_rhs(y, t, beta, n):
+        x, yv, z = y
+        return [beta / (1 + z**n) - x, beta / (1 + x**n) - yv, beta / (1 + yv**n) - z]
+
+    # --- Numerical ODE integration ---
+    sol = odeint(repressilator_rhs, [1.0, 2.0, 3.0], t_arr, args=(beta, n))
+
+    # --- 3D interactive plot (Plotly) ---
+    # Color along the trajectory shows time progression (Viridis colormap)
+    fig = go.Figure(data=[go.Scatter3d(
+        x=sol[:, 0], y=sol[:, 1], z=sol[:, 2],
+        mode='lines',
+        line=dict(color=t_arr, colorscale='Viridis', width=4)
+    )])
+
+    fig.update_layout(
+        scene=dict(
+            xaxis_title='Protein X_1',
+            yaxis_title='Protein X_2',
+            zaxis_title='Protein X_3'
+        ),
+        width=700, height=600
+    )
+
+    fig.show()
+
+plot_repressilator_3d()
+</pre></div></div>
+<div class="output"><div class="si"><em>Plotly 3D interactive plot - open in Jupyter Lab to view</em></div></div>
+<div class="cell md"><h3>Bifurcation Analysis (Repressilator)</h3></div>
+<div class="cell code-cell"><div class="ch collapsed" onclick="tc(this)"><span class="ar">&#9660;</span>[29] Code</div><div class="cc folded"><pre># ============================================================
+#  BIFURCATION ANALYSIS: Repressilator
+#  Hopf bifurcation boundary: beta = (n/(n-2)) * ((2/(n-2))^(1/n))
+#  Above the curve: sustained oscillations; below: stable steady state
+#  Asymptote at n = 2 (oscillations require n &gt; 2)
+# ============================================================
+def plot_repressilator_bifurcation():
+    # n must be &gt; 2 for oscillations (Hopf condition)
+    n_vals = np.linspace(2.001, 10, 1000)
+    # Analytical Hopf bifurcation boundary
+    beta_boundary = (n_vals / (n_vals - 2)) * ((2 / (n_vals - 2))**(1/n_vals))
+
+    # Clip the upper boundary strictly for visualization filling
+    beta_boundary_clipped = np.clip(beta_boundary, 0, 200)
+
+    # --- Bifurcation diagram ---
+    p = figure(title="Bifurcation Diagram: Repressilator",
+               x_axis_label="n", y_axis_label="nondimensional beta",
+               x_range=(0, 10), y_range=(0, 100), width=600, height=400)
+
+    # Gray region = oscillatory regime (unstable steady state, above boundary)
+    p.varea(x=n_vals, y1=beta_boundary_clipped, y2=200, fill_color="gray", fill_alpha=0.7)
+
+    # Light gray region = stable steady state (no oscillations, below boundary)
+    # For n &lt;= 2, the entire beta range is stable
+    n_mono = np.linspace(0, 10, 1000)
+    y2_mono = np.zeros_like(n_mono)
+    for i, nv in enumerate(n_mono):
+        if nv &lt;= 2:
+            y2_mono[i] = 200
+        else:
+            y2_mono[i] = min(200, (nv / (nv - 2)) * ((2 / (nv - 2))**(1/nv)))
+
+    p.varea(x=n_mono, y1=0, y2=y2_mono, fill_color="lightgray", fill_alpha=0.5)
+
+    # Boundary curve (Hopf bifurcation)
+    p.line(n_vals, beta_boundary, color="black", line_width=3)
+    # Vertical asymptote at n = 2
+    p.line([2.0, 2.0], [0, 200], color="black", line_width=3, line_dash="dashed")
+
+    # Region labels
+    p.text(x=[6], y=[60], text=["sustained oscillations"], text_color="black", text_align="center", text_font_size="16pt")
+    p.text(x=[1.3], y=[5], text=["stable \n steady state"], text_color="black", text_align="center", text_font_size="16pt")
+
+    return p
+
+show(plot_repressilator_bifurcation())
+</pre></div></div>
+<div class="output"><div class="si"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAiUAAAGHCAYAAABvUSKTAAAAOnRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjEwLjksIGh0dHBzOi8vbWF0cGxvdGxpYi5vcmcvJkbTWQAAAAlwSFlzAAAPYQAAD2EBqD+naQAASHdJREFUeJzt3QeYE9Xb//8D0ntTiorSFKRIURBEQRFUEAtWQIWHr1/1ARVEQRFUsFAVUVAQC6AIYhc7WGiCSpUqRQERRUTp0snv+pz/f/LMzGZ3s7C7mc28X9c17GaSTSYzIeee+9znTK5IJBIxAAAACZY70RsAAAAgBCUAACAQCEoAAEAgEJQAAIBAICgBAACBQFACAAACgaAEAAAEAkEJAAAIBIISAAAQCAQlgDFm/PjxJleuXJ7lxBNPNM2bNzcff/xxin2k+/v37+9Z99VXX5lzzjnHFC5c2N7/wQcfBG7f/vvvv3a7Z8yYkeo+2LBhgwkK/zEpVqyYadKkiZk8ebIJE//nTcdP62Idx/SsXLnSPleQjjPgyBP9DYAZN26cqV69utHVF7Zs2WJGjRpl2rZta6ZOnWp/OubNm2dOOeWU6G09/oYbbjBnnHGGfawCkzPPPDOQQcmAAQPs7wq43Nq0aWPfV/ny5U2QXHfddea+++6z+3j9+vVm4MCBpkOHDva2foaB//N2PBSU6DOg43/66adnynMCmYWgBHCpVauWzXY4LrvsMlOyZEl7Zu4OSs477zzPfvv999/NP//8Y6655hrTokWLTNmnanT3799vChYsmC3HSJkhLUFTtmzZ6P5u3LixOf/8821j+uKLL2Z7ULJv3z5ToEABm6XITv7PWxAp4C1UqFCiNwM5HN03QBrUAOXLl8/kzZs31XS6fjpnsQ888IC9zzkD7dy5c8yzUf2Nv2HT7bvuusuMGTPG1KhRw+TPn99MmDDB3vfTTz+Z9u3b2wZa6ytWrGhuvfVWc+DAAXv/X3/9Zbp27WrOOussU6RIEXPSSSeZiy++2MyePTv6/ErXO0GHzpSdLhFtY1rdN6+++qo5++yz7b4oVaqUDbxWrVrleYyeQ6+7bt0607p1a/v7qaeeajMczjZmltNOO82+jz///NOzfteuXeb+++83lSpVssfs5JNPNj169DB79+6NuZ8V1Cizpf2p/fbmm296Hufsj2nTppkuXbrY11Sj67yfKVOm2CBJWTG930svvdQsXrzY8xy//PKLuemmm0yFChXs6+j4KWhdsmRJ9DFff/21zVqULl3aBqA6ttdee61t5NPqLvRbsGCBfS193vQ8+qnPzMaNGz3v6frrr7e/X3TRRdHPgNYfy/FetmyZadWqlSlatGimBeMIN4ISwOXIkSPm8OHD5tChQ+a3336LNmppnZHfdttt5r333rO/33333TbV/v777x/TflUdyujRo80jjzxivvjiC3PBBReYH3/80Zx77rnmu+++M4899pj57LPPzKBBg2zjePDgQft3ytLIo48+aj755BPbDVW5cmXb2Dl1B+qW+fzzz+3v//nPf+x2ann44YdT3R69jh5bs2ZN+x6fffZZs3TpUtsYr1271vNY7bMrr7zSNk4ffvihbcifeeYZM2TIkBQN2vHUruzcudO+XwUUDjXgzZo1s0HcPffcY/eRAkQ1ttom/8XQ1cX23HPP2f35zjvv2EBHDbh+99P7UFD6+uuv2/v1u7qQ9HgFM2+99Za9b/fu3fZ4qXvEoQBt4cKFZujQoWb69On22NarV8/s2LHD3q99oG4zBVEKBnR8Bg8ebAMd59jGS8+lLsMRI0bYz472+x9//GE/O9u2bbOP0Wtp2+X555+Pfga0PqPHW9unfavgV8fb6RYEjksEQGTcuHFqtVIs+fPnj7zwwgsp9pDue/TRR6O3169fb9cNGzbM87hOnTpFTjvttBR/r7/1//fT7eLFi0f++ecfz/qLL744UqJEicjWrVvjPlKHDx+OHDp0KNKiRYvINddcE13/119/pdh2/z7Qe5Ht27dHChYsGGndurXncb/++qvdLx06dPC8T/3tW2+95Xms/vbMM8/0rOvSpUvkhBNOiGzYsCHd96Hn7Nq1q30vBw8ejKxZsyZy5ZVXRooWLRpZsGBB9HGDBg2K5M6dOzJ//nzP37/zzjv2OT799FPPc+p9bdmyxbO/qlevHqlatWqK/XHrrbemeP958uSJ3H333Z71u3fvjpQrVy5yww032Nvbtm2zfz9ixIhU35+zfUuWLEl3P7iP2TfffGPX6Wdq9J727NkTKVy4cOTZZ5+Nrn/77bdj/u2xHO9XX301ze0GMopMCeDy2muvmfnz59tFZ9udOnUy3bp1swWv2UFnnaphcWcAZs6caYto06v3ULdP/fr1bdo9T548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iRJmxowZKdZRUwIAIChBtlLwUb169Zjr3ei+AYDwofsGgawpofsGAMKHoASBQKYEAEBQgkCgpgQAQFCCQKD7BgBAoSuylWpF1q1b51lXtWpVum8AAAQlyF47duwwzZs396xbvnw5k6cBAOi+QTAwzTwAgJoSBALTzAMACEoQCAwJBgAQlCAQyJQAAAhKEAjUlAAACEoQCGRKAAAEJQgEJk8DABCUIBCYZh4AQFCCQGD0DQCAoASBDEo0HT0AIFwIShAIFLoCAAhKEAh03wAACEoQCGRKAAAEJQgEJk8DABCUIFsVK1bMvPvuu55F68iUwPHXX3+ZDh06mDFjxgRmp8ycOdNuk37mFNrexx9/3LPunXfesetXrlyZ7mOzY3sAP++QByCL5cuXz5x//vnpjr45cuQIxyIHUWOzatUqM2nSpERvChKEzwAyA0EJAoFMCRwlS5Y0w4YNM4UKFWKnHAftw/z58wdmHwZtexBMBCUIBDIlcH8WTj75ZHbIcQraPgza9iCYCEoQCAQlx+eHH34wn3/+ufn999/Nvn37TNGiRc0pp5xiWrRoYc4991z7GNURPPHEE6Zdu3bmuuuuS1HH0b17d3PhhReaO++8M7r+jz/+MB9++KHtmtmxY4c90y1Tpow566yzzM033xytFXC4f3c/14wZM8zChQvNxo0bzc6dO203XuXKlc2VV15patasGde2ON0Dr7/+ut0m1Xds377dbs/ll19uWrZsmWK/RCIR+zi9/qZNm2y3oBpHPbZ58+YpHr9nzx4zZcoUM3/+fLN//367D6+66qpjOiZr1qwxH3zwgVm7dq05ePCg3c7GjRubtm3bpsgYrF+/3r6nn3/+2e4fZYlOOukkc84559h95Kb7P/74Y7No0SKzbds2uy/Lly9vGjVqZNq0aeM5FjVq1DAPP/zwMW2/jv0333xjli9fbl/nwIEDpnTp0vbzdM0115gCBQp4XivW7+5jmNr27N692+6nBQsW2OOp967Plz6n2v9uqjOaNWuWefbZZ82SJUvMF198YT8vxYsXN82aNbPblTv3/5VKHj161B7/r776yvz555/m0KFDtobttNNOM61bt7bbg2AhKEEg0H1z7KZPn27GjRtnSpQoYRuxIkWK2ABCDZwCAScoySg1EGpA1BjVq1fPnHfeebah3rJli20MnKBEjYcaCjVc+t2h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"></div></div>
+<div class="cell md"><h2><font color="orange">5. Open Challenges</font></h2>
+<li>Design a new biological circuit that can realize an interesting behavior you could think of.</li>
+<li>Starting with a concrete biological or clinical problem, design a useful and elegant biological circuit.</li>
+<li>... Feel free to propose your own!</li></div>
+<div class="cell md"></div>
+<script>
+function rk4(f,y,dt){const k1=f(y),k2=f(y.map((yi,i)=>yi+.5*dt*k1[i])),k3=f(y.map((yi,i)=>yi+.5*dt*k2[i])),k4=f(y.map((yi,i)=>yi+dt*k3[i]));return y.map((yi,i)=>yi+(dt/6)*(k1[i]+2*k2[i]+2*k3[i]+k4[i]))}
+function solve(f,y0,tE,dt){const s=Math.floor(tE/dt),t=new Array(s+1),y=new Array(s+1);t[0]=0;y[0]=y0.slice();let c=y0.slice();for(let i=0;i<s;i++){c=rk4(f,c,dt);t[i+1]=(i+1)*dt;y[i+1]=c.slice()}return{t,y}}
+function tc(h){h.classList.toggle('collapsed');h.nextElementSibling.classList.toggle('folded')}
+function c6_upd(){const beta=parseFloat(document.getElementById("c6_beta").value);document.getElementById("c6_v_beta").textContent=beta.toFixed(1);plotSimple(beta)}
+function plotSimple(beta){const f=(y)=>[beta-y[0]];const sol=solve(f,[0],10,.05);Plotly.newPlot("c6_p0",[{x:sol.t,y:sol.y.map(v=>v[0]),mode:'lines',name:'x(t)',line:{color:'#2ca02c',width:2}}],{title:'Dynamics',xaxis:{title:'Time'},yaxis:{title:'x'},margin:{l:40,r:10,t:30,b:35}},{responsive:true});const xA=Array.from({length:100},(_,i)=>i*10/99);Plotly.newPlot("c6_p1",[{x:xA,y:xA.map(()=>beta),mode:'lines',name:'Production',line:{color:'#1f77b4',width:2}},{x:xA,y:xA,mode:'lines',name:'Removal',line:{color:'#ff7f0e',width:2}},{x:[beta],y:[beta],mode:'markers',name:'FP',marker:{size:9,color:'black'}}],{title:'Nullcline',xaxis:{title:'x'},yaxis:{title:'rate'},margin:{l:40,r:10,t:30,b:35}},{responsive:true})}
+function c8_upd(){const ts=parseFloat(document.getElementById("c8_ts").value);const b1=parseFloat(document.getElementById("c8_b1").value);const b2=parseFloat(document.getElementById("c8_b2").value);const x0=parseFloat(document.getElementById("c8_x0").value);document.getElementById("c8_v_ts").textContent=ts.toFixed(1);document.getElementById("c8_v_b1").textContent=b1.toFixed(1);document.getElementById("c8_v_b2").textContent=b2.toFixed(1);document.getElementById("c8_v_x0").textContent=x0.toFixed(1);plotSimpleAdvanced(ts,b1,b2,x0)}
+function plotSimpleAdvanced(ts,b1,b2,x0){const sol1=solve((y)=>[b1-y[0]],[x0],ts,.05);const xsw=sol1.y[sol1.y.length-1][0];const sol2=solve((y)=>[b2-y[0]],[xsw],10,.05);const t2a=sol2.t.map(t=>t+ts);Plotly.newPlot("c8_p0",[{x:sol1.t,y:sol1.y.map(v=>v[0]),mode:'lines',name:'Phase 1 (β1)',line:{color:'#1f77b4',width:2}},{x:t2a,y:sol2.y.map(v=>v[0]),mode:'lines',name:'Phase 2 (β2)',line:{color:'#ff7f0e',width:2}}],{title:'Parameter Switch Dynamics',xaxis:{title:'Time'},yaxis:{title:'x'},shapes:[{type:'line',x0:ts,x1:ts,y0:0,y1:1,yref:'paper',line:{color:'red',dash:'dash'}}],margin:{l:40,r:10,t:30,b:35}},{responsive:true})}
+function c11_upd(){const beta=parseFloat(document.getElementById("c11_beta").value);const n=parseFloat(document.getElementById("c11_n").value);const x0l=parseFloat(document.getElementById("c11_x0l").value);const x0h=parseFloat(document.getElementById("c11_x0h").value);document.getElementById("c11_v_beta").textContent=beta.toFixed(1);document.getElementById("c11_v_n").textContent=n.toFixed(1);document.getElementById("c11_v_x0l").textContent=x0l.toFixed(2);document.getElementById("c11_v_x0h").textContent=x0h.toFixed(1);plotAuto(beta,n,x0l,x0h)}
+function plotAuto(beta,n,x0l,x0h){const f=(y)=>[beta*Math.pow(y[0],n)/(1+Math.pow(y[0],n))-y[0]];const sl=solve(f,[x0l],15,.05),sh=solve(f,[x0h],15,.05);Plotly.newPlot("c11_p0",[{x:sl.t,y:sl.y.map(v=>v[0]),mode:'lines',name:'Starts Low',line:{color:'green',width:2}},{x:sh.t,y:sh.y.map(v=>v[0]),mode:'lines',name:'Starts High',line:{color:'purple',width:2}}],{title:'Dynamics',xaxis:{title:'Time'},yaxis:{title:'x'},margin:{l:40,r:10,t:30,b:35}},{responsive:true});const xA=Array.from({length:500},(_,i)=>i*8/499+.01);const tp=xA.map(x=>beta*Math.pow(x,n)/(1+Math.pow(x,n)));Plotly.newPlot("c11_p1",[{x:xA,y:tp,mode:'lines',name:'Production',line:{color:'#1f77b4',width:2}},{x:xA,y:xA,mode:'lines',name:'Removal',line:{color:'#ff7f0e',width:2}}],{title:'Nullcline',xaxis:{title:'x'},yaxis:{title:'rate'},margin:{l:40,r:10,t:30,b:35}},{responsive:true})}
+function c14_upd(){const a={};["ts1","ts2","b1","n1","b2","n2","b3","n3","x0l","x0h"].forEach(id=>{a[id]=parseFloat(document.getElementById("c14_"+id).value);document.getElementById("c14_v_"+id).textContent=a[id].toFixed(id.startsWith("x")?2:1);});plotAutoAdvanced(a.ts1,a.ts2,a.b1,a.n1,a.b2,a.n2,a.b3,a.n3,a.x0l,a.x0h)}
+function plotAutoAdvanced(ts1,ts2,b1,n1,b2,n2,b3,n3,x0l,x0h){const sol1=solve((y)=>[b1*Math.pow(y[0],n1)/(1+Math.pow(y[0],n1))-y[0]],[x0l],ts1,.05);const x1=sol1.y[sol1.y.length-1][0];const sol2=solve((y)=>[b2*Math.pow(y[0],n2)/(1+Math.pow(y[0],n2))-y[0]],[x1],ts2,.05);const x2=sol2.y[sol2.y.length-1][0];const sol3=solve((y)=>[b3*Math.pow(y[0],n3)/(1+Math.pow(y[0],n3))-y[0]],[x2],15,.05);const t2a=sol2.t.map(t=>t+ts1);const t3a=sol3.t.map(t=>t+ts1+ts2);Plotly.newPlot("c14_p0",[{x:sol1.t,y:sol1.y.map(v=>v[0]),mode:'lines',name:'Phase 1',line:{color:'#1f77b4',width:2}},{x:t2a,y:sol2.y.map(v=>v[0]),mode:'lines',name:'Phase 2',line:{color:'#ff7f0e',width:2}},{x:t3a,y:sol3.y.map(v=>v[0]),mode:'lines',name:'Phase 3',line:{color:'#2ca02c',width:2}}],{title:'Two Parameter Switches',xaxis:{title:'Time'},yaxis:{title:'x'},shapes:[{type:'line',x0:ts1,x1:ts1,y0:0,y1:1,yref:'paper',line:{color:'red',dash:'dash'}},{type:'line',x0:ts1+ts2,x1:ts1+ts2,y0:0,y1:1,yref:'paper',line:{color:'green',dash:'dash'}}],margin:{l:40,r:10,t:30,b:35}},{responsive:true})}
+function c19_upd(){const bx=parseFloat(document.getElementById("c19_bx").value);const by=parseFloat(document.getElementById("c19_by").value);const n=parseFloat(document.getElementById("c19_n").value);const x0=parseFloat(document.getElementById("c19_x0").value);const y0=parseFloat(document.getElementById("c19_y0").value);document.getElementById("c19_v_bx").textContent=bx.toFixed(1);document.getElementById("c19_v_by").textContent=by.toFixed(1);document.getElementById("c19_v_n").textContent=n.toFixed(1);document.getElementById("c19_v_x0").textContent=x0.toFixed(2);document.getElementById("c19_v_y0").textContent=y0.toFixed(2);plotToggle(bx,by,n,x0,y0)}
+function plotToggle(bx,by,n,x0,y0){const f=(y)=>[bx/(1+Math.pow(y[1],n))-y[0],by/(1+Math.pow(y[0],n))-y[1]];const sol=solve(f,[x0,y0],15,.05);Plotly.newPlot("c19_p0",[{x:sol.t,y:sol.y.map(v=>v[0]),mode:'lines',name:'x(t)',line:{color:'#1f77b4',width:2}},{x:sol.t,y:sol.y.map(v=>v[1]),mode:'lines',name:'y(t)',line:{color:'#ff7f0e',width:2}}],{title:'Dynamics',xaxis:{title:'Time'},yaxis:{title:'Concentration'},margin:{l:40,r:10,t:30,b:35}},{responsive:true});const uA=Array.from({length:200},(_,i)=>i*8/199+.01);const xnc=uA.map(y=>bx/(1+Math.pow(y,n)));const ync=uA.map(x=>by/(1+Math.pow(x,n)));const fps=[];for(let i=0;i<35;i++)for(let j=0;j<35;j++){let gx=.1+i*7.9/34,gy=.1+j*7.9/34;for(let k=0;k<80;k++){const nx=bx/(1+Math.pow(gy,n));const ny=by/(1+Math.pow(gx,n));gx=nx;gy=ny;}if(Math.abs(gx-bx/(1+Math.pow(gy,n)))+Math.abs(gy-by/(1+Math.pow(gx,n)))<.01){if(!fps.some(fp=>Math.abs(gx-fp.x)<.15&&Math.abs(gy-fp.y)<.15)){const dfdy=bx*n*Math.pow(gy,n-1)/Math.pow(1+Math.pow(gy,n),2);const dgdx=by*n*Math.pow(gx,n-1)/Math.pow(1+Math.pow(gx,n),2);const det=1-dfdy*dgdx;fps.push({x:gx,y:gy,s:det>0});}}}Plotly.newPlot("c19_p1",[{x:xnc,y:uA,mode:'lines',name:'x-nullcline',line:{color:'#1f77b4',width:2}},{x:uA,y:ync,mode:'lines',name:'y-nullcline',line:{color:'#ff7f0e',width:2}},{x:fps.filter(f=>f.s).map(f=>f.x),y:fps.filter(f=>f.s).map(f=>f.y),mode:'markers',name:'Stable',marker:{size:8,color:'black'}},{x:fps.filter(f=>!f.s).map(f=>f.x),y:fps.filter(f=>!f.s).map(f=>f.y),mode:'markers',name:'Unstable',marker:{size:8,color:'white',line:{color:'black',width:2}}}],{title:'Nullclines',xaxis:{title:'x'},yaxis:{title:'y'},margin:{l:40,r:10,t:30,b:35}},{responsive:true})}
+function c25_upd(){const beta=parseFloat(document.getElementById("c25_beta").value);const n=parseFloat(document.getElementById("c25_n").value);const x0=parseFloat(document.getElementById("c25_x0").value);const y0=parseFloat(document.getElementById("c25_y0").value);const z0=parseFloat(document.getElementById("c25_z0").value);document.getElementById("c25_v_beta").textContent=beta.toFixed(0);document.getElementById("c25_v_n").textContent=n.toFixed(1);document.getElementById("c25_v_x0").textContent=x0.toFixed(1);document.getElementById("c25_v_y0").textContent=y0.toFixed(1);document.getElementById("c25_v_z0").textContent=z0.toFixed(1);plotRepress(beta,n,x0,y0,z0)}
+function plotRepress(beta,n,x0,y0,z0){const f=(y)=>[beta/(1+Math.pow(y[2],n))-y[0],beta/(1+Math.pow(y[0],n))-y[1],beta/(1+Math.pow(y[1],n))-y[2]];const sol=solve(f,[x0,y0,z0],50,.1);Plotly.newPlot("c25_p0",[{x:sol.t,y:sol.y.map(v=>v[0]),mode:'lines',name:'Protein X',line:{color:'#1f77b4',width:2}},{x:sol.t,y:sol.y.map(v=>v[1]),mode:'lines',name:'Protein Y',line:{color:'#ff7f0e',width:2}},{x:sol.t,y:sol.y.map(v=>v[2]),mode:'lines',name:'Protein Z',line:{color:'#2ca02c',width:2}}],{title:'Time Dynamics',xaxis:{title:'Time'},yaxis:{title:'Concentration'},margin:{l:40,r:10,t:30,b:35}},{responsive:true});Plotly.newPlot("c25_p1",[{x:sol.y.map(v=>v[0]),y:sol.y.map(v=>v[1]),mode:'lines',name:'Trajectory',line:{color:'purple',width:2}}],{title:'Phase Portrait (x vs y)',xaxis:{title:'Protein X'},yaxis:{title:'Protein Y'},margin:{l:40,r:10,t:30,b:35}},{responsive:true})}
+window.addEventListener("load",function(){c6_upd();c8_upd();c11_upd();c14_upd();c19_upd();c25_upd();});
+</script>
+
+</div></body></html>
