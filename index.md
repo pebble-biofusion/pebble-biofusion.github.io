@@ -86,7 +86,7 @@ layout: home
 
   .skills li {
     display: grid;
-    grid-template-columns: 220px 1fr;
+    grid-template-columns: 150px 1fr;
     gap: 2rem;
     align-items: baseline;
     margin-bottom: 1.75rem;
@@ -101,6 +101,7 @@ layout: home
     font-weight: 600;
     color: #FF6C0C;
     letter-spacing: 0.2px;
+    text-align: right;
   }
 
   .skill-desc {
@@ -158,6 +159,7 @@ layout: home
 
     .skill-name {
       font-size: 1rem;
+      text-align: left;
     }
 
     .stats {
