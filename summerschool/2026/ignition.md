@@ -14,15 +14,15 @@ permalink: /summerschool/2026/ignition/
     </button>
     <ul class="talk-list collapsed">
       <li class="talk">
-        <a href="#" class="talk-title">Mechanism-driven single-cell modelling</a>
+        <span class="talk-title">Mechanism-driven single-cell modelling</span>
         <span class="talk-speaker">Yuhao Chen</span>
       </li>
       <li class="talk">
-        <a href="#" class="talk-title">Data-driven approaches</a>
+        <span class="talk-title">Data-driven approaches</span>
         <span class="talk-speaker">Tailin Wu</span>
       </li>
       <li class="talk">
-        <a href="#" class="talk-title">Multiscale modelling</a>
+        <span class="talk-title">Multiscale modelling</span>
         <span class="talk-speaker">Zhennan Zhou</span>
       </li>
     </ul>
@@ -36,23 +36,23 @@ permalink: /summerschool/2026/ignition/
     </button>
     <ul class="talk-list collapsed">
       <li class="talk">
-        <a href="#" class="talk-title">Control theory</a>
+        <span class="talk-title">Control theory</span>
         <span class="talk-speaker">Fangzhou Xiao</span>
       </li>
       <li class="talk">
-        <a href="#" class="talk-title">Protein computation</a>
+        <span class="talk-title">Protein computation</span>
         <span class="talk-speaker">Zibo Chen</span>
       </li>
       <li class="talk">
-        <a href="#" class="talk-title">Probabilistic reasoning in cells</a>
+        <span class="talk-title">Probabilistic reasoning in cells</span>
         <span class="talk-speaker">Zitong (Jerry) Wang</span>
       </li>
       <li class="talk">
-        <a href="#" class="talk-title">A scientific story that spreads like a virus</a>
+        <span class="talk-title">A scientific story that spreads like a virus</span>
         <span class="talk-speaker">Fangzhou Xiao</span>
       </li>
       <li class="talk">
-        <a href="#" class="talk-title">From a story to a publishable paper: A deep dive in AI-native scientific research</a>
+        <span class="talk-title">From a story to a publishable paper: A deep dive in AI-native scientific research</span>
         <span class="talk-speaker">Fangzhou Xiao</span>
       </li>
     </ul>
@@ -136,16 +136,23 @@ permalink: /summerschool/2026/ignition/
     border-bottom: 1px solid #f3f4f6;
   }
 
+  /* Default: no material yet — plain gray, not clickable */
   .talk-title {
     font-size: 1rem;
     font-weight: 500;
+    color: #9ca3af;
+    line-height: 1.5;
+  }
+
+  /* When a talk has material, it becomes a clickable link */
+  a.talk-title {
     color: #1f2937;
     text-decoration: none;
-    line-height: 1.5;
+    cursor: pointer;
     transition: color 0.2s;
   }
 
-  .talk-title:hover {
+  a.talk-title:hover {
     color: #FF6C0C;
   }
 
