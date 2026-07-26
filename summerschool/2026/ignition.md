@@ -6,11 +6,11 @@ permalink: /summerschool/2026/ignition/
 
 <div class="ignition">
 
-  <!-- ===== 07.28 ===== -->
+  <!-- ===== 07.27 ===== -->
   <section class="day">
     <button class="day-toggle" type="button" aria-expanded="false">
       <span class="day-arrow">▸</span>
-      <span class="day-date">07.28 Monday Q3: Noise, Fluctuation &amp; Diversity</span>
+      <span class="day-date">07.27 Monday Q3: Noise, Fluctuation &amp; Diversity</span>
     </button>
     <ul class="talk-list collapsed">
       <li class="talk">
