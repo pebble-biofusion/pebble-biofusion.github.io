@@ -8,7 +8,7 @@ permalink: /summerschool/2026/ignition/
 
   <!-- ===== 07.25 ===== -->
   <section class="day">
-    <h2 class="day-date">07.25 Saturday 01: Cellular Information Processing</h2>
+    <h2 class="day-date">07.25 Saturday Q1: Cellular Information Processing</h2>
     <ul class="talk-list">
 
       <li class="talk">
