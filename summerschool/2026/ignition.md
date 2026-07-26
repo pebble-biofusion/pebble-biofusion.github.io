@@ -6,6 +6,29 @@ permalink: /summerschool/2026/ignition/
 
 <div class="ignition">
 
+  <!-- ===== 07.26 ===== -->
+  <section class="day">
+    <h2 class="day-date">07.26 Sunday Q2: Complex Cellular Behaviors</h2>
+    <ul class="talk-list">
+
+      <li class="talk">
+        <a href="#" class="talk-title">Mechanism-driven single-cell modelling</a>
+        <span class="talk-speaker">Yuhao Chen</span>
+      </li>
+
+      <li class="talk">
+        <a href="#" class="talk-title">Data-driven approaches</a>
+        <span class="talk-speaker">Tailin Wu</span>
+      </li>
+
+      <li class="talk">
+        <a href="#" class="talk-title">Multiscale modelling</a>
+        <span class="talk-speaker">Zhennan Zhou</span>
+      </li>
+
+    </ul>
+  </section>
+
   <!-- ===== 07.25 ===== -->
   <section class="day">
     <h2 class="day-date">07.25 Saturday Q1: Cellular Information Processing</h2>
@@ -58,7 +81,7 @@ permalink: /summerschool/2026/ignition/
   .day-date {
     font-size: 1.3rem;
     font-weight: 600;
-    color: #6b7280;
+    color: #374151;
     margin: 0 0 1.5rem 0;
     letter-spacing: 0.5px;
   }
