@@ -111,14 +111,13 @@
     }
 
     .sidebar-title {
-      font-size: 0.8rem;
+      font-size: 1rem;
       font-weight: 600;
-      text-transform: uppercase;
       letter-spacing: 0.5px;
-      color: #666;
+      color: #1f2937;
       margin-bottom: 1rem;
       padding-bottom: 0.5rem;
-      border-bottom: 1px solid #e0e0e0;
+      border-bottom: 2px solid #1f2937;
     }
 
     .sidebar-nav {
@@ -145,6 +144,59 @@
     .sidebar-nav a.active {
       color: #0066cc;
       font-weight: 500;
+    }
+
+    /* Workshop Tree */
+    .workshop-tree {
+      margin-top: 0.5rem;
+    }
+
+    .workshop-year-label {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #6b7280;
+      margin-bottom: 0.75rem;
+      letter-spacing: 1px;
+    }
+
+    .workshop-nav {
+      list-style: none;
+      padding-left: 0.75rem;
+      border-left: 2px solid #e0e0e0;
+      margin: 0 0 0 0.25rem;
+    }
+
+    .workshop-nav li {
+      margin-bottom: 0.3rem;
+    }
+
+    .workshop-nav a {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #1f2937;
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 0.35rem 0;
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .workshop-nav a:hover {
+      color: #FF6C0C;
+      transform: translateX(4px);
+    }
+
+    .workshop-marker {
+      width: 6px;
+      height: 6px;
+      background: #1f2937;
+      border-radius: 50%;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+
+    .workshop-nav a:hover .workshop-marker {
+      background: #FF6C0C;
     }
 
     /* Main Content */
@@ -274,23 +326,24 @@
   <div class="main-wrapper">
     <aside class="sidebar">
       <div class="sidebar-section">
-        <div class="sidebar-title">Research Areas</div>
-        <ul class="sidebar-nav">
-          <li><a href="{{ '/topics/complex-systems/' | relative_url }}">Complex Systems</a></li>
-          <li><a href="{{ '/topics/synthetic-biology/' | relative_url }}">Synthetic Biology</a></li>
-          <li><a href="{{ '/topics/biophysics/' | relative_url }}">Biophysics</a></li>
-          <li><a href="{{ '/topics/ai-for-science/' | relative_url }}">AI for Science</a></li>
-          <li><a href="{{ '/topics/microbiome/' | relative_url }}">Microbiome</a></li>
-        </ul>
-      </div>
-
-      <div class="sidebar-section">
-        <div class="sidebar-title">Quick Links</div>
-        <ul class="sidebar-nav">
-          <li><a href="{{ '/years/2026/' | relative_url }}">2026 Projects</a></li>
-          <li><a href="{{ '/summer-camp/' | relative_url }}">Application</a></li>
-          <li><a href="{{ '/contribute/' | relative_url }}">Add Materials</a></li>
-        </ul>
+        <div class="sidebar-title">workshop</div>
+        <div class="workshop-tree">
+          <div class="workshop-year-label">2026</div>
+          <ul class="workshop-nav">
+            <li>
+              <a href="{{ '/years/2026/' | relative_url }}">
+                <span class="workshop-marker"></span>
+                ignition
+              </a>
+            </li>
+            <li>
+              <a href="{{ '/years/2026/' | relative_url }}">
+                <span class="workshop-marker"></span>
+                synthesis
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </aside>
 
