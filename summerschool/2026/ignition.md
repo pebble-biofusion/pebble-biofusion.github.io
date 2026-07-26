@@ -57,13 +57,33 @@ permalink: /summerschool/2026/ignition/
         <span class="talk-title">Mechanics &amp; Morphogenesis</span>
         <span class="talk-speaker">Hanqin Guo</span>
       </li>
-      <li class="talk">
-        <a href="#" class="talk-title">Machine learning for omics data integration</a>
-        <span class="talk-speaker">Lei Hui, Qinyu Cai</span>
+      <li class="talk talk--has-materials">
+        <div class="talk-row">
+          <button class="talk-toggle" type="button" aria-expanded="false">
+            <span class="talk-arrow">▸</span>
+            <span class="talk-title">Machine learning for omics data integration</span>
+          </button>
+          <span class="talk-speaker">Lei Hui, Qinyu Cai</span>
+        </div>
+        <ul class="materials collapsed">
+          <li><a href="#">Slides</a></li>
+          <li><a href="#">Notebook</a></li>
+          <li><a href="#">Data</a></li>
+        </ul>
       </li>
-      <li class="talk">
-        <a href="#" class="talk-title">Tobe</a>
-        <span class="talk-speaker">Xiaowen</span>
+      <li class="talk talk--has-materials">
+        <div class="talk-row">
+          <button class="talk-toggle" type="button" aria-expanded="false">
+            <span class="talk-arrow">▸</span>
+            <span class="talk-title">Tobe</span>
+          </button>
+          <span class="talk-speaker">Xiaowen</span>
+        </div>
+        <ul class="materials collapsed">
+          <li><a href="#">Slides</a></li>
+          <li><a href="#">Notebook</a></li>
+          <li><a href="#">Data</a></li>
+        </ul>
       </li>
     </ul>
   </section>
@@ -91,17 +111,47 @@ permalink: /summerschool/2026/ignition/
         <span class="talk-title">Cellular information processing</span>
         <span class="talk-speaker">Fan Jin</span>
       </li>
-      <li class="talk">
-        <a href="#" class="talk-title">Asymmetric damage &amp; lifespan</a>
-        <span class="talk-speaker">Hongying Lin</span>
+      <li class="talk talk--has-materials">
+        <div class="talk-row">
+          <button class="talk-toggle" type="button" aria-expanded="false">
+            <span class="talk-arrow">▸</span>
+            <span class="talk-title">Asymmetric damage &amp; lifespan</span>
+          </button>
+          <span class="talk-speaker">Hongying Lin</span>
+        </div>
+        <ul class="materials collapsed">
+          <li><a href="#">Slides</a></li>
+          <li><a href="#">Notebook</a></li>
+          <li><a href="#">Data</a></li>
+        </ul>
       </li>
-      <li class="talk">
-        <a href="#" class="talk-title">The methylation clock</a>
-        <span class="talk-speaker">Yihao Lin</span>
+      <li class="talk talk--has-materials">
+        <div class="talk-row">
+          <button class="talk-toggle" type="button" aria-expanded="false">
+            <span class="talk-arrow">▸</span>
+            <span class="talk-title">The methylation clock</span>
+          </button>
+          <span class="talk-speaker">Yihao Lin</span>
+        </div>
+        <ul class="materials collapsed">
+          <li><a href="#">Slides</a></li>
+          <li><a href="#">Notebook</a></li>
+          <li><a href="#">Data</a></li>
+        </ul>
       </li>
-      <li class="talk">
-        <a href="#" class="talk-title">Saturating-removal models of aging</a>
-        <span class="talk-speaker">Yihang Ding</span>
+      <li class="talk talk--has-materials">
+        <div class="talk-row">
+          <button class="talk-toggle" type="button" aria-expanded="false">
+            <span class="talk-arrow">▸</span>
+            <span class="talk-title">Saturating-removal models of aging</span>
+          </button>
+          <span class="talk-speaker">Yihang Ding</span>
+        </div>
+        <ul class="materials collapsed">
+          <li><a href="#">Slides</a></li>
+          <li><a href="#">Notebook</a></li>
+          <li><a href="#">Data</a></li>
+        </ul>
       </li>
     </ul>
   </section>
@@ -121,13 +171,33 @@ permalink: /summerschool/2026/ignition/
         <span class="talk-title">Single-cell trajectories</span>
         <span class="talk-speaker">Yihan Wan</span>
       </li>
-      <li class="talk">
-        <a href="#" class="talk-title">Agent-based models</a>
-        <span class="talk-speaker">Ruoqing Zhang</span>
+      <li class="talk talk--has-materials">
+        <div class="talk-row">
+          <button class="talk-toggle" type="button" aria-expanded="false">
+            <span class="talk-arrow">▸</span>
+            <span class="talk-title">Agent-based models</span>
+          </button>
+          <span class="talk-speaker">Ruoqing Zhang</span>
+        </div>
+        <ul class="materials collapsed">
+          <li><a href="#">Slides</a></li>
+          <li><a href="#">Notebook</a></li>
+          <li><a href="#">Data</a></li>
+        </ul>
       </li>
-      <li class="talk">
-        <a href="#" class="talk-title">Membrane physics</a>
-        <span class="talk-speaker">Jiahao Chen</span>
+      <li class="talk talk--has-materials">
+        <div class="talk-row">
+          <button class="talk-toggle" type="button" aria-expanded="false">
+            <span class="talk-arrow">▸</span>
+            <span class="talk-title">Membrane physics</span>
+          </button>
+          <span class="talk-speaker">Jiahao Chen</span>
+        </div>
+        <ul class="materials collapsed">
+          <li><a href="#">Slides</a></li>
+          <li><a href="#">Notebook</a></li>
+          <li><a href="#">Data</a></li>
+        </ul>
       </li>
     </ul>
   </section>
@@ -151,17 +221,47 @@ permalink: /summerschool/2026/ignition/
         <span class="talk-title">Multiscale modelling</span>
         <span class="talk-speaker">Zhennan Zhou</span>
       </li>
-      <li class="talk">
-        <a href="#" class="talk-title">High-dimensional biological data</a>
-        <span class="talk-speaker">Xinyu Wang</span>
+      <li class="talk talk--has-materials">
+        <div class="talk-row">
+          <button class="talk-toggle" type="button" aria-expanded="false">
+            <span class="talk-arrow">▸</span>
+            <span class="talk-title">High-dimensional biological data</span>
+          </button>
+          <span class="talk-speaker">Xinyu Wang</span>
+        </div>
+        <ul class="materials collapsed">
+          <li><a href="#">Slides</a></li>
+          <li><a href="#">Notebook</a></li>
+          <li><a href="#">Data</a></li>
+        </ul>
       </li>
-      <li class="talk">
-        <a href="#" class="talk-title">Dynamics from RNA splicing</a>
-        <span class="talk-speaker">Qinguo Liu</span>
+      <li class="talk talk--has-materials">
+        <div class="talk-row">
+          <button class="talk-toggle" type="button" aria-expanded="false">
+            <span class="talk-arrow">▸</span>
+            <span class="talk-title">Dynamics from RNA splicing</span>
+          </button>
+          <span class="talk-speaker">Qinguo Liu</span>
+        </div>
+        <ul class="materials collapsed">
+          <li><a href="#">Slides</a></li>
+          <li><a href="#">Notebook</a></li>
+          <li><a href="#">Data</a></li>
+        </ul>
       </li>
-      <li class="talk">
-        <a href="#" class="talk-title">Neural systems across scales</a>
-        <span class="talk-speaker">Qianrui Wang, Jiaqi Tu</span>
+      <li class="talk talk--has-materials">
+        <div class="talk-row">
+          <button class="talk-toggle" type="button" aria-expanded="false">
+            <span class="talk-arrow">▸</span>
+            <span class="talk-title">Neural systems across scales</span>
+          </button>
+          <span class="talk-speaker">Qianrui Wang, Jiaqi Tu</span>
+        </div>
+        <ul class="materials collapsed">
+          <li><a href="#">Slides</a></li>
+          <li><a href="#">Notebook</a></li>
+          <li><a href="#">Data</a></li>
+        </ul>
       </li>
     </ul>
   </section>
@@ -193,17 +293,47 @@ permalink: /summerschool/2026/ignition/
         <span class="talk-title">From a story to a publishable paper: A deep dive in AI-native scientific research</span>
         <span class="talk-speaker">Fangzhou Xiao</span>
       </li>
-      <li class="talk">
-        <a href="#" class="talk-title">Biocircuits 101</a>
-        <span class="talk-speaker">Sijie Li</span>
+      <li class="talk talk--has-materials">
+        <div class="talk-row">
+          <button class="talk-toggle" type="button" aria-expanded="false">
+            <span class="talk-arrow">▸</span>
+            <span class="talk-title">Biocircuits 101</span>
+          </button>
+          <span class="talk-speaker">Sijie Li</span>
+        </div>
+        <ul class="materials collapsed">
+          <li><a href="#">Slides</a></li>
+          <li><a href="#">Notebook</a></li>
+          <li><a href="#">Data</a></li>
+        </ul>
       </li>
-      <li class="talk">
-        <a href="#" class="talk-title">Information processing in living systems</a>
-        <span class="talk-speaker">Haoming Luo, Yiping Ma, Yanzhang Jiang</span>
+      <li class="talk talk--has-materials">
+        <div class="talk-row">
+          <button class="talk-toggle" type="button" aria-expanded="false">
+            <span class="talk-arrow">▸</span>
+            <span class="talk-title">Information processing in living systems</span>
+          </button>
+          <span class="talk-speaker">Haoming Luo, Yiping Ma, Yanzhang Jiang</span>
+        </div>
+        <ul class="materials collapsed">
+          <li><a href="#">Slides</a></li>
+          <li><a href="#">Notebook</a></li>
+          <li><a href="#">Data</a></li>
+        </ul>
       </li>
-      <li class="talk">
-        <a href="#" class="talk-title">A minimal synthetic cell</a>
-        <span class="talk-speaker">Xinwen Fan</span>
+      <li class="talk talk--has-materials">
+        <div class="talk-row">
+          <button class="talk-toggle" type="button" aria-expanded="false">
+            <span class="talk-arrow">▸</span>
+            <span class="talk-title">A minimal synthetic cell</span>
+          </button>
+          <span class="talk-speaker">Xinwen Fan</span>
+        </div>
+        <ul class="materials collapsed">
+          <li><a href="#">Slides</a></li>
+          <li><a href="#">Notebook</a></li>
+          <li><a href="#">Data</a></li>
+        </ul>
       </li>
     </ul>
   </section>
@@ -274,6 +404,7 @@ permalink: /summerschool/2026/ignition/
     display: none;
   }
 
+  /* Talk row: title + speaker (no material) */
   .talk {
     display: flex;
     align-items: baseline;
@@ -286,23 +417,60 @@ permalink: /summerschool/2026/ignition/
     border-bottom: 1px solid #f3f4f6;
   }
 
-  /* Default: no material yet — plain gray, not clickable */
+  /* Talk with materials: block layout (row + file list) */
+  .talk--has-materials {
+    display: block;
+    padding: 1rem 0;
+  }
+
+  .talk--has-materials .talk-row {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* Talk title */
   .talk-title {
     font-size: 1rem;
     font-weight: 500;
-    color: #9ca3af;
     line-height: 1.5;
   }
 
-  /* When a talk has material, it becomes a clickable link */
-  a.talk-title {
-    color: #1f2937;
-    text-decoration: none;
+  span.talk-title {
+    color: #9ca3af;
+  }
+
+  /* Clickable talk toggle (has materials) */
+  .talk-toggle {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
     cursor: pointer;
+  }
+
+  .talk-arrow {
+    display: inline-block;
+    font-size: 0.7rem;
+    color: #9ca3af;
+    transition: transform 0.2s, color 0.2s;
+  }
+
+  .talk-toggle[aria-expanded="true"] .talk-arrow {
+    transform: rotate(90deg);
+    color: #FF6C0C;
+  }
+
+  .talk-toggle .talk-title {
+    color: #1f2937;
     transition: color 0.2s;
   }
 
-  a.talk-title:hover {
+  .talk-toggle:hover .talk-title {
     color: #FF6C0C;
   }
 
@@ -312,9 +480,41 @@ permalink: /summerschool/2026/ignition/
     flex-shrink: 0;
   }
 
+  /* ===== Materials list (expanded) ===== */
+  .materials {
+    list-style: none;
+    padding: 0.4rem 0 0.25rem 1.2rem;
+    margin: 0;
+  }
+
+  .materials.collapsed {
+    display: none;
+  }
+
+  .materials li {
+    padding: 0.25rem 0;
+  }
+
+  .materials a {
+    font-size: 0.88rem;
+    color: #4b5563;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .materials a::before {
+    content: "↳ ";
+    color: #d1d5db;
+  }
+
+  .materials a:hover {
+    color: #FF6C0C;
+  }
+
   /* ===== Responsive ===== */
   @media (max-width: 600px) {
-    .talk {
+    .talk,
+    .talk--has-materials .talk-row {
       flex-direction: column;
       gap: 0.3rem;
       align-items: flex-start;
@@ -327,6 +527,7 @@ permalink: /summerschool/2026/ignition/
 </style>
 
 <script>
+  // Day expand/collapse
   document.querySelectorAll('.day-toggle').forEach(function(btn) {
     btn.addEventListener('click', function() {
       var expanded = this.getAttribute('aria-expanded') === 'true';
@@ -334,6 +535,21 @@ permalink: /summerschool/2026/ignition/
       var list = this.nextElementSibling;
       if (list) {
         list.classList.toggle('collapsed');
+      }
+    });
+  });
+
+  // Talk materials expand/collapse
+  document.querySelectorAll('.talk-toggle').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !expanded);
+      var talk = this.closest('.talk--has-materials');
+      if (talk) {
+        var materials = talk.querySelector('.materials');
+        if (materials) {
+          materials.classList.toggle('collapsed');
+        }
       }
     });
   });
