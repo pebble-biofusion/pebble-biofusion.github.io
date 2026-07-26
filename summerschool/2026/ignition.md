@@ -56,7 +56,7 @@ permalink: /summerschool/2026/ignition/
         <span class="talk-speaker">Hong Qian</span>
       </li>
       <li class="talk">
-        <span class="talk-title">Yihan Wan</span>
+        <span class="talk-title">Single-cell trajectories</span>
         <span class="talk-speaker">Yihan Wan</span>
       </li>
       <li class="talk">
