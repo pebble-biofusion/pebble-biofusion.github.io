@@ -72,10 +72,10 @@ permalink: /summerschool/2026/ignition/
 
   .talk {
     display: flex;
-    justify-content: space-between;
     align-items: baseline;
-    gap: 2rem;
+    gap: 1rem;
     padding: 1rem 0;
+    flex-wrap: wrap;
   }
 
   .talk:not(:last-child) {
@@ -99,7 +99,6 @@ permalink: /summerschool/2026/ignition/
     font-size: 0.88rem;
     color: #9ca3af;
     flex-shrink: 0;
-    text-align: right;
   }
 
   /* ===== Responsive ===== */
