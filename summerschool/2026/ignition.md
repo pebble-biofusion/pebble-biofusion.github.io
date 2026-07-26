@@ -12,7 +12,7 @@ permalink: /summerschool/2026/ignition/
     <ul class="talk-list">
 
       <li class="talk">
-        <a href="#" class="talk-title">Cellular Information Processing, Control theory</a>
+        <a href="#" class="talk-title">Control theory</a>
         <span class="talk-speaker">Fangzhou Xiao</span>
       </li>
 
