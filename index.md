@@ -97,7 +97,7 @@ layout: home
   }
 
   .skill-name {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #FF6C0C;
     letter-spacing: 0.2px;
@@ -157,7 +157,7 @@ layout: home
     }
 
     .skill-name {
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
 
     .stats {
