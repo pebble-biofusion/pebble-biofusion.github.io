@@ -1,44 +1,252 @@
 ---
 layout: home
-title: Pebble Biofusion Summer School
+title: PEBBLE
 ---
 
-## About the Program
+<div class="pebble-home">
 
-This program brings together exceptional students and world-class faculty from physics, mathematics, biology, computer science, and engineering to work on cutting-edge interdisciplinary problems.
+  <!-- Main Two-Column Layout -->
+  <div class="home-grid">
 
-## 2026 Program Details
+    <!-- Left Column: Workshop -->
+    <section class="home-column workshop-column">
+      <h2 class="column-heading">workshop</h2>
 
-- **Application Deadline**: June 15, 2026 at 10:00 AM  
-- **Program Duration**: 6-8 weeks  
-- **Location**: Westlake University, Hangzhou
+      <div class="workshop-year">
+        <h3 class="year-label">2026</h3>
+        <ul class="workshop-items">
+          <li>
+            <a href="{{ site.baseurl }}/years/2026/" class="workshop-link">
+              <span class="item-marker"></span>
+              ignition
+            </a>
+          </li>
+          <li>
+            <a href="{{ site.baseurl }}/years/2026/" class="workshop-link">
+              <span class="item-marker"></span>
+              synthesis
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-### Faculty & Research
+    <!-- Divider -->
+    <div class="column-divider"></div>
 
-- **15+ Faculty Members** from Westlake University and partner institutions
-- **8 Research Areas**: Complex Systems, Synthetic Biology, AI for Science, Biophysics, and more
-- **Hands-On Research** with real-world projects and cutting-edge computational tools
+    <!-- Right Column: About -->
+    <section class="home-column about-column">
+      <h2 class="column-heading">About</h2>
 
-## This Platform
+      <div class="mission-block">
+        <h3 class="mission-label">Mission</h3>
+        <p class="mission-equation">
+          <strong>PEBBLE</strong> = Physics + Engineering + Biology + Biotechnology + Learning + Experience
+        </p>
+      </div>
 
-### Teaching Materials
-- Course slides and theoretical background
-- Tutorial notebooks and code examples  
-- Reference materials and reading lists
+      <!-- Stats with Circles -->
+      <div class="stats-row">
+        <div class="stat-circle">
+          <div class="stat-number">500<span class="stat-plus">+</span></div>
+          <div class="stat-label">contributor</div>
+        </div>
+        <div class="stat-circle">
+          <div class="stat-number">50<span class="stat-plus">+</span></div>
+          <div class="stat-label">products</div>
+        </div>
+        <div class="stat-circle">
+          <div class="stat-number">3<span class="stat-plus">+</span></div>
+          <div class="stat-label">years</div>
+        </div>
+      </div>
+    </section>
 
-### Research Outputs
-- Jupyter notebooks with reproducible analysis
-- Conference posters and presentations
-- Research papers and technical reports
+  </div>
 
-## Quick Navigation
+</div>
 
-- **[Program Details]({{ site.baseurl }}/summer-camp/)** - Faculty, application information, and program overview
-- **[2026 Projects]({{ site.baseurl }}/years/2026/)** - Research directions and project structure  
-- **[Research Areas]({{ site.baseurl }}/topics/)** - Explore by scientific discipline (see sidebar)
+<style>
+  /* ===== Home Page Layout ===== */
+  .pebble-home {
+    width: 100%;
+  }
 
-## Contact
+  .home-grid {
+    display: grid;
+    grid-template-columns: 1fr 1px 1.4fr;
+    gap: 3rem;
+    align-items: start;
+    margin-top: 1rem;
+  }
 
-**Host**: Westlake University Interdisciplinary Sciences Center (CIS)
+  /* ===== Columns ===== */
+  .home-column {
+    padding: 0.5rem 0;
+  }
 
-**Application**: See [program page]({{ site.baseurl }}/summer-camp/) for details
+  .column-heading {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: lowercase;
+    letter-spacing: 0.5px;
+    color: #1f2937;
+    margin: 0 0 2rem 0;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid #1f2937;
+  }
+
+  /* ===== Divider ===== */
+  .column-divider {
+    background: #e0e0e0;
+    width: 1px;
+    height: 100%;
+    min-height: 300px;
+    align-self: stretch;
+  }
+
+  /* ===== Workshop Column ===== */
+  .workshop-year {
+    margin-bottom: 1.5rem;
+  }
+
+  .year-label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6b7280;
+    margin: 0 0 1rem 0;
+    letter-spacing: 1px;
+  }
+
+  .workshop-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .workshop-items li {
+    margin-bottom: 0.5rem;
+  }
+
+  .workshop-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #1f2937;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.4rem 0;
+    transition: color 0.2s, transform 0.2s;
+  }
+
+  .workshop-link:hover {
+    color: #0066cc;
+    transform: translateX(4px);
+  }
+
+  .item-marker {
+    width: 6px;
+    height: 6px;
+    background: #1f2937;
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: background 0.2s;
+  }
+
+  .workshop-link:hover .item-marker {
+    background: #0066cc;
+  }
+
+  /* ===== About Column ===== */
+  .mission-block {
+    margin-bottom: 2.5rem;
+  }
+
+  .mission-label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6b7280;
+    margin: 0 0 0.75rem 0;
+    letter-spacing: 1px;
+  }
+
+  .mission-equation {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #374151;
+    margin: 0;
+  }
+
+  .mission-equation strong {
+    color: #1f2937;
+    font-weight: 600;
+  }
+
+  /* ===== Stats Circles ===== */
+  .stats-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .stat-circle {
+    width: 90px;
+    height: 90px;
+    border: 2px solid #1f2937;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+
+  .stat-circle:hover {
+    transform: translateY(-3px);
+    border-color: #0066cc;
+  }
+
+  .stat-number {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1f2937;
+    line-height: 1;
+  }
+
+  .stat-plus {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+    color: #6b7280;
+    margin-top: 0.2rem;
+    text-transform: lowercase;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    .home-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .column-divider {
+      width: 100%;
+      height: 1px;
+      min-height: 1px;
+    }
+
+    .stats-row {
+      gap: 1rem;
+    }
+
+    .stat-circle {
+      width: 78px;
+      height: 78px;
+    }
+  }
+</style>
