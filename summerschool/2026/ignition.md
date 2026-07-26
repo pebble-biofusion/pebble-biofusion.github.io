@@ -65,7 +65,7 @@ permalink: /summerschool/2026/ignition/
           </button>
           <span class="talk-speaker">Lei Hui, Qinyu Cai</span>
         </div>
-        <ul class="materials collapsed">
+        <ul class="materials">
           <li><a href="#">Slides</a></li>
           <li><a href="#">Notebook</a></li>
           <li><a href="#">Data</a></li>
@@ -79,7 +79,7 @@ permalink: /summerschool/2026/ignition/
           </button>
           <span class="talk-speaker">Xiaowen Zhang</span>
         </div>
-        <ul class="materials collapsed">
+        <ul class="materials">
           <li><a href="#">Slides</a></li>
           <li><a href="#">Notebook</a></li>
           <li><a href="#">Data</a></li>
@@ -119,7 +119,7 @@ permalink: /summerschool/2026/ignition/
           </button>
           <span class="talk-speaker">Hongying Lin</span>
         </div>
-        <ul class="materials collapsed">
+        <ul class="materials">
           <li><a href="#">Slides</a></li>
           <li><a href="#">Notebook</a></li>
           <li><a href="#">Data</a></li>
@@ -133,7 +133,7 @@ permalink: /summerschool/2026/ignition/
           </button>
           <span class="talk-speaker">Yihao Lin</span>
         </div>
-        <ul class="materials collapsed">
+        <ul class="materials">
           <li><a href="#">Slides</a></li>
           <li><a href="#">Notebook</a></li>
           <li><a href="#">Data</a></li>
@@ -147,7 +147,7 @@ permalink: /summerschool/2026/ignition/
           </button>
           <span class="talk-speaker">Yihang Ding</span>
         </div>
-        <ul class="materials collapsed">
+        <ul class="materials">
           <li><a href="#">Slides</a></li>
           <li><a href="#">Notebook</a></li>
           <li><a href="#">Data</a></li>
@@ -179,7 +179,7 @@ permalink: /summerschool/2026/ignition/
           </button>
           <span class="talk-speaker">Ruoqing Zhang</span>
         </div>
-        <ul class="materials collapsed">
+        <ul class="materials">
           <li><a href="#">Slides</a></li>
           <li><a href="#">Notebook</a></li>
           <li><a href="#">Data</a></li>
@@ -193,7 +193,7 @@ permalink: /summerschool/2026/ignition/
           </button>
           <span class="talk-speaker">Jiahao Chen</span>
         </div>
-        <ul class="materials collapsed">
+        <ul class="materials">
           <li><a href="#">Slides</a></li>
           <li><a href="#">Notebook</a></li>
           <li><a href="#">Data</a></li>
@@ -229,7 +229,7 @@ permalink: /summerschool/2026/ignition/
           </button>
           <span class="talk-speaker">Xinyu Wang</span>
         </div>
-        <ul class="materials collapsed">
+        <ul class="materials">
           <li><a href="#">Slides</a></li>
           <li><a href="#">Notebook</a></li>
           <li><a href="#">Data</a></li>
@@ -243,7 +243,7 @@ permalink: /summerschool/2026/ignition/
           </button>
           <span class="talk-speaker">Qinguo Liu</span>
         </div>
-        <ul class="materials collapsed">
+        <ul class="materials">
           <li><a href="#">Slides</a></li>
           <li><a href="#">Notebook</a></li>
           <li><a href="#">Data</a></li>
@@ -257,7 +257,7 @@ permalink: /summerschool/2026/ignition/
           </button>
           <span class="talk-speaker">Qianrui Wang, Jiaqi Tu</span>
         </div>
-        <ul class="materials collapsed">
+        <ul class="materials">
           <li><a href="#">Slides</a></li>
           <li><a href="#">Notebook</a></li>
           <li><a href="#">Data</a></li>
@@ -301,7 +301,7 @@ permalink: /summerschool/2026/ignition/
           </button>
           <span class="talk-speaker">Sijie Li</span>
         </div>
-        <ul class="materials collapsed">
+        <ul class="materials">
           <li><a href="{{ site.baseurl }}/summerschool/2026/materials/biocircuits-101/Biocircuit101_slide_sijie.pdf">Biocircuit101_slide_sijie.pdf</a></li>
           <li><a href="{{ site.baseurl }}/summerschool/2026/materials/biocircuits-101/Biocircuit101_notebook.html">Biocircuit101_notebook.html</a></li>
           <li><a href="{{ site.baseurl }}/summerschool/2026/materials/biocircuits-101/Biocircuit101_notebook.ipynb">Biocircuit101_notebook.ipynb</a></li>
@@ -316,7 +316,7 @@ permalink: /summerschool/2026/ignition/
           </button>
           <span class="talk-speaker">Haoming Luo, Yiping Ma, Yanzhang Jiang</span>
         </div>
-        <ul class="materials collapsed">
+        <ul class="materials">
           <li><a href="#">Slides</a></li>
           <li><a href="#">Notebook</a></li>
           <li><a href="#">Data</a></li>
@@ -330,7 +330,7 @@ permalink: /summerschool/2026/ignition/
           </button>
           <span class="talk-speaker">Xinwen Fan</span>
         </div>
-        <ul class="materials collapsed">
+        <ul class="materials">
           <li><a href="#">Slides</a></li>
           <li><a href="#">Notebook</a></li>
           <li><a href="#">Data</a></li>
@@ -461,7 +461,8 @@ permalink: /summerschool/2026/ignition/
     transition: transform 0.2s, color 0.2s;
   }
 
-  .talk-toggle[aria-expanded="true"] .talk-arrow {
+  .talk--has-materials:hover .talk-arrow,
+  .talk--has-materials:focus-within .talk-arrow {
     transform: rotate(90deg);
     color: #FF6C0C;
   }
@@ -481,15 +482,17 @@ permalink: /summerschool/2026/ignition/
     flex-shrink: 0;
   }
 
-  /* ===== Materials list (expanded) ===== */
+  /* ===== Materials list (shown on hover/focus) ===== */
   .materials {
     list-style: none;
     padding: 0.4rem 0 0.25rem 1.2rem;
     margin: 0;
+    display: none;
   }
 
-  .materials.collapsed {
-    display: none;
+  .talk--has-materials:hover .materials,
+  .talk--has-materials:focus-within .materials {
+    display: block;
   }
 
   .materials li {
@@ -536,21 +539,6 @@ permalink: /summerschool/2026/ignition/
       var list = this.nextElementSibling;
       if (list) {
         list.classList.toggle('collapsed');
-      }
-    });
-  });
-
-  // Talk materials expand/collapse
-  document.querySelectorAll('.talk-toggle').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var expanded = this.getAttribute('aria-expanded') === 'true';
-      this.setAttribute('aria-expanded', !expanded);
-      var talk = this.closest('.talk--has-materials');
-      if (talk) {
-        var materials = talk.querySelector('.materials');
-        if (materials) {
-          materials.classList.toggle('collapsed');
-        }
       }
     });
   });
