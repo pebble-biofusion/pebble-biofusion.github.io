@@ -14,7 +14,7 @@ permalink: /summerschool/2026/ignition/
     </button>
     <ul class="talk-list collapsed">
       <li class="talk">
-        <span class="talk-title">Toward an Interpretable Virtual Cell Model</span>
+        <span class="talk-title">Toward an interpretable virtual cell model</span>
         <span class="talk-speaker">Weixu Wang</span>
       </li>
     </ul>
