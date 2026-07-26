@@ -7,7 +7,7 @@ title: PEBBLE
 
   <!-- About -->
   <section class="about-section">
-    <h2 class="section-heading">About</h2>
+    <div class="mission-label">Mission</div>
 
     <div class="mission-block">
       <p class="intro-text">
@@ -49,14 +49,13 @@ title: PEBBLE
   }
 
   /* ===== About Section ===== */
-  .section-heading {
-    font-size: 1.1rem;
+  .mission-label {
+    font-size: 0.8rem;
     font-weight: 600;
-    letter-spacing: 0.5px;
-    color: #1f2937;
-    margin: 0 0 2rem 0;
-    padding-bottom: 0.6rem;
-    border-bottom: 2px solid #1f2937;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #6b7280;
+    margin: 0 0 1.5rem 0;
   }
 
   .mission-block {
