@@ -97,19 +97,19 @@ permalink: /summerschool/2026/ignition/
     <ul class="talk-list collapsed">
       <li class="talk">
         <span class="talk-title">Single-cell damage</span>
-        <span class="talk-speaker">Rui Fang</span>
+        <a class="talk-speaker" href="https://en.westlake.edu.cn/faculty/rui-fang.html" target="_blank" rel="noopener">Rui Fang</a>
       </li>
       <li class="talk">
         <span class="talk-title">Damage &amp; asymmetric division</span>
-        <span class="talk-speaker">Yifan Yang</span>
+        <a class="talk-speaker" href="https://en.westlake.edu.cn/faculty/Yifan-Yang.html" target="_blank" rel="noopener">Yifan Yang</a>
       </li>
       <li class="talk">
         <span class="talk-title">Lineage &amp; inheritance</span>
-        <span class="talk-speaker">Shouwen Wang</span>
+        <a class="talk-speaker" href="https://en.westlake.edu.cn/faculty/shouwen-wang.html" target="_blank" rel="noopener">Shouwen Wang</a>
       </li>
       <li class="talk">
         <span class="talk-title">Cellular information processing</span>
-        <span class="talk-speaker">Fan Jin</span>
+        <a class="talk-speaker" href="https://people.ucas.ac.cn/~jinfan" target="_blank" rel="noopener">Fan Jin</a>
       </li>
       <li class="talk talk--has-materials">
         <div class="talk-row">
@@ -165,11 +165,11 @@ permalink: /summerschool/2026/ignition/
     <ul class="talk-list collapsed">
       <li class="talk">
         <span class="talk-title">Stochasticity at the core</span>
-        <span class="talk-speaker">Hong Qian</span>
+        <a class="talk-speaker" href="https://en.westlake.edu.cn/faculty/hong-qian.html" target="_blank" rel="noopener">Hong Qian</a>
       </li>
       <li class="talk">
         <span class="talk-title">Single-cell trajectories</span>
-        <span class="talk-speaker">Yihan Wan</span>
+        <a class="talk-speaker" href="https://en.westlake.edu.cn/faculty/yihan-wan.html" target="_blank" rel="noopener">Yihan Wan</a>
       </li>
       <li class="talk talk--has-materials">
         <div class="talk-row">
@@ -215,11 +215,11 @@ permalink: /summerschool/2026/ignition/
       </li>
       <li class="talk">
         <span class="talk-title">Data-driven approaches</span>
-        <span class="talk-speaker">Tailin Wu</span>
+        <a class="talk-speaker" href="https://en.westlake.edu.cn/faculty/tailin-wu.html" target="_blank" rel="noopener">Tailin Wu</a>
       </li>
       <li class="talk">
         <span class="talk-title">Multiscale modelling</span>
-        <span class="talk-speaker">Zhennan Zhou</span>
+        <a class="talk-speaker" href="https://en.westlake.edu.cn/faculty/zhennan-zhou.html" target="_blank" rel="noopener">Zhennan Zhou</a>
       </li>
       <li class="talk talk--has-materials">
         <div class="talk-row">
@@ -275,23 +275,23 @@ permalink: /summerschool/2026/ignition/
     <ul class="talk-list collapsed">
       <li class="talk">
         <span class="talk-title">Control theory</span>
-        <span class="talk-speaker">Fangzhou Xiao</span>
+        <a class="talk-speaker" href="https://en.westlake.edu.cn/faculty/fangzhou-xiao.html" target="_blank" rel="noopener">Fangzhou Xiao</a>
       </li>
       <li class="talk">
         <span class="talk-title">Protein computation</span>
-        <span class="talk-speaker">Zibo Chen</span>
+        <a class="talk-speaker" href="https://en.westlake.edu.cn/faculty/zibo-chen.html" target="_blank" rel="noopener">Zibo Chen</a>
       </li>
       <li class="talk">
         <span class="talk-title">Probabilistic reasoning in cells</span>
-        <span class="talk-speaker">Zitong (Jerry) Wang</span>
+        <a class="talk-speaker" href="https://en.westlake.edu.cn/faculty/Zitong-Wang.html" target="_blank" rel="noopener">Zitong (Jerry) Wang</a>
       </li>
       <li class="talk">
         <span class="talk-title">A scientific story that spreads like a virus</span>
-        <span class="talk-speaker">Fangzhou Xiao</span>
+        <a class="talk-speaker" href="https://en.westlake.edu.cn/faculty/fangzhou-xiao.html" target="_blank" rel="noopener">Fangzhou Xiao</a>
       </li>
       <li class="talk">
         <span class="talk-title">From a story to a publishable paper: A deep dive in AI-native scientific research</span>
-        <span class="talk-speaker">Fangzhou Xiao</span>
+        <a class="talk-speaker" href="https://en.westlake.edu.cn/faculty/fangzhou-xiao.html" target="_blank" rel="noopener">Fangzhou Xiao</a>
       </li>
       <li class="talk talk--has-materials">
         <div class="talk-row">
@@ -480,6 +480,15 @@ permalink: /summerschool/2026/ignition/
     font-size: 0.83rem;
     color: #9ca3af;
     flex-shrink: 0;
+  }
+
+  a.talk-speaker {
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  a.talk-speaker:hover {
+    color: #FF6C0C;
   }
 
   /* ===== Materials list (expanded on click) ===== */
