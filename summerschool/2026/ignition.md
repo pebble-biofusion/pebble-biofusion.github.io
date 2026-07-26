@@ -6,47 +6,38 @@ permalink: /summerschool/2026/ignition/
 
 <div class="ignition">
 
-  <!-- ===== Day: 07.25 ===== -->
+  <!-- ===== 07.25 ===== -->
   <section class="day">
-    <h2 class="day-date">07.25</h2>
+    <h2 class="day-date">07.25 Saturday</h2>
     <ul class="talk-list">
 
       <li class="talk">
-        <span class="talk-time">09:00</span>
-        <div class="talk-body">
-          <a href="#" class="talk-title">Opening remarks</a>
-          <span class="talk-speaker">Chao Tang</span>
-        </div>
+        <a href="#" class="talk-title">Cellular Information Processing, Control theory</a>
+        <span class="talk-speaker">Fangzhou Xiao</span>
       </li>
 
       <li class="talk">
-        <span class="talk-time">09:30</span>
-        <div class="talk-body">
-          <a href="#" class="talk-title">Talk title — demo</a>
-          <span class="talk-speaker">Qingyu Cheng</span>
-        </div>
+        <a href="#" class="talk-title">Protein computation</a>
+        <span class="talk-speaker">Zibo Chen</span>
       </li>
 
       <li class="talk">
-        <span class="talk-time">11:00</span>
-        <div class="talk-body">
-          <a href="#" class="talk-title">Talk title — demo</a>
-          <span class="talk-speaker">Speaker name</span>
-        </div>
+        <a href="#" class="talk-title">Probabilistic reasoning in cells</a>
+        <span class="talk-speaker">Zitong (Jerry) Wang</span>
       </li>
 
       <li class="talk">
-        <span class="talk-time">14:00</span>
-        <div class="talk-body">
-          <a href="#" class="talk-title">Talk title — demo</a>
-          <span class="talk-speaker">Speaker name</span>
-        </div>
+        <a href="#" class="talk-title">A scientific story that spreads like a virus</a>
+        <span class="talk-speaker">Fangzhou Xiao</span>
+      </li>
+
+      <li class="talk">
+        <a href="#" class="talk-title">From a story to a publishable paper: A deep dive in AI-native scientific research</a>
+        <span class="talk-speaker">Fangzhou Xiao</span>
       </li>
 
     </ul>
   </section>
-
-  <p class="ign-note">Demo content — replace with the real schedule and talk materials.</p>
 
 </div>
 
@@ -80,10 +71,10 @@ permalink: /summerschool/2026/ignition/
   }
 
   .talk {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 1.5rem;
+    display: flex;
+    justify-content: space-between;
     align-items: baseline;
+    gap: 2rem;
     padding: 1rem 0;
   }
 
@@ -91,18 +82,7 @@ permalink: /summerschool/2026/ignition/
     border-bottom: 1px solid #f3f4f6;
   }
 
-  .talk-time {
-    font-size: 0.9rem;
-    color: #9ca3af;
-    font-variant-numeric: tabular-nums;
-  }
-
-  .talk-body {
-    min-width: 0;
-  }
-
   .talk-title {
-    display: inline;
     font-size: 1.02rem;
     font-weight: 500;
     color: #1f2937;
@@ -116,25 +96,22 @@ permalink: /summerschool/2026/ignition/
   }
 
   .talk-speaker {
-    display: block;
     font-size: 0.88rem;
     color: #9ca3af;
-    margin-top: 0.2rem;
-  }
-
-  .ign-note {
-    font-size: 0.8rem;
-    color: #d1d5db;
-    font-style: italic;
-    margin-top: 2rem;
-    margin-bottom: 0;
+    flex-shrink: 0;
+    text-align: right;
   }
 
   /* ===== Responsive ===== */
   @media (max-width: 600px) {
     .talk {
-      grid-template-columns: 60px 1fr;
-      gap: 1rem;
+      flex-direction: column;
+      gap: 0.3rem;
+      align-items: flex-start;
+    }
+
+    .talk-speaker {
+      text-align: left;
     }
   }
 </style>
