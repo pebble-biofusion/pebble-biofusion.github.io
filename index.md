@@ -57,11 +57,10 @@ layout: home
   /* ===== Intro & Closing paragraphs ===== */
   .intro,
   .closing {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     line-height: 1.85;
     color: #374151;
     margin: 0;
-    max-width: 720px;
   }
 
   .intro {
