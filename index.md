@@ -68,7 +68,7 @@ layout: home
   }
 
   .closing {
-    margin-bottom: 3.5rem;
+    margin-bottom: 5rem;
   }
 
   .intro strong,
