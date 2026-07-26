@@ -5,97 +5,53 @@ title: PEBBLE
 
 <div class="pebble-home">
 
-  <!-- Main Two-Column Layout -->
-  <div class="home-grid">
+  <!-- About -->
+  <section class="about-section">
+    <h2 class="section-heading">About</h2>
 
-    <!-- Left Column: Workshop -->
-    <section class="home-column workshop-column">
-      <h2 class="column-heading">workshop</h2>
+    <div class="mission-block">
+      <p class="intro-text">
+        <strong>PEBBLE BioFusion 2026</strong> is designed from the ground up for the age of AI. We are not adding AI as a tool on top of a traditional curriculum. Instead, we are rethinking what a summer school should train when AI makes tutorials, literature review, coding, and draft generation available on demand. In this new landscape, three things become critically important:
+      </p>
+      <ul class="core-skills">
+        <li><span class="skill-name">Taste</span> &mdash; the ability to ask deep, well-chosen questions. Which problems are alive? Which framings reveal new structure?</li>
+        <li><span class="skill-name">Scientific Reasoning</span> &mdash; the ability to develop a full, in-depth chain of logic that tells a complete, convincing story.</li>
+        <li><span class="skill-name">Courage</span> &mdash; the willingness to ask bold questions, and the determination to pursue them all the way through.</li>
+      </ul>
+      <p class="intro-text">
+        These are precisely what AI does not reliably provide. They are what <strong>PEBBLE BioFusion</strong> trains.
+      </p>
+    </div>
 
-      <div class="workshop-year">
-        <h3 class="year-label">2026</h3>
-        <ul class="workshop-items">
-          <li>
-            <a href="{{ site.baseurl }}/years/2026/" class="workshop-link">
-              <span class="item-marker"></span>
-              ignition
-            </a>
-          </li>
-          <li>
-            <a href="{{ site.baseurl }}/years/2026/" class="workshop-link">
-              <span class="item-marker"></span>
-              synthesis
-            </a>
-          </li>
-        </ul>
+    <!-- Stats with Circles -->
+    <div class="stats-row">
+      <div class="stat-circle">
+        <div class="stat-number">500<span class="stat-plus">+</span></div>
+        <div class="stat-label">contributor</div>
       </div>
-    </section>
-
-    <!-- Divider -->
-    <div class="column-divider"></div>
-
-    <!-- Right Column: About -->
-    <section class="home-column about-column">
-      <h2 class="column-heading">About</h2>
-
-      <div class="mission-block">
-        <p class="intro-text">
-          <strong>PEBBLE BioFusion 2026</strong> is designed from the ground up for the age of AI. We are not adding AI as a tool on top of a traditional curriculum. Instead, we are rethinking what a summer school should train when AI makes tutorials, literature review, coding, and draft generation available on demand. In this new landscape, three things become critically important:
-        </p>
-        <ul class="core-skills">
-          <li><span class="skill-name">Taste</span> &mdash; the ability to ask deep, well-chosen questions. Which problems are alive? Which framings reveal new structure?</li>
-          <li><span class="skill-name">Scientific Reasoning</span> &mdash; the ability to develop a full, in-depth chain of logic that tells a complete, convincing story.</li>
-          <li><span class="skill-name">Courage</span> &mdash; the willingness to ask bold questions, and the determination to pursue them all the way through.</li>
-        </ul>
-        <p class="intro-text">
-          These are precisely what AI does not reliably provide. They are what <strong>PEBBLE BioFusion</strong> trains.
-        </p>
+      <div class="stat-circle">
+        <div class="stat-number">50<span class="stat-plus">+</span></div>
+        <div class="stat-label">products</div>
       </div>
-
-      <!-- Stats with Circles -->
-      <div class="stats-row">
-        <div class="stat-circle">
-          <div class="stat-number">500<span class="stat-plus">+</span></div>
-          <div class="stat-label">contributor</div>
-        </div>
-        <div class="stat-circle">
-          <div class="stat-number">50<span class="stat-plus">+</span></div>
-          <div class="stat-label">products</div>
-        </div>
-        <div class="stat-circle">
-          <div class="stat-number">3<span class="stat-plus">+</span></div>
-          <div class="stat-label">years</div>
-        </div>
+      <div class="stat-circle">
+        <div class="stat-number">3<span class="stat-plus">+</span></div>
+        <div class="stat-label">years</div>
       </div>
-    </section>
-
-  </div>
+    </div>
+  </section>
 
 </div>
 
 <style>
-  /* ===== Home Page Layout ===== */
+  /* ===== Home Page ===== */
   .pebble-home {
     width: 100%;
   }
 
-  .home-grid {
-    display: grid;
-    grid-template-columns: 1fr 1px 1.4fr;
-    gap: 3rem;
-    align-items: start;
-    margin-top: 1rem;
-  }
-
-  /* ===== Columns ===== */
-  .home-column {
-    padding: 0.5rem 0;
-  }
-
-  .column-heading {
+  /* ===== About Section ===== */
+  .section-heading {
     font-size: 1.1rem;
     font-weight: 600;
-    text-transform: lowercase;
     letter-spacing: 0.5px;
     color: #1f2937;
     margin: 0 0 2rem 0;
@@ -103,68 +59,6 @@ title: PEBBLE
     border-bottom: 2px solid #1f2937;
   }
 
-  /* ===== Divider ===== */
-  .column-divider {
-    background: #e0e0e0;
-    width: 1px;
-    height: 100%;
-    min-height: 300px;
-    align-self: stretch;
-  }
-
-  /* ===== Workshop Column ===== */
-  .workshop-year {
-    margin-bottom: 1.5rem;
-  }
-
-  .year-label {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #6b7280;
-    margin: 0 0 1rem 0;
-    letter-spacing: 1px;
-  }
-
-  .workshop-items {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .workshop-items li {
-    margin-bottom: 0.5rem;
-  }
-
-  .workshop-link {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    color: #1f2937;
-    text-decoration: none;
-    font-size: 1rem;
-    padding: 0.4rem 0;
-    transition: color 0.2s, transform 0.2s;
-  }
-
-  .workshop-link:hover {
-    color: #0066cc;
-    transform: translateX(4px);
-  }
-
-  .item-marker {
-    width: 6px;
-    height: 6px;
-    background: #1f2937;
-    border-radius: 50%;
-    flex-shrink: 0;
-    transition: background 0.2s;
-  }
-
-  .workshop-link:hover .item-marker {
-    background: #0066cc;
-  }
-
-  /* ===== About Column ===== */
   .mission-block {
     margin-bottom: 2.5rem;
   }
@@ -234,7 +128,7 @@ title: PEBBLE
 
   .stat-circle:hover {
     transform: translateY(-3px);
-    border-color: #0066cc;
+    border-color: #FF6C0C;
   }
 
   .stat-number {
@@ -258,17 +152,6 @@ title: PEBBLE
 
   /* ===== Responsive ===== */
   @media (max-width: 768px) {
-    .home-grid {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-
-    .column-divider {
-      width: 100%;
-      height: 1px;
-      min-height: 1px;
-    }
-
     .stats-row {
       gap: 1rem;
     }
