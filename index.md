@@ -16,7 +16,7 @@ layout: home
         <span class="skill-desc">the ability to ask deep, well-chosen questions. Which problems are alive? Which framings reveal new structure?</span>
       </li>
       <li>
-        <span class="skill-name">Scientific Reasoning</span>
+        <span class="skill-name">Rigor</span>
         <span class="skill-desc">the ability to develop a full, in-depth chain of logic that tells a complete, convincing story.</span>
       </li>
       <li>
