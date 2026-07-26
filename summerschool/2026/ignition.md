@@ -317,9 +317,10 @@ permalink: /summerschool/2026/ignition/
           <span class="talk-speaker">Haoming Luo, Yiping Ma, Yanzhang Jiang</span>
         </div>
         <ul class="materials collapsed">
-          <li><a href="#">Slides</a></li>
-          <li><a href="#">Notebook</a></li>
-          <li><a href="#">Data</a></li>
+          <li><a href="{{ site.baseurl }}/summerschool/2026/materials/information-processing-living-systems/fdcc_multiscale_signal_chain_concise_en.ipynb">fdcc_multiscale_signal_chain_concise_en.ipynb</a></li>
+          <li><a href="{{ site.baseurl }}/summerschool/2026/materials/information-processing-living-systems/Information%20processing%20in%20living%20systems.html">Information processing in living systems.html</a></li>
+          <li><a href="{{ site.baseurl }}/summerschool/2026/materials/information-processing-living-systems/Information%20processing%20in%20living%20systems.ipynb">Information processing in living systems.ipynb</a></li>
+          <li><a href="{{ site.baseurl }}/summerschool/2026/materials/information-processing-living-systems/Information%20processing%20in%20living%20systems.key">Information processing in living systems.key</a></li>
         </ul>
       </li>
       <li class="talk talk--has-materials">
