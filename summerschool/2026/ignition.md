@@ -75,9 +75,9 @@ permalink: /summerschool/2026/ignition/
         <div class="talk-row">
           <button class="talk-toggle" type="button" aria-expanded="false">
             <span class="talk-arrow">▸</span>
-            <span class="talk-title">Tobe</span>
+            <span class="talk-title">Turing Patterns: How does development take shape?</span>
           </button>
-          <span class="talk-speaker">Xiaowen</span>
+          <span class="talk-speaker">Xiaowen Zhang</span>
         </div>
         <ul class="materials collapsed">
           <li><a href="#">Slides</a></li>
