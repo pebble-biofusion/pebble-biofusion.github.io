@@ -51,7 +51,7 @@ layout: home
 <style>
   /* ===== Layout ===== */
   .pebble-home {
-    max-width: 680px;
+    width: 100%;
   }
 
   /* ===== Intro & Closing paragraphs ===== */
@@ -61,14 +61,15 @@ layout: home
     line-height: 1.85;
     color: #374151;
     margin: 0;
+    max-width: 720px;
   }
 
   .intro {
-    margin-bottom: 2.75rem;
+    margin-bottom: 3rem;
   }
 
   .closing {
-    margin-bottom: 3.25rem;
+    margin-bottom: 3.5rem;
   }
 
   .intro strong,
@@ -77,14 +78,18 @@ layout: home
     font-weight: 600;
   }
 
-  /* ===== Three core skills ===== */
+  /* ===== Three core skills (name | description) ===== */
   .skills {
     list-style: none;
     padding: 0;
-    margin: 0 0 2.75rem 0;
+    margin: 0 0 3rem 0;
   }
 
   .skills li {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 2rem;
+    align-items: baseline;
     margin-bottom: 1.75rem;
   }
 
@@ -93,16 +98,13 @@ layout: home
   }
 
   .skill-name {
-    display: block;
-    font-size: 1.02rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: #FF6C0C;
     letter-spacing: 0.2px;
-    margin-bottom: 0.35rem;
   }
 
   .skill-desc {
-    display: block;
     font-size: 0.95rem;
     line-height: 1.7;
     color: #6b7280;
@@ -136,12 +138,8 @@ layout: home
   .stat-number {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #1f2937;
-    line-height: 1;
-  }
-
-  .stat-number span {
     color: #FF6C0C;
+    line-height: 1;
   }
 
   .stat-label {
@@ -154,6 +152,15 @@ layout: home
 
   /* ===== Responsive ===== */
   @media (max-width: 768px) {
+    .skills li {
+      grid-template-columns: 1fr;
+      gap: 0.35rem;
+    }
+
+    .skill-name {
+      font-size: 1.1rem;
+    }
+
     .stats {
       gap: 1.5rem;
     }
