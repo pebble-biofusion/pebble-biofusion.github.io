@@ -6,6 +6,36 @@ permalink: /summerschool/2026/ignition/
 
 <div class="ignition">
 
+  <!-- ===== 07.29 ===== -->
+  <section class="day">
+    <button class="day-toggle" type="button" aria-expanded="false">
+      <span class="day-arrow">▸</span>
+      <span class="day-date">07.29 Wednesday Q5: Spatial Organization &amp; Multicellularity</span>
+    </button>
+    <ul class="talk-list collapsed">
+      <li class="talk">
+        <span class="talk-title">Adaptive niche construction in microbes</span>
+        <span class="talk-speaker">Zhiyuan Li</span>
+      </li>
+      <li class="talk">
+        <span class="talk-title">Cell fate decisions in development</span>
+        <span class="talk-speaker">Zhiyuan Li</span>
+      </li>
+      <li class="talk">
+        <span class="talk-title">Mechanics &amp; Morphogenesis</span>
+        <span class="talk-speaker">Hanqin Guo</span>
+      </li>
+      <li class="talk">
+        <a href="#" class="talk-title">Machine learning for omics data integration</a>
+        <span class="talk-speaker">Lei Hui, Qinyu Cai</span>
+      </li>
+      <li class="talk">
+        <a href="#" class="talk-title">Tobe</a>
+        <span class="talk-speaker">Xiaowen</span>
+      </li>
+    </ul>
+  </section>
+
   <!-- ===== 07.28 ===== -->
   <section class="day">
     <button class="day-toggle" type="button" aria-expanded="false">
