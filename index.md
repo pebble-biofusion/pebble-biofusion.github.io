@@ -11,7 +11,7 @@ title: PEBBLE
 
     <div class="mission-block">
       <p class="intro-text">
-        <strong>PEBBLE BioFusion 2026</strong> is designed from the ground up for the age of AI. We are not adding AI as a tool on top of a traditional curriculum. Instead, we are rethinking what a summer school should train when AI makes tutorials, literature review, coding, and draft generation available on demand. In this new landscape, three things become critically important:
+        <strong>Mission BioFusion 2026</strong> is designed from the ground up for the age of AI. We are not adding AI as a tool on top of a traditional curriculum. Instead, we are rethinking what a summer school should train when AI makes tutorials, literature review, coding, and draft generation available on demand. In this new landscape, three things become critically important:
       </p>
       <ul class="core-skills">
         <li><span class="skill-name">Taste</span> &mdash; the ability to ask deep, well-chosen questions. Which problems are alive? Which framings reveal new structure?</li>
