@@ -37,10 +37,14 @@
     }
 
     .site-title {
-      font-size: 1.3rem;
-      font-weight: 500;
-      color: #1f2937;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: #555;
       text-decoration: none;
+      display: inline-flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      line-height: 1.4;
     }
 
     .site-title:hover {
@@ -349,7 +353,9 @@
 <body>
   <header class="site-header">
     <div class="header-content">
-      <a href="{{ '/' | relative_url }}" class="site-title">Mission</a>
+      <a href="{{ '/' | relative_url }}" class="site-title">
+        <span class="title-acronym">PEBBLE</span><span class="title-eq">=</span><span class="cap">P</span>hysics<span class="op">+</span><span class="cap">E</span>ngineering<span class="op">+</span><span class="cap">B</span>iology<span class="op">+</span><span class="cap">B</span>iotechnology<span class="op">+</span><span class="cap">L</span>earning<span class="op">+</span><span class="cap">E</span>xperience
+      </a>
     </div>
   </header>
 
