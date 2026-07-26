@@ -58,7 +58,7 @@ permalink: /summerschool/2026/ignition/
   .day-date {
     font-size: 1.3rem;
     font-weight: 600;
-    color: #FF6C0C;
+    color: #6b7280;
     margin: 0 0 1.5rem 0;
     letter-spacing: 0.5px;
   }
