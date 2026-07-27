@@ -199,6 +199,23 @@ permalink: /workshop/2026/ignition/
           <li><a href="#">Data</a></li>
         </ul>
       </li>
+      <li class="talk talk--has-materials">
+        <div class="talk-row">
+          <button class="talk-toggle" type="button" aria-expanded="false">
+            <span class="talk-arrow">▸</span>
+            <span class="talk-title">Gillespie simulation</span>
+          </button>
+          <span class="talk-speaker">Wenqin Zhou</span>
+        </div>
+        <ul class="materials collapsed">
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/gillespie-simulation/START_HERE_guide.ipynb">START_HERE_guide.ipynb</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/gillespie-simulation/Gillespie_simulation_tutorial.pptx">Gillespie_simulation_tutorial.pptx</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/gillespie-simulation/gillespie_derivation.ipynb">gillespie_derivation.ipynb</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/gillespie-simulation/Interactive_module_1_birth_death.ipynb">Interactive_module_1_birth_death.ipynb</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/gillespie-simulation/Interactive_module_2_sini_sinr_switch.ipynb">Interactive_module_2_sini_sinr_switch.ipynb</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/gillespie-simulation/Reading%20material_%20bacterial%20cell%20fate%20switch.pdf">Reading material_ bacterial cell fate switch.pdf</a></li>
+        </ul>
+      </li>
     </ul>
   </section>
 
