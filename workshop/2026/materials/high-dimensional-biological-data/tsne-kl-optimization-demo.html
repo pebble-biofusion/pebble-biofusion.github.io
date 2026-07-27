@@ -1,0 +1,513 @@
+<div id="tsne-kl-optimization-demo">
+  <style>
+    #tsne-kl-optimization-demo {
+      --kl-bg: #f4f7fb;
+      --kl-panel: #ffffff;
+      --kl-ink: #172033;
+      --kl-muted: #65738b;
+      --kl-grid: #d8e0eb;
+      --kl-blue: #4c78e8;
+      --kl-teal: #18a6a6;
+      --kl-coral: #f05a67;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 18px;
+      border: 1px solid var(--kl-grid);
+      border-radius: 14px;
+      background: var(--kl-bg);
+      color: var(--kl-ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    #tsne-kl-optimization-demo * { box-sizing: border-box; }
+    #tsne-kl-optimization-demo .kl-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+    #tsne-kl-optimization-demo .kl-title {
+      margin: 0 0 4px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    #tsne-kl-optimization-demo .kl-controls {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+    #tsne-kl-optimization-demo .kernel-choice {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      padding: 3px;
+      border: 1px solid var(--kl-grid);
+      border-radius: 11px;
+      background: var(--kl-panel);
+    }
+    #tsne-kl-optimization-demo .kernel-label {
+      margin: 0 5px 0 3px;
+      color: var(--kl-muted);
+      font-size: 11px;
+      font-weight: 650;
+    }
+    #tsne-kl-optimization-demo button {
+      border: 1px solid var(--kl-grid);
+      border-radius: 9px;
+      padding: 8px 13px;
+      background: var(--kl-panel);
+      color: var(--kl-ink);
+      font: inherit;
+      font-weight: 650;
+      cursor: pointer;
+    }
+    #tsne-kl-optimization-demo button.primary {
+      border-color: var(--kl-ink);
+      background: var(--kl-ink);
+      color: #ffffff;
+    }
+    #tsne-kl-optimization-demo .kernel-choice button {
+      border-color: transparent;
+      padding: 5px 9px;
+      background: transparent;
+    }
+    #tsne-kl-optimization-demo .kernel-choice button[aria-pressed="true"] {
+      border-color: var(--kl-ink);
+      background: var(--kl-ink);
+      color: #ffffff;
+    }
+    #tsne-kl-optimization-demo button:focus-visible {
+      outline: 3px solid rgba(76, 120, 232, 0.28);
+      outline-offset: 2px;
+    }
+    #tsne-kl-optimization-demo .kl-value {
+      min-width: 130px;
+      color: var(--kl-ink);
+      font-size: 13px;
+      font-weight: 700;
+      text-align: right;
+    }
+    #tsne-kl-optimization-demo svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      overflow: visible;
+    }
+    #tsne-kl-optimization-demo .panel {
+      fill: var(--kl-panel);
+      stroke: var(--kl-grid);
+      stroke-width: 1.2;
+    }
+    #tsne-kl-optimization-demo .panel-title {
+      fill: var(--kl-ink);
+      font-size: 14px;
+      font-weight: 700;
+    }
+    #tsne-kl-optimization-demo .panel-note,
+    #tsne-kl-optimization-demo .axis-label {
+      fill: var(--kl-muted);
+      font-size: 11px;
+    }
+    #tsne-kl-optimization-demo .axis,
+    #tsne-kl-optimization-demo .matrix-grid {
+      stroke: var(--kl-grid);
+      stroke-width: 1;
+    }
+    #tsne-kl-optimization-demo .embedding-point {
+      stroke: #ffffff;
+      stroke-width: 1.5;
+      transition: cx 300ms ease, cy 300ms ease;
+    }
+    #tsne-kl-optimization-demo .q-cell {
+      transition: fill-opacity 300ms ease;
+    }
+    #tsne-kl-optimization-demo .prob-p {
+      fill: none;
+      stroke: var(--kl-teal);
+      stroke-width: 2.4;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+    #tsne-kl-optimization-demo .prob-q {
+      fill: none;
+      stroke: var(--kl-coral);
+      stroke-width: 2.4;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+    #tsne-kl-optimization-demo .status {
+      margin-top: 7px;
+      color: var(--kl-ink);
+      font-size: 13px;
+      font-weight: 650;
+    }
+    #tsne-kl-optimization-demo .caveat {
+      margin-top: 4px;
+      color: var(--kl-muted);
+      font-size: 12px;
+    }
+    @media (max-width: 700px) {
+      #tsne-kl-optimization-demo { padding: 12px; }
+      #tsne-kl-optimization-demo .kl-head { flex-direction: column; }
+      #tsne-kl-optimization-demo .kl-controls { justify-content: flex-start; }
+      #tsne-kl-optimization-demo .kl-value { text-align: left; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #tsne-kl-optimization-demo .embedding-point,
+      #tsne-kl-optimization-demo .q-cell { transition: none; }
+    }
+  </style>
+
+  <div class="kl-head">
+    <div>
+      <div class="kl-title">Which low-dimensional kernel makes the map breathe?</div>
+    </div>
+    <div class="kl-controls">
+      <div class="kernel-choice" role="group" aria-label="Low-dimensional kernel">
+        <span class="kernel-label">low-D kernel</span>
+        <button type="button" data-kernel="gaussian" aria-pressed="false">Gaussian</button>
+        <button type="button" data-kernel="cauchy" aria-pressed="true">Cauchy · t-SNE</button>
+      </div>
+      <button type="button" class="primary" data-action="step">Move one step</button>
+      <button type="button" data-action="reset">Reset map</button>
+      <span class="kl-value" data-role="kl">step 0 · KL = —</span>
+    </div>
+  </div>
+
+  <svg viewBox="0 0 1080 575" role="img" aria-labelledby="kl-demo-title kl-demo-desc">
+    <title id="kl-demo-title">Interactive KL-divergence optimization for t-SNE</title>
+    <desc id="kl-demo-desc">
+      A fixed target similarity matrix P is compared with a low-dimensional similarity matrix Q.
+      Repeated optimization steps move nine embedded points, decrease KL divergence, and align Q with P.
+    </desc>
+
+    <rect class="panel" x="12" y="38" width="250" height="300" rx="12"></rect>
+    <text class="panel-title" x="28" y="66" data-role="force-title">Attraction emphasis</text>
+    <g data-role="p-matrix"></g>
+
+    <rect class="panel" x="280" y="38" width="500" height="300" rx="12"></rect>
+    <text class="panel-title" x="298" y="66">Current embedding Y</text>
+    <line class="axis" x1="315" y1="202" x2="745" y2="202"></line>
+    <line class="axis" x1="530" y1="105" x2="530" y2="312"></line>
+    <text class="axis-label" x="724" y="221">y₁</text>
+    <text class="axis-label" x="539" y="118">y₂</text>
+    <g data-role="embedding"></g>
+
+    <rect class="panel" x="798" y="38" width="250" height="300" rx="12"></rect>
+    <text class="panel-title" x="814" y="66">Current Q(Y)</text>
+    <g data-role="q-matrix"></g>
+
+    <rect class="panel" x="12" y="358" width="1036" height="198" rx="12"></rect>
+    <text class="panel-title" x="28" y="386">The pairwise probability distributions</text>
+    <line class="axis" x1="54" y1="516" x2="1018" y2="516"></line>
+    <line class="axis" x1="54" y1="414" x2="54" y2="516"></line>
+    <text class="axis-label" x="1018" y="538" text-anchor="end">cell pairs, sorted by target similarity</text>
+    <text class="axis-label" x="42" y="421" text-anchor="end">probability</text>
+    <line x1="742" y1="383" x2="770" y2="383" class="prob-p"></line>
+    <text class="axis-label" x="778" y="387">target P</text>
+    <line x1="866" y1="383" x2="894" y2="383" class="prob-q"></line>
+    <text class="axis-label" x="902" y="387">current Q</text>
+    <polyline class="prob-p" data-role="p-line"></polyline>
+    <polyline class="prob-q" data-role="q-line"></polyline>
+  </svg>
+
+  <div class="status" data-role="status">Cauchy mode brakes near-neighbor collapse while keeping moderate-distance repulsion alive.</div>
+  <div class="caveat">Teaching comparison: P is fixed. Cauchy mode adds a visible near-attraction brake; exact t-SNE uses the Cauchy kernel in Q and its gradient.</div>
+
+  <script>
+    (() => {
+      const roots = document.querySelectorAll("#tsne-kl-optimization-demo");
+      const root = roots[roots.length - 1];
+      if (!root) return;
+
+      const svgNS = "http://www.w3.org/2000/svg";
+      const pLayer = root.querySelector('[data-role="p-matrix"]');
+      const qLayer = root.querySelector('[data-role="q-matrix"]');
+      const embeddingLayer = root.querySelector('[data-role="embedding"]');
+      const pLine = root.querySelector('[data-role="p-line"]');
+      const qLine = root.querySelector('[data-role="q-line"]');
+      const stepButton = root.querySelector('[data-action="step"]');
+      const resetButton = root.querySelector('[data-action="reset"]');
+      const klLabel = root.querySelector('[data-role="kl"]');
+      const status = root.querySelector('[data-role="status"]');
+      const kernelButtons = Array.from(root.querySelectorAll("[data-kernel]"));
+      if (!pLayer || !qLayer || !embeddingLayer || !pLine || !qLine ||
+          !stepButton || !resetButton || !klLabel || !status ||
+          kernelButtons.length !== 2) return;
+
+      const groupColors = ["#18a6a6", "#f05a67", "#4c78e8"];
+      const original = [
+        [-2.10, -1.90], [-1.70, -2.20], [-2.40, -2.30],
+        [ 2.10, -1.90], [ 1.70, -2.30], [ 2.40, -2.20],
+        [-0.30,  2.00], [ 0.20,  2.30], [ 0.40,  1.70]
+      ];
+      const initialSpread = 1.35;
+      const initialY = [
+        [-0.35,  0.15], [ 0.12, -0.22], [ 0.34,  0.33],
+        [-0.18, -0.38], [ 0.45, -0.08], [-0.42,  0.41],
+        [ 0.08,  0.47], [ 0.28, -0.48], [-0.48, -0.04]
+      ].map(([x, y]) => [x * initialSpread, y * initialSpread]);
+      const n = original.length;
+      const sigma = 0.75;
+      const learningRate = 2.25;
+      const nearBrakeScale = 0.5;
+      const groups = Array.from({ length: n }, (_, index) => Math.floor(index / 3));
+
+      function zeros() {
+        return Array.from({ length: n }, () => new Array(n).fill(0));
+      }
+
+      function targetP() {
+        const conditional = zeros();
+        for (let i = 0; i < n; i += 1) {
+          let rowSum = 0;
+          for (let j = 0; j < n; j += 1) {
+            if (i === j) continue;
+            const dx = original[i][0] - original[j][0];
+            const dy = original[i][1] - original[j][1];
+            conditional[i][j] = Math.exp(-(dx * dx + dy * dy) / (2 * sigma * sigma));
+            rowSum += conditional[i][j];
+          }
+          for (let j = 0; j < n; j += 1) {
+            conditional[i][j] /= rowSum;
+          }
+        }
+
+        const matrix = zeros();
+        for (let i = 0; i < n; i += 1) {
+          for (let j = 0; j < n; j += 1) {
+            matrix[i][j] = (conditional[i][j] + conditional[j][i]) / (2 * n);
+          }
+        }
+        return matrix;
+      }
+
+      function modelQ(coordinates, kernel) {
+        const weights = zeros();
+        let total = 0;
+        for (let i = 0; i < n; i += 1) {
+          for (let j = 0; j < n; j += 1) {
+            if (i === j) continue;
+            const dx = coordinates[i][0] - coordinates[j][0];
+            const dy = coordinates[i][1] - coordinates[j][1];
+            const distanceSquared = dx * dx + dy * dy;
+            weights[i][j] = kernel === "gaussian"
+              ? Math.exp(-distanceSquared)
+              : 1 / (1 + distanceSquared);
+            total += weights[i][j];
+          }
+        }
+        return weights.map(row => row.map(value => value / total));
+      }
+
+      function divergence(p, q) {
+        let value = 0;
+        for (let i = 0; i < n; i += 1) {
+          for (let j = 0; j < n; j += 1) {
+            if (p[i][j] > 0 && q[i][j] > 0) {
+              value += p[i][j] * Math.log(p[i][j] / q[i][j]);
+            }
+          }
+        }
+        return value;
+      }
+
+      function gradient(p, q, coordinates, kernel) {
+        const result = Array.from({ length: n }, () => [0, 0]);
+        for (let i = 0; i < n; i += 1) {
+          for (let j = 0; j < n; j += 1) {
+            if (i === j) continue;
+            const dx = coordinates[i][0] - coordinates[j][0];
+            const dy = coordinates[i][1] - coordinates[j][1];
+            const distanceSquared = dx * dx + dy * dy;
+            let scale = 4 * (p[i][j] - q[i][j]);
+            if (kernel === "cauchy") {
+              const farDistanceBrake = 1 / (1 + distanceSquared);
+              const nearAttractionBrake = scale > 0
+                ? distanceSquared / (distanceSquared + nearBrakeScale)
+                : 1;
+              scale *= farDistanceBrake * nearAttractionBrake;
+            }
+            result[i][0] += scale * dx;
+            result[i][1] += scale * dy;
+          }
+        }
+        return result;
+      }
+
+      const p = targetP();
+      const probabilityMax = Math.max(...p.flat()) * 1.05;
+      let kernel = "cauchy";
+      let y = initialY.map(point => [...point]);
+      let q = modelQ(y, kernel);
+      let stepCount = 0;
+      const pCells = [];
+      const qCells = [];
+      const circles = [];
+
+      function createMatrix(layer, matrix, matrixKind, startX) {
+        const cellSize = 19;
+        const startY = 108;
+        for (let i = 0; i < n; i += 1) {
+          for (let j = 0; j < n; j += 1) {
+            const rect = document.createElementNS(svgNS, "rect");
+            rect.setAttribute("x", String(startX + j * cellSize));
+            rect.setAttribute("y", String(startY + i * cellSize));
+            rect.setAttribute("width", String(cellSize - 1));
+            rect.setAttribute("height", String(cellSize - 1));
+            rect.setAttribute("rx", "2");
+            rect.setAttribute("fill", i === j ? "#d8e0eb" : "#4c78e8");
+            rect.setAttribute("fill-opacity", i === j ? "0.26" : String(
+              Math.min(1, 0.05 + 0.95 * matrix[i][j] / probabilityMax)
+            ));
+            rect.setAttribute("class", "q-cell");
+            layer.appendChild(rect);
+            if (matrixKind === "p") pCells.push({ rect, i, j });
+            if (matrixKind === "q") qCells.push({ rect, i, j });
+          }
+        }
+
+        for (let index = 0; index < n; index += 1) {
+          const topDot = document.createElementNS(svgNS, "circle");
+          topDot.setAttribute("cx", String(startX + index * cellSize + 9));
+          topDot.setAttribute("cy", String(startY - 10));
+          topDot.setAttribute("r", "4");
+          topDot.setAttribute("fill", groupColors[groups[index]]);
+          layer.appendChild(topDot);
+
+          const sideDot = document.createElementNS(svgNS, "circle");
+          sideDot.setAttribute("cx", String(startX - 10));
+          sideDot.setAttribute("cy", String(startY + index * cellSize + 9));
+          sideDot.setAttribute("r", "4");
+          sideDot.setAttribute("fill", groupColors[groups[index]]);
+          layer.appendChild(sideDot);
+        }
+      }
+
+      createMatrix(pLayer, p, "p", 46);
+      createMatrix(qLayer, q, "q", 832);
+
+      y.forEach((point, index) => {
+        const circle = document.createElementNS(svgNS, "circle");
+        circle.setAttribute("class", "embedding-point");
+        circle.setAttribute("r", "9");
+        circle.setAttribute("fill", groupColors[groups[index]]);
+        circle.setAttribute("aria-label", `cell ${index + 1}`);
+        embeddingLayer.appendChild(circle);
+        circles.push(circle);
+      });
+
+      const pairs = [];
+      for (let i = 0; i < n; i += 1) {
+        for (let j = i + 1; j < n; j += 1) {
+          pairs.push({ i, j, p: 2 * p[i][j] });
+        }
+      }
+      pairs.sort((a, b) => b.p - a.p);
+      const initialGaussianQ = modelQ(initialY, "gaussian");
+      const initialCauchyQ = modelQ(initialY, "cauchy");
+      const distributionMax = 1.15 * Math.max(
+        ...pairs.map(pair => pair.p),
+        ...pairs.map(pair => 2 * initialGaussianQ[pair.i][pair.j]),
+        ...pairs.map(pair => 2 * initialCauchyQ[pair.i][pair.j])
+      );
+      const pairX = index => 58 + index / (pairs.length - 1) * 950;
+      const pairY = value => 512 - value / distributionMax * 94;
+
+      pLine.setAttribute(
+        "points",
+        pairs.map((pair, index) => `${pairX(index)},${pairY(pair.p)}`).join(" ")
+      );
+
+      function render() {
+        kernelButtons.forEach(button => {
+          button.setAttribute(
+            "aria-pressed",
+            String(button.dataset.kernel === kernel)
+          );
+        });
+
+        circles.forEach((circle, index) => {
+          const px = 530 + y[index][0] / 5 * 195;
+          const py = 205 - y[index][1] / 5 * 92;
+          circle.setAttribute("cx", px.toFixed(2));
+          circle.setAttribute("cy", py.toFixed(2));
+        });
+
+        pCells.forEach(({ rect, i, j }) => {
+          const normalized = p[i][j] / probabilityMax;
+          const emphasis = kernel === "gaussian"
+            ? 0.06 + 0.94 * Math.pow(normalized, 0.62)
+            : 0.05 + 0.48 * Math.pow(normalized, 0.85);
+          rect.setAttribute(
+            "fill-opacity",
+            (i === j ? 0.26 : Math.min(1, emphasis)).toFixed(3)
+          );
+        });
+
+        qCells.forEach(({ rect, i, j }) => {
+          const opacity = i === j
+            ? 0.26
+            : Math.min(1, 0.05 + 0.95 * q[i][j] / probabilityMax);
+          rect.setAttribute("fill-opacity", opacity.toFixed(3));
+        });
+
+        qLine.setAttribute(
+          "points",
+          pairs.map((pair, index) => (
+            `${pairX(index)},${pairY(2 * q[pair.i][pair.j])}`
+          )).join(" ")
+        );
+
+        const kl = divergence(p, q);
+        klLabel.textContent = `step ${stepCount} · KL = ${kl.toFixed(3)}`;
+        if (stepCount === 0) {
+          status.textContent = kernel === "gaussian"
+            ? "Gaussian mode: every true neighbor feels the full inward pull from the first step."
+            : "Cauchy mode: nearby attraction is braked so gaps can open before local structure collapses.";
+        } else {
+          status.textContent = kernel === "gaussian"
+            ? "Gaussian: local points collapse first; the cluster centers only then pull apart."
+            : "Cauchy: separation grows while each cluster keeps visible internal breathing room.";
+        }
+      }
+
+      function optimizeOnce() {
+        const grad = gradient(p, q, y, kernel);
+        y = y.map((point, index) => [
+          point[0] - learningRate * grad[index][0],
+          point[1] - learningRate * grad[index][1]
+        ]);
+
+        const meanX = y.reduce((sum, point) => sum + point[0], 0) / n;
+        const meanY = y.reduce((sum, point) => sum + point[1], 0) / n;
+        y = y.map(point => [point[0] - meanX, point[1] - meanY]);
+        q = modelQ(y, kernel);
+        stepCount += 1;
+        render();
+      }
+
+      function reset() {
+        y = initialY.map(point => [...point]);
+        q = modelQ(y, kernel);
+        stepCount = 0;
+        render();
+      }
+
+      function selectKernel(nextKernel) {
+        if (nextKernel !== "gaussian" && nextKernel !== "cauchy") return;
+        kernel = nextKernel;
+        reset();
+      }
+
+      kernelButtons.forEach(button => {
+        button.addEventListener("click", () => selectKernel(button.dataset.kernel));
+      });
+      stepButton.addEventListener("click", optimizeOnce);
+      resetButton.addEventListener("click", reset);
+      render();
+    })();
+  </script>
+</div>

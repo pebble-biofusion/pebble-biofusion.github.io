@@ -247,9 +247,13 @@ permalink: /workshop/2026/ignition/
           <span class="talk-speaker">Xinyu Wang</span>
         </div>
         <ul class="materials collapsed">
-          <li><a href="#">Slides</a></li>
-          <li><a href="#">Notebook</a></li>
-          <li><a href="#">Data</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/high-dimensional-biological-data/0726_section1.ipynb">0726_section1.ipynb</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/high-dimensional-biological-data/data.zip">data.zip</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/high-dimensional-biological-data/nmf-vector-programs.py">nmf-vector-programs.py</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/high-dimensional-biological-data/pbmc_playground.py">pbmc_playground.py</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/high-dimensional-biological-data/tsne-1d-force-demo.html">tsne-1d-force-demo.html</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/high-dimensional-biological-data/tsne-kl-optimization-demo.html">tsne-kl-optimization-demo.html</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/high-dimensional-biological-data/tsne-similarity-kernels.py">tsne-similarity-kernels.py</a></li>
         </ul>
       </li>
       <li class="talk talk--has-materials">
