@@ -244,9 +244,11 @@ permalink: /workshop/2026/ignition/
           <span class="talk-speaker">Qinguo Liu</span>
         </div>
         <ul class="materials collapsed">
-          <li><a href="#">Slides</a></li>
-          <li><a href="#">Notebook</a></li>
-          <li><a href="#">Data</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/dynamics-from-rna-splicing/README.md">README.md</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/dynamics-from-rna-splicing/student.ipynb">student.ipynb</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/dynamics-from-rna-splicing/solutions.ipynb">solutions.ipynb</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/dynamics-from-rna-splicing/requirements.txt">requirements.txt</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/dynamics-from-rna-splicing/data.zip">data.zip</a></li>
         </ul>
       </li>
       <li class="talk talk--has-materials">
