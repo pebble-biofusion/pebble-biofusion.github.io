@@ -211,7 +211,7 @@ permalink: /workshop/2026/ignition/
           <span class="talk-speaker">Yihao Lin</span>
         </div>
         <ul class="materials collapsed">
-          <li><a href="{{ site.baseurl }}/workshop/2026/materials/methylation-clock/Day4_Aging%20clocks%20based%20on%20accumulating%20stochastic%20variation.pptx">Day4_Aging clocks based on accumulating stochastic variation.pptx</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/methylation-clock/Aging%20clocks%20based%20on%20accumulating%20stochastic%20variation.pptx">Aging clocks based on accumulating stochastic variation.pptx</a></li>
           <li><a href="{{ site.baseurl }}/workshop/2026/materials/methylation-clock/metClock.ipynb">metClock.ipynb</a></li>
           <li><a href="{{ site.baseurl }}/workshop/2026/materials/methylation-clock/Data.zip">Data.zip</a></li>
           <li><a href="{{ site.baseurl }}/workshop/2026/materials/methylation-clock/results.zip">results.zip</a></li>
