@@ -260,9 +260,11 @@ permalink: /workshop/2026/ignition/
           <span class="talk-speaker">Qianrui Wang, Jiaqi Tu</span>
         </div>
         <ul class="materials collapsed">
-          <li><a href="#">Slides</a></li>
-          <li><a href="#">Notebook</a></li>
-          <li><a href="#">Data</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/neural-systems-across-scales/Multiscale_Modelling_Tutorial.pdf">Multiscale_Modelling_Tutorial.pdf</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/neural-systems-across-scales/From%20Ion%20Channels%20to%20Memories.ipynb">From Ion Channels to Memories.ipynb</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/neural-systems-across-scales/section3_0726_From%20Ion%20Channels%20to%20Memories(1).html">section3_0726_From Ion Channels to Memories(1).html</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/neural-systems-across-scales/tutorial_models.py">tutorial_models.py</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/neural-systems-across-scales/Student_Worksheet.docx">Student_Worksheet.docx</a></li>
         </ul>
       </li>
     </ul>
