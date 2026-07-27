@@ -183,9 +183,8 @@ permalink: /workshop/2026/ignition/
           <span class="talk-speaker">Ruoqing Zhang</span>
         </div>
         <ul class="materials collapsed">
-          <li><a href="#">Slides</a></li>
-          <li><a href="#">Notebook</a></li>
-          <li><a href="#">Data</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/agent-based-models/Agent based model.key">Agent based model.key</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/agent-based-models/Agent based model.pptx">Agent based model.pptx</a></li>
         </ul>
       </li>
       <li class="talk talk--has-materials">
