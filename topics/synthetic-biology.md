@@ -6,7 +6,7 @@ permalink: /topics/synthetic-biology/
 
 # Synthetic Biology Research Projects
 
-Synthetic biology is an important direction of the Pebble Biofusion Summer School, combining engineering principles with biological knowledge to design and construct new biological systems.
+Synthetic biology is an important direction of the Pebble Biofusion Workshop, combining engineering principles with biological knowledge to design and construct new biological systems.
 
 ## Research Focus
 

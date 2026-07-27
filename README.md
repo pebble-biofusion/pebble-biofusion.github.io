@@ -1,6 +1,6 @@
-# 🎓 Pebble Biofusion Summer School Platform
+# 🎓 Pebble Biofusion Workshop Platform
 
-A comprehensive platform for hosting teaching materials, project outputs, and research results from the annual Pebble Biofusion Summer School programs at Westlake University Interdisciplinary Sciences Center.
+A comprehensive platform for hosting teaching materials, project outputs, and research results from the annual Pebble Biofusion Workshop programs at Westlake University Interdisciplinary Sciences Center.
 
 ## 🌟 Website
 
@@ -12,7 +12,7 @@ This platform serves as a central repository for:
 - **Teaching Materials**: Lecture slides, tutorials, and educational resources
 - **Project Outputs**: Jupyter notebooks, presentations, and analysis code
 - **Research Results**: Manuscripts, posters, and conference materials
-- **Collaborative Work**: Multi-year, multi-institutional summer school projects
+- **Collaborative Work**: Multi-year, multi-institutional workshop projects
 
 ## 📁 Project Organization
 
@@ -90,7 +90,7 @@ The site automatically deploys to GitHub Pages when you push to the main branch:
 
 ```bash
 git add .
-git commit -m "Add new summer school project"
+git commit -m "Add new workshop project"
 git push origin main
 ```
 
@@ -128,7 +128,7 @@ date: 2026-07-25
 
 ## 🎓 Program Overview
 
-### 2026 Summer School
+### 2026 Workshop
 - **Application Deadline**: June 15, 2026
 - **Duration**: 6-8 weeks
 - **Research Areas**: 8 interdisciplinary directions
@@ -188,7 +188,7 @@ date: 2026-07-25
 ## 🔍 Navigation Guide
 
 ### Browse by Year
-- [2026 Projects](/years/2026/) - Current summer school projects
+- [2026 Projects](/years/2026/) - Current workshop projects
 
 ### Browse by Research Topic
 - [Complex Systems](/topics/complex-systems/) - Statistical physics, networks

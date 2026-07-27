@@ -85,5 +85,5 @@ This research can be used for:
 Funding sources, institutional support, etc.
 
 ---
-*Part of Summer School 2026 - [Research Area]*
+*Part of Workshop 2026 - [Research Area]*
 *Last updated: July 2026*

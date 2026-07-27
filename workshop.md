@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Summer School Projects
+title: Workshop Projects
 permalink: /workshop/
 ---
 
-# Summer School Materials Portal
+# Workshop Materials Portal
 
-Welcome to the Pebble Summer School materials repository! This platform hosts teaching materials, project outputs, and research results from our annual summer school programs.
+Welcome to the Pebble Workshop materials repository! This platform hosts teaching materials, project outputs, and research results from our annual workshop programs.
 
 ## 📁 Browse Materials
 
@@ -14,7 +14,7 @@ Welcome to the Pebble Summer School materials repository! This platform hosts te
 {% assign years = "2025,2024,2023" | split: "," %}
 {% for year in years %}
 <div class="year-card">
-  <h3>{{ year }} Summer School</h3>
+  <h3>{{ year }} Workshop</h3>
   <p>Explore projects, presentations, and outputs from {{ year }}.</p>
   <a href="{{ site.baseurl }}/years/{{ year }}/" class="btn-year">View {{ year }} Projects</a>
 </div>

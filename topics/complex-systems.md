@@ -6,7 +6,7 @@ permalink: /topics/complex-systems/
 
 # Complex Systems Research Projects
 
-Complex systems research is one of the core directions of the Pebble Biofusion Summer School, using methods from statistical physics, network dynamics, and other fields to study the fundamental laws of living systems.
+Complex systems research is one of the core directions of the Pebble Biofusion Workshop, using methods from statistical physics, network dynamics, and other fields to study the fundamental laws of living systems.
 
 ## Research Focus
 

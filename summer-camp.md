@@ -1,12 +1,12 @@
 ---
 layout: page
-title: "Summer School Program"
+title: "Workshop Program"
 permalink: /summer-camp/
 ---
 
 ## Program Overview
 
-The Pebble Biofusion Summer School is an intensive interdisciplinary program hosted by Westlake University Interdisciplinary Sciences Center (CIS), cultivating scientific core competencies in the AI era through hands-on research experience.
+The Pebble Biofusion Workshop is an intensive interdisciplinary program hosted by Westlake University Interdisciplinary Sciences Center (CIS), cultivating scientific core competencies in the AI era through hands-on research experience.
 
 ## Important Dates
 

@@ -6,7 +6,7 @@ permalink: /about/
 
 ## About the Platform
 
-This platform hosts teaching materials and research outputs from the Pebble Biofusion Summer School hosted by Westlake University Interdisciplinary Sciences Center.
+This platform hosts teaching materials and research outputs from the Pebble Biofusion Workshop hosted by Westlake University Interdisciplinary Sciences Center.
 
 ## Program Mission
 
@@ -17,7 +17,7 @@ This platform hosts teaching materials and research outputs from the Pebble Biof
 
 ## Program Background
 
-The Pebble Biofusion Summer School brings together students and researchers from physics, mathematics, biology, computer science, and engineering for intensive 6-8 week research projects.
+The Pebble Biofusion Workshop brings together students and researchers from physics, mathematics, biology, computer science, and engineering for intensive 6-8 week research projects.
 
 ### Features
 - World-class faculty from Westlake University and partners
@@ -47,7 +47,7 @@ The Pebble Biofusion Summer School brings together students and researchers from
 - Complex Systems, Synthetic Biology, AI for Science, Biophysics, etc.
 
 ### By Year
-- Access projects by summer school year
+- Access projects by workshop year
 
 ### By Type
 - Presentations, Notebooks, Posters, Manuscripts
@@ -63,7 +63,7 @@ The Pebble Biofusion Summer School brings together students and researchers from
 
 **Host**: Westlake University Interdisciplinary Sciences Center
 
-For platform questions, contact the summer school organizing committee.
+For platform questions, contact the workshop organizing committee.
 
 ---
 

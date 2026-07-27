@@ -6,7 +6,7 @@ permalink: /contribute/
 
 ## Adding Content
 
-This platform hosts teaching materials and research outputs from the Pebble Biofusion Summer School.
+This platform hosts teaching materials and research outputs from the Pebble Biofusion Workshop.
 
 ## Project Structure
 
@@ -91,4 +91,4 @@ bundle exec jekyll serve
 
 ## Contact
 
-For guidance on contributing materials, contact the summer school organizing committee.
+For guidance on contributing materials, contact the workshop organizing committee.
