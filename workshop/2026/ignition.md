@@ -196,9 +196,10 @@ permalink: /workshop/2026/ignition/
           <span class="talk-speaker">Jiahao Chen</span>
         </div>
         <ul class="materials collapsed">
-          <li><a href="#">Slides</a></li>
-          <li><a href="#">Notebook</a></li>
-          <li><a href="#">Data</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/membrane-physics/Membrane physics.pptx">Membrane physics.pptx</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/membrane-physics/Membrane physics-0.ipynb">Membrane physics-0.ipynb</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/membrane-physics/Membrane physics-1.ipynb">Membrane physics-1.ipynb</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/membrane-physics/Membrane physics-2.ipynb">Membrane physics-2.ipynb</a></li>
         </ul>
       </li>
       <li class="talk talk--has-materials">
