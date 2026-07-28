@@ -120,9 +120,11 @@ permalink: /workshop/2026/ignition/
           <span class="talk-speaker">Hongying Lin</span>
         </div>
         <ul class="materials collapsed">
-          <li><a href="#">Slides</a></li>
-          <li><a href="#">Notebook</a></li>
-          <li><a href="#">Data</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/asymmetric-damage-lifespan/lineage_damage_model_tutorial_final.pdf">lineage_damage_model_tutorial_final.pdf</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/asymmetric-damage-lifespan/lineage_damage_model_minimal.ipynb">lineage_damage_model_minimal.ipynb</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/asymmetric-damage-lifespan/lineage_damage_model_minimal.html">lineage_damage_model_minimal.html</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/asymmetric-damage-lifespan/lineage_damage_model_advanced.ipynb">lineage_damage_model_advanced.ipynb</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/asymmetric-damage-lifespan/lineage_damage_model_advanced.html">lineage_damage_model_advanced.html</a></li>
         </ul>
       </li>
       <li class="talk talk--has-materials">
