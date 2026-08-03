@@ -84,9 +84,7 @@ permalink: /workshop/2026/ignition/
           <span class="talk-speaker">Xiaowen Zhang</span>
         </div>
         <ul class="materials collapsed">
-          <li><a href="#">Slides</a></li>
-          <li><a href="#">Notebook</a></li>
-          <li><a href="#">Data</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/turing-patterns/Turing_Pattern-Tutorial.pdf">Turing_Pattern-Tutorial.pdf</a></li>
         </ul>
       </li>
     </ul>
