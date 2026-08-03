@@ -66,9 +66,13 @@ permalink: /workshop/2026/ignition/
           <span class="talk-speaker">Lei Hui, Qinyu Cai</span>
         </div>
         <ul class="materials collapsed">
-          <li><a href="#">Slides</a></li>
-          <li><a href="#">Notebook</a></li>
-          <li><a href="#">Data</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/omics-data-integration/README.md">README.md</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/omics-data-integration/interactive_tutorial.html">interactive_tutorial.html</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/omics-data-integration/exercise_pbmc10k.ipynb">exercise_pbmc10k.ipynb</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/omics-data-integration/citeseq_pbmc.npz">citeseq_pbmc.npz</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/omics-data-integration/citeseq_pbmc10k.npz">citeseq_pbmc10k.npz</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/omics-data-integration/prepare_data.py">prepare_data.py</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/2026/materials/omics-data-integration/requirements.txt">requirements.txt</a></li>
         </ul>
       </li>
       <li class="talk talk--has-materials">
