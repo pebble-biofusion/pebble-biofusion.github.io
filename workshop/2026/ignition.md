@@ -20,6 +20,20 @@ permalink: /workshop/2026/ignition/
     </ul>
   </section>
 
+  <!-- ===== 08.02 ===== -->
+  <section class="day">
+    <button class="day-toggle" type="button" aria-expanded="false">
+      <span class="day-arrow">▸</span>
+      <span class="day-date">08.02 Sunday Research + Analysis</span>
+    </button>
+    <ul class="talk-list collapsed">
+      <li class="talk">
+        <span class="talk-title">Noise suppression &amp; large deviation</span>
+        <span class="talk-speaker">Jiawei Yan</span>
+      </li>
+    </ul>
+  </section>
+
   <!-- ===== 07.30 ===== -->
   <section class="day">
     <button class="day-toggle" type="button" aria-expanded="false">
