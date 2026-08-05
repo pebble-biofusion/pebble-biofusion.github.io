@@ -18,7 +18,7 @@ permalink: /workshop/2026/synthesis/
 
   <article class="paper-row">
     <div class="paper-info">
-      <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/02A-From Connectome Structure to Signal Propagation Cross-Level Interference Boundaries in C. elegancs Whole-Brain Dynamics.pdf" class="paper-title">From Connectome Structure to Signal Propagation: Cross-Level Interference Boundaries in C. elegans Whole-Brain Dynamics</a>
+      <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/02A-From Connectome Structure to Signal Propagation Cross-Level Interference Boundaries in C. elegancs Whole-Brain Dynamics.pdf" class="paper-title">From Connectome Structure to Signal Propagation Cross-Level Interference Boundaries in C. elegancs Whole-Brain Dynamics</a>
       <div class="paper-meta">Pebble Authors · 2026 · Manuscript</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/02A-From Connectome Structure to Signal Propagation Cross-Level Interference Boundaries in C. elegancs Whole-Brain Dynamics.pdf" class="paper-poster">
