@@ -68,21 +68,11 @@ permalink: /workshop/2026/synthesis/
 
   <article class="paper-row">
     <div class="paper-info">
-      <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/06A_Designing for Emergence_manuscript_2026.8.4.pdf" class="paper-title">Designing for Emergence (Main Manuscript)</a>
+      <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/06-Designing for Emergence.pdf" class="paper-title">Designing for Emergence</a>
       <div class="paper-meta">Pebble Authors · 2026 · Manuscript</div>
     </div>
-    <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/06A-figure.png" class="paper-poster" target="_blank">
-      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/06A-figure.png" alt="Designing for Emergence (Main Manuscript)">
-    </a>
-  </article>
-
-  <article class="paper-row">
-    <div class="paper-info">
-      <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/06B_Designing for Emergence_SI_2026.8.4.pdf" class="paper-title">Designing for Emergence (Supplementary Information)</a>
-      <div class="paper-meta">Pebble Authors · 2026 · Supplementary Materials</div>
-    </div>
-    <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/06B-figure.png" class="paper-poster" target="_blank">
-      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/06B-figure.png" alt="Designing for Emergence (Supplementary Information)">
+    <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/06-figure.png" class="paper-poster" target="_blank">
+      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/06-figure.png" alt="Designing for Emergence">
     </a>
   </article>
 
