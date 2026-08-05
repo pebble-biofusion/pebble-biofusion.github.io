@@ -6,24 +6,21 @@ permalink: /workshop/2026/gallery/
 
 <div class="gallery">
 
-  <div class="gallery-header">
-    <h1>Workshop Gallery</h1>
-    <p class="gallery-subtitle">2026 Pebble BioFusion Workshop Moments</p>
-  </div>
-
   <!-- ===== Gallery Grid ===== -->
   <div class="gallery-grid">
     
     <!-- Add your images here -->
-    <!-- Example format:
+    <!-- Example photos from the workshop - replace with your actual photos -->
+    
+    <!-- Photo 1: Workshop Opening -->
     <div class="gallery-item">
       <div class="gallery-image-wrapper">
-        <img src="{{ site.baseurl }}/images/workshop2026/photo1.jpg" 
-             alt="Workshop photo" 
+        <img src="{{ site.baseurl }}/images/workshop2026/workshop-opening.jpg" 
+             alt="Workshop Opening Ceremony" 
              class="gallery-image"
-             data-full="{{ site.baseurl }}/images/workshop2026/photo1.jpg"
-             data-title="Photo Title"
-             data-description="Photo description">
+             data-full="{{ site.baseurl }}/images/workshop2026/workshop-opening.jpg"
+             data-title="Workshop Opening Ceremony"
+             data-description="Group photo from the opening ceremony of Pebble BioFusion Workshop 2026">
         <div class="gallery-overlay">
           <div class="gallery-overlay-content">
             <button class="view-btn" title="View Full Size">
@@ -54,7 +51,93 @@ permalink: /workshop/2026/gallery/
         </div>
       </div>
     </div>
-    -->
+
+    <!-- Photo 2: Group Discussion -->
+    <div class="gallery-item">
+      <div class="gallery-image-wrapper">
+        <img src="{{ site.baseurl }}/images/workshop2026/group-discussion.jpg" 
+             alt="Group Discussion Session" 
+             class="gallery-image"
+             data-full="{{ site.baseurl }}/images/workshop2026/group-discussion.jpg"
+             data-title="Group Discussion Session"
+             data-description="Participants engaging in lively discussion about biofusion research">
+        <div class="gallery-overlay">
+          <div class="gallery-overlay-content">
+            <button class="view-btn" title="View Full Size">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+            </button>
+            <button class="download-btn" title="Download Image">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+            <button class="share-btn" title="Share Image">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Photo 3: Lab Tour -->
+    <div class="gallery-item">
+      <div class="gallery-image-wrapper">
+        <img src="{{ site.baseurl }}/images/workshop2026/lab-tour.jpg" 
+             alt="Laboratory Tour" 
+             class="gallery-image"
+             data-full="{{ site.baseurl }}/images/workshop2026/lab-tour.jpg"
+             data-title="Laboratory Tour"
+             data-description="Workshop participants touring the research facilities">
+        <div class="gallery-overlay">
+          <div class="gallery-overlay-content">
+            <button class="view-btn" title="View Full Size">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+            </button>
+            <button class="download-btn" title="Download Image">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+            <button class="share-btn" title="Share Image">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add more photos here following the same format -->
+    <!-- You can copy and paste the photo template above and modify the:
+         - Image file path
+         - Alt text
+         - Title
+         - Description -->
 
   </div>
 
@@ -104,27 +187,7 @@ permalink: /workshop/2026/gallery/
     width: 100%;
     max-width: 1600px;
     margin: 0 auto;
-    padding: 2rem 1rem;
-  }
-
-  /* ===== Header ===== */
-  .gallery-header {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-
-  .gallery-header h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #1f2937;
-    margin-bottom: 0.5rem;
-    letter-spacing: -0.5px;
-  }
-
-  .gallery-subtitle {
-    font-size: 1.1rem;
-    color: #6b7280;
-    margin: 0;
+    padding: 1rem 1rem 2rem;
   }
 
   /* ===== Gallery Grid ===== */
@@ -320,10 +383,6 @@ permalink: /workshop/2026/gallery/
       gap: 1rem;
     }
 
-    .gallery-header h1 {
-      font-size: 2rem;
-    }
-
     .lightbox-content {
       max-width: 95vw;
     }
@@ -337,10 +396,6 @@ permalink: /workshop/2026/gallery/
   @media (max-width: 480px) {
     .gallery-grid {
       grid-template-columns: 1fr;
-    }
-
-    .gallery-header h1 {
-      font-size: 1.75rem;
     }
 
     .lightbox {
