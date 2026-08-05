@@ -119,15 +119,16 @@ layout: home
   /* ===== Carousel Styles ===== */
   .hero-carousel {
     width: 100%;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
     position: relative;
   }
 
   .carousel-container {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9;
-    max-width: 1600px;
+    aspect-ratio: 21 / 9;
+    max-width: 1400px;
+    max-height: 400px;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 12px;
@@ -367,6 +368,11 @@ layout: home
 
   /* ===== Responsive ===== */
   @media (max-width: 768px) {
+    .carousel-container {
+      aspect-ratio: 16 / 9;
+      max-height: 300px;
+    }
+
     .carousel-control {
       width: 40px;
       height: 40px;
@@ -411,7 +417,8 @@ layout: home
 
   @media (max-width: 480px) {
     .carousel-container {
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 3 / 2;
+      max-height: 250px;
       border-radius: 8px;
     }
 
