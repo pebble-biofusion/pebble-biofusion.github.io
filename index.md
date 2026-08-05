@@ -127,7 +127,7 @@ layout: home
     position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
-    max-width: 1100px;
+    max-width: 900px;
     max-height: 450px;
     margin: 0 auto;
     overflow: hidden;
@@ -370,7 +370,7 @@ layout: home
   /* ===== Responsive ===== */
   @media (max-width: 1200px) {
     .carousel-container {
-      max-width: 900px;
+      max-width: 750px;
       max-height: 400px;
     }
   }
