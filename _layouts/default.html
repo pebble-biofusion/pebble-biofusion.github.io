@@ -123,23 +123,42 @@
 
     .workshop-nav {
       display: flex;
-      gap: 2rem;
+      gap: 1.5rem;
       margin-top: 0.75rem;
+      align-items: center;
     }
 
     .workshop-nav a {
-      color: #FF6C0C;
+      color: #4b5563;
       text-decoration: none;
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       font-weight: 500;
       transition: all 0.2s;
-      padding: 0.35rem 0;
-      border-bottom: 2px solid transparent;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      letter-spacing: 0.3px;
+      position: relative;
     }
 
     .workshop-nav a:hover {
-      color: #e55a00;
-      border-bottom-color: #FF6C0C;
+      color: #1f2937;
+      background: #f9fafb;
+    }
+
+    .workshop-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: #6366f1;
+      transition: width 0.3s ease;
+    }
+
+    .workshop-nav a:hover::after {
+      width: 80%;
     }
 
     /* Main Layout */
@@ -255,8 +274,13 @@
       .workshop-nav {
         width: 100%;
         flex-wrap: wrap;
-        gap: 1rem;
+        gap: 0.5rem;
         margin-top: 0.5rem;
+      }
+
+      .workshop-nav a {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.6rem;
       }
 
       .site-title {
@@ -266,16 +290,6 @@
 
       .header-logos img {
         height: 30px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .workshop-nav {
-        gap: 0.75rem;
-      }
-
-      .workshop-nav a {
-        font-size: 0.85rem;
       }
     }
   </style>
