@@ -126,9 +126,9 @@ layout: home
   .carousel-container {
     position: relative;
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 4 / 3;
     max-width: 900px;
-    max-height: 900px;
+    max-height: 800px;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 12px;
@@ -371,15 +371,15 @@ layout: home
   @media (max-width: 1200px) {
     .carousel-container {
       max-width: 750px;
-      max-height: 750px;
+      max-height: 700px;
     }
   }
 
   @media (max-width: 768px) {
     .carousel-container {
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 4 / 3;
       max-width: 100%;
-      max-height: 600px;
+      max-height: 550px;
     }
 
     .carousel-control {
@@ -426,9 +426,9 @@ layout: home
 
   @media (max-width: 480px) {
     .carousel-container {
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 4 / 3;
       max-width: 100%;
-      max-height: 500px;
+      max-height: 450px;
       border-radius: 8px;
     }
 
