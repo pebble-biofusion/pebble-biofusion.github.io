@@ -28,11 +28,11 @@ permalink: /workshop/2026/synthesis/
 
   <article class="paper-row">
     <div class="paper-info">
-      <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/02B-Two Faces of Plasticity in Small Spiking Circuits How Connectome Topology and Cell-Type-Specific Learning Rules Shape What a Small Network Can Learn.docx" class="paper-title">Two Faces of Plasticity in Small Spiking Circuits: How Connectome Topology and Cell-Type-Specific Learning Rules Shape What a Small Network Can Learn</a>
+      <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/02B-Two Faces of Plasticity in Small Spiking Circuits_How Connectome Topology and Cell-Type-Specific Learning Rules Shape What a Small Network Can Learn.pdf" class="paper-title">Two Faces of Plasticity in Small Spiking Circuits: How Connectome Topology and Cell-Type-Specific Learning Rules Shape What a Small Network Can Learn</a>
       <div class="paper-meta">Pebble Authors · 2026 · Manuscript</div>
     </div>
-    <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/02B-Two Faces of Plasticity in Small Spiking Circuits How Connectome Topology and Cell-Type-Specific Learning Rules Shape What a Small Network Can Learn.docx" class="paper-poster">
-      <span class="poster-tag">DOCX</span>
+    <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/02B-Two Faces of Plasticity in Small Spiking Circuits_How Connectome Topology and Cell-Type-Specific Learning Rules Shape What a Small Network Can Learn.pdf" class="paper-poster">
+      <span class="poster-tag">PDF</span>
     </a>
   </article>
 
