@@ -126,13 +126,14 @@ layout: home
   .carousel-container {
     position: relative;
     width: 100%;
-    aspect-ratio: 21 / 9;
-    max-width: 1400px;
-    max-height: 400px;
+    aspect-ratio: 16 / 9;
+    max-width: 1100px;
+    max-height: 450px;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 12px;
     background: #f9fafb;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   }
 
   .carousel-slides {
@@ -367,10 +368,18 @@ layout: home
   }
 
   /* ===== Responsive ===== */
+  @media (max-width: 1200px) {
+    .carousel-container {
+      max-width: 900px;
+      max-height: 400px;
+    }
+  }
+
   @media (max-width: 768px) {
     .carousel-container {
       aspect-ratio: 16 / 9;
-      max-height: 300px;
+      max-width: 100%;
+      max-height: 350px;
     }
 
     .carousel-control {
@@ -417,8 +426,9 @@ layout: home
 
   @media (max-width: 480px) {
     .carousel-container {
-      aspect-ratio: 3 / 2;
-      max-height: 250px;
+      aspect-ratio: 4 / 3;
+      max-width: 100%;
+      max-height: 300px;
       border-radius: 8px;
     }
 
