@@ -12,7 +12,7 @@ permalink: /workshop/2026/synthesis/
       <div class="paper-meta">Pebble Authors · 2026 · Manuscript</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/01-Quantifying_the_Spatial_Reach_of_Perturbation_Effects_in_Tumor_CRISPR_Screens.pdf" class="paper-poster">
-      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/01-placeholder.png" alt="Quantifying the Spatial Reach of Perturbation Effects in Tumor CRISPR Screens">
+      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/01-figure.png" alt="Quantifying the Spatial Reach of Perturbation Effects in Tumor CRISPR Screens">
     </a>
   </article>
 
@@ -22,7 +22,7 @@ permalink: /workshop/2026/synthesis/
       <div class="paper-meta">Pebble Authors · 2026 · Manuscript</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/02A-From Connectome Structure to Signal Propagation Cross-Level Interference Boundaries in C. elegancs Whole-Brain Dynamics.pdf" class="paper-poster">
-      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/02A-placeholder.png" alt="From Connectome Structure to Signal Propagation Cross-Level Interference Boundaries in C. elegancs Whole-Brain Dynamics">
+      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/02A-figure.png" alt="From Connectome Structure to Signal Propagation Cross-Level Interference Boundaries in C. elegancs Whole-Brain Dynamics">
     </a>
   </article>
 
@@ -32,7 +32,7 @@ permalink: /workshop/2026/synthesis/
       <div class="paper-meta">Pebble Authors · 2026 · Manuscript</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/02B-Two Faces of Plasticity in Small Spiking Circuits_How Connectome Topology and Cell-Type-Specific Learning Rules Shape What a Small Network Can Learn.pdf" class="paper-poster">
-      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/02B-placeholder.png" alt="Two Faces of Plasticity in Small Spiking Circuits">
+      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/02B-figure.png" alt="Two Faces of Plasticity in Small Spiking Circuits">
     </a>
   </article>
 
@@ -42,7 +42,7 @@ permalink: /workshop/2026/synthesis/
       <div class="paper-meta">Pebble Authors · 2026 · Manuscript</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/03-Growth and immunity receptors compete for co-receptors to regulate balance in plants.pdf" class="paper-poster">
-      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/03-placeholder.png" alt="Growth and immunity receptors compete for co-receptors to regulate balance in plants">
+      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/03-figure.png" alt="Growth and immunity receptors compete for co-receptors to regulate balance in plants">
     </a>
   </article>
 
@@ -52,7 +52,7 @@ permalink: /workshop/2026/synthesis/
       <div class="paper-meta">Pebble Authors · 2026 · Manuscript</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/04-Health Human B-Cell Aging Characterized by Regulatory-State Remodeling.pdf" class="paper-poster">
-      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/04-placeholder.png" alt="Healthy Human B-Cell Aging Characterized by Regulatory-State Remodeling">
+      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/04-figure.png" alt="Healthy Human B-Cell Aging Characterized by Regulatory-State Remodeling">
     </a>
   </article>
 
@@ -62,7 +62,7 @@ permalink: /workshop/2026/synthesis/
       <div class="paper-meta">Pebble Authors · 2026 · Manuscript</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/05-Factorial Knockouts Diagnose Missing Physical Structure in a Calibrated PSI-LHCI Transport Surrogate.pdf" class="paper-poster">
-      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/05-placeholder.png" alt="Factorial Knockouts Diagnose Missing Physical Structure in a Calibrated PSI-LHCI Transport Surrogate">
+      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/05-figure.png" alt="Factorial Knockouts Diagnose Missing Physical Structure in a Calibrated PSI-LHCI Transport Surrogate">
     </a>
   </article>
 
@@ -72,7 +72,7 @@ permalink: /workshop/2026/synthesis/
       <div class="paper-meta">Pebble Authors · 2026 · Manuscript</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/06A_Designing for Emergence_manuscript_2026.8.4.pdf" class="paper-poster">
-      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/06A-placeholder.png" alt="Designing for Emergence (Main Manuscript)">
+      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/06A-figure.png" alt="Designing for Emergence (Main Manuscript)">
     </a>
   </article>
 
@@ -82,7 +82,7 @@ permalink: /workshop/2026/synthesis/
       <div class="paper-meta">Pebble Authors · 2026 · Supplementary Materials</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/06B_Designing for Emergence_SI_2026.8.4.pdf" class="paper-poster">
-      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/06B-placeholder.png" alt="Designing for Emergence (Supplementary Information)">
+      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/06B-figure.png" alt="Designing for Emergence (Supplementary Information)">
     </a>
   </article>
 
@@ -92,7 +92,7 @@ permalink: /workshop/2026/synthesis/
       <div class="paper-meta">Pebble Authors · 2026 · Manuscript</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/07-A_pharmacokinetics_informed_ODE_extrapolates_long_term_fenofibrate_transcriptomic_responses.pdf" class="paper-poster">
-      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/07-placeholder.png" alt="A pharmacokinetics-informed ODE extrapolates long-term fenofibrate transcriptomic responses">
+      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/07-figure.png" alt="A pharmacokinetics-informed ODE extrapolates long-term fenofibrate transcriptomic responses">
     </a>
   </article>
 
@@ -102,7 +102,7 @@ permalink: /workshop/2026/synthesis/
       <div class="paper-meta">Pebble Authors · 2026 · Manuscript</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/08-Balancing degradation and tissue integration_a coupled-dynamics model of the mechanical performance of biodegradable hernia meshes.pdf" class="paper-poster">
-      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/08-placeholder.png" alt="Balancing degradation and tissue integration">
+      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/08-figure.png" alt="Balancing degradation and tissue integration">
     </a>
   </article>
 
@@ -112,7 +112,7 @@ permalink: /workshop/2026/synthesis/
       <div class="paper-meta">Pebble Authors · 2026 · Manuscript</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/09-Why This Code_A Constrained Mapping Framework for the Evolutionary Stability of the Canonical Genetic Code.pdf" class="paper-poster">
-      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/09-placeholder.png" alt="Why This Code? A Constrained Mapping Framework for the Evolutionary Stability of the Canonical Genetic Code">
+      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/09-figure.png" alt="Why This Code? A Constrained Mapping Framework for the Evolutionary Stability of the Canonical Genetic Code">
     </a>
   </article>
 
@@ -122,7 +122,7 @@ permalink: /workshop/2026/synthesis/
       <div class="paper-meta">Pebble Authors · 2026 · Manuscript</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/10-Feedback Dysregulation as a Dominant Driver of Hematopoietic Stem Cell Aging.pdf" class="paper-poster">
-      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/10-placeholder.png" alt="Feedback Dysregulation as a Dominant Driver of Hematopoietic Stem Cell Aging">
+      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/10-figure.png" alt="Feedback Dysregulation as a Dominant Driver of Hematopoietic Stem Cell Aging">
     </a>
   </article>
 
@@ -132,7 +132,7 @@ permalink: /workshop/2026/synthesis/
       <div class="paper-meta">Pebble Authors · 2026 · Manuscript</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/12-RPDynaFlow_Generating Protein-RNA Conformational Ensembles with Flow Matching.pdf" class="paper-poster">
-      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/12-placeholder.png" alt="RPDynaFlow: Generating Protein-RNA Conformational Ensembles with Flow Matching">
+      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/12-figure.png" alt="RPDynaFlow: Generating Protein-RNA Conformational Ensembles with Flow Matching">
     </a>
   </article>
 
@@ -142,7 +142,7 @@ permalink: /workshop/2026/synthesis/
       <div class="paper-meta">Pebble Authors · 2026 · Manuscript</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/13-TailorAge_ A Cell-Specific Epigenetic Clock Framework for Profiling Human Biological Aging at Single-Cell Resolution.pdf" class="paper-poster">
-      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/13-placeholder.png" alt="TailorAge: A Cell-Specific Epigenetic Clock Framework for Profiling Human Biological Aging at Single-Cell Resolution">
+      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/13-figure.png" alt="TailorAge: A Cell-Specific Epigenetic Clock Framework for Profiling Human Biological Aging at Single-Cell Resolution">
     </a>
   </article>
 
@@ -152,7 +152,7 @@ permalink: /workshop/2026/synthesis/
       <div class="paper-meta">Pebble Authors · 2026 · Manuscript</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/14-A Coarse Grained Stochastic Model of Translation Coupled Latent-Time Variability.pdf" class="paper-poster">
-      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/14-placeholder.png" alt="A Coarse-Grained Stochastic Model of Translation Coupled Latent-Time Variability">
+      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/14-figure.png" alt="A Coarse-Grained Stochastic Model of Translation Coupled Latent-Time Variability">
     </a>
   </article>
 
@@ -162,7 +162,7 @@ permalink: /workshop/2026/synthesis/
       <div class="paper-meta">Pebble Authors · 2026 · Manuscript</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/15-Distinct residual spatial organization of inputs and outputs in human cortical neurons.pdf" class="paper-poster">
-      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/15-placeholder.png" alt="Distinct residual spatial organization of inputs and outputs in human cortical neurons">
+      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/15-figure.png" alt="Distinct residual spatial organization of inputs and outputs in human cortical neurons">
     </a>
   </article>
 
@@ -172,7 +172,7 @@ permalink: /workshop/2026/synthesis/
       <div class="paper-meta">Pebble Authors · 2026 · Manuscript</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/16-Statistical Orthogonality Between Thermodynamic Predictions and Experimental DNA Melt Profiles.pdf" class="paper-poster">
-      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/16-placeholder.png" alt="Statistical Orthogonality Between Thermodynamic Predictions and Experimental DNA Melt Profiles">
+      <img src="{{ site.baseurl }}/workshop/2026/materials/synthesis-manuscripts/images/16-figure.png" alt="Statistical Orthogonality Between Thermodynamic Predictions and Experimental DNA Melt Profiles">
     </a>
   </article>
 
