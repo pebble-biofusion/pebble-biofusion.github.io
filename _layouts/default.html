@@ -37,6 +37,13 @@
       gap: 1.5rem;
     }
 
+    .header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.5rem;
+    }
+
     .header-logos {
       display: flex;
       gap: 1rem;
@@ -114,158 +121,38 @@
       color: #0066cc;
     }
 
+    .workshop-nav {
+      display: flex;
+      gap: 2rem;
+      margin-top: 0.75rem;
+    }
+
+    .workshop-nav a {
+      color: #FF6C0C;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.2s;
+      padding: 0.35rem 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    .workshop-nav a:hover {
+      color: #e55a00;
+      border-bottom-color: #FF6C0C;
+    }
+
     /* Main Layout */
     .main-wrapper {
-      display: flex;
       max-width: 1400px;
       margin: 0 auto;
     }
 
-    /* Sidebar */
-    .sidebar {
-      width: 250px;
-      padding: 2rem 1.5rem 2rem 2rem;
-      border-right: 1px solid #e0e0e0;
-      flex-shrink: 0;
-    }
-
-    .sidebar-section {
-      margin-bottom: 2rem;
-    }
-
-    .sidebar-title {
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      color: #1f2937;
-      margin-bottom: 1rem;
-    }
-
-    .sidebar-nav {
-      list-style: none;
-    }
-
-    .sidebar-nav li {
-      margin-bottom: 0.5rem;
-    }
-
-    .sidebar-nav a {
-      color: #333;
-      text-decoration: none;
-      font-size: 0.9rem;
-      display: block;
-      padding: 0.25rem 0;
-      transition: color 0.2s;
-    }
-
-    .sidebar-nav a:hover {
-      color: #0066cc;
-    }
-
-    .sidebar-nav a.active {
-      color: #0066cc;
-      font-weight: 500;
-    }
-
-    /* Workshop Tree */
-    .workshop-tree {
-      margin-top: 0.5rem;
-    }
-
-    .workshop-year-label {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: #6b7280;
-      margin-bottom: 0.75rem;
-      letter-spacing: 1px;
-    }
-
-    .workshop-toggle {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: none;
-      border: none;
-      padding: 0.35rem 0;
-      margin-bottom: 0.5rem;
-      font-family: inherit;
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: #6b7280;
-      cursor: pointer;
-      letter-spacing: 1px;
-      transition: color 0.2s;
-    }
-
-    .workshop-toggle:hover {
-      color: #FF6C0C;
-    }
-
-    .workshop-toggle:hover .toggle-arrow {
-      color: #FF6C0C;
-    }
-
-    .toggle-arrow {
-      display: inline-block;
-      font-size: 0.65rem;
-      color: #9ca3af;
-      transition: transform 0.2s, color 0.2s;
-    }
-
-    .workshop-toggle[aria-expanded="true"] .toggle-arrow {
-      transform: rotate(90deg);
-      color: #FF6C0C;
-    }
-
-    .workshop-nav {
-      list-style: none;
-      padding-left: 0.75rem;
-      border-left: 2px solid #e0e0e0;
-      margin: 0 0 0 0.25rem;
-    }
-
-    .workshop-nav.collapsed {
-      display: none;
-    }
-
-    .workshop-nav li {
-      margin-bottom: 0.3rem;
-    }
-
-    .workshop-nav a {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      color: #1f2937;
-      text-decoration: none;
-      font-size: 0.9rem;
-      padding: 0.35rem 0;
-      transition: color 0.2s, transform 0.2s;
-    }
-
-    .workshop-nav a:hover {
-      color: #FF6C0C;
-      transform: translateX(4px);
-    }
-
-    .workshop-marker {
-      width: 6px;
-      height: 6px;
-      background: #1f2937;
-      border-radius: 50%;
-      flex-shrink: 0;
-      transition: background 0.2s;
-    }
-
-    .workshop-nav a:hover .workshop-marker {
-      background: #FF6C0C;
-    }
-
     /* Main Content */
     .main-content {
-      flex: 1;
       padding: 2rem 3rem;
-      min-width: 0;
+      max-width: 1400px;
+      margin: 0 auto;
     }
 
     .main-content h1 {
@@ -349,38 +236,46 @@
 
     /* Responsive */
     @media (max-width: 900px) {
-      .main-wrapper {
-        flex-direction: column;
-      }
-
-      .sidebar {
-        width: 100%;
-        border-right: none;
-        padding: 1.5rem 2rem;
-      }
-
       .main-content {
         padding: 2rem 2rem;
-      }
-
-      .header-nav {
-        display: none;
       }
 
       .header-content {
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.75rem;
+        gap: 1rem;
         padding: 0 1.5rem;
       }
 
+      .header-right {
+        align-items: flex-start;
+        width: 100%;
+      }
+
+      .workshop-nav {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 0.5rem;
+      }
+
       .site-title {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         line-height: 1.3;
       }
 
       .header-logos img {
         height: 30px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .workshop-nav {
+        gap: 0.75rem;
+      }
+
+      .workshop-nav a {
+        font-size: 0.85rem;
       }
     }
   </style>
@@ -391,70 +286,30 @@
       <a href="{{ '/' | relative_url }}" class="site-title">
         <span class="title-acronym">PEBBLE</span><span class="title-eq">=</span><span class="cap">P</span>hysics<span class="op">+</span><span class="cap">E</span>ngineering<span class="op">+</span><span class="cap">B</span>iology<span class="op">+</span><span class="cap">B</span>iotechnology<span class="op">+</span><span class="cap">L</span>earning<span class="op">+</span><span class="cap">E</span>xperience
       </a>
-      <div class="header-logos">
-        <a href="https://cis.westlake.edu.cn/index.htm" target="_blank" rel="noopener" title="CIS, Westlake University">
-          <img src="{{ '/images/cis-logo.png' | relative_url }}" alt="CIS, Westlake University">
-        </a>
-        <a href="https://www.westlake.edu.cn/" target="_blank" rel="noopener" title="Westlake University">
-          <img src="{{ '/images/westlake-logo.png' | relative_url }}" alt="Westlake University">
-        </a>
+      <div class="header-right">
+        <nav class="workshop-nav">
+          <a href="{{ '/workshop/ignition/' | relative_url }}">Ignition</a>
+          <a href="{{ '/workshop/synthesis/' | relative_url }}">Synthesis</a>
+          <a href="{{ '/workshop/gallery/' | relative_url }}">Gallery</a>
+        </nav>
+        <div class="header-logos">
+          <a href="https://cis.westlake.edu.cn/index.htm" target="_blank" rel="noopener" title="CIS, Westlake University">
+            <img src="{{ '/images/cis-logo.png' | relative_url }}" alt="CIS, Westlake University">
+          </a>
+          <a href="https://www.westlake.edu.cn/" target="_blank" rel="noopener" title="Westlake University">
+            <img src="{{ '/images/westlake-logo.png' | relative_url }}" alt="Westlake University">
+          </a>
+        </div>
       </div>
     </div>
   </header>
 
-  <div class="main-wrapper">
-    <aside class="sidebar">
-      <div class="sidebar-section">
-        <div class="sidebar-title">Workshop</div>
-        <div class="workshop-tree">
-          <button class="workshop-toggle" type="button" aria-expanded="false">
-            <span class="toggle-arrow">▸</span>
-            <span class="toggle-label">2026</span>
-          </button>
-          <ul class="workshop-nav collapsed">
-            <li>
-              <a href="{{ '/workshop/2026/ignition/' | relative_url }}">
-                <span class="workshop-marker"></span>
-                ignition
-              </a>
-            </li>
-            <li>
-              <a href="{{ '/workshop/2026/synthesis/' | relative_url }}">
-                <span class="workshop-marker"></span>
-                synthesis
-              </a>
-            </li>
-            <li>
-              <a href="{{ '/workshop/2026/gallery/' | relative_url }}">
-                <span class="workshop-marker"></span>
-                gallery
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </aside>
-
-    <main class="main-content">
-      {{ content }}
-    </main>
-  </div>
+  <main class="main-content">
+    {{ content }}
+  </main>
 
   <footer class="site-footer">
     &copy; 2026 PEBBLE BioFusion Workshop, Westlake University CIS
   </footer>
-
-  <script>
-    document.querySelectorAll('.workshop-toggle').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var expanded = this.getAttribute('aria-expanded') === 'true';
-        this.setAttribute('aria-expanded', !expanded);
-        var nav = this.nextElementSibling;
-        if (nav) {
-          nav.classList.toggle('collapsed');
-        }
-      });
-    });
-  </script>
 </body>
 </html>

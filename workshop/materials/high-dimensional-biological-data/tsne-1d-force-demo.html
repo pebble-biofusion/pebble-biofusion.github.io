@@ -1,0 +1,413 @@
+<div id="tsne-1d-force-demo">
+  <style>
+    #tsne-1d-force-demo {
+      --demo-bg: #f4f7fb;
+      --demo-panel: #ffffff;
+      --demo-ink: #172033;
+      --demo-muted: #65738b;
+      --demo-grid: #d8e0eb;
+      --demo-teal: #18a6a6;
+      --demo-coral: #f05a67;
+      --demo-blue: #4c78e8;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 18px;
+      border: 1px solid var(--demo-grid);
+      border-radius: 14px;
+      background: var(--demo-bg);
+      color: var(--demo-ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    #tsne-1d-force-demo * { box-sizing: border-box; }
+    #tsne-1d-force-demo .demo-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+    #tsne-1d-force-demo .demo-title {
+      margin: 0 0 6px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    #tsne-1d-force-demo .demo-rule {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      color: var(--demo-muted);
+      font-size: 13px;
+    }
+    #tsne-1d-force-demo .rule-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    #tsne-1d-force-demo .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    #tsne-1d-force-demo .controls {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+    #tsne-1d-force-demo button {
+      border: 1px solid var(--demo-grid);
+      border-radius: 9px;
+      padding: 8px 13px;
+      background: var(--demo-panel);
+      color: var(--demo-ink);
+      font: inherit;
+      font-weight: 650;
+      cursor: pointer;
+    }
+    #tsne-1d-force-demo button.primary {
+      border-color: var(--demo-ink);
+      background: var(--demo-ink);
+      color: #ffffff;
+    }
+    #tsne-1d-force-demo button:focus-visible {
+      outline: 3px solid rgba(76, 120, 232, 0.28);
+      outline-offset: 2px;
+    }
+    #tsne-1d-force-demo .step-label {
+      min-width: 58px;
+      color: var(--demo-muted);
+      font-size: 13px;
+      text-align: right;
+    }
+    #tsne-1d-force-demo svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      overflow: visible;
+    }
+    #tsne-1d-force-demo .panel {
+      fill: var(--demo-panel);
+      stroke: var(--demo-grid);
+      stroke-width: 1.3;
+    }
+    #tsne-1d-force-demo .panel-title {
+      fill: var(--demo-ink);
+      font-size: 15px;
+      font-weight: 700;
+    }
+    #tsne-1d-force-demo .panel-note,
+    #tsne-1d-force-demo .axis-label {
+      fill: var(--demo-muted);
+      font-size: 12px;
+    }
+    #tsne-1d-force-demo .axis {
+      stroke: var(--demo-muted);
+      stroke-width: 1.4;
+      stroke-linecap: round;
+    }
+    #tsne-1d-force-demo .projection-guide {
+      stroke: var(--demo-grid);
+      stroke-width: 1;
+      stroke-dasharray: 4 5;
+    }
+    #tsne-1d-force-demo .source-ball,
+    #tsne-1d-force-demo .target-ball {
+      stroke: #ffffff;
+      stroke-width: 1.5;
+    }
+    #tsne-1d-force-demo .target-ball {
+      opacity: 0.72;
+      transition: cx 320ms ease;
+    }
+    #tsne-1d-force-demo .flow-arrow {
+      stroke: var(--demo-muted);
+      stroke-width: 2.2;
+      fill: none;
+      marker-end: url(#tsne-arrowhead);
+    }
+    #tsne-1d-force-demo .status {
+      margin-top: 8px;
+      color: var(--demo-ink);
+      font-size: 13px;
+      font-weight: 650;
+    }
+    #tsne-1d-force-demo .caveat {
+      margin-top: 4px;
+      color: var(--demo-muted);
+      font-size: 12px;
+    }
+    @media (max-width: 700px) {
+      #tsne-1d-force-demo { padding: 12px; }
+      #tsne-1d-force-demo .demo-head { flex-direction: column; }
+      #tsne-1d-force-demo .controls { justify-content: flex-start; }
+      #tsne-1d-force-demo .step-label { text-align: left; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #tsne-1d-force-demo .target-ball { transition: none; }
+    }
+  </style>
+
+  <div class="demo-head">
+    <div>
+      <div class="demo-title">Can one dimension keep the neighborhoods?</div>
+      <div class="demo-rule" aria-label="Toy force rules">
+        <span class="rule-item">
+          <span class="dot" style="background: var(--demo-teal)"></span>
+          <span>→ ←</span>
+          <span class="dot" style="background: var(--demo-teal)"></span>
+          <span>same neighborhood attracts</span>
+        </span>
+        <span class="rule-item">
+          <span class="dot" style="background: var(--demo-coral)"></span>
+          <span>← →</span>
+          <span class="dot" style="background: var(--demo-blue)"></span>
+          <span>different neighborhoods repel</span>
+        </span>
+      </div>
+    </div>
+    <div class="controls">
+      <button type="button" class="primary" data-action="step">Update once</button>
+      <button type="button" data-action="reset">Reset projection</button>
+      <span class="step-label" data-role="step">step 0</span>
+    </div>
+  </div>
+
+  <svg viewBox="0 0 980 400" role="img" aria-labelledby="tsne-demo-title tsne-demo-desc">
+    <title id="tsne-demo-title">Interactive two-dimensional to one-dimensional neighborhood embedding</title>
+    <desc id="tsne-demo-desc">
+      Three clusters are separate in two dimensions but overlap after direct projection to one dimension.
+      Repeated updates attract members of the same neighborhood and repel members of different neighborhoods.
+    </desc>
+    <defs>
+      <marker id="tsne-arrowhead" viewBox="0 0 10 10" refX="8" refY="5"
+              markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--demo-muted)"></path>
+      </marker>
+    </defs>
+
+    <rect class="panel" x="12" y="38" width="350" height="335" rx="12"></rect>
+    <text class="panel-title" x="30" y="68">Original space: 2D</text>
+    <line class="axis" x1="55" y1="340" x2="328" y2="340"></line>
+    <line class="axis" x1="55" y1="340" x2="55" y2="112"></line>
+    <text class="axis-label" x="300" y="360">feature 1</text>
+    <text class="axis-label" x="24" y="125" transform="rotate(-90 24 125)">feature 2</text>
+    <g data-role="source-points">
+      <circle class="source-ball" data-point-id="0-0" cx="152.00" cy="199.04" r="8.5" fill="#18a6a6" aria-label="state A"></circle>
+      <circle class="source-ball" data-point-id="0-1" cx="163.00" cy="224.96" r="8.5" fill="#18a6a6" aria-label="state A"></circle>
+      <circle class="source-ball" data-point-id="0-2" cx="177.00" cy="191.12" r="8.5" fill="#18a6a6" aria-label="state A"></circle>
+      <circle class="source-ball" data-point-id="0-3" cx="188.00" cy="217.76" r="8.5" fill="#18a6a6" aria-label="state A"></circle>
+      <circle class="source-ball" data-point-id="0-4" cx="203.00" cy="203.36" r="8.5" fill="#18a6a6" aria-label="state A"></circle>
+      <circle class="source-ball" data-point-id="0-5" cx="214.00" cy="228.56" r="8.5" fill="#18a6a6" aria-label="state A"></circle>
+      <circle class="source-ball" data-point-id="0-6" cx="229.00" cy="209.12" r="8.5" fill="#18a6a6" aria-label="state A"></circle>
+      <circle class="source-ball" data-point-id="0-7" cx="196.00" cy="240.08" r="8.5" fill="#18a6a6" aria-label="state A"></circle>
+      <circle class="source-ball" data-point-id="1-0" cx="177.27" cy="323.05" r="8.5" fill="#f05a67" aria-label="state B"></circle>
+      <circle class="source-ball" data-point-id="1-1" cx="170.78" cy="349.75" r="8.5" fill="#f05a67" aria-label="state B"></circle>
+      <circle class="source-ball" data-point-id="1-2" cx="204.54" cy="324.15" r="8.5" fill="#f05a67" aria-label="state B"></circle>
+      <circle class="source-ball" data-point-id="1-3" cx="197.59" cy="351.48" r="8.5" fill="#f05a67" aria-label="state B"></circle>
+      <circle class="source-ball" data-point-id="1-4" cx="220.03" cy="343.54" r="8.5" fill="#f05a67" aria-label="state B"></circle>
+      <circle class="source-ball" data-point-id="1-5" cx="213.98" cy="369.59" r="8.5" fill="#f05a67" aria-label="state B"></circle>
+      <circle class="source-ball" data-point-id="1-6" cx="239.58" cy="357.15" r="8.5" fill="#f05a67" aria-label="state B"></circle>
+      <circle class="source-ball" data-point-id="1-7" cx="190.69" cy="373.99" r="8.5" fill="#f05a67" aria-label="state B"></circle>
+      <circle class="source-ball" data-point-id="2-0" cx="208.12" cy="247.26" r="8.5" fill="#4c78e8" aria-label="state C"></circle>
+      <circle class="source-ball" data-point-id="2-1" cx="185.54" cy="268.94" r="8.5" fill="#4c78e8" aria-label="state C"></circle>
+      <circle class="source-ball" data-point-id="2-2" cx="231.75" cy="257.13" r="8.5" fill="#4c78e8" aria-label="state C"></circle>
+      <circle class="source-ball" data-point-id="2-3" cx="208.36" cy="279.23" r="8.5" fill="#4c78e8" aria-label="state C"></circle>
+      <circle class="source-ball" data-point-id="2-4" cx="233.36" cy="279.46" r="8.5" fill="#4c78e8" aria-label="state C"></circle>
+      <circle class="source-ball" data-point-id="2-5" cx="211.58" cy="300.72" r="8.5" fill="#4c78e8" aria-label="state C"></circle>
+      <circle class="source-ball" data-point-id="2-6" cx="242.23" cy="297.98" r="8.5" fill="#4c78e8" aria-label="state C"></circle>
+      <circle class="source-ball" data-point-id="2-7" cx="188.04" cy="297.05" r="8.5" fill="#4c78e8" aria-label="state C"></circle>
+    </g>
+
+    <path class="flow-arrow" d="M 378 205 C 397 205, 408 205, 428 205"></path>
+    <text class="panel-note" x="402" y="184" text-anchor="middle">embed</text>
+
+    <rect class="panel" x="442" y="38" width="526" height="335" rx="12"></rect>
+    <text class="panel-title" x="462" y="68">Target space: 1D</text>
+    <line class="projection-guide" x1="484" y1="133" x2="930" y2="133"></line>
+    <text class="axis-label" x="484" y="123">projection direction</text>
+    <line class="axis" x1="484" y1="242" x2="930" y2="242"></line>
+    <line class="axis" x1="484" y1="233" x2="484" y2="251"></line>
+    <line class="axis" x1="930" y1="233" x2="930" y2="251"></line>
+    <text class="axis-label" x="707" y="275" text-anchor="middle">one learned coordinate</text>
+    <g data-role="target-points">
+      <circle class="target-ball" data-point-id="0-0" cx="590.00" cy="242" r="10" fill="#18a6a6" aria-label="state A"></circle>
+      <circle class="target-ball" data-point-id="0-1" cx="618.04" cy="242" r="10" fill="#18a6a6" aria-label="state A"></circle>
+      <circle class="target-ball" data-point-id="0-2" cx="653.72" cy="242" r="10" fill="#18a6a6" aria-label="state A"></circle>
+      <circle class="target-ball" data-point-id="0-3" cx="681.76" cy="242" r="10" fill="#18a6a6" aria-label="state A"></circle>
+      <circle class="target-ball" data-point-id="0-4" cx="720.00" cy="242" r="10" fill="#18a6a6" aria-label="state A"></circle>
+      <circle class="target-ball" data-point-id="0-5" cx="748.04" cy="242" r="10" fill="#18a6a6" aria-label="state A"></circle>
+      <circle class="target-ball" data-point-id="0-6" cx="786.27" cy="242" r="10" fill="#18a6a6" aria-label="state A"></circle>
+      <circle class="target-ball" data-point-id="0-7" cx="702.16" cy="242" r="10" fill="#18a6a6" aria-label="state A"></circle>
+      <circle class="target-ball" data-point-id="1-0" cx="654.42" cy="242" r="10" fill="#f05a67" aria-label="state B"></circle>
+      <circle class="target-ball" data-point-id="1-1" cx="637.86" cy="242" r="10" fill="#f05a67" aria-label="state B"></circle>
+      <circle class="target-ball" data-point-id="1-2" cx="723.93" cy="242" r="10" fill="#f05a67" aria-label="state B"></circle>
+      <circle class="target-ball" data-point-id="1-3" cx="706.22" cy="242" r="10" fill="#f05a67" aria-label="state B"></circle>
+      <circle class="target-ball" data-point-id="1-4" cx="763.39" cy="242" r="10" fill="#f05a67" aria-label="state B"></circle>
+      <circle class="target-ball" data-point-id="1-5" cx="747.99" cy="242" r="10" fill="#f05a67" aria-label="state B"></circle>
+      <circle class="target-ball" data-point-id="1-6" cx="813.25" cy="242" r="10" fill="#f05a67" aria-label="state B"></circle>
+      <circle class="target-ball" data-point-id="1-7" cx="688.61" cy="242" r="10" fill="#f05a67" aria-label="state B"></circle>
+      <circle class="target-ball" data-point-id="2-0" cx="733.06" cy="242" r="10" fill="#4c78e8" aria-label="state C"></circle>
+      <circle class="target-ball" data-point-id="2-1" cx="675.49" cy="242" r="10" fill="#4c78e8" aria-label="state C"></circle>
+      <circle class="target-ball" data-point-id="2-2" cx="793.29" cy="242" r="10" fill="#4c78e8" aria-label="state C"></circle>
+      <circle class="target-ball" data-point-id="2-3" cx="733.66" cy="242" r="10" fill="#4c78e8" aria-label="state C"></circle>
+      <circle class="target-ball" data-point-id="2-4" cx="797.38" cy="242" r="10" fill="#4c78e8" aria-label="state C"></circle>
+      <circle class="target-ball" data-point-id="2-5" cx="741.87" cy="242" r="10" fill="#4c78e8" aria-label="state C"></circle>
+      <circle class="target-ball" data-point-id="2-6" cx="820.00" cy="242" r="10" fill="#4c78e8" aria-label="state C"></circle>
+      <circle class="target-ball" data-point-id="2-7" cx="681.88" cy="242" r="10" fill="#4c78e8" aria-label="state C"></circle>
+    </g>
+  </svg>
+
+  <div class="status" data-role="status">Raw projection: colors overlap even though the 2D neighborhoods do not.</div>
+  <div class="caveat">Teaching simplification: color stands in for similarity in the original space. Real t-SNE uses pairwise similarities—not cluster labels.</div>
+
+  <script>
+    (() => {
+      const roots = document.querySelectorAll("#tsne-1d-force-demo");
+      const root = roots[roots.length - 1];
+      if (!root) return;
+
+      const svgNS = "http://www.w3.org/2000/svg";
+      const sourceLayer = root.querySelector('[data-role="source-points"]');
+      const targetLayer = root.querySelector('[data-role="target-points"]');
+      const stepButton = root.querySelector('[data-action="step"]');
+      const resetButton = root.querySelector('[data-action="reset"]');
+      const stepLabel = root.querySelector('[data-role="step"]');
+      const status = root.querySelector('[data-role="status"]');
+      if (!sourceLayer || !targetLayer || !stepButton || !resetButton || !stepLabel || !status) return;
+
+      const groups = [
+        { name: "state A", color: "#18a6a6", center: [135, 150] },
+        { name: "state B", color: "#f05a67", center: [148, 285] },
+        { name: "state C", color: "#4c78e8", center: [161, 215] }
+      ];
+      const offsets = [
+        [-38, -18], [-27, 18], [-13, -29], [-2, 8],
+        [13, -12], [24, 23], [39, -4], [6, 39]
+      ];
+      const points2d = [];
+
+      groups.forEach((group, groupIndex) => {
+        const angle = groupIndex * 0.47;
+        const cosA = Math.cos(angle);
+        const sinA = Math.sin(angle);
+        offsets.forEach((offset, pointIndex) => {
+          const ox = offset[0] * cosA - offset[1] * sinA;
+          const oy = offset[0] * sinA + offset[1] * cosA;
+          points2d.push({
+            id: `${groupIndex}-${pointIndex}`,
+            group: groupIndex,
+            color: group.color,
+            x: 55 + group.center[0] + ox,
+            y: 62 + group.center[1] + oy * 0.72
+          });
+        });
+      });
+
+      const sourceMin = Math.min(...points2d.map(point => point.x));
+      const sourceMax = Math.max(...points2d.map(point => point.x));
+      const project = value => 590 + (value - sourceMin) / (sourceMax - sourceMin) * 230;
+      const initial = points2d.map(point => ({
+        id: point.id,
+        group: point.group,
+        color: point.color,
+        x: project(point.x)
+      }));
+
+      let points1d = initial.map(point => ({ ...point }));
+      let stepCount = 0;
+      const targetCircles = new Map();
+
+      points2d.forEach(point => {
+        let circle = sourceLayer.querySelector(`[data-point-id="${point.id}"]`);
+        if (!circle) {
+          circle = document.createElementNS(svgNS, "circle");
+          circle.setAttribute("class", "source-ball");
+          circle.setAttribute("data-point-id", point.id);
+          circle.setAttribute("cx", point.x.toFixed(2));
+          circle.setAttribute("cy", point.y.toFixed(2));
+          circle.setAttribute("r", "8.5");
+          circle.setAttribute("fill", point.color);
+          circle.setAttribute("aria-label", groups[point.group].name);
+          sourceLayer.appendChild(circle);
+        }
+      });
+
+      initial.forEach(point => {
+        let circle = targetLayer.querySelector(`[data-point-id="${point.id}"]`);
+        if (!circle) {
+          circle = document.createElementNS(svgNS, "circle");
+          circle.setAttribute("class", "target-ball");
+          circle.setAttribute("data-point-id", point.id);
+          circle.setAttribute("cx", point.x.toFixed(2));
+          circle.setAttribute("cy", "242");
+          circle.setAttribute("r", "10");
+          circle.setAttribute("fill", point.color);
+          circle.setAttribute("aria-label", groups[point.group].name);
+          targetLayer.appendChild(circle);
+        }
+        targetCircles.set(point.id, circle);
+      });
+
+      function render() {
+        points1d.forEach(point => {
+          const circle = targetCircles.get(point.id);
+          if (circle) circle.setAttribute("cx", point.x.toFixed(2));
+        });
+        stepLabel.textContent = `step ${stepCount}`;
+        status.textContent = stepCount === 0
+          ? "Raw projection: colors overlap even though the 2D neighborhoods do not."
+          : "Embedding update: within-color spread shrinks while between-color gaps grow.";
+      }
+
+      function updateOnce() {
+        const forces = new Array(points1d.length).fill(0);
+
+        for (let i = 0; i < points1d.length; i += 1) {
+          for (let j = i + 1; j < points1d.length; j += 1) {
+            let dx = points1d[j].x - points1d[i].x;
+            if (Math.abs(dx) < 0.35) {
+              dx = ((i + j) % 2 === 0 ? 1 : -1) * 0.35;
+            }
+
+            if (points1d[i].group === points1d[j].group) {
+              const attraction = 0.018 * dx;
+              forces[i] += attraction;
+              forces[j] -= attraction;
+            } else {
+              const repulsion = 78 * dx / (dx * dx + 625);
+              forces[i] -= repulsion;
+              forces[j] += repulsion;
+            }
+          }
+        }
+
+        points1d = points1d.map((point, index) => ({
+          ...point,
+          x: point.x + forces[index]
+        }));
+
+        const mean = points1d.reduce((sum, point) => sum + point.x, 0) / points1d.length;
+        const centerShift = 707 - mean;
+        points1d = points1d.map(point => ({
+          ...point,
+          x: Math.max(495, Math.min(919, point.x + centerShift))
+        }));
+
+        stepCount += 1;
+        render();
+      }
+
+      function reset() {
+        points1d = initial.map(point => ({ ...point }));
+        stepCount = 0;
+        render();
+      }
+
+      stepButton.addEventListener("click", updateOnce);
+      resetButton.addEventListener("click", reset);
+      render();
+    })();
+  </script>
+</div>
