@@ -9,7 +9,7 @@ permalink: /workshop/synthesis/
   <article class="paper-row">
     <div class="paper-info">
       <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/01-Quantifying_the_Spatial_Reach_of_Perturbation_Effects_in_Tumor_CRISPR_Screens.pdf" class="paper-title">Quantifying the Spatial Reach of Perturbation Effects in Tumor CRISPR Screens</a>
-      <div class="paper-meta">Zhenghao Xu, Yongji Lyu, Haotian Jin, Qiaochu Jiang, Qinyu Cai, Lei Hu · 2026 · Manuscript</div>
+      <div class="paper-meta">Zhenghao Xu, Yongji Lyu, Haotian Jin, Qiaochu Jiang, Qinyu Cai, Lei Hu</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/01-figure.png" class="paper-poster" target="_blank">
       <img src="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/01-figure.png" alt="Quantifying the Spatial Reach of Perturbation Effects in Tumor CRISPR Screens">
@@ -19,7 +19,7 @@ permalink: /workshop/synthesis/
   <article class="paper-row">
     <div class="paper-info">
       <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/02A-From Connectome Structure to Signal Propagation Cross-Level Interference Boundaries in C. elegancs Whole-Brain Dynamics.pdf" class="paper-title">From Connectome Structure to Signal Propagation Cross-Level Interference Boundaries in C. elegancs Whole-Brain Dynamics</a>
-      <div class="paper-meta">Zhiqi Shen · 2026 · Manuscript</div>
+      <div class="paper-meta">Zhiqi Shen</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/02A-figure.png" class="paper-poster" target="_blank">
       <img src="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/02A-figure.png" alt="From Connectome Structure to Signal Propagation Cross-Level Interference Boundaries in C. elegancs Whole-Brain Dynamics">
@@ -29,7 +29,7 @@ permalink: /workshop/synthesis/
   <article class="paper-row">
     <div class="paper-info">
       <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/02B-Two Faces of Plasticity in Small Spiking Circuits_How Connectome Topology and Cell-Type-Specific Learning Rules Shape What a Small Network Can Learn.pdf" class="paper-title">Two Faces of Plasticity in Small Spiking Circuits: How Connectome Topology and Cell-Type-Specific Learning Rules Shape What a Small Network Can Learn</a>
-      <div class="paper-meta">Jiaqi Tu, Shaoji Zhan, Junlin Xia, Xuele Dong, Wenxuan Zhang · 2026 · Manuscript</div>
+      <div class="paper-meta">Jiaqi Tu, Shaoji Zhan, Junlin Xia, Xuele Dong, Wenxuan Zhang</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/02B-figure.png" class="paper-poster" target="_blank">
       <img src="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/02B-figure.png" alt="Two Faces of Plasticity in Small Spiking Circuits">
@@ -39,7 +39,7 @@ permalink: /workshop/synthesis/
   <article class="paper-row">
     <div class="paper-info">
       <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/03-Growth and immunity receptors compete for co-receptors to regulate balance in plants.pdf" class="paper-title">Growth and immunity receptors compete for co-receptors to regulate balance in plants</a>
-      <div class="paper-meta">Qiaorui Zhang, Canxi Chen, Jiayu Zou · 2026 · Manuscript</div>
+      <div class="paper-meta">Qiaorui Zhang, Canxi Chen, Jiayu Zou</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/03-figure.png" class="paper-poster" target="_blank">
       <img src="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/03-figure.png" alt="Growth and immunity receptors compete for co-receptors to regulate balance in plants">
@@ -49,7 +49,7 @@ permalink: /workshop/synthesis/
   <article class="paper-row">
     <div class="paper-info">
       <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/04-Health Human B-Cell Aging Characterized by Regulatory-State Remodeling.pdf" class="paper-title">Healthy Human B-Cell Aging Characterized by Regulatory-State Remodeling</a>
-      <div class="paper-meta">Yifan Wang, Lanxin Ma, Jingwen Zhang · 2026 · Manuscript</div>
+      <div class="paper-meta">Yifan Wang, Lanxin Ma, Jingwen Zhang</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/04-figure.png" class="paper-poster" target="_blank">
       <img src="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/04-figure.png" alt="Healthy Human B-Cell Aging Characterized by Regulatory-State Remodeling">
@@ -59,7 +59,7 @@ permalink: /workshop/synthesis/
   <article class="paper-row">
     <div class="paper-info">
       <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/05-Factorial Knockouts Diagnose Missing Physical Structure in a Calibrated PSI-LHCI Transport Surrogate.pdf" class="paper-title">Factorial Knockouts Diagnose Missing Physical Structure in a Calibrated PSI-LHCI Transport Surrogate</a>
-      <div class="paper-meta">Hai Zhang, Boyi Feng, Huan Tan, Yuqi Wang, Haoming Luo · 2026 · Manuscript</div>
+      <div class="paper-meta">Hai Zhang, Boyi Feng, Huan Tan, Yuqi Wang, Haoming Luo</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/05-figure.png" class="paper-poster" target="_blank">
       <img src="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/05-figure.png" alt="Factorial Knockouts Diagnose Missing Physical Structure in a Calibrated PSI-LHCI Transport Surrogate">
@@ -69,7 +69,7 @@ permalink: /workshop/synthesis/
   <article class="paper-row">
     <div class="paper-info">
       <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/06-Designing for Emergence.pdf" class="paper-title">Designing for Emergence</a>
-      <div class="paper-meta">Haohui Feng · 2026 · Manuscript</div>
+      <div class="paper-meta">Haohui Feng</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/06-figure.png" class="paper-poster" target="_blank">
       <img src="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/06-figure.png" alt="Designing for Emergence">
@@ -79,7 +79,7 @@ permalink: /workshop/synthesis/
   <article class="paper-row">
     <div class="paper-info">
       <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/07-A_pharmacokinetics_informed_ODE_extrapolates_long_term_fenofibrate_transcriptomic_responses.pdf" class="paper-title">A pharmacokinetics-informed ODE extrapolates long-term fenofibrate transcriptomic responses</a>
-      <div class="paper-meta">Zheng Zhang, Yixuan Gao, Yu Li, Jian'en Qiu · 2026 · Manuscript</div>
+      <div class="paper-meta">Zheng Zhang, Yixuan Gao, Yu Li, Jian'en Qiu</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/07-figure.png" class="paper-poster" target="_blank">
       <img src="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/07-figure.png" alt="A pharmacokinetics-informed ODE extrapolates long-term fenofibrate transcriptomic responses">
@@ -89,7 +89,7 @@ permalink: /workshop/synthesis/
   <article class="paper-row">
     <div class="paper-info">
       <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/08-Balancing degradation and tissue integration_a coupled-dynamics model of the mechanical performance of biodegradable hernia meshes.pdf" class="paper-title">Balancing degradation and tissue integration: a coupled-dynamics model of the mechanical performance of biodegradable hernia meshes</a>
-      <div class="paper-meta">Ruiqin Feng · 2026 · Manuscript</div>
+      <div class="paper-meta">Ruiqin Feng</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/08-figure.png" class="paper-poster" target="_blank">
       <img src="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/08-figure.png" alt="Balancing degradation and tissue integration">
@@ -99,7 +99,7 @@ permalink: /workshop/synthesis/
   <article class="paper-row">
     <div class="paper-info">
       <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/09-Why This Code_A Constrained Mapping Framework for the Evolutionary Stability of the Canonical Genetic Code.pdf" class="paper-title">Why This Code? A Constrained Mapping Framework for the Evolutionary Stability of the Canonical Genetic Code</a>
-      <div class="paper-meta">Rentian Lin, Chenxiao Wang, Yining Hu, Chuanrui Wang, Xinyu Wang · 2026 · Manuscript</div>
+      <div class="paper-meta">Rentian Lin, Chenxiao Wang, Yining Hu, Chuanrui Wang, Xinyu Wang</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/09-figure.png" class="paper-poster" target="_blank">
       <img src="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/09-figure.png" alt="Why This Code? A Constrained Mapping Framework for the Evolutionary Stability of the Canonical Genetic Code">
@@ -109,7 +109,7 @@ permalink: /workshop/synthesis/
   <article class="paper-row">
     <div class="paper-info">
       <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/10-Feedback Dysregulation as a Dominant Driver of Hematopoietic Stem Cell Aging.pdf" class="paper-title">Feedback Dysregulation as a Dominant Driver of Hematopoietic Stem Cell Aging</a>
-      <div class="paper-meta">Rongkai Bao · 2026 · Manuscript</div>
+      <div class="paper-meta">Rongkai Bao</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/10-figure.png" class="paper-poster" target="_blank">
       <img src="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/10-figure.png" alt="Feedback Dysregulation as a Dominant Driver of Hematopoietic Stem Cell Aging">
@@ -119,7 +119,7 @@ permalink: /workshop/synthesis/
   <article class="paper-row">
     <div class="paper-info">
       <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/12-RPDynaFlow_Generating Protein-RNA Conformational Ensembles with Flow Matching.pdf" class="paper-title">RPDynaFlow: Generating Protein-RNA Conformational Ensembles with Flow Matching</a>
-      <div class="paper-meta">Yuntao Li, Kexin Lu · 2026 · Manuscript</div>
+      <div class="paper-meta">Yuntao Li, Kexin Lu</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/12-figure.png" class="paper-poster" target="_blank">
       <img src="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/12-figure.png" alt="RPDynaFlow: Generating Protein-RNA Conformational Ensembles with Flow Matching">
@@ -129,7 +129,7 @@ permalink: /workshop/synthesis/
   <article class="paper-row">
     <div class="paper-info">
       <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/13-TailorAge_ A Cell-Specific Epigenetic Clock Framework for Profiling Human Biological Aging at Single-Cell Resolution.pdf" class="paper-title">TailorAge: A Cell-Specific Epigenetic Clock Framework for Profiling Human Biological Aging at Single-Cell Resolution</a>
-      <div class="paper-meta">Zhengyi Yan · 2026 · Manuscript</div>
+      <div class="paper-meta">Zhengyi Yan</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/13-figure.png" class="paper-poster" target="_blank">
       <img src="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/13-figure.png" alt="TailorAge: A Cell-Specific Epigenetic Clock Framework for Profiling Human Biological Aging at Single-Cell Resolution">
@@ -139,7 +139,7 @@ permalink: /workshop/synthesis/
   <article class="paper-row">
     <div class="paper-info">
       <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/14-A Coarse Grained Stochastic Model of Translation Coupled Latent-Time Variability.pdf" class="paper-title">A Coarse-Grained Stochastic Model of Translation Coupled Latent-Time Variability</a>
-      <div class="paper-meta">Rui Ling, Wanqi Zhao, Yike Zhu, Ruoqing Zhang · 2026 · Manuscript</div>
+      <div class="paper-meta">Rui Ling, Wanqi Zhao, Yike Zhu, Ruoqing Zhang</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/14-figure.png" class="paper-poster" target="_blank">
       <img src="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/14-figure.png" alt="A Coarse-Grained Stochastic Model of Translation Coupled Latent-Time Variability">
@@ -149,7 +149,7 @@ permalink: /workshop/synthesis/
   <article class="paper-row">
     <div class="paper-info">
       <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/15-Distinct residual spatial organization of inputs and outputs in human cortical neurons.pdf" class="paper-title">Distinct residual spatial organization of inputs and outputs in human cortical neurons</a>
-      <div class="paper-meta">Xueqiang Xin · 2026 · Manuscript</div>
+      <div class="paper-meta">Xueqiang Xin</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/15-figure.png" class="paper-poster" target="_blank">
       <img src="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/15-figure.png" alt="Distinct residual spatial organization of inputs and outputs in human cortical neurons">
@@ -159,7 +159,7 @@ permalink: /workshop/synthesis/
   <article class="paper-row">
     <div class="paper-info">
       <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/16-Statistical Orthogonality Between Thermodynamic Predictions and Experimental DNA Melt Profiles.pdf" class="paper-title">Statistical Orthogonality Between Thermodynamic Predictions and Experimental DNA Melt Profiles</a>
-      <div class="paper-meta">Haoxiang Sun, Qinguo Liu · 2026 · Manuscript</div>
+      <div class="paper-meta">Haoxiang Sun, Qinguo Liu</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/16-figure.png" class="paper-poster" target="_blank">
       <img src="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/16-figure.png" alt="Statistical Orthogonality Between Thermodynamic Predictions and Experimental DNA Melt Profiles">
