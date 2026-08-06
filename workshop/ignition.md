@@ -331,9 +331,17 @@ permalink: /workshop/ignition/
         <span class="talk-title">Probabilistic reasoning in cells</span>
         <a class="talk-speaker" href="https://en.westlake.edu.cn/faculty/Zitong-Wang.html" target="_blank" rel="noopener">Zitong (Jerry) Wang</a>
       </li>
-      <li class="talk">
-        <span class="talk-title">A scientific story that spreads like a virus</span>
-        <a class="talk-speaker" href="https://en.westlake.edu.cn/faculty/fangzhou-xiao.html" target="_blank" rel="noopener">Fangzhou Xiao</a>
+      <li class="talk talk--has-materials">
+        <div class="talk-row">
+          <button class="talk-toggle" type="button" aria-expanded="false">
+            <span class="talk-arrow">▸</span>
+            <span class="talk-title">A scientific story that spreads like a virus</span>
+          </button>
+          <a class="talk-speaker" href="https://en.westlake.edu.cn/faculty/fangzhou-xiao.html" target="_blank" rel="noopener">Fangzhou Xiao</a>
+        </div>
+        <ul class="materials collapsed">
+          <li><a href="{{ site.baseurl }}/workshop/materials/202607-PEBBLE-PCAPS-seed.pdf">202607-PEBBLE-PCAPS-seed.pdf</a></li>
+        </ul>
       </li>
       <li class="talk">
         <span class="talk-title">From a story to a publishable paper: A deep dive in AI-native scientific research</span>
