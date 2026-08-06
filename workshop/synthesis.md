@@ -89,7 +89,7 @@ permalink: /workshop/synthesis/
   <article class="paper-row">
     <div class="paper-info">
       <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/08-Balancing degradation and tissue integration_a coupled-dynamics model of the mechanical performance of biodegradable hernia meshes.pdf" class="paper-title">Balancing degradation and tissue integration: a coupled-dynamics model of the mechanical performance of biodegradable hernia meshes</a>
-      <div class="paper-meta">Pebble Authors · 2026 · Manuscript</div>
+      <div class="paper-meta">Ruiqin Feng · 2026 · Manuscript</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/08-figure.png" class="paper-poster" target="_blank">
       <img src="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/08-figure.png" alt="Balancing degradation and tissue integration">
@@ -129,7 +129,7 @@ permalink: /workshop/synthesis/
   <article class="paper-row">
     <div class="paper-info">
       <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/13-TailorAge_ A Cell-Specific Epigenetic Clock Framework for Profiling Human Biological Aging at Single-Cell Resolution.pdf" class="paper-title">TailorAge: A Cell-Specific Epigenetic Clock Framework for Profiling Human Biological Aging at Single-Cell Resolution</a>
-      <div class="paper-meta">Pebble Authors · 2026 · Manuscript</div>
+      <div class="paper-meta">Zhengyi Yan · 2026 · Manuscript</div>
     </div>
     <a href="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/13-figure.png" class="paper-poster" target="_blank">
       <img src="{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/13-figure.png" alt="TailorAge: A Cell-Specific Epigenetic Clock Framework for Profiling Human Biological Aging at Single-Cell Resolution">
