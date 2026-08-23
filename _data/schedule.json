@@ -1,0 +1,654 @@
+{
+ "days": [
+  {
+   "date": "07.25",
+   "header": "07.25 Saturday Q1: Cellular Information Processing",
+   "talks": [
+    {
+     "title": "Control theory",
+     "speaker": "Fangzhou Xiao",
+     "speaker_url": "https://en.westlake.edu.cn/faculty/fangzhou-xiao.html",
+     "materials": [],
+     "kind": "lecture"
+    },
+    {
+     "title": "Protein computation",
+     "speaker": "Zibo Chen",
+     "speaker_url": "https://en.westlake.edu.cn/faculty/zibo-chen.html",
+     "materials": [],
+     "kind": "lecture"
+    },
+    {
+     "title": "Probabilistic reasoning in cells",
+     "speaker": "Zitong (Jerry) Wang",
+     "speaker_url": "https://en.westlake.edu.cn/faculty/Zitong-Wang.html",
+     "materials": [],
+     "kind": "lecture"
+    },
+    {
+     "title": "A scientific story that spreads like a virus",
+     "speaker": "Fangzhou Xiao",
+     "speaker_url": "https://en.westlake.edu.cn/faculty/fangzhou-xiao.html",
+     "materials": [
+      {
+       "name": "202607-PEBBLE-PCAPS-seed.pdf",
+       "href": "{{ site.baseurl }}/workshop/materials/202607-PEBBLE-PCAPS-seed.pdf"
+      }
+     ],
+     "kind": "method"
+    },
+    {
+     "title": "From a story to a publishable paper: A deep dive in AI-native scientific research",
+     "speaker": "Fangzhou Xiao",
+     "speaker_url": "https://en.westlake.edu.cn/faculty/fangzhou-xiao.html",
+     "materials": [
+      {
+       "name": "github.com/chemaoxfz/pebble-from-story-to-paper",
+       "href": "https://github.com/chemaoxfz/pebble-from-story-to-paper"
+      }
+     ],
+     "kind": "method"
+    },
+    {
+     "title": "Biocircuits 101",
+     "speaker": "Sijie Li",
+     "speaker_url": "",
+     "materials": [
+      {
+       "name": "Biocircuit101_slide_sijie.pdf",
+       "href": "{{ site.baseurl }}/workshop/materials/biocircuits-101/Biocircuit101_slide_sijie.pdf"
+      },
+      {
+       "name": "Biocircuit101_notebook.html",
+       "href": "{{ site.baseurl }}/workshop/materials/biocircuits-101/Biocircuit101_notebook.html"
+      },
+      {
+       "name": "Biocircuit101_notebook.ipynb",
+       "href": "{{ site.baseurl }}/workshop/materials/biocircuits-101/Biocircuit101_notebook.ipynb"
+      },
+      {
+       "name": "environment.yml",
+       "href": "{{ site.baseurl }}/workshop/materials/biocircuits-101/environment.yml"
+      }
+     ],
+     "kind": "tutorial"
+    },
+    {
+     "title": "Information processing in living systems",
+     "speaker": "Haoming Luo, Yiping Ma, Yanzhang Jiang",
+     "speaker_url": "",
+     "materials": [
+      {
+       "name": "fdcc_multiscale_signal_chain_concise_en.ipynb",
+       "href": "{{ site.baseurl }}/workshop/materials/information-processing-living-systems/fdcc_multiscale_signal_chain_concise_en.ipynb"
+      },
+      {
+       "name": "Information processing in living systems.html",
+       "href": "{{ site.baseurl }}/workshop/materials/information-processing-living-systems/Information%20processing%20in%20living%20systems.html"
+      },
+      {
+       "name": "Information processing in living systems.ipynb",
+       "href": "{{ site.baseurl }}/workshop/materials/information-processing-living-systems/Information%20processing%20in%20living%20systems.ipynb"
+      },
+      {
+       "name": "Information processing in living systems.key",
+       "href": "{{ site.baseurl }}/workshop/materials/information-processing-living-systems/Information%20processing%20in%20living%20systems.key"
+      }
+     ],
+     "kind": "tutorial"
+    },
+    {
+     "title": "A minimal synthetic cell",
+     "speaker": "Xinwen Fan",
+     "speaker_url": "",
+     "materials": [
+      {
+       "name": "260725_spudecell_tutorials.key",
+       "href": "{{ site.baseurl }}/workshop/materials/a-minimal-synthetic-cell/260725_spudecell_tutorials.key"
+      },
+      {
+       "name": "spudcell_whole_cell_cycle.ipynb",
+       "href": "{{ site.baseurl }}/workshop/materials/a-minimal-synthetic-cell/spudcell_whole_cell_cycle.ipynb"
+      },
+      {
+       "name": "spudcell-manuscript.pdf",
+       "href": "{{ site.baseurl }}/workshop/materials/a-minimal-synthetic-cell/spudcell-manuscript.pdf"
+      }
+     ],
+     "kind": "tutorial"
+    }
+   ],
+   "weekday": "Saturday",
+   "theme": "Q1: Cellular Information Processing",
+   "phase": "questions",
+   "date_full": "2026-07-25",
+   "description": "Morning talks on one question, an afternoon Methods Studio, and the AI-native night."
+  },
+  {
+   "date": "07.26",
+   "header": "07.26 Sunday Q2: Complex Cellular Behaviors",
+   "talks": [
+    {
+     "title": "Mechanism-driven single-cell modelling",
+     "speaker": "Yuhao Chen",
+     "speaker_url": "",
+     "materials": [],
+     "kind": "lecture"
+    },
+    {
+     "title": "Data-driven approaches",
+     "speaker": "Tailin Wu",
+     "speaker_url": "https://en.westlake.edu.cn/faculty/tailin-wu.html",
+     "materials": [],
+     "kind": "lecture"
+    },
+    {
+     "title": "Multiscale modelling",
+     "speaker": "Zhennan Zhou",
+     "speaker_url": "https://en.westlake.edu.cn/faculty/zhennan-zhou.html",
+     "materials": [],
+     "kind": "lecture"
+    },
+    {
+     "title": "High-dimensional biological data",
+     "speaker": "Xinyu Wang",
+     "speaker_url": "",
+     "materials": [
+      {
+       "name": "0726_section1.ipynb",
+       "href": "{{ site.baseurl }}/workshop/materials/high-dimensional-biological-data/0726_section1.ipynb"
+      },
+      {
+       "name": "data.zip",
+       "href": "{{ site.baseurl }}/workshop/materials/high-dimensional-biological-data/data.zip"
+      },
+      {
+       "name": "nmf-vector-programs.py",
+       "href": "{{ site.baseurl }}/workshop/materials/high-dimensional-biological-data/nmf-vector-programs.py"
+      },
+      {
+       "name": "pbmc_playground.py",
+       "href": "{{ site.baseurl }}/workshop/materials/high-dimensional-biological-data/pbmc_playground.py"
+      },
+      {
+       "name": "tsne-1d-force-demo.html",
+       "href": "{{ site.baseurl }}/workshop/materials/high-dimensional-biological-data/tsne-1d-force-demo.html"
+      },
+      {
+       "name": "tsne-kl-optimization-demo.html",
+       "href": "{{ site.baseurl }}/workshop/materials/high-dimensional-biological-data/tsne-kl-optimization-demo.html"
+      },
+      {
+       "name": "tsne-similarity-kernels.py",
+       "href": "{{ site.baseurl }}/workshop/materials/high-dimensional-biological-data/tsne-similarity-kernels.py"
+      }
+     ],
+     "kind": "tutorial"
+    },
+    {
+     "title": "Dynamics from RNA splicing",
+     "speaker": "Qinguo Liu",
+     "speaker_url": "",
+     "materials": [
+      {
+       "name": "README.md",
+       "href": "{{ site.baseurl }}/workshop/materials/dynamics-from-rna-splicing/README.md"
+      },
+      {
+       "name": "student.ipynb",
+       "href": "{{ site.baseurl }}/workshop/materials/dynamics-from-rna-splicing/student.ipynb"
+      },
+      {
+       "name": "solutions.ipynb",
+       "href": "{{ site.baseurl }}/workshop/materials/dynamics-from-rna-splicing/solutions.ipynb"
+      },
+      {
+       "name": "requirements.txt",
+       "href": "{{ site.baseurl }}/workshop/materials/dynamics-from-rna-splicing/requirements.txt"
+      },
+      {
+       "name": "data.zip",
+       "href": "{{ site.baseurl }}/workshop/materials/dynamics-from-rna-splicing/data.zip"
+      }
+     ],
+     "kind": "tutorial"
+    },
+    {
+     "title": "Neural systems across scales",
+     "speaker": "Qianrui Wang, Jiaqi Tu",
+     "speaker_url": "",
+     "materials": [
+      {
+       "name": "Multiscale_Modelling_Tutorial.pdf",
+       "href": "{{ site.baseurl }}/workshop/materials/neural-systems-across-scales/Multiscale_Modelling_Tutorial.pdf"
+      },
+      {
+       "name": "From Ion Channels to Memories.ipynb",
+       "href": "{{ site.baseurl }}/workshop/materials/neural-systems-across-scales/From%20Ion%20Channels%20to%20Memories.ipynb"
+      },
+      {
+       "name": "From Ion Channels to Memories.html",
+       "href": "{{ site.baseurl }}/workshop/materials/neural-systems-across-scales/From%20Ion%20Channels%20to%20Memories.html"
+      },
+      {
+       "name": "tutorial_models.py",
+       "href": "{{ site.baseurl }}/workshop/materials/neural-systems-across-scales/tutorial_models.py"
+      },
+      {
+       "name": "Student_Worksheet.docx",
+       "href": "{{ site.baseurl }}/workshop/materials/neural-systems-across-scales/Student_Worksheet.docx"
+      }
+     ],
+     "kind": "tutorial"
+    },
+    {
+     "title": "Commandments of research with AI",
+     "speaker": "Fangzhou Xiao",
+     "speaker_url": "https://en.westlake.edu.cn/faculty/fangzhou-xiao.html",
+     "materials": [
+      {
+       "name": "Commandments_of_Research_with_AI_v8-improved.pdf",
+       "href": "{{ site.baseurl }}/workshop/materials/Commandments_of_Research_with_AI_v8-improved.pdf"
+      }
+     ],
+     "kind": "method"
+    }
+   ],
+   "weekday": "Sunday",
+   "theme": "Q2: Complex Cellular Behaviors",
+   "phase": "questions",
+   "date_full": "2026-07-26",
+   "description": "Three ways to model cellular behavior this morning, hands-on methods this afternoon, and a Questions Night to meet your people."
+  },
+  {
+   "date": "07.27",
+   "header": "07.27 Monday Q3: Noise, Fluctuation & Diversity",
+   "talks": [
+    {
+     "title": "Stochasticity at the core",
+     "speaker": "Hong Qian",
+     "speaker_url": "https://en.westlake.edu.cn/faculty/hong-qian.html",
+     "materials": [],
+     "kind": "lecture"
+    },
+    {
+     "title": "Single-cell trajectories",
+     "speaker": "Yihan Wan",
+     "speaker_url": "https://en.westlake.edu.cn/faculty/yihan-wan.html",
+     "materials": [],
+     "kind": "lecture"
+    },
+    {
+     "title": "Gillespie simulation",
+     "speaker": "Wenqin Zhou",
+     "speaker_url": "",
+     "materials": [
+      {
+       "name": "START_HERE_guide.ipynb",
+       "href": "{{ site.baseurl }}/workshop/materials/gillespie-simulation/START_HERE_guide.ipynb"
+      },
+      {
+       "name": "Gillespie_simulation_tutorial.pptx",
+       "href": "{{ site.baseurl }}/workshop/materials/gillespie-simulation/Gillespie_simulation_tutorial.pptx"
+      },
+      {
+       "name": "gillespie_derivation.ipynb",
+       "href": "{{ site.baseurl }}/workshop/materials/gillespie-simulation/gillespie_derivation.ipynb"
+      },
+      {
+       "name": "Interactive_module_1_birth_death.ipynb",
+       "href": "{{ site.baseurl }}/workshop/materials/gillespie-simulation/Interactive_module_1_birth_death.ipynb"
+      },
+      {
+       "name": "Interactive_module_2_sini_sinr_switch.ipynb",
+       "href": "{{ site.baseurl }}/workshop/materials/gillespie-simulation/Interactive_module_2_sini_sinr_switch.ipynb"
+      },
+      {
+       "name": "Reading material_ bacterial cell fate switch.pdf",
+       "href": "{{ site.baseurl }}/workshop/materials/gillespie-simulation/Reading%20material_%20bacterial%20cell%20fate%20switch.pdf"
+      }
+     ],
+     "kind": "tutorial"
+    },
+    {
+     "title": "Agent-based models",
+     "speaker": "Ruoqing Zhang",
+     "speaker_url": "",
+     "materials": [
+      {
+       "name": "Agent based model.key",
+       "href": "{{ site.baseurl }}/workshop/materials/agent-based-models/Agent based model.key"
+      },
+      {
+       "name": "Agent based model.pptx",
+       "href": "{{ site.baseurl }}/workshop/materials/agent-based-models/Agent based model.pptx"
+      }
+     ],
+     "kind": "tutorial"
+    },
+    {
+     "title": "Membrane physics",
+     "speaker": "Jiahao Chen",
+     "speaker_url": "",
+     "materials": [
+      {
+       "name": "Membrane physics.pptx",
+       "href": "{{ site.baseurl }}/workshop/materials/membrane-physics/Membrane physics.pptx"
+      },
+      {
+       "name": "Membrane physics-0.ipynb",
+       "href": "{{ site.baseurl }}/workshop/materials/membrane-physics/Membrane physics-0.ipynb"
+      },
+      {
+       "name": "Membrane physics-1.ipynb",
+       "href": "{{ site.baseurl }}/workshop/materials/membrane-physics/Membrane physics-1.ipynb"
+      },
+      {
+       "name": "Membrane physics-2.ipynb",
+       "href": "{{ site.baseurl }}/workshop/materials/membrane-physics/Membrane physics-2.ipynb"
+      }
+     ],
+     "kind": "tutorial"
+    },
+    {
+     "title": "The methylation clock",
+     "speaker": "Yihao Lin",
+     "speaker_url": "",
+     "materials": [
+      {
+       "name": "Aging clocks based on accumulating stochastic variation.pptx",
+       "href": "{{ site.baseurl }}/workshop/materials/methylation-clock/Aging%20clocks%20based%20on%20accumulating%20stochastic%20variation.pptx"
+      },
+      {
+       "name": "metClock.ipynb",
+       "href": "{{ site.baseurl }}/workshop/materials/methylation-clock/metClock.ipynb"
+      },
+      {
+       "name": "Data.zip",
+       "href": "{{ site.baseurl }}/workshop/materials/methylation-clock/Data.zip"
+      },
+      {
+       "name": "results.zip",
+       "href": "{{ site.baseurl }}/workshop/materials/methylation-clock/results.zip"
+      },
+      {
+       "name": "scripts/adjust_beta_by_cell_composition.R",
+       "href": "{{ site.baseurl }}/workshop/materials/methylation-clock/scripts/adjust_beta_by_cell_composition.R"
+      },
+      {
+       "name": "scripts/estimate_cell_composition.R",
+       "href": "{{ site.baseurl }}/workshop/materials/methylation-clock/scripts/estimate_cell_composition.R"
+      }
+     ],
+     "kind": "tutorial"
+    }
+   ],
+   "weekday": "Monday",
+   "theme": "Q3: Noise, Fluctuation & Diversity",
+   "phase": "questions",
+   "date_full": "2026-07-27",
+   "description": "Three takes on randomness in cells this morning, hands-on methods this afternoon, and a Questions Night."
+  },
+  {
+   "date": "07.28",
+   "header": "07.28 Tuesday Q4: Aging, Damage & Asymmetry",
+   "talks": [
+    {
+     "title": "Single-cell damage",
+     "speaker": "Rui Fang",
+     "speaker_url": "https://en.westlake.edu.cn/faculty/rui-fang.html",
+     "materials": [],
+     "kind": "lecture"
+    },
+    {
+     "title": "Damage & asymmetric division",
+     "speaker": "Yifan Yang",
+     "speaker_url": "https://en.westlake.edu.cn/faculty/Yifan-Yang.html",
+     "materials": [],
+     "kind": "lecture"
+    },
+    {
+     "title": "Lineage & inheritance",
+     "speaker": "Shouwen Wang",
+     "speaker_url": "https://en.westlake.edu.cn/faculty/shouwen-wang.html",
+     "materials": [],
+     "kind": "lecture"
+    },
+    {
+     "title": "Cellular information processing",
+     "speaker": "Fan Jin",
+     "speaker_url": "https://people.ucas.ac.cn/~jinfan",
+     "materials": [],
+     "kind": "lecture"
+    },
+    {
+     "title": "Asymmetric damage & lifespan",
+     "speaker": "Hongying Lin",
+     "speaker_url": "",
+     "materials": [
+      {
+       "name": "lineage_damage_model_tutorial_final.pdf",
+       "href": "{{ site.baseurl }}/workshop/materials/asymmetric-damage-lifespan/lineage_damage_model_tutorial_final.pdf"
+      },
+      {
+       "name": "lineage_damage_model_minimal.ipynb",
+       "href": "{{ site.baseurl }}/workshop/materials/asymmetric-damage-lifespan/lineage_damage_model_minimal.ipynb"
+      },
+      {
+       "name": "lineage_damage_model_minimal.html",
+       "href": "{{ site.baseurl }}/workshop/materials/asymmetric-damage-lifespan/lineage_damage_model_minimal.html"
+      },
+      {
+       "name": "lineage_damage_model_advanced.ipynb",
+       "href": "{{ site.baseurl }}/workshop/materials/asymmetric-damage-lifespan/lineage_damage_model_advanced.ipynb"
+      },
+      {
+       "name": "lineage_damage_model_advanced.html",
+       "href": "{{ site.baseurl }}/workshop/materials/asymmetric-damage-lifespan/lineage_damage_model_advanced.html"
+      }
+     ],
+     "kind": "tutorial"
+    },
+    {
+     "title": "Saturating-removal models of aging",
+     "speaker": "Yihang Ding",
+     "speaker_url": "",
+     "materials": [
+      {
+       "name": "sr_model_tutorial.ipynb",
+       "href": "{{ site.baseurl }}/workshop/materials/saturating-removal-aging/sr_model_tutorial.ipynb"
+      },
+      {
+       "name": "karin_2019_source_data.xlsx",
+       "href": "{{ site.baseurl }}/workshop/materials/saturating-removal-aging/data/karin_2019_source_data.xlsx"
+      },
+      {
+       "name": "Slides",
+       "href": "#"
+      }
+     ],
+     "kind": "tutorial"
+    }
+   ],
+   "weekday": "Tuesday",
+   "theme": "Q4: Aging, Damage & Asymmetry",
+   "phase": "questions",
+   "date_full": "2026-07-28",
+   "description": "Three views on damage and aging this morning, a guest lecture opening a longer afternoon, and a Questions Night."
+  },
+  {
+   "date": "07.29",
+   "header": "07.29 Wednesday Q5: Spatial Organization & Multicellularity",
+   "talks": [
+    {
+     "title": "Adaptive niche construction in microbes",
+     "speaker": "Zhiyuan Li",
+     "speaker_url": "",
+     "materials": [],
+     "kind": "lecture"
+    },
+    {
+     "title": "Cell fate decisions in development",
+     "speaker": "Zhiyuan Li",
+     "speaker_url": "",
+     "materials": [],
+     "kind": "lecture"
+    },
+    {
+     "title": "Mechanics & Morphogenesis",
+     "speaker": "Hanqin Guo",
+     "speaker_url": "",
+     "materials": [],
+     "kind": "lecture"
+    },
+    {
+     "title": "Machine learning for omics data integration",
+     "speaker": "Lei Hui, Qinyu Cai",
+     "speaker_url": "",
+     "materials": [
+      {
+       "name": "README.md",
+       "href": "{{ site.baseurl }}/workshop/materials/omics-data-integration/README.md"
+      },
+      {
+       "name": "interactive_tutorial.html",
+       "href": "{{ site.baseurl }}/workshop/materials/omics-data-integration/interactive_tutorial.html"
+      },
+      {
+       "name": "exercise_pbmc10k.ipynb",
+       "href": "{{ site.baseurl }}/workshop/materials/omics-data-integration/exercise_pbmc10k.ipynb"
+      },
+      {
+       "name": "citeseq_pbmc.npz",
+       "href": "{{ site.baseurl }}/workshop/materials/omics-data-integration/citeseq_pbmc.npz"
+      },
+      {
+       "name": "citeseq_pbmc10k.npz",
+       "href": "{{ site.baseurl }}/workshop/materials/omics-data-integration/citeseq_pbmc10k.npz"
+      },
+      {
+       "name": "prepare_data.py",
+       "href": "{{ site.baseurl }}/workshop/materials/omics-data-integration/prepare_data.py"
+      },
+      {
+       "name": "requirements.txt",
+       "href": "{{ site.baseurl }}/workshop/materials/omics-data-integration/requirements.txt"
+      }
+     ],
+     "kind": "tutorial"
+    },
+    {
+     "title": "Turing Patterns: How does development take shape?",
+     "speaker": "Xiaowen Zhang",
+     "speaker_url": "",
+     "materials": [
+      {
+       "name": "Turing_Pattern-Tutorial.pdf",
+       "href": "{{ site.baseurl }}/workshop/materials/turing-patterns/Turing_Pattern-Tutorial.pdf"
+      }
+     ],
+     "kind": "tutorial"
+    }
+   ],
+   "weekday": "Wednesday",
+   "theme": "Q5: Spatial Organization & Multicellularity",
+   "phase": "questions",
+   "date_full": "2026-07-29",
+   "description": "From single cells to tissues this morning, hands-on methods this afternoon, and the last Questions Night."
+  },
+  {
+   "date": "07.30",
+   "header": "07.30 Thursday Project Kickstart",
+   "talks": [
+    {
+     "title": "Introduction: Network science in biology",
+     "speaker": "Xin-Ya Zhang",
+     "speaker_url": "",
+     "materials": [],
+     "kind": "lecture"
+    },
+    {
+     "title": "Protein language models",
+     "speaker": "Sergei Maslov",
+     "speaker_url": "",
+     "materials": [],
+     "kind": "lecture"
+    }
+   ],
+   "weekday": "Thursday",
+   "theme": "Project Kickstart",
+   "phase": "sprint",
+   "date_full": "2026-07-30",
+   "description": "Teams and projects lock in. Two guests bracket the day, and you commit to the question you will spend the sprint on."
+  },
+  {
+   "date": "07.31",
+   "weekday": "Friday",
+   "phase": "sprint",
+   "date_full": "2026-07-31",
+   "theme": "Research Sprint: Work",
+   "talks": [],
+   "description": "The sprint begins in earnest: a morning panel and project clinics, heads-down group work, and a nightly check-in with your TA.",
+   "cal_label": "Panel &middot; clinics &middot; group work",
+   "note": "Panel, project clinics and group work. No lecture materials from this day."
+  },
+  {
+   "date": "08.01",
+   "weekday": "Saturday",
+   "phase": "sprint",
+   "date_full": "2026-08-01",
+   "theme": "Recharge: Rest Day",
+   "talks": [],
+   "description": "No sessions today. Rest, explore Hangzhou, and come back ready for the final push.",
+   "note": "Rest day. No sessions scheduled.",
+   "cal_label": "No sessions"
+  },
+  {
+   "date": "08.02",
+   "header": "08.02 Sunday Research + Analysis",
+   "talks": [
+    {
+     "title": "Noise suppression & large deviation",
+     "speaker": "Jiawei Yan",
+     "speaker_url": "",
+     "materials": [],
+     "kind": "lecture"
+    }
+   ],
+   "weekday": "Sunday",
+   "theme": "Research Sprint: Analysis",
+   "phase": "sprint",
+   "date_full": "2026-08-02",
+   "description": "Back to the sprint: morning panel and project clinics, then deep work on analysis, and the nightly check-in."
+  },
+  {
+   "date": "08.03",
+   "header": "08.03 Monday Research + Polish",
+   "talks": [
+    {
+     "title": "Toward an interpretable virtual cell model",
+     "speaker": "Weixu Wang",
+     "speaker_url": "",
+     "materials": [],
+     "kind": "lecture"
+    }
+   ],
+   "weekday": "Monday",
+   "theme": "Research Sprint: Polish",
+   "phase": "sprint",
+   "date_full": "2026-08-03",
+   "description": "A guest talk to open, then polish everything: results, figures, and the story. Manuscript and poster due by end of day."
+  },
+  {
+   "date": "08.04",
+   "weekday": "Tuesday",
+   "phase": "sprint",
+   "date_full": "2026-08-04",
+   "theme": "Final Presentation",
+   "talks": [],
+   "description": "The finale: team talks in the morning, posters after lunch, then the closing ceremony and checkout.",
+   "note": "Group presentations, poster session and closing ceremony. What the teams produced is on the Student work page.",
+   "cal_label": "Talks &middot; posters"
+  }
+ ]
+}

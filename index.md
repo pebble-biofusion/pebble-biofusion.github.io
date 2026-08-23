@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: default
 ---
 
 <div class="pebble-home">
@@ -74,7 +74,10 @@ layout: home
   <section class="about-section">
 
     <p class="intro">
-      <strong>PEBBLE BioFusion 2026</strong> is designed from the ground up for the age of AI. We are not adding AI as a tool on top of a traditional curriculum. Instead, we are rethinking what a workshop should train when AI makes tutorials, literature review, coding, and draft generation available on demand. In this new landscape, three things become critically important:
+      <strong>PEBBLE BioFusion 2026</strong> is designed from the ground up for the age of AI. We are
+      not adding AI as a tool on top of a traditional curriculum. Instead, we are rethinking what a
+      workshop should train when AI makes tutorials, literature review, coding, and draft generation
+      available on demand. In this new landscape, three things become critically important:
     </p>
 
     <ul class="skills">
@@ -96,21 +99,129 @@ layout: home
       These are precisely what AI does not reliably provide. They are what <strong>PEBBLE BioFusion</strong> trains.
     </p>
 
-    <div class="stats">
-      <div class="stat">
-        <div class="stat-number">50<span>+</span></div>
-        <div class="stat-label">contributors</div>
+  </section>
+
+  <section class="stats" id="numbers">
+    <a class="stat" href="{{ site.baseurl }}/workshop/schedule/">
+      <div class="stat-number">36</div><div class="stat-label">talks over 11 days</div></a>
+    <a class="stat" href="{{ site.baseurl }}/workshop/tutorials/">
+      <div class="stat-number">63</div><div class="stat-label">tutorial files</div></a>
+    <a class="stat" href="{{ site.baseurl }}/workshop/student-work/">
+      <div class="stat-number">16</div><div class="stat-label">student manuscripts</div></a>
+    <a class="stat" href="{{ site.baseurl }}/workshop/student-work/">
+      <div class="stat-number">45</div><div class="stat-label">student authors</div></a>
+  </section>
+
+  <section class="home-section" id="schedule">
+    <div class="sec-head">
+      <h2>The camp, day by day</h2>
+      <a class="more" href="{{ site.baseurl }}/workshop/schedule/">Full schedule &rarr;</a>
+    </div>
+    <p class="sec-lede">Week one opens five live questions. Week two hands the hours over to the
+    students. Every day below links to its talks and the files that go with them.</p>
+    <div class="cal">
+      <div class="cal-phase"><span>Week one</span><b>Five questions</b></div>
+      <div class="cal-row">
+        <a class="cal-day questions" href="{{ site.baseurl }}/workshop/schedule/#d0725">
+          <span class="cd">07.25</span>
+          <span class="cw">Sat</span>
+          <span class="ct">Q1: Cellular Information Processing</span>
+          <span class="cn">8 talks &middot; 12 files</span>
+        </a>
+        <a class="cal-day questions" href="{{ site.baseurl }}/workshop/schedule/#d0726">
+          <span class="cd">07.26</span>
+          <span class="cw">Sun</span>
+          <span class="ct">Q2: Complex Cellular Behaviors</span>
+          <span class="cn">7 talks &middot; 18 files</span>
+        </a>
+        <a class="cal-day questions" href="{{ site.baseurl }}/workshop/schedule/#d0727">
+          <span class="cd">07.27</span>
+          <span class="cw">Mon</span>
+          <span class="ct">Q3: Noise, Fluctuation &amp; Diversity</span>
+          <span class="cn">6 talks &middot; 18 files</span>
+        </a>
+        <a class="cal-day questions" href="{{ site.baseurl }}/workshop/schedule/#d0728">
+          <span class="cd">07.28</span>
+          <span class="cw">Tue</span>
+          <span class="ct">Q4: Aging, Damage &amp; Asymmetry</span>
+          <span class="cn">6 talks &middot; 7 files</span>
+        </a>
+        <a class="cal-day questions" href="{{ site.baseurl }}/workshop/schedule/#d0729">
+          <span class="cd">07.29</span>
+          <span class="cw">Wed</span>
+          <span class="ct">Q5: Spatial Organization &amp; Multicellularity</span>
+          <span class="cn">5 talks &middot; 8 files</span>
+        </a>
       </div>
-      <div class="stat">
-        <div class="stat-number">20<span>+</span></div>
-        <div class="stat-label">products</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">2<span>+</span></div>
-        <div class="stat-label">years</div>
+      <div class="cal-phase"><span>Week two</span><b>The sprint</b></div>
+      <div class="cal-row">
+        <a class="cal-day sprint" href="{{ site.baseurl }}/workshop/schedule/#d0730">
+          <span class="cd">07.30</span>
+          <span class="cw">Thu</span>
+          <span class="ct">Project Kickstart</span>
+          <span class="cn">2 talks</span>
+        </a>
+        <a class="cal-day sprint" href="{{ site.baseurl }}/workshop/schedule/#d0731">
+          <span class="cd">07.31</span>
+          <span class="cw">Fri</span>
+          <span class="ct">Research Sprint: Work</span>
+          <span class="cn">Panel &middot; clinics &middot; group work</span>
+        </a>
+        <a class="cal-day sprint" href="{{ site.baseurl }}/workshop/schedule/#d0801">
+          <span class="cd">08.01</span>
+          <span class="cw">Sat</span>
+          <span class="ct">Recharge: Rest Day</span>
+          <span class="cn">No sessions</span>
+        </a>
+        <a class="cal-day sprint" href="{{ site.baseurl }}/workshop/schedule/#d0802">
+          <span class="cd">08.02</span>
+          <span class="cw">Sun</span>
+          <span class="ct">Research Sprint: Analysis</span>
+          <span class="cn">1 talk</span>
+        </a>
+        <a class="cal-day sprint" href="{{ site.baseurl }}/workshop/schedule/#d0803">
+          <span class="cd">08.03</span>
+          <span class="cw">Mon</span>
+          <span class="ct">Research Sprint: Polish</span>
+          <span class="cn">1 talk</span>
+        </a>
+        <a class="cal-day sprint" href="{{ site.baseurl }}/workshop/schedule/#d0804">
+          <span class="cd">08.04</span>
+          <span class="cw">Tue</span>
+          <span class="ct">Final Presentation</span>
+          <span class="cn">Talks &middot; posters</span>
+        </a>
       </div>
     </div>
+  </section>
 
+  <section class="home-section" id="explore">
+    <div class="sec-head"><h2>Explore</h2></div>
+    <div class="cards">
+      <a class="card" href="{{ site.baseurl }}/workshop/method/">
+        <span class="card-tag">Research with AI</span>
+        <span class="card-title">The method we taught</span>
+        <span class="card-desc">The four commandments for working with an AI agent, the PCAPS chain
+        of logic, and a worked example carrying one idea from a sentence to a manuscript.</span>
+      </a>
+      <a class="card" href="{{ site.baseurl }}/workshop/tutorials/">
+        <span class="card-tag">Tutorials</span>
+        <span class="card-title">14 topics, 63 files</span>
+        <span class="card-desc">Slides, notebooks, data and worksheets from the hands-on studios,
+        written by the teaching assistants. Every file downloadable, each one runs on its own.</span>
+      </a>
+      <a class="card" href="{{ site.baseurl }}/workshop/student-work/">
+        <span class="card-tag">Student work</span>
+        <span class="card-title">16 manuscripts</span>
+        <span class="card-desc">What the teams produced during the sprint week, with the posters and
+        graphical abstracts that went with them.</span>
+      </a>
+      <a class="card" href="{{ site.baseurl }}/workshop/gallery/">
+        <span class="card-tag">Gallery</span>
+        <span class="card-title">The camp itself</span>
+        <span class="card-desc">Photographs from the two weeks in Hangzhou.</span>
+      </a>
+    </div>
   </section>
 
 </div>
@@ -267,9 +378,6 @@ layout: home
   }
 
   /* ===== Carousel Layout ===== */
-  .pebble-home {
-    width: 100%;
-  }
 
   /* ===== Intro & Closing paragraphs ===== */
   .intro,
@@ -328,44 +436,6 @@ layout: home
   }
 
   /* ===== Stats ===== */
-  .stats {
-    display: flex;
-    gap: 2.5rem;
-    flex-wrap: wrap;
-  }
-
-  .stat {
-    width: 86px;
-    height: 86px;
-    border: 1px solid #e5e7eb;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    transition: border-color 0.2s, transform 0.2s;
-  }
-
-  .stat:hover {
-    border-color: #FF6C0C;
-    transform: translateY(-2px);
-  }
-
-  .stat-number {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #FF6C0C;
-    line-height: 1;
-  }
-
-  .stat-label {
-    font-size: 0.65rem;
-    color: #9ca3af;
-    margin-top: 0.3rem;
-    text-transform: lowercase;
-    letter-spacing: 0.3px;
-  }
 
   /* ===== Responsive ===== */
   @media (max-width: 1200px) {
@@ -410,18 +480,6 @@ layout: home
       text-align: left;
     }
 
-    .stats {
-      gap: 1.5rem;
-    }
-
-    .stat {
-      width: 74px;
-      height: 74px;
-    }
-
-    .stat-number {
-      font-size: 1.3rem;
-    }
   }
 
   @media (max-width: 480px) {
@@ -457,6 +515,56 @@ layout: home
       font-size: 0.7rem;
       padding: 0.3rem 0.5rem;
     }
+  }
+
+  /* ===== Homepage sections ===== */
+  .pebble-home { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 2.5rem 0 0; }
+  .stats .stat { display: block; text-align: center; padding: 1.1rem 0.6rem; border: 1px solid #e5e7eb;
+    border-radius: 9px; text-decoration: none; transition: border-color 0.15s, transform 0.15s; }
+  .stats .stat:hover { border-color: #FF6C0C; transform: translateY(-2px); }
+  .stats .stat-number { font-size: 1.85rem; font-weight: 680; color: #1f2937; line-height: 1.1; }
+  .stats .stat-label { font-size: 0.78rem; color: #6b7280; margin-top: 0.25rem; }
+
+  .home-section { margin: 3.5rem 0 0; }
+  .sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
+    border-bottom: 2px solid #e5e7eb; padding-bottom: 0.55rem; }
+  .sec-head h2 { font-size: 1.35rem; font-weight: 640; color: #1f2937; letter-spacing: -0.01em; }
+  .sec-head .more { font-size: 0.86rem; color: #FF6C0C; text-decoration: none; font-weight: 550;
+    white-space: nowrap; }
+  .sec-head .more:hover { text-decoration: underline; }
+  .sec-lede { margin-top: 0.85rem; color: #6b7280; font-size: 0.95rem; max-width: 66ch; }
+
+  .cal { margin-top: 1.4rem; }
+  .cal-phase { display: flex; align-items: baseline; gap: 0.6rem; margin: 1.3rem 0 0.7rem; }
+  .cal-phase span { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.09em;
+    text-transform: uppercase; color: #FF6C0C; }
+  .cal-phase b { font-size: 0.95rem; font-weight: 600; color: #1f2937; }
+  .cal-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.7rem; }
+  .cal-day { display: flex; flex-direction: column; gap: 0.1rem; padding: 0.85rem 0.9rem;
+    border: 1px solid #e5e7eb; border-radius: 8px; text-decoration: none; background: #fff;
+    transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s; }
+  .cal-day:hover { border-color: #FF6C0C; transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 108, 12, 0.10); }
+  .cal-day.sprint { background: #fffaf6; }
+  .cal-day .cd { font-size: 1.05rem; font-weight: 660; color: #1f2937; line-height: 1.15; }
+  .cal-day .cw { font-size: 0.72rem; color: #9ca3af; }
+  .cal-day .ct { font-size: 0.83rem; color: #374151; margin-top: 0.35rem; line-height: 1.35; }
+  .cal-day .cn { font-size: 0.72rem; color: #9ca3af; margin-top: 0.4rem; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 0.9rem; margin-top: 1.4rem; }
+  .card { display: flex; flex-direction: column; padding: 1.2rem; border: 1px solid #e5e7eb;
+    border-radius: 9px; text-decoration: none; transition: border-color 0.15s, transform 0.15s; }
+  .card:hover { border-color: #FF6C0C; transform: translateY(-2px); }
+  .card-tag { font-size: 0.67rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
+    color: #FF6C0C; }
+  .card-title { font-size: 1.02rem; font-weight: 620; color: #1f2937; margin-top: 0.3rem; }
+  .card-desc { font-size: 0.86rem; color: #6b7280; margin-top: 0.45rem; line-height: 1.55; }
+
+  @media (max-width: 720px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
 
