@@ -9,7 +9,7 @@ permalink: /workshop/tutorials/
   <header class="page-head">
     <h1>Tutorials &amp; materials</h1>
     <p class="lede">The hands-on studio material, by topic. Slides, notebooks, data and worksheets, written by the teaching assistants and used during the camp. Everything here is downloadable and runs on its own.</p>
-    <p class="tally"><b>14</b> topics &middot; <b>62</b> files</p>
+    <p class="tally"><b>14</b> topics &middot; <b>61</b> files</p>
   </header>
 
   <div class="tut-grid">
@@ -158,9 +158,9 @@ permalink: /workshop/tutorials/
         <div class="tut-meta">Yihang Ding <span class="dot">&middot;</span> <a href="{{ site.baseurl }}/workshop/schedule/#d0728">07.28 Q4</a></div>
       </div>
       <ul class="files">
+        <li><a href="{{ site.baseurl }}/workshop/materials/saturating-removal-aging/sr_model_tutorial.ipynb">sr_model_tutorial.ipynb</a></li>
+        <li><a href="{{ site.baseurl }}/workshop/materials/saturating-removal-aging/data/karin_2019_source_data.xlsx">karin_2019_source_data.xlsx</a></li>
         <li><a href="#" class="dead">Slides (not uploaded)</a></li>
-        <li><a href="#" class="dead">Notebook (not uploaded)</a></li>
-        <li><a href="#" class="dead">Data (not uploaded)</a></li>
       </ul>
     </section>
     <section class="tut">
@@ -221,7 +221,10 @@ permalink: /workshop/tutorials/
   .day-when { position: sticky; top: 1rem; align-self: start; }
   .day-when .d { font-size: 1.25rem; font-weight: 650; color: var(--ink); line-height: 1.15; }
   .day-when .wd { font-size: 0.8rem; color: var(--muted); }
-  .day-theme { font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 0.9rem; }
+  .day-theme { font-size: 1rem; font-weight: 600; color: var(--ink); }
+  .day-desc { font-size: 0.88rem; color: var(--muted); margin: 0.3rem 0 0.9rem; max-width: 70ch; }
+  .day-note { font-size: 0.88rem; color: var(--muted); background: var(--soft);
+              border: 1px dashed var(--line); border-radius: 7px; padding: 0.7rem 0.9rem; }
 
   .item { padding: 0.6rem 0; border-top: 1px dashed var(--line); }
   .item:first-of-type { border-top: 0; padding-top: 0; }

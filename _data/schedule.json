@@ -41,7 +41,12 @@
      "title": "From a story to a publishable paper: A deep dive in AI-native scientific research",
      "speaker": "Fangzhou Xiao",
      "speaker_url": "https://en.westlake.edu.cn/faculty/fangzhou-xiao.html",
-     "materials": [],
+     "materials": [
+      {
+       "name": "github.com/chemaoxfz/pebble-from-story-to-paper",
+       "href": "https://github.com/chemaoxfz/pebble-from-story-to-paper"
+      }
+     ],
      "kind": "method"
     },
     {
@@ -116,7 +121,8 @@
    "weekday": "Saturday",
    "theme": "Q1: Cellular Information Processing",
    "phase": "questions",
-   "date_full": "2026-07-25"
+   "date_full": "2026-07-25",
+   "description": "Morning talks on one question, an afternoon Methods Studio, and the AI-native night."
   },
   {
    "date": "07.26",
@@ -251,7 +257,8 @@
    "weekday": "Sunday",
    "theme": "Q2: Complex Cellular Behaviors",
    "phase": "questions",
-   "date_full": "2026-07-26"
+   "date_full": "2026-07-26",
+   "description": "Three ways to model cellular behavior this morning, hands-on methods this afternoon, and a Questions Night to meet your people."
   },
   {
    "date": "07.27",
@@ -379,7 +386,8 @@
    "weekday": "Monday",
    "theme": "Q3: Noise, Fluctuation & Diversity",
    "phase": "questions",
-   "date_full": "2026-07-27"
+   "date_full": "2026-07-27",
+   "description": "Three takes on randomness in cells this morning, hands-on methods this afternoon, and a Questions Night."
   },
   {
    "date": "07.28",
@@ -447,15 +455,15 @@
      "speaker_url": "",
      "materials": [
       {
+       "name": "sr_model_tutorial.ipynb",
+       "href": "{{ site.baseurl }}/workshop/materials/saturating-removal-aging/sr_model_tutorial.ipynb"
+      },
+      {
+       "name": "karin_2019_source_data.xlsx",
+       "href": "{{ site.baseurl }}/workshop/materials/saturating-removal-aging/data/karin_2019_source_data.xlsx"
+      },
+      {
        "name": "Slides",
-       "href": "#"
-      },
-      {
-       "name": "Notebook",
-       "href": "#"
-      },
-      {
-       "name": "Data",
        "href": "#"
       }
      ],
@@ -465,7 +473,8 @@
    "weekday": "Tuesday",
    "theme": "Q4: Aging, Damage & Asymmetry",
    "phase": "questions",
-   "date_full": "2026-07-28"
+   "date_full": "2026-07-28",
+   "description": "Three views on damage and aging this morning, a guest lecture opening a longer afternoon, and a Questions Night."
   },
   {
    "date": "07.29",
@@ -544,7 +553,8 @@
    "weekday": "Wednesday",
    "theme": "Q5: Spatial Organization & Multicellularity",
    "phase": "questions",
-   "date_full": "2026-07-29"
+   "date_full": "2026-07-29",
+   "description": "From single cells to tissues this morning, hands-on methods this afternoon, and the last Questions Night."
   },
   {
    "date": "07.30",
@@ -568,7 +578,30 @@
    "weekday": "Thursday",
    "theme": "Project Kickstart",
    "phase": "sprint",
-   "date_full": "2026-07-30"
+   "date_full": "2026-07-30",
+   "description": "Teams and projects lock in. Two guests bracket the day, and you commit to the question you will spend the sprint on."
+  },
+  {
+   "date": "07.31",
+   "weekday": "Friday",
+   "phase": "sprint",
+   "date_full": "2026-07-31",
+   "theme": "Research Sprint: Work",
+   "talks": [],
+   "description": "The sprint begins in earnest: a morning panel and project clinics, heads-down group work, and a nightly check-in with your TA.",
+   "cal_label": "Panel &middot; clinics &middot; group work",
+   "note": "Panel, project clinics and group work. No lecture materials from this day."
+  },
+  {
+   "date": "08.01",
+   "weekday": "Saturday",
+   "phase": "sprint",
+   "date_full": "2026-08-01",
+   "theme": "Recharge: Rest Day",
+   "talks": [],
+   "description": "No sessions today. Rest, explore Hangzhou, and come back ready for the final push.",
+   "note": "Rest day. No sessions scheduled.",
+   "cal_label": "No sessions"
   },
   {
    "date": "08.02",
@@ -583,9 +616,10 @@
     }
    ],
    "weekday": "Sunday",
-   "theme": "Research + Analysis",
+   "theme": "Research Sprint: Analysis",
    "phase": "sprint",
-   "date_full": "2026-08-02"
+   "date_full": "2026-08-02",
+   "description": "Back to the sprint: morning panel and project clinics, then deep work on analysis, and the nightly check-in."
   },
   {
    "date": "08.03",
@@ -600,9 +634,21 @@
     }
    ],
    "weekday": "Monday",
-   "theme": "Research + Polish",
+   "theme": "Research Sprint: Polish",
    "phase": "sprint",
-   "date_full": "2026-08-03"
+   "date_full": "2026-08-03",
+   "description": "A guest talk to open, then polish everything: results, figures, and the story. Manuscript and poster due by end of day."
+  },
+  {
+   "date": "08.04",
+   "weekday": "Tuesday",
+   "phase": "sprint",
+   "date_full": "2026-08-04",
+   "theme": "Final Presentation",
+   "talks": [],
+   "description": "The finale: team talks in the morning, posters after lunch, then the closing ceremony and checkout.",
+   "note": "Group presentations, poster session and closing ceremony. What the teams produced is on the Student work page.",
+   "cal_label": "Talks &middot; posters"
   }
  ]
 }

@@ -191,7 +191,10 @@ permalink: /workshop/student-work/
   .day-when { position: sticky; top: 1rem; align-self: start; }
   .day-when .d { font-size: 1.25rem; font-weight: 650; color: var(--ink); line-height: 1.15; }
   .day-when .wd { font-size: 0.8rem; color: var(--muted); }
-  .day-theme { font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 0.9rem; }
+  .day-theme { font-size: 1rem; font-weight: 600; color: var(--ink); }
+  .day-desc { font-size: 0.88rem; color: var(--muted); margin: 0.3rem 0 0.9rem; max-width: 70ch; }
+  .day-note { font-size: 0.88rem; color: var(--muted); background: var(--soft);
+              border: 1px dashed var(--line); border-radius: 7px; padding: 0.7rem 0.9rem; }
 
   .item { padding: 0.6rem 0; border-top: 1px dashed var(--line); }
   .item:first-of-type { border-top: 0; padding-top: 0; }

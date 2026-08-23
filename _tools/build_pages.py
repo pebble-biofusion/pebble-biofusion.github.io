@@ -46,6 +46,23 @@ def plural(n, suffix="s"):
     return "" if n == 1 else suffix
 
 
+def hosted(talk):
+    """Materials that are real files on this site: not dead links, not external URLs."""
+    return [m for m in talk["materials"]
+            if m["href"].strip() != "#" and not m["href"].startswith("http")]
+
+
+def cal_label(day, n_files):
+    """The small grey line under a day on the homepage calendar."""
+    n = len(day["talks"])
+    if not n:
+        return day.get("cal_label", "No sessions")
+    out = f"{n} talk{plural(n)}"
+    if n_files:
+        out += f" &middot; {n_files} file{plural(n_files)}"
+    return out
+
+
 def counts():
     talks = [t for d in DAYS for t in d["talks"]]
     return {
@@ -53,7 +70,7 @@ def counts():
         "talks": len(talks),
         "lectures": sum(1 for t in talks if t["kind"] == "lecture"),
         "tutorials": sum(1 for t in talks if t["kind"] == "tutorial"),
-        "files": sum(len(t["materials"]) for t in talks),
+        "files": sum(len(hosted(t)) for t in talks),
         "papers": len(PAPERS),
         "authors": len({a for p in PAPERS for a in p["authors"]}),
     }
@@ -91,7 +108,10 @@ SHARED_CSS = """
   .day-when { position: sticky; top: 1rem; align-self: start; }
   .day-when .d { font-size: 1.25rem; font-weight: 650; color: var(--ink); line-height: 1.15; }
   .day-when .wd { font-size: 0.8rem; color: var(--muted); }
-  .day-theme { font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 0.9rem; }
+  .day-theme { font-size: 1rem; font-weight: 600; color: var(--ink); }
+  .day-desc { font-size: 0.88rem; color: var(--muted); margin: 0.3rem 0 0.9rem; max-width: 70ch; }
+  .day-note { font-size: 0.88rem; color: var(--muted); background: var(--soft);
+              border: 1px dashed var(--line); border-radius: 7px; padding: 0.7rem 0.9rem; }
 
   .item { padding: 0.6rem 0; border-top: 1px dashed var(--line); }
   .item:first-of-type { border-top: 0; padding-top: 0; }
@@ -173,8 +193,12 @@ def render_day(day):
         '      <div class="day-body">\n'
         f'        <div class="day-theme">{esc(day["theme"])}</div>\n'
     )
+    if day.get("description"):
+        out += f'        <p class="day-desc">{esc(day["description"])}</p>\n'
     for t in day["talks"]:
         out += render_talk(t)
+    if not day["talks"] and day.get("note"):
+        out += f'        <div class="day-note">{esc(day["note"])}</div>\n'
     out += "      </div>\n    </section>\n"
     return out
 
@@ -222,7 +246,7 @@ def build_tutorials():
         'worksheets, written by the teaching assistants and used during the camp. Everything here '
         'is downloadable and runs on its own.</p>\n'
         f'    <p class="tally"><b>{len(tuts)}</b> topics &middot; '
-        f'<b>{sum(len(t["materials"]) for _, t in tuts)}</b> files</p>\n'
+        f'<b>{sum(len(hosted(t)) for _, t in tuts)}</b> files</p>\n'
         '  </header>\n\n'
     )
     s += '  <div class="tut-grid">\n'
@@ -396,16 +420,14 @@ def build_index():
         s += f'      <div class="cal-phase"><span>{tag}</span><b>{name}</b></div>\n'
         s += '      <div class="cal-row">\n'
         for d in ds:
-            n_files = sum(len(t["materials"]) for t in d["talks"])
+            n_files = sum(len(hosted(t)) for t in d["talks"])
             mm, dd = d["date"].split(".")
             anchor = d["date"].replace(".", "")
             s += (f'        <a class="cal-day {key}" href="{{{{ site.baseurl }}}}/workshop/schedule/#d{anchor}">\n'
                   f'          <span class="cd">{mm}.{dd}</span>\n'
                   f'          <span class="cw">{d["weekday"][:3]}</span>\n'
                   f'          <span class="ct">{esc(d["theme"])}</span>\n'
-                  f'          <span class="cn">{len(d["talks"])} talk{plural(len(d["talks"]))}'
-                  + (f' &middot; {n_files} file{plural(n_files)}' if n_files else '')
-                  + '</span>\n        </a>\n')
+                  f'          <span class="cn">{cal_label(d, n_files)}</span>\n        </a>\n')
         s += '      </div>\n'
     s += "    </div>\n  </section>\n"
 

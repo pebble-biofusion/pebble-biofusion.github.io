@@ -103,9 +103,9 @@ layout: default
 
   <section class="stats" id="numbers">
     <a class="stat" href="{{ site.baseurl }}/workshop/schedule/">
-      <div class="stat-number">36</div><div class="stat-label">talks over 8 days</div></a>
+      <div class="stat-number">36</div><div class="stat-label">talks over 11 days</div></a>
     <a class="stat" href="{{ site.baseurl }}/workshop/tutorials/">
-      <div class="stat-number">64</div><div class="stat-label">tutorial files</div></a>
+      <div class="stat-number">63</div><div class="stat-label">tutorial files</div></a>
     <a class="stat" href="{{ site.baseurl }}/workshop/student-work/">
       <div class="stat-number">16</div><div class="stat-label">student manuscripts</div></a>
     <a class="stat" href="{{ site.baseurl }}/workshop/student-work/">
@@ -144,7 +144,7 @@ layout: default
           <span class="cd">07.28</span>
           <span class="cw">Tue</span>
           <span class="ct">Q4: Aging, Damage &amp; Asymmetry</span>
-          <span class="cn">6 talks &middot; 8 files</span>
+          <span class="cn">6 talks &middot; 7 files</span>
         </a>
         <a class="cal-day questions" href="{{ site.baseurl }}/workshop/schedule/#d0729">
           <span class="cd">07.29</span>
@@ -161,17 +161,35 @@ layout: default
           <span class="ct">Project Kickstart</span>
           <span class="cn">2 talks</span>
         </a>
+        <a class="cal-day sprint" href="{{ site.baseurl }}/workshop/schedule/#d0731">
+          <span class="cd">07.31</span>
+          <span class="cw">Fri</span>
+          <span class="ct">Research Sprint: Work</span>
+          <span class="cn">Panel &middot; clinics &middot; group work</span>
+        </a>
+        <a class="cal-day sprint" href="{{ site.baseurl }}/workshop/schedule/#d0801">
+          <span class="cd">08.01</span>
+          <span class="cw">Sat</span>
+          <span class="ct">Recharge: Rest Day</span>
+          <span class="cn">No sessions</span>
+        </a>
         <a class="cal-day sprint" href="{{ site.baseurl }}/workshop/schedule/#d0802">
           <span class="cd">08.02</span>
           <span class="cw">Sun</span>
-          <span class="ct">Research + Analysis</span>
+          <span class="ct">Research Sprint: Analysis</span>
           <span class="cn">1 talk</span>
         </a>
         <a class="cal-day sprint" href="{{ site.baseurl }}/workshop/schedule/#d0803">
           <span class="cd">08.03</span>
           <span class="cw">Mon</span>
-          <span class="ct">Research + Polish</span>
+          <span class="ct">Research Sprint: Polish</span>
           <span class="cn">1 talk</span>
+        </a>
+        <a class="cal-day sprint" href="{{ site.baseurl }}/workshop/schedule/#d0804">
+          <span class="cd">08.04</span>
+          <span class="cw">Tue</span>
+          <span class="ct">Final Presentation</span>
+          <span class="cn">Talks &middot; posters</span>
         </a>
       </div>
     </div>
@@ -188,7 +206,7 @@ layout: default
       </a>
       <a class="card" href="{{ site.baseurl }}/workshop/tutorials/">
         <span class="card-tag">Tutorials</span>
-        <span class="card-title">14 topics, 64 files</span>
+        <span class="card-title">14 topics, 63 files</span>
         <span class="card-desc">Slides, notebooks, data and worksheets from the hands-on studios,
         written by the teaching assistants. Every file downloadable, each one runs on its own.</span>
       </a>

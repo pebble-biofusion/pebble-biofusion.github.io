@@ -9,7 +9,7 @@ permalink: /workshop/schedule/
   <header class="page-head">
     <h1>Schedule</h1>
     <p class="lede">Every day of PEBBLE BioFusion 2026, in order, with the talks given and every file that goes with them. Week one asks five questions. Week two spends the hours on student work instead.</p>
-    <p class="tally"><b>8</b> days &middot; <b>36</b> talks &middot; <b>64</b> downloadable files</p>
+    <p class="tally"><b>11</b> days &middot; <b>36</b> talks &middot; <b>63</b> downloadable files</p>
   </header>
 
   <div class="phase">
@@ -25,6 +25,7 @@ permalink: /workshop/schedule/
       </div>
       <div class="day-body">
         <div class="day-theme">Q1: Cellular Information Processing</div>
+        <p class="day-desc">Morning talks on one question, an afternoon Methods Studio, and the AI-native night.</p>
       <div class="item">
         <div class="item-head">
           <span class="kind lecture">Lecture</span>
@@ -65,7 +66,9 @@ permalink: /workshop/schedule/
           <span class="item-title">From a story to a publishable paper: A deep dive in AI-native scientific research</span>
           <span class="item-by"><a href="https://en.westlake.edu.cn/faculty/fangzhou-xiao.html" target="_blank" rel="noopener">Fangzhou Xiao</a></span>
         </div>
-        <div class="nofiles">No materials posted.</div>
+        <ul class="files">
+          <li><a href="https://github.com/chemaoxfz/pebble-from-story-to-paper">github.com/chemaoxfz/pebble-from-story-to-paper</a></li>
+        </ul>
       </div>
       <div class="item">
         <div class="item-head">
@@ -114,6 +117,7 @@ permalink: /workshop/schedule/
       </div>
       <div class="day-body">
         <div class="day-theme">Q2: Complex Cellular Behaviors</div>
+        <p class="day-desc">Three ways to model cellular behavior this morning, hands-on methods this afternoon, and a Questions Night to meet your people.</p>
       <div class="item">
         <div class="item-head">
           <span class="kind lecture">Lecture</span>
@@ -201,6 +205,7 @@ permalink: /workshop/schedule/
       </div>
       <div class="day-body">
         <div class="day-theme">Q3: Noise, Fluctuation &amp; Diversity</div>
+        <p class="day-desc">Three takes on randomness in cells this morning, hands-on methods this afternoon, and a Questions Night.</p>
       <div class="item">
         <div class="item-head">
           <span class="kind lecture">Lecture</span>
@@ -280,6 +285,7 @@ permalink: /workshop/schedule/
       </div>
       <div class="day-body">
         <div class="day-theme">Q4: Aging, Damage &amp; Asymmetry</div>
+        <p class="day-desc">Three views on damage and aging this morning, a guest lecture opening a longer afternoon, and a Questions Night.</p>
       <div class="item">
         <div class="item-head">
           <span class="kind lecture">Lecture</span>
@@ -333,9 +339,9 @@ permalink: /workshop/schedule/
           <span class="item-by">Yihang Ding</span>
         </div>
         <ul class="files">
+          <li><a href="{{ site.baseurl }}/workshop/materials/saturating-removal-aging/sr_model_tutorial.ipynb">sr_model_tutorial.ipynb</a></li>
+          <li><a href="{{ site.baseurl }}/workshop/materials/saturating-removal-aging/data/karin_2019_source_data.xlsx">karin_2019_source_data.xlsx</a></li>
           <li><a href="#" class="dead">Slides (not uploaded)</a></li>
-          <li><a href="#" class="dead">Notebook (not uploaded)</a></li>
-          <li><a href="#" class="dead">Data (not uploaded)</a></li>
         </ul>
       </div>
       </div>
@@ -347,6 +353,7 @@ permalink: /workshop/schedule/
       </div>
       <div class="day-body">
         <div class="day-theme">Q5: Spatial Organization &amp; Multicellularity</div>
+        <p class="day-desc">From single cells to tissues this morning, hands-on methods this afternoon, and the last Questions Night.</p>
       <div class="item">
         <div class="item-head">
           <span class="kind lecture">Lecture</span>
@@ -414,6 +421,7 @@ permalink: /workshop/schedule/
       </div>
       <div class="day-body">
         <div class="day-theme">Project Kickstart</div>
+        <p class="day-desc">Teams and projects lock in. Two guests bracket the day, and you commit to the question you will spend the sprint on.</p>
       <div class="item">
         <div class="item-head">
           <span class="kind lecture">Lecture</span>
@@ -432,13 +440,36 @@ permalink: /workshop/schedule/
       </div>
       </div>
     </section>
+    <section class="day" id="d0731">
+      <div class="day-when">
+        <div class="d">07.31</div>
+        <div class="wd">Friday</div>
+      </div>
+      <div class="day-body">
+        <div class="day-theme">Research Sprint: Work</div>
+        <p class="day-desc">The sprint begins in earnest: a morning panel and project clinics, heads-down group work, and a nightly check-in with your TA.</p>
+        <div class="day-note">Panel, project clinics and group work. No lecture materials from this day.</div>
+      </div>
+    </section>
+    <section class="day" id="d0801">
+      <div class="day-when">
+        <div class="d">08.01</div>
+        <div class="wd">Saturday</div>
+      </div>
+      <div class="day-body">
+        <div class="day-theme">Recharge: Rest Day</div>
+        <p class="day-desc">No sessions today. Rest, explore Hangzhou, and come back ready for the final push.</p>
+        <div class="day-note">Rest day. No sessions scheduled.</div>
+      </div>
+    </section>
     <section class="day" id="d0802">
       <div class="day-when">
         <div class="d">08.02</div>
         <div class="wd">Sunday</div>
       </div>
       <div class="day-body">
-        <div class="day-theme">Research + Analysis</div>
+        <div class="day-theme">Research Sprint: Analysis</div>
+        <p class="day-desc">Back to the sprint: morning panel and project clinics, then deep work on analysis, and the nightly check-in.</p>
       <div class="item">
         <div class="item-head">
           <span class="kind lecture">Lecture</span>
@@ -455,7 +486,8 @@ permalink: /workshop/schedule/
         <div class="wd">Monday</div>
       </div>
       <div class="day-body">
-        <div class="day-theme">Research + Polish</div>
+        <div class="day-theme">Research Sprint: Polish</div>
+        <p class="day-desc">A guest talk to open, then polish everything: results, figures, and the story. Manuscript and poster due by end of day.</p>
       <div class="item">
         <div class="item-head">
           <span class="kind lecture">Lecture</span>
@@ -464,6 +496,17 @@ permalink: /workshop/schedule/
         </div>
         <div class="nofiles">No materials posted.</div>
       </div>
+      </div>
+    </section>
+    <section class="day" id="d0804">
+      <div class="day-when">
+        <div class="d">08.04</div>
+        <div class="wd">Tuesday</div>
+      </div>
+      <div class="day-body">
+        <div class="day-theme">Final Presentation</div>
+        <p class="day-desc">The finale: team talks in the morning, posters after lunch, then the closing ceremony and checkout.</p>
+        <div class="day-note">Group presentations, poster session and closing ceremony. What the teams produced is on the Student work page.</div>
       </div>
     </section>
   </div>
@@ -500,7 +543,10 @@ permalink: /workshop/schedule/
   .day-when { position: sticky; top: 1rem; align-self: start; }
   .day-when .d { font-size: 1.25rem; font-weight: 650; color: var(--ink); line-height: 1.15; }
   .day-when .wd { font-size: 0.8rem; color: var(--muted); }
-  .day-theme { font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 0.9rem; }
+  .day-theme { font-size: 1rem; font-weight: 600; color: var(--ink); }
+  .day-desc { font-size: 0.88rem; color: var(--muted); margin: 0.3rem 0 0.9rem; max-width: 70ch; }
+  .day-note { font-size: 0.88rem; color: var(--muted); background: var(--soft);
+              border: 1px dashed var(--line); border-radius: 7px; padding: 0.7rem 0.9rem; }
 
   .item { padding: 0.6rem 0; border-top: 1px dashed var(--line); }
   .item:first-of-type { border-top: 0; padding-top: 0; }
