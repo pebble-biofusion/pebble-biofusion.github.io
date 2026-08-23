@@ -74,6 +74,7 @@ def counts():
         "lectures": sum(1 for t in talks if t["kind"] == "lecture"),
         "tutorials": sum(1 for t in talks if t["kind"] == "tutorial"),
         "files": sum(len(hosted(t)) for t in talks),
+        "tutorial_files": sum(len(hosted(t)) for t in talks if t["kind"] == "tutorial"),
         "papers": len(PAPERS),
         "authors": len({a for p in PAPERS for a in p["authors"]}),
     }
@@ -245,10 +246,10 @@ def build_tutorials():
     s += (
         '  <header class="page-head">\n'
         '    <h1>Tutorials &amp; materials</h1>\n'
-        '    <p class="lede">The hands-on studio material, by topic. Slides, notebooks, data and '
+        '    <p class="lede">The hands-on studio sessions, one card each. Slides, notebooks, data and '
         'worksheets, written by the teaching assistants and used during the camp. Everything here '
         'is downloadable and runs on its own.</p>\n'
-        f'    <p class="tally"><b>{len(tuts)}</b> topics &middot; '
+        f'    <p class="tally"><b>{len(tuts)}</b> session{plural(len(tuts))} &middot; '
         f'<b>{sum(len(hosted(t)) for _, t in tuts)}</b> files</p>\n'
         '  </header>\n\n'
     )
@@ -399,7 +400,7 @@ def build_index():
     <a class="stat" href="{{ site.baseurl }}/workshop/schedule/">
       <div class="stat-number">%(talks)d</div><div class="stat-label">talks over %(days)d days</div></a>
     <a class="stat" href="{{ site.baseurl }}/workshop/tutorials/">
-      <div class="stat-number">%(files)d</div><div class="stat-label">tutorial files</div></a>
+      <div class="stat-number">%(tutorials)d</div><div class="stat-label">tutorial sessions</div></a>
     <a class="stat" href="{{ site.baseurl }}/workshop/student-work/">
       <div class="stat-number">%(papers)d</div><div class="stat-label">student manuscripts</div></a>
     <a class="stat" href="{{ site.baseurl }}/workshop/student-work/">
@@ -448,7 +449,7 @@ def build_index():
       </a>
       <a class="card" href="{{ site.baseurl }}/workshop/tutorials/">
         <span class="card-tag">Tutorials</span>
-        <span class="card-title">%(tutorials)d topics, %(files)d files</span>
+        <span class="card-title">%(tutorials)d sessions, %(tutorial_files)d files</span>
         <span class="card-desc">Slides, notebooks, data and worksheets from the hands-on studios,
         written by the teaching assistants. Every file downloadable, each one runs on its own.</span>
       </a>

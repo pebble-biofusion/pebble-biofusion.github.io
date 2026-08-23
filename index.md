@@ -105,7 +105,7 @@ layout: default
     <a class="stat" href="{{ site.baseurl }}/workshop/schedule/">
       <div class="stat-number">36</div><div class="stat-label">talks over 11 days</div></a>
     <a class="stat" href="{{ site.baseurl }}/workshop/tutorials/">
-      <div class="stat-number">63</div><div class="stat-label">tutorial files</div></a>
+      <div class="stat-number">14</div><div class="stat-label">tutorial sessions</div></a>
     <a class="stat" href="{{ site.baseurl }}/workshop/student-work/">
       <div class="stat-number">16</div><div class="stat-label">student manuscripts</div></a>
     <a class="stat" href="{{ site.baseurl }}/workshop/student-work/">
@@ -210,7 +210,7 @@ layout: default
       </a>
       <a class="card" href="{{ site.baseurl }}/workshop/tutorials/">
         <span class="card-tag">Tutorials</span>
-        <span class="card-title">14 topics, 63 files</span>
+        <span class="card-title">14 sessions, 61 files</span>
         <span class="card-desc">Slides, notebooks, data and worksheets from the hands-on studios,
         written by the teaching assistants. Every file downloadable, each one runs on its own.</span>
       </a>
