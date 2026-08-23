@@ -8,8 +8,8 @@ permalink: /workshop/tutorials/
 
   <header class="page-head">
     <h1>Tutorials &amp; materials</h1>
-    <p class="lede">The hands-on studio material, by topic. Slides, notebooks, data and worksheets, written by the teaching assistants and used during the camp. Everything here is downloadable and runs on its own.</p>
-    <p class="tally"><b>14</b> topics &middot; <b>61</b> files</p>
+    <p class="lede">The hands-on studio sessions, one card each. Slides, notebooks, data and worksheets, written by the teaching assistants and used during the camp. Everything here is downloadable and runs on its own.</p>
+    <p class="tally"><b>14</b> sessions &middot; <b>61</b> files</p>
   </header>
 
   <div class="tut-grid">
