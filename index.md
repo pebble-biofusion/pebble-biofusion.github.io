@@ -118,9 +118,10 @@ layout: default
       <a class="more" href="{{ site.baseurl }}/workshop/schedule/">Full schedule &rarr;</a>
     </div>
     <p class="sec-lede">Week one opens five live questions. Week two hands the hours over to the
-    students. Every day below links to its talks and the files that go with them.</p>
+    students. The last day is theirs to present. Every day below links to its talks and the files
+    that go with them.</p>
     <div class="cal">
-      <div class="cal-phase"><span>Week one</span><b>Five questions</b></div>
+      <div class="cal-phase"><span>Week one</span><b>Ignition: five questions</b></div>
       <div class="cal-row">
         <a class="cal-day questions" href="{{ site.baseurl }}/workshop/schedule/#d0725">
           <span class="cd">07.25</span>
@@ -153,7 +154,7 @@ layout: default
           <span class="cn">5 talks &middot; 8 files</span>
         </a>
       </div>
-      <div class="cal-phase"><span>Week two</span><b>The sprint</b></div>
+      <div class="cal-phase"><span>Week two</span><b>Synthesis: research sprint</b></div>
       <div class="cal-row">
         <a class="cal-day sprint" href="{{ site.baseurl }}/workshop/schedule/#d0730">
           <span class="cd">07.30</span>
@@ -185,11 +186,14 @@ layout: default
           <span class="ct">Research Sprint: Polish</span>
           <span class="cn">1 talk</span>
         </a>
-        <a class="cal-day sprint" href="{{ site.baseurl }}/workshop/schedule/#d0804">
+      </div>
+      <div class="cal-phase"><span>Finale</span><b>Demo day</b></div>
+      <div class="cal-row">
+        <a class="cal-day finale" href="{{ site.baseurl }}/workshop/schedule/#d0804">
           <span class="cd">08.04</span>
           <span class="cw">Tue</span>
           <span class="ct">Final Presentation</span>
-          <span class="cn">Talks &middot; posters</span>
+          <span class="cn">Talks &middot; posters &middot; closing</span>
         </a>
       </div>
     </div>
@@ -548,6 +552,7 @@ layout: default
   .cal-day:hover { border-color: #FF6C0C; transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(255, 108, 12, 0.10); }
   .cal-day.sprint { background: #fffaf6; }
+  .cal-day.finale { background: #fff3e9; border-color: #fbd5b5; }
   .cal-day .cd { font-size: 1.05rem; font-weight: 660; color: #1f2937; line-height: 1.15; }
   .cal-day .cw { font-size: 0.72rem; color: #9ca3af; }
   .cal-day .ct { font-size: 0.83rem; color: #374151; margin-top: 0.35rem; line-height: 1.35; }
