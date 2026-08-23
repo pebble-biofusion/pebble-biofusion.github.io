@@ -309,6 +309,18 @@ permalink: /workshop/ignition/
           <li><a href="{{ site.baseurl }}/workshop/materials/neural-systems-across-scales/Student_Worksheet.docx">Student_Worksheet.docx</a></li>
         </ul>
       </li>
+      <li class="talk talk--has-materials">
+        <div class="talk-row">
+          <button class="talk-toggle" type="button" aria-expanded="false">
+            <span class="talk-arrow">▸</span>
+            <span class="talk-title">Commandments of research with AI</span>
+          </button>
+          <a class="talk-speaker" href="https://en.westlake.edu.cn/faculty/fangzhou-xiao.html" target="_blank" rel="noopener">Fangzhou Xiao</a>
+        </div>
+        <ul class="materials collapsed">
+          <li><a href="{{ site.baseurl }}/workshop/materials/Commandments_of_Research_with_AI_v8-improved.pdf">Commandments_of_Research_with_AI_v8-improved.pdf</a></li>
+        </ul>
+      </li>
     </ul>
   </section>
 
