@@ -29,12 +29,15 @@ DAYS = SCHED["days"]
 KIND_LABEL = {"lecture": "Lecture", "tutorial": "Tutorial", "method": "Research method"}
 
 PHASES = [
-    ("questions", "Week one", "Five questions",
+    ("questions", "Week one", "Ignition: five questions",
      "Each day opens a live question in quantitative biology, with research talks in the "
      "morning and a hands-on studio in the afternoon."),
-    ("sprint", "Week two", "The sprint",
+    ("sprint", "Week two", "Synthesis: research sprint",
      "Expert talk drops away almost entirely. Students work on their own questions, and "
      "the hours go to producing something."),
+    ("finale", "Finale", "Demo day",
+     "Final presentation. Team talks in the morning, posters after lunch, then the "
+     "closing ceremony."),
 ]
 
 
@@ -412,7 +415,8 @@ def build_index():
       <a class="more" href="{{ site.baseurl }}/workshop/schedule/">Full schedule &rarr;</a>
     </div>
     <p class="sec-lede">Week one opens five live questions. Week two hands the hours over to the
-    students. Every day below links to its talks and the files that go with them.</p>
+    students. The last day is theirs to present. Every day below links to its talks and the files
+    that go with them.</p>
     <div class="cal">
 '''
     for key, tag, name, _ in PHASES:
@@ -499,6 +503,7 @@ HOME_CSS = """
   .cal-day:hover { border-color: #FF6C0C; transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(255, 108, 12, 0.10); }
   .cal-day.sprint { background: #fffaf6; }
+  .cal-day.finale { background: #fff3e9; border-color: #fbd5b5; }
   .cal-day .cd { font-size: 1.05rem; font-weight: 660; color: #1f2937; line-height: 1.15; }
   .cal-day .cw { font-size: 0.72rem; color: #9ca3af; }
   .cal-day .ct { font-size: 0.83rem; color: #374151; margin-top: 0.35rem; line-height: 1.35; }

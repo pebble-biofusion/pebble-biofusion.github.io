@@ -642,13 +642,13 @@
   {
    "date": "08.04",
    "weekday": "Tuesday",
-   "phase": "sprint",
+   "phase": "finale",
    "date_full": "2026-08-04",
    "theme": "Final Presentation",
    "talks": [],
    "description": "The finale: team talks in the morning, posters after lunch, then the closing ceremony and checkout.",
    "note": "Group presentations, poster session and closing ceremony. What the teams produced is on the Student work page.",
-   "cal_label": "Talks &middot; posters"
+   "cal_label": "Talks &middot; posters &middot; closing"
   }
  ]
 }

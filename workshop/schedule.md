@@ -15,7 +15,7 @@ permalink: /workshop/schedule/
   <div class="phase">
     <div class="phase-head">
       <span class="tag">Week one</span>
-      <h2>Five questions</h2>
+      <h2>Ignition: five questions</h2>
       <p>Each day opens a live question in quantitative biology, with research talks in the morning and a hands-on studio in the afternoon.</p>
     </div>
     <section class="day" id="d0725">
@@ -411,7 +411,7 @@ permalink: /workshop/schedule/
   <div class="phase">
     <div class="phase-head">
       <span class="tag">Week two</span>
-      <h2>The sprint</h2>
+      <h2>Synthesis: research sprint</h2>
       <p>Expert talk drops away almost entirely. Students work on their own questions, and the hours go to producing something.</p>
     </div>
     <section class="day" id="d0730">
@@ -498,6 +498,14 @@ permalink: /workshop/schedule/
       </div>
       </div>
     </section>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head">
+      <span class="tag">Finale</span>
+      <h2>Demo day</h2>
+      <p>Final presentation. Team talks in the morning, posters after lunch, then the closing ceremony.</p>
+    </div>
     <section class="day" id="d0804">
       <div class="day-when">
         <div class="d">08.04</div>
