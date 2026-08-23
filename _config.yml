@@ -22,6 +22,7 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - .gitignore
+  - _tools
   - README.md
   - LICENSE
 

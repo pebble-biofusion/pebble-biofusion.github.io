@@ -1,0 +1,175 @@
+[
+ {
+  "num": "01",
+  "title": "Quantifying the Spatial Reach of Perturbation Effects in Tumor CRISPR Screens",
+  "authors": [
+   "Zhenghao Xu",
+   "Yongji Lyu",
+   "Haotian Jin",
+   "Qiaochu Jiang",
+   "Qinyu Cai",
+   "Lei Hu"
+  ],
+  "pdf": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/01-Quantifying_the_Spatial_Reach_of_Perturbation_Effects_in_Tumor_CRISPR_Screens.pdf",
+  "image": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/01-figure.png"
+ },
+ {
+  "num": "02A",
+  "title": "From Connectome Structure to Signal Propagation Cross-Level Interference Boundaries in C. elegancs Whole-Brain Dynamics",
+  "authors": [
+   "Zhiqi Shen"
+  ],
+  "pdf": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/02A-From Connectome Structure to Signal Propagation Cross-Level Interference Boundaries in C. elegancs Whole-Brain Dynamics.pdf",
+  "image": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/02A-figure.png"
+ },
+ {
+  "num": "02B",
+  "title": "Two Faces of Plasticity in Small Spiking Circuits: How Connectome Topology and Cell-Type-Specific Learning Rules Shape What a Small Network Can Learn",
+  "authors": [
+   "Jiaqi Tu",
+   "Shaoji Zhan",
+   "Junlin Xia",
+   "Xuele Dong",
+   "Wenxuan Zhang"
+  ],
+  "pdf": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/02B-Two Faces of Plasticity in Small Spiking Circuits_How Connectome Topology and Cell-Type-Specific Learning Rules Shape What a Small Network Can Learn.pdf",
+  "image": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/02B-figure.png"
+ },
+ {
+  "num": "03",
+  "title": "Growth and immunity receptors compete for co-receptors to regulate balance in plants",
+  "authors": [
+   "Qiaorui Zhang",
+   "Canxi Chen",
+   "Jiayu Zou"
+  ],
+  "pdf": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/03-Growth and immunity receptors compete for co-receptors to regulate balance in plants.pdf",
+  "image": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/03-figure.png"
+ },
+ {
+  "num": "04",
+  "title": "Healthy Human B-Cell Aging Characterized by Regulatory-State Remodeling",
+  "authors": [
+   "Yifan Wang",
+   "Lanxin Ma",
+   "Jingwen Zhang"
+  ],
+  "pdf": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/04-Health Human B-Cell Aging Characterized by Regulatory-State Remodeling.pdf",
+  "image": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/04-figure.png"
+ },
+ {
+  "num": "05",
+  "title": "Factorial Knockouts Diagnose Missing Physical Structure in a Calibrated PSI-LHCI Transport Surrogate",
+  "authors": [
+   "Hai Zhang",
+   "Boyi Feng",
+   "Huan Tan",
+   "Yuqi Wang",
+   "Haoming Luo"
+  ],
+  "pdf": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/05-Factorial Knockouts Diagnose Missing Physical Structure in a Calibrated PSI-LHCI Transport Surrogate.pdf",
+  "image": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/05-figure.png"
+ },
+ {
+  "num": "06",
+  "title": "Designing for Emergence",
+  "authors": [
+   "Haohui Feng"
+  ],
+  "pdf": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/06-Designing for Emergence.pdf",
+  "image": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/06-figure.png"
+ },
+ {
+  "num": "07",
+  "title": "A pharmacokinetics-informed ODE extrapolates long-term fenofibrate transcriptomic responses",
+  "authors": [
+   "Zheng Zhang",
+   "Yixuan Gao",
+   "Yu Li",
+   "Jian'en Qiu"
+  ],
+  "pdf": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/07-A_pharmacokinetics_informed_ODE_extrapolates_long_term_fenofibrate_transcriptomic_responses.pdf",
+  "image": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/07-figure.png"
+ },
+ {
+  "num": "08",
+  "title": "Balancing degradation and tissue integration: a coupled-dynamics model of the mechanical performance of biodegradable hernia meshes",
+  "authors": [
+   "Ruiqin Feng"
+  ],
+  "pdf": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/08-Balancing degradation and tissue integration_a coupled-dynamics model of the mechanical performance of biodegradable hernia meshes.pdf",
+  "image": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/08-figure.png"
+ },
+ {
+  "num": "09",
+  "title": "Why This Code? A Constrained Mapping Framework for the Evolutionary Stability of the Canonical Genetic Code",
+  "authors": [
+   "Rentian Lin",
+   "Chenxiao Wang",
+   "Yining Hu",
+   "Chuanrui Wang",
+   "Xinyu Wang"
+  ],
+  "pdf": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/09-Why This Code_A Constrained Mapping Framework for the Evolutionary Stability of the Canonical Genetic Code.pdf",
+  "image": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/09-figure.png"
+ },
+ {
+  "num": "10",
+  "title": "Feedback Dysregulation as a Dominant Driver of Hematopoietic Stem Cell Aging",
+  "authors": [
+   "Rongkai Bao"
+  ],
+  "pdf": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/10-Feedback Dysregulation as a Dominant Driver of Hematopoietic Stem Cell Aging.pdf",
+  "image": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/10-figure.png"
+ },
+ {
+  "num": "12",
+  "title": "RPDynaFlow: Generating Protein-RNA Conformational Ensembles with Flow Matching",
+  "authors": [
+   "Yuntao Li",
+   "Kexin Lu"
+  ],
+  "pdf": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/12-RPDynaFlow_Generating Protein-RNA Conformational Ensembles with Flow Matching.pdf",
+  "image": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/12-figure.png"
+ },
+ {
+  "num": "13",
+  "title": "TailorAge: A Cell-Specific Epigenetic Clock Framework for Profiling Human Biological Aging at Single-Cell Resolution",
+  "authors": [
+   "Zhengyi Yan"
+  ],
+  "pdf": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/13-TailorAge_ A Cell-Specific Epigenetic Clock Framework for Profiling Human Biological Aging at Single-Cell Resolution.pdf",
+  "image": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/13-figure.png"
+ },
+ {
+  "num": "14",
+  "title": "A Coarse-Grained Stochastic Model of Translation Coupled Latent-Time Variability",
+  "authors": [
+   "Rui Ling",
+   "Wanqi Zhao",
+   "Yike Zhu",
+   "Ruoqing Zhang"
+  ],
+  "pdf": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/14-A Coarse Grained Stochastic Model of Translation Coupled Latent-Time Variability.pdf",
+  "image": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/14-figure.png"
+ },
+ {
+  "num": "15",
+  "title": "Distinct residual spatial organization of inputs and outputs in human cortical neurons",
+  "authors": [
+   "Xueqiang Xin"
+  ],
+  "pdf": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/15-Distinct residual spatial organization of inputs and outputs in human cortical neurons.pdf",
+  "image": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/15-figure.png"
+ },
+ {
+  "num": "16",
+  "title": "Statistical Orthogonality Between Thermodynamic Predictions and Experimental DNA Melt Profiles",
+  "authors": [
+   "Haoxiang Sun",
+   "Qinguo Liu"
+  ],
+  "pdf": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/16-Statistical Orthogonality Between Thermodynamic Predictions and Experimental DNA Melt Profiles.pdf",
+  "image": "{{ site.baseurl }}/workshop/materials/synthesis-manuscripts/images/16-figure.png"
+ }
+]

@@ -121,44 +121,50 @@
       color: #0066cc;
     }
 
-    .workshop-nav {
-      display: flex;
-      gap: 1.5rem;
-      margin-top: 0.75rem;
-      align-items: center;
+    /* Primary navigation */
+    .site-nav {
+      border-top: 1px solid #e5e7eb;
+      border-bottom: 1px solid #e5e7eb;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 50;
     }
 
-    .workshop-nav a {
+    .site-nav-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      gap: 0.25rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .site-nav-inner::-webkit-scrollbar { display: none; }
+
+    .site-nav a {
+      position: relative;
+      display: block;
+      padding: 0.95rem 0.9rem;
       color: #4b5563;
       text-decoration: none;
-      font-size: 0.85rem;
+      font-size: 0.94rem;
       font-weight: 500;
-      transition: all 0.2s;
-      padding: 0.5rem 0.75rem;
-      border-radius: 6px;
-      letter-spacing: 0.3px;
-      position: relative;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
     }
 
-    .workshop-nav a:hover {
+    .site-nav a:hover {
       color: #1f2937;
-      background: #f9fafb;
+      border-bottom-color: #d1d5db;
     }
 
-    .workshop-nav a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 0;
-      height: 2px;
-      background: #6366f1;
-      transition: width 0.3s ease;
-    }
-
-    .workshop-nav a:hover::after {
-      width: 80%;
+    .site-nav a.active {
+      color: #FF6C0C;
+      border-bottom-color: #FF6C0C;
+      font-weight: 600;
     }
 
     /* Main Layout */
@@ -271,17 +277,7 @@
         width: 100%;
       }
 
-      .workshop-nav {
-        width: 100%;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-top: 0.5rem;
-      }
 
-      .workshop-nav a {
-        font-size: 0.8rem;
-        padding: 0.4rem 0.6rem;
-      }
 
       .site-title {
         font-size: 0.9rem;
@@ -309,14 +305,21 @@
             <img src="{{ '/images/westlake-logo.png' | relative_url }}" alt="Westlake University">
           </a>
         </div>
-        <nav class="workshop-nav">
-          <a href="{{ '/workshop/ignition/' | relative_url }}">Ignition</a>
-          <a href="{{ '/workshop/synthesis/' | relative_url }}">Synthesis</a>
-          <a href="{{ '/workshop/gallery/' | relative_url }}">Gallery</a>
-        </nav>
       </div>
     </div>
   </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      {% assign u = page.url %}
+      <a href="{{ '/' | relative_url }}"{% if u == '/' %} class="active"{% endif %}>Home</a>
+      <a href="{{ '/workshop/schedule/' | relative_url }}"{% if u contains '/schedule' or u contains '/ignition' %} class="active"{% endif %}>Schedule</a>
+      <a href="{{ '/workshop/tutorials/' | relative_url }}"{% if u contains '/tutorials' %} class="active"{% endif %}>Tutorials</a>
+      <a href="{{ '/workshop/method/' | relative_url }}"{% if u contains '/method' %} class="active"{% endif %}>Research with AI</a>
+      <a href="{{ '/workshop/student-work/' | relative_url }}"{% if u contains '/student-work' or u contains '/synthesis' %} class="active"{% endif %}>Student work</a>
+      <a href="{{ '/workshop/gallery/' | relative_url }}"{% if u contains '/gallery' %} class="active"{% endif %}>Gallery</a>
+    </div>
+  </nav>
 
   <main class="main-content">
     {{ content }}
