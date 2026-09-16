@@ -54,8 +54,8 @@ defaults:
       path: "images"
     values:
       sitemap: false
-  # workshop/2026/materials is a pre-August-2026 snapshot of workshop/materials.
-  # Its pages redirect to the canonical path; keep the whole tree out of sitemap.xml.
+  # workshop/2026/materials holds only redirect stubs for the pre-August-2026 URLs
+  # of workshop/materials. Keep them out of sitemap.xml.
   - scope:
       path: "workshop/2026/materials"
     values:
