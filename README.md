@@ -1,6 +1,6 @@
 # 🎓 Pebble Biofusion Workshop Platform
 
-A comprehensive platform for hosting teaching materials, project outputs, and research results from the annual Pebble Biofusion Workshop programs at Westlake University Interdisciplinary Sciences Center.
+A comprehensive platform for hosting teaching materials, project outputs, and research results from the annual Pebble Biofusion Workshop programs at Westlake University's Center for Interdisciplinary Studies.
 
 ## 🌟 Website
 

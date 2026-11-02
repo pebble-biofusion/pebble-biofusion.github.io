@@ -6,7 +6,7 @@ permalink: /summer-camp/
 
 ## Program Overview
 
-The Pebble Biofusion Workshop is an intensive interdisciplinary program hosted by Westlake University Interdisciplinary Sciences Center (CIS), cultivating scientific core competencies in the AI era through hands-on research experience.
+The Pebble Biofusion Workshop is an intensive interdisciplinary program hosted by Westlake University's Center for Interdisciplinary Studies (CIS), cultivating scientific core competencies in the AI era through hands-on research experience.
 
 ## Important Dates
 
@@ -82,6 +82,6 @@ Morphogenesis mechanisms, optogenetics applications
 
 ## Contact
 
-**Institution**: Westlake University College of Science Interdisciplinary Sciences Center
+**Institution**: Center for Interdisciplinary Studies, Westlake University
 
 **Application**: [Official information](https://mp.weixin.qq.com/s/75Lt8VJmhoKTkEY9bz9r-w)

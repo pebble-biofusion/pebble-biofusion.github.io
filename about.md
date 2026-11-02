@@ -6,7 +6,7 @@ permalink: /about/
 
 ## About the Platform
 
-This platform hosts teaching materials and research outputs from the Pebble Biofusion Workshop hosted by Westlake University Interdisciplinary Sciences Center.
+This platform hosts teaching materials and research outputs from the Pebble Biofusion Workshop hosted by Westlake University's Center for Interdisciplinary Studies.
 
 ## Program Mission
 
@@ -61,7 +61,7 @@ The Pebble Biofusion Workshop brings together students and researchers from phys
 
 ## Contact
 
-**Host**: Westlake University Interdisciplinary Sciences Center
+**Host**: Center for Interdisciplinary Studies, Westlake University
 
 For platform questions, contact the workshop organizing committee.
 
