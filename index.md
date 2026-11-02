@@ -99,6 +99,11 @@ layout: default
       These are precisely what AI does not reliably provide. They are what <strong>PEBBLE BioFusion</strong> trains.
     </p>
 
+    <p class="credits">
+      PEBBLE BioFusion is hosted by the <strong>Center for Interdisciplinary Studies</strong> at Westlake University.
+      <a href="https://en.westlake.edu.cn/faculty/fangzhou-xiao.html" target="_blank" rel="noopener">Fangzhou Xiao</a> organized the 2026 camp, with Zilin Zhu as program coordinator.
+    </p>
+
   </section>
 
   <section class="stats" id="numbers">
@@ -397,13 +402,38 @@ layout: default
   }
 
   .closing {
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
   }
 
   .intro strong,
   .closing strong {
     color: #1f2937;
     font-weight: 600;
+  }
+
+  .credits {
+    margin: 0 0 5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid #e5e7eb;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #6b7280;
+  }
+
+  .credits strong {
+    color: #1f2937;
+    font-weight: 600;
+  }
+
+  .credits a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid #d1d5db;
+  }
+
+  .credits a:hover {
+    color: #FF6C0C;
+    border-color: #FF6C0C;
   }
 
   /* ===== Three core skills (name | description) ===== */
